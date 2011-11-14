@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
 
@@ -28,13 +29,18 @@ public class Piiripunkt implements Serializable {
 	private String GPS_longituide;
 	private String GPS_latitude;
 	private String korgus_merepinnast;
+	@DateTimeFormat(style = "M-")
 	private Date alates;
+	@DateTimeFormat(style = "M-")
 	private Date kuni;
 	private String avaja;
+	@DateTimeFormat(style = "M-")
 	private Date avatud;
 	private String sulgeja;
+	@DateTimeFormat(style = "M-")
 	private Date suletud;
 	private String muutja;
+	@DateTimeFormat(style = "M-")
 	private Date muudetud;
 	private String kommentaar;
 	private static final long serialVersionUID = 1L;

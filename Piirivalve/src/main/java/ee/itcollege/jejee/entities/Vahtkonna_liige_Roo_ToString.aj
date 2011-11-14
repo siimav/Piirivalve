@@ -16,9 +16,11 @@ privileged aspect Vahtkonna_liige_Roo_ToString {
         sb.append("Kuni: ").append(getKuni()).append(", ");
         sb.append("Muudetud: ").append(getMuudetud()).append(", ");
         sb.append("Muutja: ").append(getMuutja()).append(", ");
+        sb.append("Piirivalvur: ").append(getPiirivalvur()).append(", ");
         sb.append("Piirivalvur_ID: ").append(getPiirivalvur_ID()).append(", ");
         sb.append("Suletud: ").append(getSuletud()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
+        sb.append("Vahtkond: ").append(getVahtkond()).append(", ");
         sb.append("Vahtkond_ID: ").append(getVahtkond_ID()).append(", ");
         sb.append("Vahtkonna_liige_ID: ").append(getVahtkonna_liige_ID()).append(", ");
         sb.append("Version: ").append(getVersion());

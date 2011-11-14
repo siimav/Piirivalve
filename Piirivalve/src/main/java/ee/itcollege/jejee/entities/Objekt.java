@@ -7,7 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
 
@@ -26,13 +28,18 @@ public class Objekt implements Serializable {
 	private String nimetus;
 	private ee.itcollege.jejee.entities.Objekti_liik objekt_liik_ID;
 	private String avaja;
+	@DateTimeFormat(style = "M-")
 	private Date avatud;
 	private String sulgeja;
+	@DateTimeFormat(style = "M-")
 	private Date suletud;
 	private String muutja;
+	@DateTimeFormat(style = "M-")
 	private Date muudetud;
 	private String kommentaar;
 	private static final long serialVersionUID = 1L;
+	@ManyToOne
+	private Objekti_liik objekti_liik;
 
 	public Objekt() {
 		super();
@@ -117,6 +124,14 @@ public class Objekt implements Serializable {
 
 	public void setKommentaar(String kommentaar) {
 		this.kommentaar = kommentaar;
+	}
+
+	public Objekti_liik getObjekti_liik() {
+	    return objekti_liik;
+	}
+
+	public void setObjekti_liik(Objekti_liik param) {
+	    this.objekti_liik = param;
 	}
 
    

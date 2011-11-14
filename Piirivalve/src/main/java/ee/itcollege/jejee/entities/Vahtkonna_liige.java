@@ -7,7 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
 
@@ -25,16 +27,25 @@ public class Vahtkonna_liige implements Serializable {
 	private Long vahtkonna_liige_ID;
 	private ee.itcollege.jejee.entities.Vahtkond vahtkond_ID;
 	private ee.itcollege.jejee.entities.Piirivalvur piirivalvur_ID;
+	@DateTimeFormat(style = "M-")
 	private Date alates;
+	@DateTimeFormat(style = "M-")
 	private Date kuni;
 	private String avaja;
+	@DateTimeFormat(style = "M-")
 	private Date avatud;
 	private String sulgeja;
+	@DateTimeFormat(style = "M-")
 	private Date suletud;
 	private String muutja;
+	@DateTimeFormat(style = "M-")
 	private Date muudetud;
 	private String kommentaar;
 	private static final long serialVersionUID = 1L;
+	@ManyToOne
+	private Vahtkond vahtkond;
+	@ManyToOne
+	private Piirivalvur piirivalvur;
 
 	public Vahtkonna_liige() {
 		super();
@@ -135,6 +146,22 @@ public class Vahtkonna_liige implements Serializable {
 
 	public void setKommentaar(String kommentaar) {
 		this.kommentaar = kommentaar;
+	}
+
+	public Vahtkond getVahtkond() {
+	    return vahtkond;
+	}
+
+	public void setVahtkond(Vahtkond param) {
+	    this.vahtkond = param;
+	}
+
+	public Piirivalvur getPiirivalvur() {
+	    return piirivalvur;
+	}
+
+	public void setPiirivalvur(Piirivalvur param) {
+	    this.piirivalvur = param;
 	}
 
    

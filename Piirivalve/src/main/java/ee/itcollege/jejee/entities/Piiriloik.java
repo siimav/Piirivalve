@@ -1,20 +1,19 @@
 package ee.itcollege.jejee.entities;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
-import ee.itcollege.jejee.entities.Intsident;
-import java.util.Collection;
-import javax.persistence.OneToMany;
-import javax.persistence.JoinColumn;
 
 @RooJavaBean
 @RooToString
@@ -28,10 +27,13 @@ public class Piiriloik implements Serializable {
 	@Id
 	private Long piiriloik_ID;
 	private String avaja;
+	@DateTimeFormat(style = "M-")
 	private Date avatud;
 	private String muutja;
+	@DateTimeFormat(style = "M-")
 	private Date muudetud;
 	private String sulgeja;
+	@DateTimeFormat(style = "M-")
 	private Date suletud;
 	private String kood;
 	private String nimetus;

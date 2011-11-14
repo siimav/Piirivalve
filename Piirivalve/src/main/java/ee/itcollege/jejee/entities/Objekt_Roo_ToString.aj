@@ -17,6 +17,7 @@ privileged aspect Objekt_Roo_ToString {
         sb.append("Nimetus: ").append(getNimetus()).append(", ");
         sb.append("Objekt_ID: ").append(getObjekt_ID()).append(", ");
         sb.append("Objekt_liik_ID: ").append(getObjekt_liik_ID()).append(", ");
+        sb.append("Objekti_liik: ").append(getObjekti_liik()).append(", ");
         sb.append("Suletud: ").append(getSuletud()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
         sb.append("Version: ").append(getVersion());

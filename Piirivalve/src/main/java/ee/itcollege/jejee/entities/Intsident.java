@@ -7,15 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import org.springframework.roo.addon.entity.RooEntity;
-import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.tostring.RooToString;
-import javax.persistence.Inheritance;
-import static javax.persistence.InheritanceType.JOINED;
-import javax.persistence.Basic;
-import ee.itcollege.jejee.entities.Piiriloik;
 import javax.persistence.ManyToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
 
 @RooToString
 @RooEntity
@@ -28,14 +24,19 @@ public class Intsident implements Serializable {
 	@Id
 	private Long intsident_ID;
 	private String avaja;
+	@DateTimeFormat(style = "M-")
 	private Date avatud;
 	private String muutja;
+	@DateTimeFormat(style = "M-")
 	private Date muudetud;
 	private String sulgeja;
+	@DateTimeFormat(style = "M-")
 	private Date suletud;
 	private String kood;
 	private String nimetus;
+	@DateTimeFormat(style = "M-")
 	private Date toimumise_algus;
+	@DateTimeFormat(style = "M-")
 	private Date toimumise_lopp;
 	private String kirjeldus;
 	private String kommentaar;
