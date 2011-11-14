@@ -3,7 +3,7 @@
 
 package ee.itcollege.jejee.entities;
 
-import ee.itcollege.jejee.entities.Intsident;
+import ee.itcollege.jejee.entities.Intsidendi_liik;
 import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
@@ -13,81 +13,81 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect Intsident_Roo_Entity {
+privileged aspect Intsidendi_liik_Roo_Entity {
     
     @PersistenceContext
-    transient EntityManager Intsident.entityManager;
+    transient EntityManager Intsidendi_liik.entityManager;
     
     @Version
     @Column(name = "version")
-    private Integer Intsident.version;
+    private Integer Intsidendi_liik.version;
     
-    public Integer Intsident.getVersion() {
+    public Integer Intsidendi_liik.getVersion() {
         return this.version;
     }
     
-    public void Intsident.setVersion(Integer version) {
+    public void Intsidendi_liik.setVersion(Integer version) {
         this.version = version;
     }
     
     @Transactional
-    public void Intsident.persist() {
+    public void Intsidendi_liik.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void Intsident.remove() {
+    public void Intsidendi_liik.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Intsident attached = Intsident.findIntsident(this.intsident_ID);
+            Intsidendi_liik attached = Intsidendi_liik.findIntsidendi_liik(this.intsidendi_liik_ID);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void Intsident.flush() {
+    public void Intsidendi_liik.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void Intsident.clear() {
+    public void Intsidendi_liik.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public Intsident Intsident.merge() {
+    public Intsidendi_liik Intsidendi_liik.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        Intsident merged = this.entityManager.merge(this);
+        Intsidendi_liik merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }
     
-    public static final EntityManager Intsident.entityManager() {
-        EntityManager em = new Intsident().entityManager;
+    public static final EntityManager Intsidendi_liik.entityManager() {
+        EntityManager em = new Intsidendi_liik().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long Intsident.countIntsidents() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Intsident o", Long.class).getSingleResult();
+    public static long Intsidendi_liik.countIntsidendi_liiks() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Intsidendi_liik o", Long.class).getSingleResult();
     }
     
-    public static List<Intsident> Intsident.findAllIntsidents() {
-        return entityManager().createQuery("SELECT o FROM Intsident o", Intsident.class).getResultList();
+    public static List<Intsidendi_liik> Intsidendi_liik.findAllIntsidendi_liiks() {
+        return entityManager().createQuery("SELECT o FROM Intsidendi_liik o", Intsidendi_liik.class).getResultList();
     }
     
-    public static Intsident Intsident.findIntsident(Long intsident_ID) {
-        if (intsident_ID == null) return null;
-        return entityManager().find(Intsident.class, intsident_ID);
+    public static Intsidendi_liik Intsidendi_liik.findIntsidendi_liik(Long intsidendi_liik_ID) {
+        if (intsidendi_liik_ID == null) return null;
+        return entityManager().find(Intsidendi_liik.class, intsidendi_liik_ID);
     }
     
-    public static List<Intsident> Intsident.findIntsidentEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Intsident o", Intsident.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<Intsidendi_liik> Intsidendi_liik.findIntsidendi_liikEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Intsidendi_liik o", Intsidendi_liik.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

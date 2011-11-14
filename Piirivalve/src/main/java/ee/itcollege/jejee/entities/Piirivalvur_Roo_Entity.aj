@@ -5,6 +5,7 @@ package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Piirivalvur;
 import java.lang.Integer;
+import java.lang.Long;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.EntityManager;
@@ -80,7 +81,7 @@ privileged aspect Piirivalvur_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Piirivalvur o", Piirivalvur.class).getResultList();
     }
     
-    public static Piirivalvur Piirivalvur.findPiirivalvur(Integer piirivalvur_ID) {
+    public static Piirivalvur Piirivalvur.findPiirivalvur(Long piirivalvur_ID) {
         if (piirivalvur_ID == null) return null;
         return entityManager().find(Piirivalvur.class, piirivalvur_ID);
     }

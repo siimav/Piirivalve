@@ -22,7 +22,7 @@ public class Piirivalvur implements Serializable {
 
 	@GeneratedValue(strategy = GenerationType.AUTO)   
 	@Id
-	private Integer piirivalvur_ID;
+	private Long piirivalvur_ID;
 	private String isikukood;
 	private String eesnimed;
 	private String perekonnanimi;
@@ -40,11 +40,11 @@ public class Piirivalvur implements Serializable {
 	public Piirivalvur() {
 		super();
 	}   
-	public Integer getPiirivalvur_ID() {
+	public Long getPiirivalvur_ID() {
 		return this.piirivalvur_ID;
 	}
 
-	public void setPiirivalvur_ID(Integer piirivalvur_ID) {
+	public void setPiirivalvur_ID(Long piirivalvur_ID) {
 		this.piirivalvur_ID = piirivalvur_ID;
 	}   
 	public String getIsikukood() {
