@@ -5,24 +5,23 @@ package ee.itcollege.jejee.entities;
 
 import java.lang.String;
 
-privileged aspect Vahtkond_Roo_ToString {
+privileged aspect Objekt_intsidendis_Roo_ToString {
     
-    public String Vahtkond.toString() {
+    public String Objekt_intsidendis.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Alates: ").append(getAlates()).append(", ");
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud()).append(", ");
+        sb.append("Intsident: ").append(getIntsident()).append(", ");
+        sb.append("Kirjeldus: ").append(getKirjeldus()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
-        sb.append("Kood: ").append(getKood()).append(", ");
         sb.append("Kuni: ").append(getKuni()).append(", ");
         sb.append("Muudetud: ").append(getMuudetud()).append(", ");
         sb.append("Muutja: ").append(getMuutja()).append(", ");
-        sb.append("Nimetus: ").append(getNimetus()).append(", ");
+        sb.append("Objekt: ").append(getObjekt()).append(", ");
+        sb.append("Objekt_intsidendis_ID: ").append(getObjekt_intsidendis_ID()).append(", ");
         sb.append("Suletud: ").append(getSuletud()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
-        sb.append("Vaeosa: ").append(getVaeosa()).append(", ");
-        sb.append("Vahtkond_ID: ").append(getVahtkond_ID()).append(", ");
-        sb.append("Vahtkonna_liige: ").append(getVahtkonna_liige() == null ? "null" : getVahtkonna_liige().size()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();
     }

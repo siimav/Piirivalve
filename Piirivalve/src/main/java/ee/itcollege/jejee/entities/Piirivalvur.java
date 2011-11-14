@@ -1,16 +1,14 @@
 package ee.itcollege.jejee.entities;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
 
@@ -23,6 +21,8 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 public class Piirivalvur implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	@GeneratedValue(strategy = GenerationType.AUTO)   
 	@Id
 	private Long piirivalvur_ID;
@@ -31,20 +31,19 @@ public class Piirivalvur implements Serializable {
 	private String perekonnanimi;
 	private String sugu;
 	private String soduri_kood;
+	@NotNull
 	private String avaja;
-	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date avatud;
 	private String sulgeja;
-	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date suletud;
+	@NotNull
 	private String muutja;
-	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date muudetud;
 	private String kommentaar;
-	private static final long serialVersionUID = 1L;
-	@OneToMany(mappedBy = "piirivalvur")
-	private Collection<Vahtkonna_liige> vahtkonna_liige;
-
+	
 	public Piirivalvur() {
 		super();
 	}   
@@ -138,12 +137,6 @@ public class Piirivalvur implements Serializable {
 
 	public void setKommentaar(String kommentaar) {
 		this.kommentaar = kommentaar;
-	}
-	public Collection<Vahtkonna_liige> getVahtkonna_liige() {
-	    return vahtkonna_liige;
-	}
-	public void setVahtkonna_liige(Collection<Vahtkonna_liige> param) {
-	    this.vahtkonna_liige = param;
 	}
    
 }

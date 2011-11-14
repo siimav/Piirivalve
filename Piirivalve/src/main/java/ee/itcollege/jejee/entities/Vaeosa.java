@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
@@ -24,29 +25,41 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 public class Vaeosa implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	@GeneratedValue(strategy = GenerationType.AUTO)   
 	@Id
 	private Long vaeosa_ID ;
+	@NotNull
 	private String kood;
-	private String nimetus;
-	private ee.itcollege.jejee.entities.Riigi_admin_yksus riigi_admin_yksus_ID;
+	@NotNull
+	private String nimetus;	
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date alates;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date kuni;
+	@NotNull
 	private String avaja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date avatud;
 	private String sulgeja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date suletud;
+	@NotNull
 	private String muutja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date muudetud;
 	private String kommentaar;
-	private static final long serialVersionUID = 1L;
+	
 	@ManyToOne
+	@NotNull
 	private Riigi_admin_yksus riigi_admin_yksus;
+	
 	@OneToMany(mappedBy = "vaeosa")
 	private Collection<Vahtkond> vahtkond;
 

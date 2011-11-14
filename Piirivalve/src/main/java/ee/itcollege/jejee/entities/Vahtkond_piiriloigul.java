@@ -1,57 +1,55 @@
 package ee.itcollege.jejee.entities;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
 
+@RooJavaBean
 @RooToString
 @RooEntity
 @Entity
-public class Intsidendi_liik implements Serializable {
+public class Vahtkond_piiriloigul implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	@GeneratedValue(strategy = GenerationType.AUTO)   
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
-	private Long intsidendi_liik_ID;
+	private Long vahtkond_piiriloigul_ID;
 	@NotNull
 	private String avaja;
-	@DateTimeFormat(style = "M-")
 	@NotNull
 	private Date avatud;
 	@NotNull
 	private String muutja;
-	@DateTimeFormat(style = "M-")
 	@NotNull
 	private Date muudetud;
 	private String sulgeja;
-	@DateTimeFormat(style = "M-")
 	@NotNull
 	private Date suletud;
-	private String kood;
-	private String nimetus;
+	private Date alates;
+	private Date kuni;
 	private String kommentaar;
-
-	@OneToMany(mappedBy = "intsidendi_liik")
-	private Collection<Intsident> intsident;
 	
-	public Long getIntsidendi_liik_ID() {
-		return intsidendi_liik_ID;
+	@NotNull
+	private Piiriloik piiriloik;
+	
+	@NotNull
+	private Vahtkond vahtkond;
+	
+	public Long getVahtkond_piiriloigul_ID() {
+		return vahtkond_piiriloigul_ID;
 	}
-	public void setIntsidendi_liik_ID(Long intsidendi_liik_ID) {
-		this.intsidendi_liik_ID = intsidendi_liik_ID;
+	public void setVahtkond_piiriloigul_ID(Long vahtkond_piiriloigul_ID) {
+		this.vahtkond_piiriloigul_ID = vahtkond_piiriloigul_ID;
 	}
 	public String getAvaja() {
 		return avaja;
@@ -89,17 +87,17 @@ public class Intsidendi_liik implements Serializable {
 	public void setSuletud(Date suletud) {
 		this.suletud = suletud;
 	}
-	public String getKood() {
-		return kood;
+	public Date getAlates() {
+		return alates;
 	}
-	public void setKood(String kood) {
-		this.kood = kood;
+	public void setAlates(Date alates) {
+		this.alates = alates;
 	}
-	public String getNimetus() {
-		return nimetus;
+	public Date getKuni() {
+		return kuni;
 	}
-	public void setNimetus(String nimetus) {
-		this.nimetus = nimetus;
+	public void setKuni(Date kuni) {
+		this.kuni = kuni;
 	}
 	public String getKommentaar() {
 		return kommentaar;
@@ -107,11 +105,17 @@ public class Intsidendi_liik implements Serializable {
 	public void setKommentaar(String kommentaar) {
 		this.kommentaar = kommentaar;
 	}
-	public Collection<Intsident> getIntsident() {
-	    return intsident;
+	public Piiriloik getPiiriloik() {
+		return piiriloik;
 	}
-	public void setIntsident(Collection<Intsident> param) {
-	    this.intsident = param;
+	public void setPiiriloik(Piiriloik piiriloik) {
+		this.piiriloik = piiriloik;
+	}
+	public Vahtkond getVahtkond() {
+		return vahtkond;
+	}
+	public void setVahtkond(Vahtkond vahtkond) {
+		this.vahtkond = vahtkond;
 	}
 	
 }

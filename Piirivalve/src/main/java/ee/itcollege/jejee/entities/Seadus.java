@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
@@ -21,25 +22,34 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 public class Seadus implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	@GeneratedValue(strategy = GenerationType.AUTO)   
 	@Id
 	private Long seadus_ID;
+	@NotNull
 	private String kood;
+	@NotNull
 	private String nimetus;
 	private String kehtiv_alates;
 	private String kehtiv_kuni;
+	@NotNull
 	private String avaja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date avatud;
 	private String sulgeja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date suletud;
+	@NotNull
 	private String muutja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date muudetud;
+	@NotNull
 	private String kommentaar;
-	private static final long serialVersionUID = 1L;
-
+	
 	public Seadus() {
 		super();
 	}

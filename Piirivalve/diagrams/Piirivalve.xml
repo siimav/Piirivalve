@@ -1,32 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><entities>
 	<entity>
-		<entity-name>ee.itcollege.jejee.entities.Intsident</entity-name>
+		<entity-name>ee.itcollege.jejee.entities.Piiripunkt</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>426</entity-height>
-		<entity-X-Coordinate>303</entity-X-Coordinate>
-		<entity-Y-Coordinate>47</entity-Y-Coordinate>
-		<primary-collapsed>false</primary-collapsed>
-		<relation-collapsed>false</relation-collapsed>
-		<basic-collapsed>false</basic-collapsed>
-	</entity>
-
-	<entity>
-		<entity-name>ee.itcollege.jejee.entities.Piiriloik</entity-name>
-		<entity-width>120</entity-width>
-		<entity-height>326</entity-height>
+		<entity-height>368</entity-height>
 		<entity-X-Coordinate>50</entity-X-Coordinate>
-		<entity-Y-Coordinate>30</entity-Y-Coordinate>
-		<primary-collapsed>false</primary-collapsed>
-		<relation-collapsed>false</relation-collapsed>
-		<basic-collapsed>false</basic-collapsed>
-	</entity>
-
-	<entity>
-		<entity-name>ee.itcollege.jejee.entities.Piirivalvur</entity-name>
-		<entity-width>120</entity-width>
-		<entity-height>366</entity-height>
-		<entity-X-Coordinate>50</entity-X-Coordinate>
-		<entity-Y-Coordinate>410</entity-Y-Coordinate>
+		<entity-Y-Coordinate>800</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -44,55 +22,11 @@
 	</entity>
 
 	<entity>
-		<entity-name>ee.itcollege.jejee.entities.Piiripunkt</entity-name>
+		<entity-name>ee.itcollege.jejee.entities.Piirivalvur</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>368</entity-height>
+		<entity-height>328</entity-height>
 		<entity-X-Coordinate>50</entity-X-Coordinate>
-		<entity-Y-Coordinate>800</entity-Y-Coordinate>
-		<primary-collapsed>false</primary-collapsed>
-		<relation-collapsed>false</relation-collapsed>
-		<basic-collapsed>false</basic-collapsed>
-	</entity>
-
-	<entity>
-		<entity-name>ee.itcollege.jejee.entities.Riigi_admin_yksuse_liik</entity-name>
-		<entity-width>120</entity-width>
-		<entity-height>346</entity-height>
-		<entity-X-Coordinate>685</entity-X-Coordinate>
-		<entity-Y-Coordinate>324</entity-Y-Coordinate>
-		<primary-collapsed>false</primary-collapsed>
-		<relation-collapsed>false</relation-collapsed>
-		<basic-collapsed>false</basic-collapsed>
-	</entity>
-
-	<entity>
-		<entity-name>ee.itcollege.jejee.entities.Riigi_admin_yksus</entity-name>
-		<entity-width>120</entity-width>
-		<entity-height>386</entity-height>
-		<entity-X-Coordinate>463</entity-X-Coordinate>
-		<entity-Y-Coordinate>475</entity-Y-Coordinate>
-		<primary-collapsed>false</primary-collapsed>
-		<relation-collapsed>false</relation-collapsed>
-		<basic-collapsed>false</basic-collapsed>
-	</entity>
-
-	<entity>
-		<entity-name>ee.itcollege.jejee.entities.Objekt</entity-name>
-		<entity-width>120</entity-width>
-		<entity-height>306</entity-height>
-		<entity-X-Coordinate>710</entity-X-Coordinate>
-		<entity-Y-Coordinate>844</entity-Y-Coordinate>
-		<primary-collapsed>false</primary-collapsed>
-		<relation-collapsed>false</relation-collapsed>
-		<basic-collapsed>false</basic-collapsed>
-	</entity>
-
-	<entity>
-		<entity-name>ee.itcollege.jejee.entities.Objekti_liik</entity-name>
-		<entity-width>120</entity-width>
-		<entity-height>306</entity-height>
-		<entity-X-Coordinate>490</entity-X-Coordinate>
-		<entity-Y-Coordinate>1152</entity-Y-Coordinate>
+		<entity-Y-Coordinate>410</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -112,7 +46,7 @@
 	<entity>
 		<entity-name>ee.itcollege.jejee.entities.Vaeosa</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>386</entity-height>
+		<entity-height>366</entity-height>
 		<entity-X-Coordinate>710</entity-X-Coordinate>
 		<entity-Y-Coordinate>1183</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
@@ -121,11 +55,77 @@
 	</entity>
 
 	<entity>
+		<entity-name>ee.itcollege.jejee.entities.Riigi_admin_yksus</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>366</entity-height>
+		<entity-X-Coordinate>463</entity-X-Coordinate>
+		<entity-Y-Coordinate>475</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>ee.itcollege.jejee.entities.Objekt</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>286</entity-height>
+		<entity-X-Coordinate>710</entity-X-Coordinate>
+		<entity-Y-Coordinate>844</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>ee.itcollege.jejee.entities.Piiriloik</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>326</entity-height>
+		<entity-X-Coordinate>50</entity-X-Coordinate>
+		<entity-Y-Coordinate>30</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>ee.itcollege.jejee.entities.Intsident</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>426</entity-height>
+		<entity-X-Coordinate>303</entity-X-Coordinate>
+		<entity-Y-Coordinate>47</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
 		<entity-name>ee.itcollege.jejee.entities.Vahtkond</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>406</entity-height>
+		<entity-height>366</entity-height>
 		<entity-X-Coordinate>270</entity-X-Coordinate>
 		<entity-Y-Coordinate>1272</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>ee.itcollege.jejee.entities.Objekti_liik</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>306</entity-height>
+		<entity-X-Coordinate>490</entity-X-Coordinate>
+		<entity-Y-Coordinate>1152</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>ee.itcollege.jejee.entities.Riigi_admin_yksuse_liik</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>346</entity-height>
+		<entity-X-Coordinate>685</entity-X-Coordinate>
+		<entity-Y-Coordinate>324</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -137,6 +137,28 @@
 		<entity-height>366</entity-height>
 		<entity-X-Coordinate>260</entity-X-Coordinate>
 		<entity-Y-Coordinate>876</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>ee.itcollege.jejee.entities.Objekt_intsidendis</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>328</entity-height>
+		<entity-X-Coordinate>50</entity-X-Coordinate>
+		<entity-Y-Coordinate>1838</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>ee.itcollege.jejee.entities.Vahtkond_piiriloigul</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>308</entity-height>
+		<entity-X-Coordinate>490</entity-X-Coordinate>
+		<entity-Y-Coordinate>1838</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>

@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
@@ -24,29 +25,39 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 public class Riigi_admin_yksus implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	@GeneratedValue(strategy = GenerationType.AUTO)   
 	@Id
 	private Long riigi_admin_yksus_ID;
 	private String kood;
-	private String nimetus;
-	private ee.itcollege.jejee.entities.Riigi_admin_yksuse_liik riigi_admin_yksuse_liik_ID;
+	private String nimetus;	
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date alates;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date kuni;
+	@NotNull
 	private String avaja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date avatud;
 	private String sulgeja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date suletud;
+	@NotNull
 	private String muutja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date muudetud;
 	private String kommentaar;
-	private static final long serialVersionUID = 1L;
+	
 	@ManyToOne
+	@NotNull
 	private Riigi_admin_yksuse_liik riigi_admin_yksuse_liik;
+	
 	@OneToMany(mappedBy = "riigi_admin_yksus")
 	private Collection<Vaeosa> vaeosa;
 
@@ -75,15 +86,6 @@ public class Riigi_admin_yksus implements Serializable {
 
 	public void setNimetus(String nimetus) {
 		this.nimetus = nimetus;
-	}
-
-	public ee.itcollege.jejee.entities.Riigi_admin_yksuse_liik getRiigi_admin_yksuse_liik_ID() {
-		return riigi_admin_yksuse_liik_ID;
-	}
-
-	public void setRiigi_admin_yksuse_liik_ID(
-			ee.itcollege.jejee.entities.Riigi_admin_yksuse_liik riigi_admin_yksuse_liik_ID) {
-		this.riigi_admin_yksuse_liik_ID = riigi_admin_yksuse_liik_ID;
 	}
 
 	public Date getAlates() {

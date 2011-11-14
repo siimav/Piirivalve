@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
@@ -26,14 +27,19 @@ public class Piiriloik implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)   
 	@Id
 	private Long piiriloik_ID;
+	@NotNull
 	private String avaja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date avatud;
+	@NotNull
 	private String muutja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date muudetud;
 	private String sulgeja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date suletud;
 	private String kood;
 	private String nimetus;

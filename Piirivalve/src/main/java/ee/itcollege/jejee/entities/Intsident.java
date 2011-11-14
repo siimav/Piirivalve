@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
@@ -23,14 +24,19 @@ public class Intsident implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
 	private Long intsident_ID;
+	@NotNull
 	private String avaja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date avatud;
+	@NotNull
 	private String muutja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date muudetud;
 	private String sulgeja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date suletud;
 	private String kood;
 	private String nimetus;
@@ -46,8 +52,9 @@ public class Intsident implements Serializable {
 	@ManyToOne
 	private Piiriloik piiriloik;
 
-	@ManyToOne(targetEntity = ee.itcollege.jejee.entities.Intsidendi_liik.class)
-	private String intsidendi_liik;
+	@NotNull
+	@ManyToOne
+	private Intsidendi_liik intsidendi_liik;
 
 	public Long getIntsident_ID() {
 		return intsident_ID;
@@ -177,11 +184,11 @@ public class Intsident implements Serializable {
 		return piiriloik;
 	}
 
-	public void setIntsidendi_liik(String param) {
+	public void setIntsidendi_liik(Intsidendi_liik param) {
 		this.intsidendi_liik = param;
 	}
 
-	public String getIntsidendi_liik() {
+	public Intsidendi_liik getIntsidendi_liik() {
 		return intsidendi_liik;
 	}
 }

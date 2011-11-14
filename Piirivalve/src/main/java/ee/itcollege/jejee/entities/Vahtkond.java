@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
@@ -24,30 +25,36 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 public class Vahtkond implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	@GeneratedValue(strategy = GenerationType.AUTO)   
 	@Id
 	private Long vahtkond_ID;
 	private String kood;
 	private String nimetus;
-	private ee.itcollege.jejee.entities.Vaeosa vaeosa_ID;
-	private ee.itcollege.jejee.entities.Piiripunkt piiripunkt_ID;
 	@DateTimeFormat(style = "M-")
 	private Date alates;
 	@DateTimeFormat(style = "M-")
 	private Date kuni;
+	@NotNull
 	private String avaja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date avatud;
 	private String sulgeja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date suletud;
+	@NotNull
 	private String muutja;
 	@DateTimeFormat(style = "M-")
+	@NotNull
 	private Date muudetud;
 	private String kommentaar;
-	private static final long serialVersionUID = 1L;
+	
 	@OneToMany(mappedBy = "vahtkond")
 	private Collection<Vahtkonna_liige> vahtkonna_liige;
+	
 	@ManyToOne
 	private Vaeosa vaeosa;
 
@@ -77,23 +84,6 @@ public class Vahtkond implements Serializable {
 
 	public void setNimetus(String nimetus) {
 		this.nimetus = nimetus;
-	}
-
-	public ee.itcollege.jejee.entities.Vaeosa getVaeosa_ID() {
-		return vaeosa_ID;
-	}
-
-	public void setVaeosa_ID(ee.itcollege.jejee.entities.Vaeosa vaeosa_ID) {
-		this.vaeosa_ID = vaeosa_ID;
-	}
-
-	public ee.itcollege.jejee.entities.Piiripunkt getPiiripunkt_ID() {
-		return piiripunkt_ID;
-	}
-
-	public void setPiiripunkt_ID(
-			ee.itcollege.jejee.entities.Piiripunkt piiripunkt_ID) {
-		this.piiripunkt_ID = piiripunkt_ID;
 	}
 
 	public Date getAlates() {

@@ -13,7 +13,7 @@ privileged aspect Piiripunkt_Roo_ToString {
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud()).append(", ");
         sb.append("GPS_latitude: ").append(getGPS_latitude()).append(", ");
-        sb.append("GPS_longituide: ").append(getGPS_longituide()).append(", ");
+        sb.append("GPS_longitude: ").append(getGPS_longitude()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
         sb.append("Kood: ").append(getKood()).append(", ");
         sb.append("Korgus_merepinnast: ").append(getKorgus_merepinnast()).append(", ");
