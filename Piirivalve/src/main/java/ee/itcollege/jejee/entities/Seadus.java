@@ -136,5 +136,8 @@ public class Seadus implements Serializable {
 		this.kommentaar = kommentaar;
 	}
 
+	public void test(){
+		
+	}
 	
 }
