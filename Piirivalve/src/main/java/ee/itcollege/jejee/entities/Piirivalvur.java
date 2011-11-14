@@ -1,4 +1,4 @@
-package ee.itcollege.jejee.enities;
+package ee.itcollege.jejee.entities;
 
 import java.io.Serializable;
 import java.util.Date;
