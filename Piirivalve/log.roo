@@ -10,3 +10,6 @@ entity --class ~.entities.Intsident
 =======
 // Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-14 14:16:39
 >>>>>>> refs/remotes/origin/master
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-14 15:35:20
+entity --class ~.entities.Intsidendi_liik
+entity --class ~.entities.Piiriloik
