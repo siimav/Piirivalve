@@ -3,7 +3,7 @@
 
 package ee.itcollege.jejee.entities;
 
-import ee.itcollege.jejee.entities.Piirivalvur;
+import ee.itcollege.jejee.entities.Piiripunkt;
 import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
@@ -13,81 +13,81 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect Piirivalvur_Roo_Entity {
+privileged aspect Piiripunkt_Roo_Entity {
     
     @PersistenceContext
-    transient EntityManager Piirivalvur.entityManager;
+    transient EntityManager Piiripunkt.entityManager;
     
     @Version
     @Column(name = "version")
-    private Integer Piirivalvur.version;
+    private Integer Piiripunkt.version;
     
-    public Integer Piirivalvur.getVersion() {
+    public Integer Piiripunkt.getVersion() {
         return this.version;
     }
     
-    public void Piirivalvur.setVersion(Integer version) {
+    public void Piiripunkt.setVersion(Integer version) {
         this.version = version;
     }
     
     @Transactional
-    public void Piirivalvur.persist() {
+    public void Piiripunkt.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void Piirivalvur.remove() {
+    public void Piiripunkt.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Piirivalvur attached = Piirivalvur.findPiirivalvur(this.piirivalvur_ID);
+            Piiripunkt attached = Piiripunkt.findPiiripunkt(this.piiripunkt_ID);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void Piirivalvur.flush() {
+    public void Piiripunkt.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void Piirivalvur.clear() {
+    public void Piiripunkt.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public Piirivalvur Piirivalvur.merge() {
+    public Piiripunkt Piiripunkt.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        Piirivalvur merged = this.entityManager.merge(this);
+        Piiripunkt merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }
     
-    public static final EntityManager Piirivalvur.entityManager() {
-        EntityManager em = new Piirivalvur().entityManager;
+    public static final EntityManager Piiripunkt.entityManager() {
+        EntityManager em = new Piiripunkt().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long Piirivalvur.countPiirivalvurs() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Piirivalvur o", Long.class).getSingleResult();
+    public static long Piiripunkt.countPiiripunkts() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Piiripunkt o", Long.class).getSingleResult();
     }
     
-    public static List<Piirivalvur> Piirivalvur.findAllPiirivalvurs() {
-        return entityManager().createQuery("SELECT o FROM Piirivalvur o", Piirivalvur.class).getResultList();
+    public static List<Piiripunkt> Piiripunkt.findAllPiiripunkts() {
+        return entityManager().createQuery("SELECT o FROM Piiripunkt o", Piiripunkt.class).getResultList();
     }
     
-    public static Piirivalvur Piirivalvur.findPiirivalvur(Long piirivalvur_ID) {
-        if (piirivalvur_ID == null) return null;
-        return entityManager().find(Piirivalvur.class, piirivalvur_ID);
+    public static Piiripunkt Piiripunkt.findPiiripunkt(Long piiripunkt_ID) {
+        if (piiripunkt_ID == null) return null;
+        return entityManager().find(Piiripunkt.class, piiripunkt_ID);
     }
     
-    public static List<Piirivalvur> Piirivalvur.findPiirivalvurEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Piirivalvur o", Piirivalvur.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<Piiripunkt> Piiripunkt.findPiiripunktEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Piiripunkt o", Piiripunkt.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

@@ -12,22 +12,21 @@ import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
 
 /**
- * Entity implementation class for Entity: Piirivalvur
+ * Entity implementation class for Entity: Riigi_admin_yksuse_liik
  *
  */
 @Entity
 @RooEntity
 @RooToString
-public class Piirivalvur implements Serializable {
+public class Riigi_admin_yksuse_liik implements Serializable {
 
 	@GeneratedValue(strategy = GenerationType.AUTO)   
 	@Id
-	private Long piirivalvur_ID;
-	private String isikukood;
-	private String eesnimed;
-	private String perekonnanimi;
-	private String sugu;
-	private String soduri_kood;
+	private Long riigi_admin_yksuse_liik_ID;
+	private String kood;
+	private String nimetus;
+	private Date alates;
+	private Date kuni;
 	private String avaja;
 	private Date avatud;
 	private String sulgeja;
@@ -37,99 +36,106 @@ public class Piirivalvur implements Serializable {
 	private String kommentaar;
 	private static final long serialVersionUID = 1L;
 
-	public Piirivalvur() {
+	public Riigi_admin_yksuse_liik() {
 		super();
-	}   
-	public Long getPiirivalvur_ID() {
-		return this.piirivalvur_ID;
 	}
 
-	public void setPiirivalvur_ID(Long piirivalvur_ID) {
-		this.piirivalvur_ID = piirivalvur_ID;
-	}   
-	public String getIsikukood() {
-		return this.isikukood;
+	public Long getRiigi_admin_yksuse_liik_ID() {
+		return riigi_admin_yksuse_liik_ID;
 	}
 
-	public void setIsikukood(String isikukood) {
-		this.isikukood = isikukood;
-	}   
-	public String getEesnimed() {
-		return this.eesnimed;
+	public void setRiigi_admin_yksuse_liik_ID(Long riigi_admin_yksuse_liik_ID) {
+		this.riigi_admin_yksuse_liik_ID = riigi_admin_yksuse_liik_ID;
 	}
 
-	public void setEesnimed(String eesnimed) {
-		this.eesnimed = eesnimed;
-	}   
-	public String getPerekonnanimi() {
-		return this.perekonnanimi;
+	public String getKood() {
+		return kood;
 	}
 
-	public void setPerekonnanimi(String perekonnanimi) {
-		this.perekonnanimi = perekonnanimi;
-	}   
-	public String getSugu() {
-		return this.sugu;
+	public void setKood(String kood) {
+		this.kood = kood;
 	}
 
-	public void setSugu(String sugu) {
-		this.sugu = sugu;
-	}   
-	public String getSoduri_kood() {
-		return this.soduri_kood;
+	public String getNimetus() {
+		return nimetus;
 	}
 
-	public void setSoduri_kood(String soduri_kood) {
-		this.soduri_kood = soduri_kood;
-	}   
+	public void setNimetus(String nimetus) {
+		this.nimetus = nimetus;
+	}
+
+	public Date getAlates() {
+		return alates;
+	}
+
+	public void setAlates(Date alates) {
+		this.alates = alates;
+	}
+
+	public Date getKuni() {
+		return kuni;
+	}
+
+	public void setKuni(Date kuni) {
+		this.kuni = kuni;
+	}
+
 	public String getAvaja() {
-		return this.avaja;
+		return avaja;
 	}
 
 	public void setAvaja(String avaja) {
 		this.avaja = avaja;
-	}   
+	}
+
 	public Date getAvatud() {
-		return this.avatud;
+		return avatud;
 	}
 
 	public void setAvatud(Date avatud) {
 		this.avatud = avatud;
-	}   
+	}
+
 	public String getSulgeja() {
-		return this.sulgeja;
+		return sulgeja;
 	}
 
 	public void setSulgeja(String sulgeja) {
 		this.sulgeja = sulgeja;
-	}   
+	}
+
 	public Date getSuletud() {
-		return this.suletud;
+		return suletud;
 	}
 
 	public void setSuletud(Date suletud) {
 		this.suletud = suletud;
-	}   
+	}
+
 	public String getMuutja() {
-		return this.muutja;
+		return muutja;
 	}
 
 	public void setMuutja(String muutja) {
 		this.muutja = muutja;
-	}   
+	}
+
 	public Date getMuudetud() {
-		return this.muudetud;
+		return muudetud;
 	}
 
 	public void setMuudetud(Date muudetud) {
 		this.muudetud = muudetud;
-	}   
+	}
+
 	public String getKommentaar() {
-		return this.kommentaar;
+		return kommentaar;
 	}
 
 	public void setKommentaar(String kommentaar) {
 		this.kommentaar = kommentaar;
 	}
-   
+
+	  
 }
+
