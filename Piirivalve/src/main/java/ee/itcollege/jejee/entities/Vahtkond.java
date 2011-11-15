@@ -192,11 +192,11 @@ public class Vahtkond implements Serializable {
 		this.vahtkond_piiriloigul = param;
 	}
 
-	public void setPiiripunkt(String param) {
+	public void setPiiripunkt(Piiripunkt param) {
 		this.piiripunkt = param;
 	}
 
-	public String getPiiripunkt() {
+	public Piiripunkt getPiiripunkt() {
 		return piiripunkt;
 	}
 

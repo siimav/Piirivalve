@@ -35,7 +35,7 @@
 	<entity>
 		<entity-name>ee.itcollege.jejee.entities.Piirivalvur</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>328</entity-height>
+		<entity-height>366</entity-height>
 		<entity-X-Coordinate>555</entity-X-Coordinate>
 		<entity-Y-Coordinate>806</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
@@ -156,7 +156,7 @@
 	<entity>
 		<entity-name>ee.itcollege.jejee.entities.Vahtkonna_liige</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>366</entity-height>
+		<entity-height>326</entity-height>
 		<entity-X-Coordinate>338</entity-X-Coordinate>
 		<entity-Y-Coordinate>810</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>

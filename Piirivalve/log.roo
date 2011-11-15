@@ -13,3 +13,7 @@ entity --class ~.entities.Intsident
 // Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-14 15:35:20
 entity --class ~.entities.Intsidendi_liik
 entity --class ~.entities.Piiriloik
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-14 23:16:27
+entity --class ~.entities.Vahtkond_piiriloigul
+entity --class ~.entities.Objekt_intsidendis
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-11-15 11:32:08

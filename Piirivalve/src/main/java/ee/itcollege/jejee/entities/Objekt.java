@@ -81,8 +81,7 @@ public class Objekt implements Serializable {
 		return objekt_liik_ID;
 	}
 
-	public void setObjekt_liik_ID(
-			ee.itcollege.jejee.entities.Objekti_liik objekt_liik_ID) {
+	public void setObjekt_liik_ID(ee.itcollege.jejee.entities.Objekti_liik objekt_liik_ID) {
 		this.objekt_liik_ID = objekt_liik_ID;
 	}
 

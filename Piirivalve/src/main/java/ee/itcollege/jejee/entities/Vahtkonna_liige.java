@@ -13,10 +13,11 @@ import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import javax.persistence.Basic;
 
 /**
  * Entity implementation class for Entity: Vahtkonna_liige
- *
+ * 
  */
 @Entity
 @RooEntity
@@ -24,8 +25,8 @@ import org.springframework.roo.addon.tostring.RooToString;
 public class Vahtkonna_liige implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-	@GeneratedValue(strategy = GenerationType.AUTO)   
+
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
 	private Long vahtkonna_liige_ID;
 	@DateTimeFormat(style = "M-")
@@ -47,13 +48,10 @@ public class Vahtkonna_liige implements Serializable {
 	@NotNull
 	private Date muudetud;
 	private String kommentaar;
-	
-	private Piiripunkt piiripunkt;
-	
-	private Vaeosa vaeosa;
-	
+
 	@ManyToOne
 	private Vahtkond vahtkond;
+
 	@ManyToOne
 	private Piirivalvur piirivalvur;
 
@@ -142,36 +140,19 @@ public class Vahtkonna_liige implements Serializable {
 	}
 
 	public Vahtkond getVahtkond() {
-	    return vahtkond;
+		return vahtkond;
 	}
 
 	public void setVahtkond(Vahtkond param) {
-	    this.vahtkond = param;
-	}
-
-	public Piirivalvur getPiirivalvur() {
-	    return piirivalvur;
+		this.vahtkond = param;
 	}
 
 	public void setPiirivalvur(Piirivalvur param) {
-	    this.piirivalvur = param;
+		this.piirivalvur = param;
 	}
 
-	public Piiripunkt getPiiripunkt() {
-		return piiripunkt;
+	public Piirivalvur getPiirivalvur() {
+		return piirivalvur;
 	}
 
-	public void setPiiripunkt(Piiripunkt piiripunkt) {
-		this.piiripunkt = piiripunkt;
-	}
-
-	public Vaeosa getVaeosa() {
-		return vaeosa;
-	}
-
-	public void setVaeosa(Vaeosa vaeosa) {
-		this.vaeosa = vaeosa;
-	}
-
-   
 }
