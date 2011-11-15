@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_itcollege_jejee_entities_Intsident" items="${intsidents}" z="Y8XhZUPCsuhFdCQ4OPIAhTi7LhI=">
+        <table:table data="${intsidents}" id="l_ee_itcollege_jejee_entities_Intsident" path="/intsidents" typeIdFieldName="intsident_ID" z="IrhUZB0bhiPssBp+ovV9khWmNU4=">
+            <table:column id="c_ee_itcollege_jejee_entities_Intsident_avaja" property="avaja" z="pQ9tedgmFNa+RjwKaM+zeM/Dn98="/>
+            <table:column date="true" dateTimePattern="${intsident_avatud_date_format}" id="c_ee_itcollege_jejee_entities_Intsident_avatud" property="avatud" z="qTeMmsQauXtdwCbBg6b5unE5Nec="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Intsident_muutja" property="muutja" z="bcH7pS8bB4JpEa154Z/Vk9KzM/c="/>
+            <table:column date="true" dateTimePattern="${intsident_muudetud_date_format}" id="c_ee_itcollege_jejee_entities_Intsident_muudetud" property="muudetud" z="v6dwJKH+pL1jEClL9IunE8sVKlQ="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Intsident_sulgeja" property="sulgeja" z="p4YE4l6Kdquf3uxTDyIDiS42Zh8="/>
+            <table:column date="true" dateTimePattern="${intsident_suletud_date_format}" id="c_ee_itcollege_jejee_entities_Intsident_suletud" property="suletud" z="knoDsqY0RKrNdVcQeTG5NFKgJPc="/>
+        </table:table>
+    </page:list>
+</div>

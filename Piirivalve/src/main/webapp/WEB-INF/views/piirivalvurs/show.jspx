@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_jejee_entities_Piirivalvur" object="${piirivalvur}" path="/piirivalvurs" z="HyqMJXeORb97hFjz1GSl0k2knuk=">
+        <field:display field="isikukood" id="s_ee_itcollege_jejee_entities_Piirivalvur_isikukood" object="${piirivalvur}" z="p1Ss9No0+/osfn8pK+OPUXrgmzo="/>
+        <field:display field="eesnimed" id="s_ee_itcollege_jejee_entities_Piirivalvur_eesnimed" object="${piirivalvur}" z="0qwAfZToHbNr5NJQK3O7xH3nwA8="/>
+        <field:display field="perekonnanimi" id="s_ee_itcollege_jejee_entities_Piirivalvur_perekonnanimi" object="${piirivalvur}" z="RMXRzc0KNf2EAz+kv3Ts/VAwRXI="/>
+        <field:display field="sugu" id="s_ee_itcollege_jejee_entities_Piirivalvur_sugu" object="${piirivalvur}" z="2Ajj2R42sPzab1hUSKeA4rFGvJ8="/>
+        <field:display field="soduri_kood" id="s_ee_itcollege_jejee_entities_Piirivalvur_soduri_kood" object="${piirivalvur}" z="Hweg5ad53tefGnZON/oIkPNT1sY="/>
+        <field:display field="avaja" id="s_ee_itcollege_jejee_entities_Piirivalvur_avaja" object="${piirivalvur}" z="3SwiqjMTlW0xTmuwDaCrBdDTqcA="/>
+        <field:display date="true" dateTimePattern="${piirivalvur_avatud_date_format}" field="avatud" id="s_ee_itcollege_jejee_entities_Piirivalvur_avatud" object="${piirivalvur}" z="ty0ecQ2OUMEqRBIFV54FdZjZXig="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_jejee_entities_Piirivalvur_sulgeja" object="${piirivalvur}" z="gDprZuMrQRkMKwri/R8zuxuxcio="/>
+        <field:display date="true" dateTimePattern="${piirivalvur_suletud_date_format}" field="suletud" id="s_ee_itcollege_jejee_entities_Piirivalvur_suletud" object="${piirivalvur}" z="PNJP8hD5+ZhS5/ADo2aQmb8yj1U="/>
+        <field:display field="muutja" id="s_ee_itcollege_jejee_entities_Piirivalvur_muutja" object="${piirivalvur}" z="dkbMnViZjP7TJa7n8fQ7kq/uluE="/>
+        <field:display date="true" dateTimePattern="${piirivalvur_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_jejee_entities_Piirivalvur_muudetud" object="${piirivalvur}" z="7YYd6Z+N7Xip/xl9UTp5bIZQjiM="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Piirivalvur_kommentaar" object="${piirivalvur}" z="6xxkLqjtvU0vPxbqLBcDWVy4mM0="/>
+    </page:show>
+</div>

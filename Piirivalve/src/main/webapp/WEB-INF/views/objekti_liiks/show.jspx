@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_jejee_entities_Objekti_liik" object="${objekti_liik}" path="/objekti_liiks" z="SbspON1bUWhHDuxp3dyaOUndJ3Y=">
+        <field:display field="kood" id="s_ee_itcollege_jejee_entities_Objekti_liik_kood" object="${objekti_liik}" z="SkJ1dvaudMVLTkDNV2tClulaFNs="/>
+        <field:display field="nimetus" id="s_ee_itcollege_jejee_entities_Objekti_liik_nimetus" object="${objekti_liik}" z="s+cnobG17f1eepF8DwLzF8qhAC4="/>
+        <field:display field="avaja" id="s_ee_itcollege_jejee_entities_Objekti_liik_avaja" object="${objekti_liik}" z="OEj1AIbl6pyG39HF65OOuFSbZHU="/>
+        <field:display date="true" dateTimePattern="${objekti_liik_avatud_date_format}" field="avatud" id="s_ee_itcollege_jejee_entities_Objekti_liik_avatud" object="${objekti_liik}" z="VGx4FGfPwPXvBsyk85eUo03aFyk="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_jejee_entities_Objekti_liik_sulgeja" object="${objekti_liik}" z="uYO+K1/3ejuzLQxctptuQldCFck="/>
+        <field:display date="true" dateTimePattern="${objekti_liik_suletud_date_format}" field="suletud" id="s_ee_itcollege_jejee_entities_Objekti_liik_suletud" object="${objekti_liik}" z="LH3uHYU9A95sJWCJoc9fEKTxaOM="/>
+        <field:display field="muutja" id="s_ee_itcollege_jejee_entities_Objekti_liik_muutja" object="${objekti_liik}" z="5c/MItrC8PwwwbIFxDc8HQPfFp8="/>
+        <field:display date="true" dateTimePattern="${objekti_liik_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_jejee_entities_Objekti_liik_muudetud" object="${objekti_liik}" z="m7TH/rpgR5vDQh2FQO0PpZBlYEU="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Objekti_liik_kommentaar" object="${objekti_liik}" z="TSD0FWJGseXAytPx8W/Kd62M308="/>
+    </page:show>
+</div>

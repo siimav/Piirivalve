@@ -62,7 +62,6 @@ public class Intsident implements Serializable {
 	private Intsidendi_liik intsidendi_liik;
 
 	@OneToMany(mappedBy = "intsident")
-	@JoinColumn(name = "Intsident_intsident_ID", referencedColumnName = "intsident_ID")
 	private Collection<Objekt_intsidendis> objekt_intsidendis;
 
 	@OneToMany(mappedBy = "intsident")

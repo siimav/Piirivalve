@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_jejee_entities_Objekt" object="${objekt}" path="/objekts" z="vU69+fia4tcJ6h/VyewIzklAoUQ=">
+        <field:display field="nimetus" id="s_ee_itcollege_jejee_entities_Objekt_nimetus" object="${objekt}" z="ibaSKgf2owkZlAOOXbmO7qDuiTI="/>
+        <field:display field="avaja" id="s_ee_itcollege_jejee_entities_Objekt_avaja" object="${objekt}" z="ZHhfBU03LVuPzP/dawtl07hs1p4="/>
+        <field:display date="true" dateTimePattern="${objekt_avatud_date_format}" field="avatud" id="s_ee_itcollege_jejee_entities_Objekt_avatud" object="${objekt}" z="de8Vp/Ns0Oklwf/iepBtkXK4axM="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_jejee_entities_Objekt_sulgeja" object="${objekt}" z="TG23AAvb49Em8AeqsL8Q6WDuObs="/>
+        <field:display date="true" dateTimePattern="${objekt_suletud_date_format}" field="suletud" id="s_ee_itcollege_jejee_entities_Objekt_suletud" object="${objekt}" z="VgmbzJJRO+3Rp+QN3zUK57AuwJs="/>
+        <field:display field="muutja" id="s_ee_itcollege_jejee_entities_Objekt_muutja" object="${objekt}" z="pG4sJG3XHgT9wdKax45wSAa3Q58="/>
+        <field:display date="true" dateTimePattern="${objekt_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_jejee_entities_Objekt_muudetud" object="${objekt}" z="8G7oqMg3/ecoyFM4k25NSWrdM44="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Objekt_kommentaar" object="${objekt}" z="9UYSrjh502AW4xpL7dJfpBARxsE="/>
+        <field:display field="objekti_liik" id="s_ee_itcollege_jejee_entities_Objekt_objekti_liik" object="${objekt}" z="22yICQKtduXu7YGfgjwMMVkeXuU="/>
+    </page:show>
+</div>

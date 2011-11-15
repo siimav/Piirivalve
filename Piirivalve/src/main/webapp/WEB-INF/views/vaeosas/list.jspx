@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_itcollege_jejee_entities_Vaeosa" items="${vaeosas}" z="iqzq5hbmGUPcXAylveVl/cKhYcQ=">
+        <table:table data="${vaeosas}" id="l_ee_itcollege_jejee_entities_Vaeosa" path="/vaeosas" typeIdFieldName="vaeosa_ID" z="v097POu50CfVOXiDgczgOH3zmgM=">
+            <table:column id="c_ee_itcollege_jejee_entities_Vaeosa_kood" property="kood" z="prthaEuGB/WQ6mdU1q8H+p0atmQ="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Vaeosa_nimetus" property="nimetus" z="7nhqhQLftboNKjCGsKzpxHOVLW0="/>
+            <table:column date="true" dateTimePattern="${vaeosa_alates_date_format}" id="c_ee_itcollege_jejee_entities_Vaeosa_alates" property="alates" z="fOkNZwPWUQkEuDL92SsVDpMol8k="/>
+            <table:column date="true" dateTimePattern="${vaeosa_kuni_date_format}" id="c_ee_itcollege_jejee_entities_Vaeosa_kuni" property="kuni" z="Xm91I8eYbONrlVYCcDANWl2cK38="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Vaeosa_avaja" property="avaja" z="Y7SVZzna2kViYOEd7RbPwkmejhQ="/>
+            <table:column date="true" dateTimePattern="${vaeosa_avatud_date_format}" id="c_ee_itcollege_jejee_entities_Vaeosa_avatud" property="avatud" z="MvtHiBr3IXsOJU+HRq42ugVzG4k="/>
+        </table:table>
+    </page:list>
+</div>

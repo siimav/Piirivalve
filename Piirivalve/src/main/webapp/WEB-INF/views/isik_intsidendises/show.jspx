@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_jejee_entities_Isik_intsidendis" object="${isik_intsidendis}" path="/isik_intsidendises" z="8MZCRHvhuIrwx5UWuUDcD1HUeMA=">
+        <field:display date="true" dateTimePattern="${isik_intsidendis_alates_date_format}" field="alates" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_alates" object="${isik_intsidendis}" z="JAfvUc8Zr8u9TLU7F9C3iINdWac="/>
+        <field:display date="true" dateTimePattern="${isik_intsidendis_kuni_date_format}" field="kuni" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_kuni" object="${isik_intsidendis}" z="4cOzojsNtGYG31FMKDKiPOEesYI="/>
+        <field:display field="kirjeldus" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_kirjeldus" object="${isik_intsidendis}" z="ycWSunvm4H0oR4QQHQFfbgre2aw="/>
+        <field:display field="intsident_ID" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_intsident_ID" object="${isik_intsidendis}" z="SDdf0z2ntGg8vMcP6+xf77eRuqo="/>
+        <field:display field="piiririkkuja_ID" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_piiririkkuja_ID" object="${isik_intsidendis}" z="6kMvfnbl0g34beGHaUsabwd2tMA="/>
+        <field:display field="avaja" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_avaja" object="${isik_intsidendis}" z="cQHMi7eN0yOVnNldXlCL1bOwUtE="/>
+        <field:display date="true" dateTimePattern="${isik_intsidendis_avatud_date_format}" field="avatud" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_avatud" object="${isik_intsidendis}" z="HfvZvQYczZZZAFiBnC3DgWpkl30="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_sulgeja" object="${isik_intsidendis}" z="6ZygwC0jLZMkYGrf6BIWPt3b81o="/>
+        <field:display date="true" dateTimePattern="${isik_intsidendis_suletud_date_format}" field="suletud" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_suletud" object="${isik_intsidendis}" z="6/dh0xGLbOj1A9I8dKWQrl0A4Wg="/>
+        <field:display field="muutja" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_muutja" object="${isik_intsidendis}" z="jFF80/a0S6cvfWxpyuTL/1pPTq8="/>
+        <field:display date="true" dateTimePattern="${isik_intsidendis_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_muudetud" object="${isik_intsidendis}" z="rDoS628ZVSSUsAPp998OHhwifQk="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_kommentaar" object="${isik_intsidendis}" z="HV5PzihZKS7Jm6tE/8xeUvs4lss="/>
+        <field:display field="intsident" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_intsident" object="${isik_intsidendis}" z="rrr7Bwj7FCVEDjpoYQ/1DXAh0Ms="/>
+        <field:display field="piiririkkuja" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_piiririkkuja" object="${isik_intsidendis}" z="JaGg+X2c3iSl0rYLyEn4ltfiLDk="/>
+    </page:show>
+</div>

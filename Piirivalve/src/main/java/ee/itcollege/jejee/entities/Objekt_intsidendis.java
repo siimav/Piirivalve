@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
@@ -27,16 +28,21 @@ public class Objekt_intsidendis implements Serializable {
 	private Long objekt_intsidendis_ID;
 	@NotNull
 	private String avaja;
+	@DateTimeFormat(style = "M-")
 	@NotNull
 	private Date avatud;
 	@NotNull
 	private String muutja;
+	@DateTimeFormat(style = "M-")
 	@NotNull
 	private Date muudetud;
 	private String sulgeja;
+	@DateTimeFormat(style = "M-")
 	@NotNull
 	private Date suletud;
+	@DateTimeFormat(style = "M-")
 	private Date alates;
+	@DateTimeFormat(style = "M-")
 	private Date kuni;
 	private String kirjeldus;
 	private String kommentaar;

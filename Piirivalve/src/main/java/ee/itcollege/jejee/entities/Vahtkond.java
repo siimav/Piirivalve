@@ -62,7 +62,6 @@ public class Vahtkond implements Serializable {
 	private Vaeosa vaeosa;
 
 	@OneToMany(mappedBy = "vahtkond")
-	@JoinColumn(name = "Vahtkond_vahtkond_ID", referencedColumnName = "vahtkond_ID")
 	private Collection<Vahtkond_piiriloigul> vahtkond_piiriloigul;
 
 	@ManyToOne

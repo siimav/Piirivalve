@@ -13,7 +13,6 @@ import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
-import javax.persistence.Basic;
 
 /**
  * Entity implementation class for Entity: Vahtkonna_liige

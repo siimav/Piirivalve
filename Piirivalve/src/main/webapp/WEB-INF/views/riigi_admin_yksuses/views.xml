@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="riigi_admin_yksuses/list">
+        <put-attribute name="body" value="/WEB-INF/views/riigi_admin_yksuses/list.jspx"/>
+    </definition>
+<definition extends="default" name="riigi_admin_yksuses/show">
+        <put-attribute name="body" value="/WEB-INF/views/riigi_admin_yksuses/show.jspx"/>
+    </definition>
+<definition extends="default" name="riigi_admin_yksuses/create">
+        <put-attribute name="body" value="/WEB-INF/views/riigi_admin_yksuses/create.jspx"/>
+    </definition>
+<definition extends="default" name="riigi_admin_yksuses/update">
+        <put-attribute name="body" value="/WEB-INF/views/riigi_admin_yksuses/update.jspx"/>
+    </definition>
+</tiles-definitions>

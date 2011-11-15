@@ -9,13 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
-import javax.persistence.Basic;
 import ee.itcollege.jejee.entities.Vahtkonna_liige;
 import javax.persistence.OneToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.JoinColumn;
 import java.util.Collection;
 
 /**
@@ -39,19 +37,21 @@ public class Piirivalvur implements Serializable {
 	private String soduri_kood;
 	@NotNull
 	private String avaja;
+	@DateTimeFormat(style = "M-")
 	@NotNull
 	private Date avatud;
 	private String sulgeja;
+	@DateTimeFormat(style = "M-")
 	@NotNull
 	private Date suletud;
 	@NotNull
 	private String muutja;
+	@DateTimeFormat(style = "M-")
 	@NotNull
 	private Date muudetud;
 	private String kommentaar;
 
 	@OneToMany(mappedBy = "piirivalvur")
-	@JoinColumn(name = "Piirivalvur_piirivalvur_ID", referencedColumnName = "piirivalvur_ID")
 	private Collection<Vahtkonna_liige> vahtkonna_liige;
 
 	public Piirivalvur() {

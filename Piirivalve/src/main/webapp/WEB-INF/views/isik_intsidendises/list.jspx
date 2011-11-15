@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_itcollege_jejee_entities_Isik_intsidendis" items="${isik_intsidendises}" z="/T451aWeCk+MbXcGvyCl7wRiJR4=">
+        <table:table data="${isik_intsidendises}" id="l_ee_itcollege_jejee_entities_Isik_intsidendis" path="/isik_intsidendises" typeIdFieldName="isik_intsidendis_ID" z="pxgnerethO0I8wg+eumzQbtdE20=">
+            <table:column date="true" dateTimePattern="${isik_intsidendis_alates_date_format}" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_alates" property="alates" z="PHNBzy/Va5fFtF7tt7ExItoq0kc="/>
+            <table:column date="true" dateTimePattern="${isik_intsidendis_kuni_date_format}" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_kuni" property="kuni" z="p4Na1uvPowqjPz2lcgsK6rfMfpo="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Isik_intsidendis_kirjeldus" property="kirjeldus" z="No4GuCpabh+Hnx8oepSgsa/K238="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Isik_intsidendis_intsident_ID" property="intsident_ID" z="KuXopEf5sD0LxCm2dhOxp/7yRMs="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Isik_intsidendis_piiririkkuja_ID" property="piiririkkuja_ID" z="KaTfBV7kms+/qe0AmQzy+VB6FMA="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Isik_intsidendis_avaja" property="avaja" z="q3OQw1XvJp8/NhtqGxK6n+pwOW4="/>
+        </table:table>
+    </page:list>
+</div>

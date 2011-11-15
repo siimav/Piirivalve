@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ee_itcollege_jejee_entities_Piirivalvur" idField="piirivalvur_ID" modelAttribute="piirivalvur" path="/piirivalvurs" versionField="Version" z="5yPMexjzi5agm8f6m7Xtns+qrys=">
+        <field:input field="isikukood" id="c_ee_itcollege_jejee_entities_Piirivalvur_isikukood" z="QEIWSjINZEazjZOPK4IOzb2I8gs="/>
+        <field:input field="eesnimed" id="c_ee_itcollege_jejee_entities_Piirivalvur_eesnimed" z="Eeei9bu7pOfTGp4IFpP2RjdV3nQ="/>
+        <field:input field="perekonnanimi" id="c_ee_itcollege_jejee_entities_Piirivalvur_perekonnanimi" z="6bMqfWxaemp3eGMDAYgXyIpB/pM="/>
+        <field:input field="sugu" id="c_ee_itcollege_jejee_entities_Piirivalvur_sugu" z="fYE7G21T7xxw98WKNSpDsqJj6aw="/>
+        <field:input field="soduri_kood" id="c_ee_itcollege_jejee_entities_Piirivalvur_soduri_kood" z="6x7dMNLmG1Pg7lXUGc1qOYdheBs="/>
+        <field:input field="avaja" id="c_ee_itcollege_jejee_entities_Piirivalvur_avaja" required="true" z="HkFM+VwmdwgFihB0PxIdobpkcjM="/>
+        <field:datetime dateTimePattern="${piirivalvur_avatud_date_format}" field="avatud" id="c_ee_itcollege_jejee_entities_Piirivalvur_avatud" required="true" z="o0zZpkTUuP0e8BFiXwPSrwlfi60="/>
+        <field:input field="sulgeja" id="c_ee_itcollege_jejee_entities_Piirivalvur_sulgeja" z="8BeOt/+MpngLS9b25uyKvFdg+lE="/>
+        <field:datetime dateTimePattern="${piirivalvur_suletud_date_format}" field="suletud" id="c_ee_itcollege_jejee_entities_Piirivalvur_suletud" required="true" z="lNyIy0JcxvfUJKKOCPUvYITYf8k="/>
+        <field:input field="muutja" id="c_ee_itcollege_jejee_entities_Piirivalvur_muutja" required="true" z="zKgjLNuqkUgTMAqmNvpLTCV0gt0="/>
+        <field:datetime dateTimePattern="${piirivalvur_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_jejee_entities_Piirivalvur_muudetud" required="true" z="PNSK62kGDGTIyF99YmY8WT8o4d4="/>
+        <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Piirivalvur_kommentaar" z="vJJkqGCUIn9El0/o0e2vRhRGndE="/>
+        <field:simple field="vahtkonna_liige" id="c_ee_itcollege_jejee_entities_Piirivalvur_vahtkonna_liige" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkonna_liige" z="M4pYKQ9w1T0+NITOiSDbF7mz+4I="/>
+    </form:update>
+</div>

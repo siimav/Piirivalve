@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_jejee_entities_Piiriloik" object="${piiriloik}" path="/piiriloiks" z="j/lPse6byC+4tn/TNzd1sxegnz4=">
+        <field:display field="avaja" id="s_ee_itcollege_jejee_entities_Piiriloik_avaja" object="${piiriloik}" z="CiilsCGpzRvTYIWTVE5ZhI+zd1E="/>
+        <field:display date="true" dateTimePattern="${piiriloik_avatud_date_format}" field="avatud" id="s_ee_itcollege_jejee_entities_Piiriloik_avatud" object="${piiriloik}" z="qhciPudP3FMc74csqCobFWfZ17E="/>
+        <field:display field="muutja" id="s_ee_itcollege_jejee_entities_Piiriloik_muutja" object="${piiriloik}" z="gz1DMqduNPLzlO00Vnw/K8QvMqA="/>
+        <field:display date="true" dateTimePattern="${piiriloik_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_jejee_entities_Piiriloik_muudetud" object="${piiriloik}" z="i9vvB9ty0kOdbrQbg/7F/JqNFBs="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_jejee_entities_Piiriloik_sulgeja" object="${piiriloik}" z="ZVmRoggJNJtzBlrdI0y2FL9rIpo="/>
+        <field:display date="true" dateTimePattern="${piiriloik_suletud_date_format}" field="suletud" id="s_ee_itcollege_jejee_entities_Piiriloik_suletud" object="${piiriloik}" z="JeJ3mfkAlh801viGWlXiR773KtA="/>
+        <field:display field="kood" id="s_ee_itcollege_jejee_entities_Piiriloik_kood" object="${piiriloik}" z="S+F2uTfA7F0CtOIQQjaaZT2ZO4A="/>
+        <field:display field="nimetus" id="s_ee_itcollege_jejee_entities_Piiriloik_nimetus" object="${piiriloik}" z="4yfYu9OXxJoouiNeOMqp6c/+yh0="/>
+        <field:display field="GPS_koordinaadid" id="s_ee_itcollege_jejee_entities_Piiriloik_GPS_koordinaadid" object="${piiriloik}" z="hfSvgAY+STscVu70pmEywIj3umE="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Piiriloik_kommentaar" object="${piiriloik}" z="msmEhaLoqCyK1PfBLyqBpyuhvU4="/>
+    </page:show>
+</div>

@@ -52,7 +52,6 @@ public class Piiriloik implements Serializable {
 	private Collection<Intsident> intsident;
 
 	@OneToMany(mappedBy = "piiriloik")
-	@JoinColumn(name = "Piiriloik_piiriloik_ID", referencedColumnName = "piiriloik_ID")
 	private Collection<Vahtkond_piiriloigul> vahtkond_piiriloigul;
 	
 	public Long getPiiriloik_ID() {

@@ -55,7 +55,6 @@ public class Objekt implements Serializable {
 	private Objekti_liik objekti_liik;
 
 	@OneToMany(mappedBy = "objekt")
-	@JoinColumn(name = "Objekt_objekt_ID", referencedColumnName = "objekt_ID")
 	private Collection<Objekt_intsidendis> objekt_intsidendis;
 
 	@OneToMany(mappedBy = "objekt")

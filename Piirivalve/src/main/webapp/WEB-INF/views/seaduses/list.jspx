@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_itcollege_jejee_entities_Seadus" items="${seaduses}" z="6njpZhQUbYngQC3YlLRdHNb7LNk=">
+        <table:table data="${seaduses}" id="l_ee_itcollege_jejee_entities_Seadus" path="/seaduses" typeIdFieldName="seadus_ID" z="kCOQuDjl91j4KTQZTBCTjsZrgDc=">
+            <table:column id="c_ee_itcollege_jejee_entities_Seadus_kood" property="kood" z="CKMDXJKrygV36uIZT4ZBANGmrro="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Seadus_nimetus" property="nimetus" z="5+4BIRNCIT79VHmlar2Tjt/dNfo="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Seadus_kehtiv_alates" property="kehtiv_alates" z="YWA6NaIScJ+0Eeln9poG3Oqua2w="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Seadus_kehtiv_kuni" property="kehtiv_kuni" z="ZT0RaVJtT2+R7H5D9vpT28sFdp8="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Seadus_avaja" property="avaja" z="Br3tKD4QAREDxGTt4LRboaiy9+A="/>
+            <table:column date="true" dateTimePattern="${seadus_avatud_date_format}" id="c_ee_itcollege_jejee_entities_Seadus_avatud" property="avatud" z="BfgwpHnFngfV9py+5zydIDGLdaw="/>
+        </table:table>
+    </page:list>
+</div>

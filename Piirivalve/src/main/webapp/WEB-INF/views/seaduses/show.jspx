@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_jejee_entities_Seadus" object="${seadus}" path="/seaduses" z="9BAh5bSBp92rSwXhOmdw1K+SbzM=">
+        <field:display field="kood" id="s_ee_itcollege_jejee_entities_Seadus_kood" object="${seadus}" z="miNvInSrVjka4KaPAhzRP3UF568="/>
+        <field:display field="nimetus" id="s_ee_itcollege_jejee_entities_Seadus_nimetus" object="${seadus}" z="L2F99Lvuj0rjqnhCW1uPKnDi16g="/>
+        <field:display field="kehtiv_alates" id="s_ee_itcollege_jejee_entities_Seadus_kehtiv_alates" object="${seadus}" z="MU1D87lBjIStdAeZQpabvgfEqQ8="/>
+        <field:display field="kehtiv_kuni" id="s_ee_itcollege_jejee_entities_Seadus_kehtiv_kuni" object="${seadus}" z="YBGb4OYbVat0+3S9GaIsd18afgA="/>
+        <field:display field="avaja" id="s_ee_itcollege_jejee_entities_Seadus_avaja" object="${seadus}" z="7krBC9eNUw0KLhNFH+aZfZOUixk="/>
+        <field:display date="true" dateTimePattern="${seadus_avatud_date_format}" field="avatud" id="s_ee_itcollege_jejee_entities_Seadus_avatud" object="${seadus}" z="gu/6D9QXzR2YfJa2u8C32JyKCaw="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_jejee_entities_Seadus_sulgeja" object="${seadus}" z="RbFoVYVIFoPcNWVPmxrJXHxCc6Q="/>
+        <field:display date="true" dateTimePattern="${seadus_suletud_date_format}" field="suletud" id="s_ee_itcollege_jejee_entities_Seadus_suletud" object="${seadus}" z="/oqJg+xomKPEW1kzl8BgCmWuB4U="/>
+        <field:display field="muutja" id="s_ee_itcollege_jejee_entities_Seadus_muutja" object="${seadus}" z="0eAEGYaJcu7ooh7cn27rQhwYJOU="/>
+        <field:display date="true" dateTimePattern="${seadus_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_jejee_entities_Seadus_muudetud" object="${seadus}" z="IXjTPrGSvHeScJNLxmQ9L1T9rjU="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Seadus_kommentaar" object="${seadus}" z="bMlFEmMfDZ4CYF0XZqCBCRBjFoA="/>
+    </page:show>
+</div>

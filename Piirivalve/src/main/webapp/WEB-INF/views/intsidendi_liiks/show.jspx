@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_jejee_entities_Intsidendi_liik" object="${intsidendi_liik}" path="/intsidendi_liiks" z="//VYiKjR0dxmQFm18IRmCzg6Ne4=">
+        <field:display field="avaja" id="s_ee_itcollege_jejee_entities_Intsidendi_liik_avaja" object="${intsidendi_liik}" z="MGbBMAeh/PMs9YdBW+5CA9sKPDE="/>
+        <field:display date="true" dateTimePattern="${intsidendi_liik_avatud_date_format}" field="avatud" id="s_ee_itcollege_jejee_entities_Intsidendi_liik_avatud" object="${intsidendi_liik}" z="0zrj/QnF5ed/S8qJuSwhTTG2gFc="/>
+        <field:display field="muutja" id="s_ee_itcollege_jejee_entities_Intsidendi_liik_muutja" object="${intsidendi_liik}" z="4jzoOzLf9qXSZ3DpwT3HhC6iwEY="/>
+        <field:display date="true" dateTimePattern="${intsidendi_liik_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_jejee_entities_Intsidendi_liik_muudetud" object="${intsidendi_liik}" z="xeE38B1dynpFt+t8K/d+aMEWWus="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_jejee_entities_Intsidendi_liik_sulgeja" object="${intsidendi_liik}" z="A4foBaFteq1EZFXWF7wlZaXhFCA="/>
+        <field:display date="true" dateTimePattern="${intsidendi_liik_suletud_date_format}" field="suletud" id="s_ee_itcollege_jejee_entities_Intsidendi_liik_suletud" object="${intsidendi_liik}" z="vVR4+/EYUtmw0q7Nef1nCl1u4r0="/>
+        <field:display field="kood" id="s_ee_itcollege_jejee_entities_Intsidendi_liik_kood" object="${intsidendi_liik}" z="kVX3pQuEJe3GCGhhXBanQGP4QW4="/>
+        <field:display field="nimetus" id="s_ee_itcollege_jejee_entities_Intsidendi_liik_nimetus" object="${intsidendi_liik}" z="r0bTFHT8+2neOKfTNq5D8wxkrh8="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Intsidendi_liik_kommentaar" object="${intsidendi_liik}" z="Lx/OaRSxVeAB7fM0P0mS5kVpthg="/>
+    </page:show>
+</div>

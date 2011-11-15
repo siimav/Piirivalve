@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_ee_itcollege_jejee_entities_Vahtkonna_liige" modelAttribute="vahtkonna_liige" path="/vahtkonna_liiges" render="${empty dependencies}" z="iagfpLM2kaVG2jjQ71WFc3EFBJg=">
+        <field:datetime dateTimePattern="${vahtkonna_liige_alates_date_format}" field="alates" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_alates" z="nQGJqwXgx1Y1mna0qhyAfRm7rxc="/>
+        <field:datetime dateTimePattern="${vahtkonna_liige_kuni_date_format}" field="kuni" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_kuni" z="nRQZUKwptQKCozK1HpkXxBom0I8="/>
+        <field:input field="avaja" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_avaja" required="true" z="mceohGNYMgxmm5XOgpdewOAHm4M="/>
+        <field:datetime dateTimePattern="${vahtkonna_liige_avatud_date_format}" field="avatud" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_avatud" required="true" z="3yRDUFw843L7wX7Xis/tdcgwXrY="/>
+        <field:input field="sulgeja" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_sulgeja" z="SeHCX4Mm7xzrfPvgWVr9Lq11R7g="/>
+        <field:datetime dateTimePattern="${vahtkonna_liige_suletud_date_format}" field="suletud" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_suletud" required="true" z="eKaykG/QwP2mUz787LLGR4+qfnA="/>
+        <field:input field="muutja" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_muutja" required="true" z="xpTPB+/gMyJLHWzzNHM0JkZkKKc="/>
+        <field:datetime dateTimePattern="${vahtkonna_liige_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_muudetud" required="true" z="GmYFTpknSrj2qLNgS+U7ixDr2GA="/>
+        <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_kommentaar" z="/kPmykIhVW9Cis7sSB1U1Kj5O/c="/>
+        <field:select field="vahtkond" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_vahtkond" itemValue="vahtkond_ID" items="${vahtkonds}" path="/vahtkonds" z="foskMp1jrLCen/S+qrI3x1YQsxI="/>
+        <field:select field="piirivalvur" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_piirivalvur" itemValue="piirivalvur_ID" items="${piirivalvurs}" path="/piirivalvurs" z="Cv9GH7bnqBH/XZD/2lT948jbnWk="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_jejee_entities_Vahtkonna_liige" render="${not empty dependencies}" z="HbGajoKiV6wfmzhMpcLHIsAKohc="/>
+</div>

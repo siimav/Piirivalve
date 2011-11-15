@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_jejee_entities_Objekt_intsidendis" object="${objekt_intsidendis}" path="/objekt_intsidendises" z="qLmMQXaZnVjyW+PV8qq5kv5VRBI=">
+        <field:display field="avaja" id="s_ee_itcollege_jejee_entities_Objekt_intsidendis_avaja" object="${objekt_intsidendis}" z="wHD8JgqlY0us3egke2JANRYdvb0="/>
+        <field:display date="true" dateTimePattern="${objekt_intsidendis_avatud_date_format}" field="avatud" id="s_ee_itcollege_jejee_entities_Objekt_intsidendis_avatud" object="${objekt_intsidendis}" z="ALZtRfamYlIC9oVq94tBwSXt+Nk="/>
+        <field:display field="muutja" id="s_ee_itcollege_jejee_entities_Objekt_intsidendis_muutja" object="${objekt_intsidendis}" z="nHm5E5WNElwJBsixT41X2pv5DlU="/>
+        <field:display date="true" dateTimePattern="${objekt_intsidendis_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_jejee_entities_Objekt_intsidendis_muudetud" object="${objekt_intsidendis}" z="7aMBTczscx/wQWJ6VH4oSuWjQco="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_jejee_entities_Objekt_intsidendis_sulgeja" object="${objekt_intsidendis}" z="hBW6regWDzGxqTgwXN53QVWuaoU="/>
+        <field:display date="true" dateTimePattern="${objekt_intsidendis_suletud_date_format}" field="suletud" id="s_ee_itcollege_jejee_entities_Objekt_intsidendis_suletud" object="${objekt_intsidendis}" z="+T6xn0vKiHSSHiIQz/Tj8+TDyG0="/>
+        <field:display date="true" dateTimePattern="${objekt_intsidendis_alates_date_format}" field="alates" id="s_ee_itcollege_jejee_entities_Objekt_intsidendis_alates" object="${objekt_intsidendis}" z="TPISM77dRjRReekknubCoyXB8es="/>
+        <field:display date="true" dateTimePattern="${objekt_intsidendis_kuni_date_format}" field="kuni" id="s_ee_itcollege_jejee_entities_Objekt_intsidendis_kuni" object="${objekt_intsidendis}" z="LjypHxs5rP19aaBay7YYfzULkCc="/>
+        <field:display field="kirjeldus" id="s_ee_itcollege_jejee_entities_Objekt_intsidendis_kirjeldus" object="${objekt_intsidendis}" z="lNAArKmjT53WkqCepXVwna+8MKI="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Objekt_intsidendis_kommentaar" object="${objekt_intsidendis}" z="ZaamwirD80iaQOYwoqdUz2ef1No="/>
+        <field:display field="intsident" id="s_ee_itcollege_jejee_entities_Objekt_intsidendis_intsident" object="${objekt_intsidendis}" z="nZiWRMkJ7VlVw9QOQvWlTFpy+/4="/>
+        <field:display field="objekt" id="s_ee_itcollege_jejee_entities_Objekt_intsidendis_objekt" object="${objekt_intsidendis}" z="5Et35IghsyDmkGyZpHZYZQbidGY="/>
+    </page:show>
+</div>

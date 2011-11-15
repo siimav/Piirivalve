@@ -38,7 +38,6 @@ public class Piiririkkuja implements Serializable {
 	private String sugu;
 	@DateTimeFormat(style = "M-")
 	private Date synniaeg;
-	private ee.itcollege.jejee.entities.Objekt objekt_ID;
 	@NotNull
 	private String avaja;
 	@DateTimeFormat(style = "M-")
@@ -107,14 +106,6 @@ public class Piiririkkuja implements Serializable {
 
 	public void setSynniaeg(Date synniaeg) {
 		this.synniaeg = synniaeg;
-	}
-
-	public ee.itcollege.jejee.entities.Objekt getObjekt_ID() {
-		return objekt_ID;
-	}
-
-	public void setObjekt_ID(ee.itcollege.jejee.entities.Objekt objekt_ID) {
-		this.objekt_ID = objekt_ID;
 	}
 
 	public String getAvaja() {

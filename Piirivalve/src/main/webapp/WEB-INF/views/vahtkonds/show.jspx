@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_jejee_entities_Vahtkond" object="${vahtkond}" path="/vahtkonds" z="Z/GKYkPUUeOxm+SYNnGgmFPhSAs=">
+        <field:display field="kood" id="s_ee_itcollege_jejee_entities_Vahtkond_kood" object="${vahtkond}" z="E53KY8TNQuRh0uAoSMTixMmNF7A="/>
+        <field:display field="nimetus" id="s_ee_itcollege_jejee_entities_Vahtkond_nimetus" object="${vahtkond}" z="d2+VRGMQACIDqbChfEib/OrT0v0="/>
+        <field:display date="true" dateTimePattern="${vahtkond_alates_date_format}" field="alates" id="s_ee_itcollege_jejee_entities_Vahtkond_alates" object="${vahtkond}" z="5q1lE+81u5um/tka3DdPuzzgXmw="/>
+        <field:display date="true" dateTimePattern="${vahtkond_kuni_date_format}" field="kuni" id="s_ee_itcollege_jejee_entities_Vahtkond_kuni" object="${vahtkond}" z="vhzX+GxX8A/ggu1a7r+fDVH7WZE="/>
+        <field:display field="avaja" id="s_ee_itcollege_jejee_entities_Vahtkond_avaja" object="${vahtkond}" z="j2SQO2pr34gy10sYk4bOY+oii+k="/>
+        <field:display date="true" dateTimePattern="${vahtkond_avatud_date_format}" field="avatud" id="s_ee_itcollege_jejee_entities_Vahtkond_avatud" object="${vahtkond}" z="8eLaQr4JLZ4h9+blKPWJud++qxM="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_jejee_entities_Vahtkond_sulgeja" object="${vahtkond}" z="QbpnaPNp20thdAa1eNxq8gsBWoQ="/>
+        <field:display date="true" dateTimePattern="${vahtkond_suletud_date_format}" field="suletud" id="s_ee_itcollege_jejee_entities_Vahtkond_suletud" object="${vahtkond}" z="EOWrL4rBBjpZWN/a0JBMc1vHJFk="/>
+        <field:display field="muutja" id="s_ee_itcollege_jejee_entities_Vahtkond_muutja" object="${vahtkond}" z="3TxO8R8tQCk7Tw5QEPVFCslNmuM="/>
+        <field:display date="true" dateTimePattern="${vahtkond_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_jejee_entities_Vahtkond_muudetud" object="${vahtkond}" z="QjGJS2sy23Jiu3AdUxst6EkL0fw="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Vahtkond_kommentaar" object="${vahtkond}" z="DlqJ04BRDGkeyU26mkwpChoqMhY="/>
+        <field:display field="vaeosa" id="s_ee_itcollege_jejee_entities_Vahtkond_vaeosa" object="${vahtkond}" z="RHZmIE0hog5gVMD3oblEVx3bzFo="/>
+        <field:display field="piiripunkt" id="s_ee_itcollege_jejee_entities_Vahtkond_piiripunkt" object="${vahtkond}" z="aPLwh0i3ka/WBD88j13T2DfeyDw="/>
+    </page:show>
+</div>
