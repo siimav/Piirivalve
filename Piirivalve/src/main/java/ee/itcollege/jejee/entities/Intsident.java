@@ -13,6 +13,10 @@ import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import ee.itcollege.jejee.entities.Objekt_intsidendis;
+import java.util.Collection;
+import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
 
 @RooToString
 @RooEntity
@@ -55,6 +59,10 @@ public class Intsident implements Serializable {
 	@NotNull
 	@ManyToOne
 	private Intsidendi_liik intsidendi_liik;
+
+	@OneToMany(mappedBy = "intsident")
+	@JoinColumn(name = "Intsident_intsident_ID", referencedColumnName = "intsident_ID")
+	private Collection<Objekt_intsidendis> objekt_intsidendis;
 
 	public Long getIntsident_ID() {
 		return intsident_ID;
@@ -190,5 +198,13 @@ public class Intsident implements Serializable {
 
 	public Intsidendi_liik getIntsidendi_liik() {
 		return intsidendi_liik;
+	}
+
+	public Collection<Objekt_intsidendis> getObjekt_intsidendis() {
+	    return objekt_intsidendis;
+	}
+
+	public void setObjekt_intsidendis(Collection<Objekt_intsidendis> param) {
+	    this.objekt_intsidendis = param;
 	}
 }

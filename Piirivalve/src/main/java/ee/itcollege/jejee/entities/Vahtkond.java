@@ -15,10 +15,13 @@ import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import ee.itcollege.jejee.entities.Vahtkond_piiriloigul;
+import javax.persistence.JoinColumn;
+import javax.persistence.Basic;
 
 /**
  * Entity implementation class for Entity: Vahtkond
- *
+ * 
  */
 @Entity
 @RooEntity
@@ -26,8 +29,8 @@ import org.springframework.roo.addon.tostring.RooToString;
 public class Vahtkond implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-	@GeneratedValue(strategy = GenerationType.AUTO)   
+
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
 	private Long vahtkond_ID;
 	private String kood;
@@ -51,12 +54,19 @@ public class Vahtkond implements Serializable {
 	@NotNull
 	private Date muudetud;
 	private String kommentaar;
-	
+
 	@OneToMany(mappedBy = "vahtkond")
 	private Collection<Vahtkonna_liige> vahtkonna_liige;
-	
+
 	@ManyToOne
 	private Vaeosa vaeosa;
+
+	@OneToMany(mappedBy = "vahtkond")
+	@JoinColumn(name = "Vahtkond_vahtkond_ID", referencedColumnName = "vahtkond_ID")
+	private Collection<Vahtkond_piiriloigul> vahtkond_piiriloigul;
+
+	@ManyToOne
+	private Piiripunkt piiripunkt;
 
 	public Vahtkond() {
 		super();
@@ -159,20 +169,35 @@ public class Vahtkond implements Serializable {
 	}
 
 	public Collection<Vahtkonna_liige> getVahtkonna_liige() {
-	    return vahtkonna_liige;
+		return vahtkonna_liige;
 	}
 
 	public void setVahtkonna_liige(Collection<Vahtkonna_liige> param) {
-	    this.vahtkonna_liige = param;
+		this.vahtkonna_liige = param;
 	}
 
 	public Vaeosa getVaeosa() {
-	    return vaeosa;
+		return vaeosa;
 	}
 
 	public void setVaeosa(Vaeosa param) {
-	    this.vaeosa = param;
+		this.vaeosa = param;
 	}
 
-   
+	public Collection<Vahtkond_piiriloigul> getVahtkond_piiriloigul() {
+		return vahtkond_piiriloigul;
+	}
+
+	public void setVahtkond_piiriloigul(Collection<Vahtkond_piiriloigul> param) {
+		this.vahtkond_piiriloigul = param;
+	}
+
+	public void setPiiripunkt(String param) {
+		this.piiripunkt = param;
+	}
+
+	public String getPiiripunkt() {
+		return piiripunkt;
+	}
+
 }

@@ -12,6 +12,10 @@ import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import ee.itcollege.jejee.entities.Vahtkond;
+import java.util.Collection;
+import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
 
 /**
  * Entity implementation class for Entity: Piiripunkt
@@ -58,6 +62,9 @@ public class Piiripunkt implements Serializable {
 	@NotNull
 	private Date muudetud;
 	private String kommentaar;
+
+	@OneToMany(mappedBy = "piiripunkt")
+	private Collection<Vahtkond> vahtkond;
 	
 	public Piiripunkt() {
 		super();
@@ -181,6 +188,14 @@ public class Piiripunkt implements Serializable {
 
 	public void setKommentaar(String kommentaar) {
 		this.kommentaar = kommentaar;
+	}
+
+	public Collection<Vahtkond> getVahtkond() {
+	    return vahtkond;
+	}
+
+	public void setVahtkond(Collection<Vahtkond> param) {
+	    this.vahtkond = param;
 	}   
 	
    

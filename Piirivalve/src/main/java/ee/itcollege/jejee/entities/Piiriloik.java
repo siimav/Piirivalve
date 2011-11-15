@@ -15,6 +15,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
+import ee.itcollege.jejee.entities.Vahtkond_piiriloigul;
+import javax.persistence.JoinColumn;
 
 @RooJavaBean
 @RooToString
@@ -48,6 +50,10 @@ public class Piiriloik implements Serializable {
 
 	@OneToMany(mappedBy = "piiriloik")
 	private Collection<Intsident> intsident;
+
+	@OneToMany(mappedBy = "piiriloik")
+	@JoinColumn(name = "Piiriloik_piiriloik_ID", referencedColumnName = "piiriloik_ID")
+	private Collection<Vahtkond_piiriloigul> vahtkond_piiriloigul;
 	
 	public Long getPiiriloik_ID() {
 		return piiriloik_ID;
@@ -120,6 +126,12 @@ public class Piiriloik implements Serializable {
 	}
 	public void setIntsident(Collection<Intsident> param) {
 	    this.intsident = param;
+	}
+	public Collection<Vahtkond_piiriloigul> getVahtkond_piiriloigul() {
+	    return vahtkond_piiriloigul;
+	}
+	public void setVahtkond_piiriloigul(Collection<Vahtkond_piiriloigul> param) {
+	    this.vahtkond_piiriloigul = param;
 	}
 	
 }

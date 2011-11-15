@@ -12,6 +12,7 @@ import javax.validation.constraints.NotNull;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
+import javax.persistence.ManyToOne;
 
 @RooJavaBean
 @RooToString
@@ -41,9 +42,11 @@ public class Objekt_intsidendis implements Serializable {
 	private String kommentaar;
 	
 	@NotNull
+	@ManyToOne
 	private Intsident intsident;
 	
 	@NotNull
+	@ManyToOne
 	private Objekt objekt;
 
 	public Long getObjekt_intsidendis_ID() {

@@ -13,6 +13,10 @@ import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import ee.itcollege.jejee.entities.Objekt_intsidendis;
+import java.util.Collection;
+import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
 
 /**
  * Entity implementation class for Entity: Objekt
@@ -48,6 +52,10 @@ public class Objekt implements Serializable {
 	@ManyToOne
 	@NotNull
 	private Objekti_liik objekti_liik;
+
+	@OneToMany(mappedBy = "objekt")
+	@JoinColumn(name = "Objekt_objekt_ID", referencedColumnName = "objekt_ID")
+	private Collection<Objekt_intsidendis> objekt_intsidendis;
 
 	public Objekt() {
 		super();
@@ -140,6 +148,14 @@ public class Objekt implements Serializable {
 
 	public void setObjekti_liik(Objekti_liik param) {
 	    this.objekti_liik = param;
+	}
+
+	public Collection<Objekt_intsidendis> getObjekt_intsidendis() {
+	    return objekt_intsidendis;
+	}
+
+	public void setObjekt_intsidendis(Collection<Objekt_intsidendis> param) {
+	    this.objekt_intsidendis = param;
 	}
 
    
