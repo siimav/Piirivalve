@@ -7,33 +7,39 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
-import ee.itcollege.jejee.entities.Objekt_intsidendis;
-import java.util.Collection;
-import javax.persistence.OneToMany;
-import javax.persistence.JoinColumn;
+import ee.itcollege.jejee.entities.Intsident;
+import javax.persistence.ManyToOne;
 import ee.itcollege.jejee.entities.Piiririkkuja;
 
 /**
- * Entity implementation class for Entity: Objekt
+ * Entity implementation class for Entity: Isik_intsidendis
  *
  */
 @Entity
 @RooEntity
 @RooToString
-public class Objekt implements Serializable {
+public class Isik_intsidendis implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
 	@GeneratedValue(strategy = GenerationType.AUTO)   
 	@Id
-	private Long objekt_ID;
-	private String nimetus;	
+	private Long isik_intsidendis_ID;
+	@DateTimeFormat(style = "M-")
+	@NotNull
+	private Date alates;
+	@DateTimeFormat(style = "M-")
+	@NotNull
+	private Date kuni;
+	@NotNull
+	private String kirjeldus;
+	private ee.itcollege.jejee.entities.Intsident intsident_ID;
+	private ee.itcollege.jejee.entities.Piiririkkuja piiririkkuja_ID;
 	@NotNull
 	private String avaja;
 	@DateTimeFormat(style = "M-")
@@ -49,36 +55,64 @@ public class Objekt implements Serializable {
 	@NotNull
 	private Date muudetud;
 	private String kommentaar;
-		
+
 	@ManyToOne
-	@NotNull
-	private Objekti_liik objekti_liik;
+	private Intsident intsident;
 
-	@OneToMany(mappedBy = "objekt")
-	@JoinColumn(name = "Objekt_objekt_ID", referencedColumnName = "objekt_ID")
-	private Collection<Objekt_intsidendis> objekt_intsidendis;
+	@ManyToOne
+	private Piiririkkuja piiririkkuja;
 
-	@OneToMany(mappedBy = "objekt")
-	private Collection<Piiririkkuja> piiririkkuja;
-
-	public Objekt() {
+	public Isik_intsidendis() {
 		super();
 	}
 
-	public Long getObjekt_ID() {
-		return objekt_ID;
+	public Long getIsik_intsidendis_ID() {
+		return isik_intsidendis_ID;
 	}
 
-	public void setObjekt_ID(Long objekt_ID) {
-		this.objekt_ID = objekt_ID;
+	public void setIsik_intsidendis_ID(Long isik_intsidendis_ID) {
+		this.isik_intsidendis_ID = isik_intsidendis_ID;
 	}
 
-	public String getNimetus() {
-		return nimetus;
+	public Date getAlates() {
+		return alates;
 	}
 
-	public void setNimetus(String nimetus) {
-		this.nimetus = nimetus;
+	public void setAlates(Date alates) {
+		this.alates = alates;
+	}
+
+	public Date getKuni() {
+		return kuni;
+	}
+
+	public void setKuni(Date kuni) {
+		this.kuni = kuni;
+	}
+
+	public String getKirjeldus() {
+		return kirjeldus;
+	}
+
+	public void setKirjeldus(String kirjeldus) {
+		this.kirjeldus = kirjeldus;
+	}
+
+	public ee.itcollege.jejee.entities.Intsident getIntsident_ID() {
+		return intsident_ID;
+	}
+
+	public void setIntsident_ID(ee.itcollege.jejee.entities.Intsident intsident_ID) {
+		this.intsident_ID = intsident_ID;
+	}
+
+	public ee.itcollege.jejee.entities.Piiririkkuja getPiiririkkuja_ID() {
+		return piiririkkuja_ID;
+	}
+
+	public void setPiiririkkuja_ID(
+			ee.itcollege.jejee.entities.Piiririkkuja piiririkkuja_ID) {
+		this.piiririkkuja_ID = piiririkkuja_ID;
 	}
 
 	public String getAvaja() {
@@ -137,29 +171,21 @@ public class Objekt implements Serializable {
 		this.kommentaar = kommentaar;
 	}
 
-	public Objekti_liik getObjekti_liik() {
-	    return objekti_liik;
+	public Intsident getIntsident() {
+	    return intsident;
 	}
 
-	public void setObjekti_liik(Objekti_liik param) {
-	    this.objekti_liik = param;
+	public void setIntsident(Intsident param) {
+	    this.intsident = param;
 	}
 
-	public Collection<Objekt_intsidendis> getObjekt_intsidendis() {
-	    return objekt_intsidendis;
-	}
-
-	public void setObjekt_intsidendis(Collection<Objekt_intsidendis> param) {
-	    this.objekt_intsidendis = param;
-	}
-
-	public Collection<Piiririkkuja> getPiiririkkuja() {
+	public Piiririkkuja getPiiririkkuja() {
 	    return piiririkkuja;
 	}
 
-	public void setPiiririkkuja(Collection<Piiririkkuja> param) {
+	public void setPiiririkkuja(Piiririkkuja param) {
 	    this.piiririkkuja = param;
 	}
 
-   
+	
 }

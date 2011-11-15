@@ -17,6 +17,8 @@
         <class>ee.itcollege.jejee.entities.Vahtkonna_liige</class>
         <class>ee.itcollege.jejee.entities.Objekt_intsidendis</class>
         <class>ee.itcollege.jejee.entities.Vahtkond_piiriloigul</class>
+        <class>ee.itcollege.jejee.entities.Piiririkkuja</class>
+        <class>ee.itcollege.jejee.entities.Isik_intsidendis</class>
         
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>

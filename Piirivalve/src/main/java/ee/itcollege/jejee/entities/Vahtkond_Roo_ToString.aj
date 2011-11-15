@@ -18,10 +18,12 @@ privileged aspect Vahtkond_Roo_ToString {
         sb.append("Muudetud: ").append(getMuudetud()).append(", ");
         sb.append("Muutja: ").append(getMuutja()).append(", ");
         sb.append("Nimetus: ").append(getNimetus()).append(", ");
+        sb.append("Piiripunkt: ").append(getPiiripunkt()).append(", ");
         sb.append("Suletud: ").append(getSuletud()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
         sb.append("Vaeosa: ").append(getVaeosa()).append(", ");
         sb.append("Vahtkond_ID: ").append(getVahtkond_ID()).append(", ");
+        sb.append("Vahtkond_piiriloigul: ").append(getVahtkond_piiriloigul() == null ? "null" : getVahtkond_piiriloigul().size()).append(", ");
         sb.append("Vahtkonna_liige: ").append(getVahtkonna_liige() == null ? "null" : getVahtkonna_liige().size()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();

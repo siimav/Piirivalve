@@ -17,6 +17,7 @@ import ee.itcollege.jejee.entities.Objekt_intsidendis;
 import java.util.Collection;
 import javax.persistence.OneToMany;
 import javax.persistence.JoinColumn;
+import ee.itcollege.jejee.entities.Isik_intsidendis;
 
 @RooToString
 @RooEntity
@@ -63,6 +64,9 @@ public class Intsident implements Serializable {
 	@OneToMany(mappedBy = "intsident")
 	@JoinColumn(name = "Intsident_intsident_ID", referencedColumnName = "intsident_ID")
 	private Collection<Objekt_intsidendis> objekt_intsidendis;
+
+	@OneToMany(mappedBy = "intsident")
+	private Collection<Isik_intsidendis> isik_intsidendis;
 
 	public Long getIntsident_ID() {
 		return intsident_ID;
@@ -206,5 +210,13 @@ public class Intsident implements Serializable {
 
 	public void setObjekt_intsidendis(Collection<Objekt_intsidendis> param) {
 	    this.objekt_intsidendis = param;
+	}
+
+	public Collection<Isik_intsidendis> getIsik_intsidendis() {
+	    return isik_intsidendis;
+	}
+
+	public void setIsik_intsidendis(Collection<Isik_intsidendis> param) {
+	    this.isik_intsidendis = param;
 	}
 }

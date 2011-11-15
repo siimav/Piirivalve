@@ -21,6 +21,7 @@ privileged aspect Piiriloik_Roo_ToString {
         sb.append("Piiriloik_ID: ").append(getPiiriloik_ID()).append(", ");
         sb.append("Suletud: ").append(getSuletud()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
+        sb.append("Vahtkond_piiriloigul: ").append(getVahtkond_piiriloigul() == null ? "null" : getVahtkond_piiriloigul().size()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();
     }

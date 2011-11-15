@@ -5,24 +5,26 @@ package ee.itcollege.jejee.entities;
 
 import java.lang.String;
 
-privileged aspect Vaeosa_Roo_ToString {
+privileged aspect Piiririkkuja_Roo_ToString {
     
-    public String Vaeosa.toString() {
+    public String Piiririkkuja.toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Alates: ").append(getAlates()).append(", ");
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud()).append(", ");
+        sb.append("Eesnimi: ").append(getEesnimi()).append(", ");
+        sb.append("Isik_intsidendis: ").append(getIsik_intsidendis() == null ? "null" : getIsik_intsidendis().size()).append(", ");
+        sb.append("Isikukood: ").append(getIsikukood()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
-        sb.append("Kood: ").append(getKood()).append(", ");
-        sb.append("Kuni: ").append(getKuni()).append(", ");
         sb.append("Muudetud: ").append(getMuudetud()).append(", ");
         sb.append("Muutja: ").append(getMuutja()).append(", ");
-        sb.append("Nimetus: ").append(getNimetus()).append(", ");
-        sb.append("Riigi_admin_yksus: ").append(getRiigi_admin_yksus()).append(", ");
+        sb.append("Objekt: ").append(getObjekt()).append(", ");
+        sb.append("Objekt_ID: ").append(getObjekt_ID()).append(", ");
+        sb.append("Perek_nimi: ").append(getPerek_nimi()).append(", ");
+        sb.append("Piiririkkuja_ID: ").append(getPiiririkkuja_ID()).append(", ");
+        sb.append("Sugu: ").append(getSugu()).append(", ");
         sb.append("Suletud: ").append(getSuletud()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
-        sb.append("Vaeosa_ID: ").append(getVaeosa_ID()).append(", ");
-        sb.append("Vahtkond: ").append(getVahtkond() == null ? "null" : getVahtkond().size()).append(", ");
+        sb.append("Synniaeg: ").append(getSynniaeg()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();
     }

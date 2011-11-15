@@ -91,15 +91,6 @@ public class Vaeosa implements Serializable {
 		this.nimetus = nimetus;
 	}
 
-	public ee.itcollege.jejee.entities.Riigi_admin_yksus getRiigi_admin_yksus_ID() {
-		return riigi_admin_yksus_ID;
-	}
-
-	public void setRiigi_admin_yksus_ID(
-			ee.itcollege.jejee.entities.Riigi_admin_yksus riigi_admin_yksus_ID) {
-		this.riigi_admin_yksus_ID = riigi_admin_yksus_ID;
-	}
-
 	public Date getAlates() {
 		return alates;
 	}
