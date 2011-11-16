@@ -16,7 +16,6 @@ import org.springframework.roo.addon.tostring.RooToString;
 import ee.itcollege.jejee.entities.Objekt_intsidendis;
 import java.util.Collection;
 import javax.persistence.OneToMany;
-import javax.persistence.JoinColumn;
 import ee.itcollege.jejee.entities.Piiririkkuja;
 
 /**

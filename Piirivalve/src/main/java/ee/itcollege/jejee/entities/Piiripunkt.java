@@ -15,7 +15,6 @@ import org.springframework.roo.addon.tostring.RooToString;
 import ee.itcollege.jejee.entities.Vahtkond;
 import java.util.Collection;
 import javax.persistence.OneToMany;
-import javax.persistence.JoinColumn;
 
 /**
  * Entity implementation class for Entity: Piiripunkt

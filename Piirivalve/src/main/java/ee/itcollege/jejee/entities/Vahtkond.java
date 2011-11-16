@@ -16,8 +16,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
 import ee.itcollege.jejee.entities.Vahtkond_piiriloigul;
-import javax.persistence.JoinColumn;
-import javax.persistence.Basic;
 
 /**
  * Entity implementation class for Entity: Vahtkond
