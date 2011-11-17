@@ -371,3 +371,19 @@ fieldset th {
 	height: 11px;
 	width: 16px;
 }
+
+
+
+.div_left {
+	float: left;
+	margin-right: 2%;
+	width: 49%;
+}
+.div_right {
+	float: right;
+	width: 49%;
+}
+.button_right {
+	margin-top: 0px;
+	text-align: right;
+}

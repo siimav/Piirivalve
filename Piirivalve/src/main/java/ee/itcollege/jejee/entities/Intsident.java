@@ -1,6 +1,7 @@
 package ee.itcollege.jejee.entities;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -8,15 +9,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
-import ee.itcollege.jejee.entities.Objekt_intsidendis;
-import java.util.Collection;
-import javax.persistence.OneToMany;
-import ee.itcollege.jejee.entities.Isik_intsidendis;
 
 @RooToString
 @RooEntity
@@ -217,4 +215,5 @@ public class Intsident implements Serializable {
 	public void setIsik_intsidendis(Collection<Isik_intsidendis> param) {
 	    this.isik_intsidendis = param;
 	}
+
 }

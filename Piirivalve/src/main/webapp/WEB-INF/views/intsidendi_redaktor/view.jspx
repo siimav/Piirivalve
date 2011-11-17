@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" 
+     xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
+     xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" 
+     version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+ 
+    <p>Intsident ${intsident.kood} - Narva - ${intsident.nimetus}</p>
+    
+	<div class="div_left">
+	<table width="100%" border="1" class="table_left">
+	  <tr>
+	    <th colspan="3" align="left" class="table_left" scope="col">Isikud</th>
+	  </tr>
+	  <tr>
+	    <td width="100%"><p>Põder</p></td>
+	    <td><label>
+	      <input type="submit" name="inf3" id="inf4" value="Info" />
+	    </label></td>
+	    <td><input type="submit" name="eemalda3" id="eemalda4" value="Eemalda" /></td>
+	  </tr>
+	  <tr>
+	    <td width="100%"></td>
+	    <td></td>
+	    <td></td>
+	  </tr>
+	</table>
+	
+	<p class="button_right">
+	  <label>
+	    <input type="submit" name="lisa" id="lisa" value="Lisa" />
+	  </label>
+	</p>
+	
+	<table width="100%" border="1" class="table_left">
+	  <tr>
+	    <th colspan="3" align="left" class="table_left" scope="col">Vahtkonnad</th>
+	  </tr>
+	  <tr>
+	    <td width="100%"><p>Öine</p></td>
+	    <td><label>
+	      <input type="submit" name="inf" id="inf2" value="Info" />
+	    </label></td>
+	    <td><input type="submit" name="eemalda" id="eemalda2" value="Eemalda" /></td>
+	  </tr>
+	  <tr>
+	    <td width="100%">Priitahtlik</td>
+	    <td></td>
+	    <td></td>
+	  </tr>
+	</table>
+	
+	<p class="button_right">
+	  <label>
+	    <input type="submit" name="lisa" id="lisa" value="Lisa" />
+	  </label>
+	</p>
+	
+	</div>
+    
+</div>
