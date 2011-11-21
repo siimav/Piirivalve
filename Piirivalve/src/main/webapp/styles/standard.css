@@ -236,13 +236,13 @@ table {
 
 table table {
 	margin: -5px 0;
-	border: 0px solid #e0e7d3;
+	border: 1px solid #e0e7d3;
 	width: 100%;
 }
 
 table td,table th {
 	padding: 2px;
-	border: 1px solid #CCCCCC;
+/* 	border: 1px solid #CCCCCC; */
 }
 
 table td form {
@@ -376,14 +376,28 @@ fieldset th {
 
 .div_left {
 	float: left;
-	margin-right: 2%;
 	width: 49%;
+	
 }
 .div_right {
 	float: right;
 	width: 49%;
+	
 }
 .button_right {
 	margin-top: 0px;
-	text-align: right;
+/* 	text-align: right; */
+	margin-right:10px;
+}
+
+.noBorder {
+	border-top: 1px solid black;
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+	background-color: white;
+}
+
+.table_left {
+	border: 1px solid black;
 }

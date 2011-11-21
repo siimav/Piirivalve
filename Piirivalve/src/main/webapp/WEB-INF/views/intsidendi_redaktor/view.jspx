@@ -9,9 +9,9 @@
     <p>Intsident ${intsident.kood} - Narva - ${intsident.nimetus}</p>
     
 	<div class="div_left">
-	<table width="100%" border="1" class="table_left">
+	<table width="100%" border="1">
 	  <tr>
-	    <th colspan="3" align="left" class="table_left" scope="col">Isikud</th>
+	    <th colspan="3" align="left" scope="col">Isikud</th>
 	  </tr>
 	  <tr>
 	    <td width="100%"><p>Põder</p></td>
@@ -33,9 +33,11 @@
 	  </label>
 	</p>
 	
-	<table width="100%" border="1" class="table_left">
+	<br/><br/><br/>
+	
+	<table width="100%" border="1">
 	  <tr>
-	    <th colspan="3" align="left" class="table_left" scope="col">Vahtkonnad</th>
+	    <th colspan="3" align="left" scope="col">Vahtkonnad</th>
 	  </tr>
 	  <tr>
 	    <td width="100%"><p>Öine</p></td>
@@ -58,5 +60,62 @@
 	</p>
 	
 	</div>
+	
+	
+	<div class="div_right">
+	<table width="100%" border="1">
+	  <tr>
+	    <th colspan="3" align="left" scope="col">Objektid</th>
+	  </tr>
+	  <tr>
+	    <td width="100%"><p>Kahtlane kott</p></td>
+	    <td><label>
+	      <input type="submit" name="inf3" id="inf4" value="Info" />
+	    </label></td>
+	    <td><input type="submit" name="eemalda3" id="eemalda4" value="Eemalda" /></td>
+	  </tr>
+	  <tr>
+	    <td width="100%"></td>
+	    <td></td>
+	    <td></td>
+	  </tr>
+	</table>
+	
+	<p class="button_right">
+	  <label>
+	    <input type="submit" name="lisa" id="lisa" value="Lisa" />
+	  </label>
+	</p>
+	
+	<br/><br/><br/>
+	
+	<table width="100%" class="table_left" id="testTable">
+	  <tr>
+	    <th colspan="3" align="left" scope="col">Piirivalvurid</th>
+	  </tr>
+	  <tr>
+	    <td width="100%"><p>Relvavend</p></td>
+	    <td><label>
+	      <input type="submit" name="inf" id="inf2" value="Info" />
+	    </label></td>
+	    <td><input type="submit" name="eemalda" id="eemalda2" value="Eemalda" /></td>
+	  </tr>
+	  <tr>
+	    <td width="100%">Priitahtlik</td>
+	    <td></td>
+	    <td></td>
+	  </tr>
+	  <tr>
+	  	<td class="noBorder"></td>
+	    <td class="noBorder"></td>
+	  	<td class="noBorder">
+	  		<input type="submit" name="lisa" id="lisa" value="Lisa" /> 
+	  	</td>	 
+	  </tr>
+	</table>
+
+	
+	</div>
+	
     
 </div>
