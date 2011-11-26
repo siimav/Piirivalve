@@ -2,18 +2,20 @@ package ee.itcollege.jejee.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Query;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
-import javax.persistence.ManyToOne;
 
 @RooJavaBean
 @RooToString
@@ -54,6 +56,10 @@ public class Objekt_intsidendis implements Serializable {
 	@NotNull
 	@ManyToOne
 	private Objekt objekt;
+	
+	public Objekt_intsidendis() {
+		
+	}
 
 	public Long getObjekt_intsidendis_ID() {
 		return objekt_intsidendis_ID;
@@ -158,5 +164,13 @@ public class Objekt_intsidendis implements Serializable {
 	public void setObjekt(Objekt objekt) {
 		this.objekt = objekt;
 	}
+
+    
+    @SuppressWarnings("unchecked")
+	public static List<Objekt_intsidendis> findAllObjekt_intsidendisForIntsident(Intsident ints) {
+    	Query q = entityManager().createQuery("SELECT o FROM Objekt_intsidendis o WHERE o.intsident=:ints", Objekt_intsidendis.class);
+    	q.setParameter("ints", ints);
+        return q.getResultList();
+    }
 	
 }

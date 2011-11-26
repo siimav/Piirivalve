@@ -13,11 +13,13 @@ import ee.itcollege.jejee.entities.Piiriloik;
 import ee.itcollege.jejee.entities.Piiripunkt;
 import ee.itcollege.jejee.entities.Piiririkkuja;
 import ee.itcollege.jejee.entities.Piirivalvur;
+import ee.itcollege.jejee.entities.Piirivalvur_intsidendis;
 import ee.itcollege.jejee.entities.Riigi_admin_yksus;
 import ee.itcollege.jejee.entities.Riigi_admin_yksuse_liik;
 import ee.itcollege.jejee.entities.Seadus;
 import ee.itcollege.jejee.entities.Vaeosa;
 import ee.itcollege.jejee.entities.Vahtkond;
+import ee.itcollege.jejee.entities.Vahtkond_intsidendis;
 import ee.itcollege.jejee.entities.Vahtkond_piiriloigul;
 import ee.itcollege.jejee.entities.Vahtkonna_liige;
 import java.lang.String;
@@ -37,11 +39,13 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(new PiiripunktConverter());
         registry.addConverter(new PiiririkkujaConverter());
         registry.addConverter(new PiirivalvurConverter());
+        registry.addConverter(new Piirivalvur_intsidendisConverter());
         registry.addConverter(new Riigi_admin_yksusConverter());
         registry.addConverter(new Riigi_admin_yksuse_liikConverter());
         registry.addConverter(new SeadusConverter());
         registry.addConverter(new VaeosaConverter());
         registry.addConverter(new VahtkondConverter());
+        registry.addConverter(new Vahtkond_intsidendisConverter());
         registry.addConverter(new Vahtkond_piiriloigulConverter());
         registry.addConverter(new Vahtkonna_liigeConverter());
     }
@@ -121,6 +125,13 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         
     }
     
+    static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.Piirivalvur_intsidendisConverter implements Converter<Piirivalvur_intsidendis, String> {
+        public String convert(Piirivalvur_intsidendis piirivalvur_intsidendis) {
+            return new StringBuilder().append(piirivalvur_intsidendis.getAlates()).append(" ").append(piirivalvur_intsidendis.getKuni()).append(" ").append(piirivalvur_intsidendis.getKirjeldus()).append(" ").append(piirivalvur_intsidendis.getKommentaar()).toString();
+        }
+        
+    }
+    
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.Riigi_admin_yksusConverter implements Converter<Riigi_admin_yksus, String> {
         public String convert(Riigi_admin_yksus riigi_admin_yksus) {
             return new StringBuilder().append(riigi_admin_yksus.getKood()).append(" ").append(riigi_admin_yksus.getNimetus()).append(" ").append(riigi_admin_yksus.getAlates()).append(" ").append(riigi_admin_yksus.getKuni()).toString();
@@ -152,6 +163,13 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.VahtkondConverter implements Converter<Vahtkond, String> {
         public String convert(Vahtkond vahtkond) {
             return new StringBuilder().append(vahtkond.getKood()).append(" ").append(vahtkond.getNimetus()).append(" ").append(vahtkond.getAlates()).append(" ").append(vahtkond.getKuni()).toString();
+        }
+        
+    }
+    
+    static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.Vahtkond_intsidendisConverter implements Converter<Vahtkond_intsidendis, String> {
+        public String convert(Vahtkond_intsidendis vahtkond_intsidendis) {
+            return new StringBuilder().append(vahtkond_intsidendis.getAlates()).append(" ").append(vahtkond_intsidendis.getKuni()).append(" ").append(vahtkond_intsidendis.getKirjeldus()).append(" ").append(vahtkond_intsidendis.getKommentaar()).toString();
         }
         
     }

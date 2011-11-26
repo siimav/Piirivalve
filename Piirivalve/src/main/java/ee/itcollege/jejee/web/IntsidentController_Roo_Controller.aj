@@ -8,6 +8,8 @@ import ee.itcollege.jejee.entities.Intsident;
 import ee.itcollege.jejee.entities.Isik_intsidendis;
 import ee.itcollege.jejee.entities.Objekt_intsidendis;
 import ee.itcollege.jejee.entities.Piiriloik;
+import ee.itcollege.jejee.entities.Piirivalvur_intsidendis;
+import ee.itcollege.jejee.entities.Vahtkond_intsidendis;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
 import java.lang.Long;
@@ -128,6 +130,16 @@ privileged aspect IntsidentController_Roo_Controller {
     @ModelAttribute("piiriloiks")
     public Collection<Piiriloik> IntsidentController.populatePiiriloiks() {
         return Piiriloik.findAllPiiriloiks();
+    }
+    
+    @ModelAttribute("piirivalvur_intsidendises")
+    public Collection<Piirivalvur_intsidendis> IntsidentController.populatePiirivalvur_intsidendises() {
+        return Piirivalvur_intsidendis.findAllPiirivalvur_intsidendises();
+    }
+    
+    @ModelAttribute("vahtkond_intsidendises")
+    public Collection<Vahtkond_intsidendis> IntsidentController.populateVahtkond_intsidendises() {
+        return Vahtkond_intsidendis.findAllVahtkond_intsidendises();
     }
     
     void IntsidentController.addDateTimeFormatPatterns(Model uiModel) {

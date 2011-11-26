@@ -2,6 +2,6 @@
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 <tiles-definitions>
     <definition extends="default" name="intsidendi_redaktor/view">
-        <put-attribute name="body" value="/WEB-INF/views/intsidendi_redaktor/view.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/intsidendi_redaktor/view.jsp"/>
     </definition>
 </tiles-definitions>

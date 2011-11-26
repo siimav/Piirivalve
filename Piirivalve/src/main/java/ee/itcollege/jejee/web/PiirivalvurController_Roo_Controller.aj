@@ -4,6 +4,7 @@
 package ee.itcollege.jejee.web;
 
 import ee.itcollege.jejee.entities.Piirivalvur;
+import ee.itcollege.jejee.entities.Piirivalvur_intsidendis;
 import ee.itcollege.jejee.entities.Vahtkonna_liige;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
@@ -98,6 +99,11 @@ privileged aspect PiirivalvurController_Roo_Controller {
     @ModelAttribute("piirivalvurs")
     public Collection<Piirivalvur> PiirivalvurController.populatePiirivalvurs() {
         return Piirivalvur.findAllPiirivalvurs();
+    }
+    
+    @ModelAttribute("piirivalvur_intsidendises")
+    public Collection<Piirivalvur_intsidendis> PiirivalvurController.populatePiirivalvur_intsidendises() {
+        return Piirivalvur_intsidendis.findAllPiirivalvur_intsidendises();
     }
     
     @ModelAttribute("vahtkonna_liiges")

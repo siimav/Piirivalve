@@ -3,6 +3,7 @@ package ee.itcollege.jejee.entities;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Query;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -64,6 +66,9 @@ public class Vahtkond implements Serializable {
 
 	@ManyToOne
 	private Piiripunkt piiripunkt;
+	
+	@OneToMany(mappedBy = "vahtkond")
+	private Collection<Vahtkond_intsidendis> vahtkonnad_intsidendis;
 
 	public Vahtkond() {
 		super();
@@ -195,6 +200,22 @@ public class Vahtkond implements Serializable {
 
 	public Piiripunkt getPiiripunkt() {
 		return piiripunkt;
+	}	
+	
+    public Collection<Vahtkond_intsidendis> getVahtkonnad_intsidendis() {
+		return vahtkonnad_intsidendis;
 	}
+
+	public void setVahtkonnad_intsidendis(Collection<Vahtkond_intsidendis> vahtkonnad_intsidendis) {
+		this.vahtkonnad_intsidendis = vahtkonnad_intsidendis;
+	}
+	
+
+	@SuppressWarnings("unchecked")
+	public static List<Vahtkond> findAllVahtkonnadForIntsident(Intsident ints) {
+    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond o JOIN o.vahtkond_piiriloigul vp JOIN vp.piiriloik pl JOIN pl.intsident ints WHERE ints=:ints", Vahtkond.class);
+    	q.setParameter("ints", ints);
+        return q.getResultList();
+    }
 
 }

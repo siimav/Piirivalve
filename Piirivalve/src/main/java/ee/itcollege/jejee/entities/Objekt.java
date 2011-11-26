@@ -2,12 +2,14 @@ package ee.itcollege.jejee.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Query;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -158,6 +160,13 @@ public class Objekt implements Serializable {
 	public void setPiiririkkuja(Collection<Piiririkkuja> param) {
 	    this.piiririkkuja = param;
 	}
+	
 
+    @SuppressWarnings("unchecked")
+	public static List<Objekt> findAllObjektidForIntsident(Intsident ints) {
+    	Query q = entityManager().createQuery("SELECT o FROM Objekt o JOIN o.objekt_intsidendis oi WHERE oi.intsident=:ints", Objekt.class);
+    	q.setParameter("ints", ints);
+        return q.getResultList();
+    }
    
 }

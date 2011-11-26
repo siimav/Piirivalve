@@ -63,7 +63,14 @@ public class Intsident implements Serializable {
 
 	@OneToMany(mappedBy = "intsident")
 	private Collection<Isik_intsidendis> isik_intsidendis;
+	
+	@OneToMany(mappedBy = "intsident")
+	private Collection<Vahtkond_intsidendis> vahtkonnad_intsidendis;
+	
+	@OneToMany(mappedBy = "intsident")
+	private Collection<Piirivalvur_intsidendis> piirivalvurid_intsidendis;
 
+	
 	public Long getIntsident_ID() {
 		return intsident_ID;
 	}
@@ -214,6 +221,22 @@ public class Intsident implements Serializable {
 
 	public void setIsik_intsidendis(Collection<Isik_intsidendis> param) {
 	    this.isik_intsidendis = param;
+	}
+
+	public Collection<Vahtkond_intsidendis> getVahtkonnad_intsidendis() {
+		return vahtkonnad_intsidendis;
+	}
+
+	public void setVahtkonnad_intsidendis(Collection<Vahtkond_intsidendis> vahtkonnad_intsidendis) {
+		this.vahtkonnad_intsidendis = vahtkonnad_intsidendis;
+	}
+
+	public Collection<Piirivalvur_intsidendis> getPiirivalvurid_intsidendis() {
+		return piirivalvurid_intsidendis;
+	}
+
+	public void setPiirivalvurid_intsidendis(Collection<Piirivalvur_intsidendis> piirivalvurid_intsidendis) {
+		this.piirivalvurid_intsidendis = piirivalvurid_intsidendis;
 	}
 
 }

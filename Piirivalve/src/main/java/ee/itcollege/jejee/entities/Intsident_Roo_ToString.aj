@@ -24,10 +24,12 @@ privileged aspect Intsident_Roo_ToString {
         sb.append("Nimetus: ").append(getNimetus()).append(", ");
         sb.append("Objekt_intsidendis: ").append(getObjekt_intsidendis() == null ? "null" : getObjekt_intsidendis().size()).append(", ");
         sb.append("Piiriloik: ").append(getPiiriloik()).append(", ");
+        sb.append("Piirivalvurid_intsidendis: ").append(getPiirivalvurid_intsidendis() == null ? "null" : getPiirivalvurid_intsidendis().size()).append(", ");
         sb.append("Suletud: ").append(getSuletud()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
         sb.append("Toimumise_algus: ").append(getToimumise_algus()).append(", ");
         sb.append("Toimumise_lopp: ").append(getToimumise_lopp()).append(", ");
+        sb.append("Vahtkonnad_intsidendis: ").append(getVahtkonnad_intsidendis() == null ? "null" : getVahtkonnad_intsidendis().size()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();
     }

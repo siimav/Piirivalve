@@ -24,7 +24,7 @@
 	<entity>
 		<entity-name>ee.itcollege.jejee.entities.Piirivalvur</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>366</entity-height>
+		<entity-height>386</entity-height>
 		<entity-X-Coordinate>580</entity-X-Coordinate>
 		<entity-Y-Coordinate>803</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
@@ -110,20 +110,9 @@
 	</entity>
 
 	<entity>
-		<entity-name>ee.itcollege.jejee.entities.Piiriloik</entity-name>
-		<entity-width>120</entity-width>
-		<entity-height>346</entity-height>
-		<entity-X-Coordinate>67</entity-X-Coordinate>
-		<entity-Y-Coordinate>827</entity-Y-Coordinate>
-		<primary-collapsed>false</primary-collapsed>
-		<relation-collapsed>false</relation-collapsed>
-		<basic-collapsed>false</basic-collapsed>
-	</entity>
-
-	<entity>
 		<entity-name>ee.itcollege.jejee.entities.Intsident</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>466</entity-height>
+		<entity-height>506</entity-height>
 		<entity-X-Coordinate>291</entity-X-Coordinate>
 		<entity-Y-Coordinate>313</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
@@ -132,11 +121,11 @@
 	</entity>
 
 	<entity>
-		<entity-name>ee.itcollege.jejee.entities.Vahtkond</entity-name>
+		<entity-name>ee.itcollege.jejee.entities.Piiriloik</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>406</entity-height>
-		<entity-X-Coordinate>518</entity-X-Coordinate>
-		<entity-Y-Coordinate>1336</entity-Y-Coordinate>
+		<entity-height>346</entity-height>
+		<entity-X-Coordinate>11</entity-X-Coordinate>
+		<entity-Y-Coordinate>900</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -154,11 +143,11 @@
 	</entity>
 
 	<entity>
-		<entity-name>ee.itcollege.jejee.entities.Riigi_admin_yksuse_liik</entity-name>
+		<entity-name>ee.itcollege.jejee.entities.Vahtkond</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>346</entity-height>
-		<entity-X-Coordinate>1120</entity-X-Coordinate>
-		<entity-Y-Coordinate>797</entity-Y-Coordinate>
+		<entity-height>426</entity-height>
+		<entity-X-Coordinate>518</entity-X-Coordinate>
+		<entity-Y-Coordinate>1336</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -176,11 +165,44 @@
 	</entity>
 
 	<entity>
+		<entity-name>ee.itcollege.jejee.entities.Riigi_admin_yksuse_liik</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>346</entity-height>
+		<entity-X-Coordinate>1120</entity-X-Coordinate>
+		<entity-Y-Coordinate>797</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
 		<entity-name>ee.itcollege.jejee.entities.Vahtkonna_liige</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>326</entity-height>
-		<entity-X-Coordinate>338</entity-X-Coordinate>
-		<entity-Y-Coordinate>810</entity-Y-Coordinate>
+		<entity-X-Coordinate>342</entity-X-Coordinate>
+		<entity-Y-Coordinate>860</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>ee.itcollege.jejee.entities.Piirivalvur_intsidendis</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>366</entity-height>
+		<entity-X-Coordinate>229</entity-X-Coordinate>
+		<entity-Y-Coordinate>1707</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>ee.itcollege.jejee.entities.Vahtkond_intsidendis</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>366</entity-height>
+		<entity-X-Coordinate>444</entity-X-Coordinate>
+		<entity-Y-Coordinate>1840</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>

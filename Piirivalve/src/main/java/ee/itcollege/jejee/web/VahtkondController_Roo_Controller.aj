@@ -6,6 +6,7 @@ package ee.itcollege.jejee.web;
 import ee.itcollege.jejee.entities.Piiripunkt;
 import ee.itcollege.jejee.entities.Vaeosa;
 import ee.itcollege.jejee.entities.Vahtkond;
+import ee.itcollege.jejee.entities.Vahtkond_intsidendis;
 import ee.itcollege.jejee.entities.Vahtkond_piiriloigul;
 import ee.itcollege.jejee.entities.Vahtkonna_liige;
 import java.io.UnsupportedEncodingException;
@@ -111,6 +112,11 @@ privileged aspect VahtkondController_Roo_Controller {
     @ModelAttribute("vahtkonds")
     public Collection<Vahtkond> VahtkondController.populateVahtkonds() {
         return Vahtkond.findAllVahtkonds();
+    }
+    
+    @ModelAttribute("vahtkond_intsidendises")
+    public Collection<Vahtkond_intsidendis> VahtkondController.populateVahtkond_intsidendises() {
+        return Vahtkond_intsidendis.findAllVahtkond_intsidendises();
     }
     
     @ModelAttribute("vahtkond_piiriloiguls")

@@ -71,5 +71,13 @@
             <menu:item id="i_seadus_new" messageCode="global_menu_new" url="/seaduses?form" z="4Jdd5BARV+OT8Uj2TLUOFslVvcM="/>
             <menu:item id="i_seadus_list" messageCode="global_menu_list" url="/seaduses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="bMv8uFCmOcQ1zI32wJeLWi5W6bc="/>
         </menu:category>
+        <menu:category id="c_vahtkond_intsidendis" z="1X5BSVIFivD7S4iiBbVzk1FZBug=">
+            <menu:item id="i_vahtkond_intsidendis_new" messageCode="global_menu_new" url="/vahtkond_intsidendises?form" z="OW4mBDVvLKMeQfVakGaYauGFx8A="/>
+            <menu:item id="i_vahtkond_intsidendis_list" messageCode="global_menu_list" url="/vahtkond_intsidendises?page=1&amp;size=${empty param.size ? 10 : param.size}" z="EfrVisjXKArX/kryJWSntjx3o9w="/>
+        </menu:category>
+        <menu:category id="c_piirivalvur_intsidendis" z="X2moFkxWn2BwxZnToZKocIKYHSs=">
+            <menu:item id="i_piirivalvur_intsidendis_new" messageCode="global_menu_new" url="/piirivalvur_intsidendises?form" z="PEEX/EA7xPvEhkiUAdYoUPWkgQ8="/>
+            <menu:item id="i_piirivalvur_intsidendis_list" messageCode="global_menu_list" url="/piirivalvur_intsidendises?page=1&amp;size=${empty param.size ? 10 : param.size}" z="GAtnJJmwp3GUecBEbSEoDCZaHOE="/>
+        </menu:category>
     </menu:menu>
 </div>

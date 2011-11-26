@@ -54,6 +54,7 @@ public class Vahtkond_piiriloigul implements Serializable {
 	@ManyToOne
 	private Vahtkond vahtkond;
 	
+	
 	public Long getVahtkond_piiriloigul_ID() {
 		return vahtkond_piiriloigul_ID;
 	}

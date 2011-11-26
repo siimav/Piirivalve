@@ -3,6 +3,7 @@
 <persistence-unit name="persistenceUnit" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <class>ee.itcollege.jejee.entities.Piirivalvur</class>
+        <class>ee.itcollege.jejee.entities.Piirivalvur_intsidendis</class>
         <class>ee.itcollege.jejee.entities.Piiripunkt</class>
         <class>ee.itcollege.jejee.entities.Riigi_admin_yksuse_liik</class>
         <class>ee.itcollege.jejee.entities.Riigi_admin_yksus</class>
@@ -14,6 +15,7 @@
         <class>ee.itcollege.jejee.entities.Seadus</class>
         <class>ee.itcollege.jejee.entities.Vaeosa</class>
         <class>ee.itcollege.jejee.entities.Vahtkond</class>
+        <class>ee.itcollege.jejee.entities.Vahtkond_intsidendis</class>
         <class>ee.itcollege.jejee.entities.Vahtkonna_liige</class>
         <class>ee.itcollege.jejee.entities.Objekt_intsidendis</class>
         <class>ee.itcollege.jejee.entities.Vahtkond_piiriloigul</class>

@@ -2,11 +2,13 @@ package ee.itcollege.jejee.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Query;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -187,5 +189,12 @@ public class Isik_intsidendis implements Serializable {
 	    this.piiririkkuja = param;
 	}
 
+	
+    @SuppressWarnings("unchecked")
+	public static List<Isik_intsidendis> findAllIsik_intsidendisForIntsident(Intsident ints) {
+    	Query q = entityManager().createQuery("SELECT o FROM Isik_intsidendis o WHERE o.intsident=:ints", Isik_intsidendis.class);
+    	q.setParameter("ints", ints);
+        return q.getResultList();
+    }
 	
 }

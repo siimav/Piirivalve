@@ -2,11 +2,13 @@ package ee.itcollege.jejee.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Query;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -53,7 +55,11 @@ public class Piirivalvur implements Serializable {
 
 	@OneToMany(mappedBy = "piirivalvur")
 	private Collection<Vahtkonna_liige> vahtkonna_liige;
-
+	
+	@OneToMany(mappedBy = "piirivalvur")
+	private Collection<Piirivalvur_intsidendis> piirivalvur_intsidendis;
+	
+	
 	public Piirivalvur() {
 		super();
 	}
@@ -169,5 +175,26 @@ public class Piirivalvur implements Serializable {
 	public void setVahtkonna_liige(Collection<Vahtkonna_liige> param) {
 	    this.vahtkonna_liige = param;
 	}
+
+	public Collection<Piirivalvur_intsidendis> getPiirivalvur_intsidendis() {
+		return piirivalvur_intsidendis;
+	}
+
+	public void setPiirivalvur_intsidendis(Collection<Piirivalvur_intsidendis> piirivalvur_intsidendis) {
+		this.piirivalvur_intsidendis = piirivalvur_intsidendis;
+	}
+	
+	
+	public String getName() {
+		return eesnimed + " " + perekonnanimi;
+	}
+	
+	
+    @SuppressWarnings("unchecked")
+	public static List<Piirivalvur> findAllPiirivalvuridForIntsident(Intsident ints) {
+    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur o JOIN o.piirivalvur_intsidendis pi WHERE pi.intsident=:ints", Piirivalvur.class);
+    	q.setParameter("ints", ints);
+        return q.getResultList();
+    }
 
 }
