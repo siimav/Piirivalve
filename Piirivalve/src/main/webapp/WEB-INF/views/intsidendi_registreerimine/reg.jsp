@@ -30,8 +30,8 @@
 <fo:form action="http://localhost:8080/Piirivalve/reg" method="POST" commandName="intsident">
 	<div id="vasak_div">
 		<table border="0">
-			<tr><td>kood: </td><td><fo:input path="kood" /></td></tr>
-			<tr><td>liik: </td>
+			<tr><td>kood<span style="color:red;">*</span></td><td><fo:input path="kood" /></td></tr>
+			<tr><td>liik<span style="color:red;">*</span></td>
 			<td height="30px">
 			<fo:select path="intsidendi_liik">
 				<c:forEach var="ints" items="${intsidendi_liiks}">
@@ -39,8 +39,8 @@
 				</c:forEach>
 			</fo:select>			
 			</td></tr>
-			<tr><td>nimetus: </td><td><fo:input path="nimetus" /></td></tr>
-			<tr><td>piirilõik: </td>
+			<tr><td>nimetus<span style="color:red;">* </span></td><td><fo:input path="nimetus" /></td></tr>
+			<tr><td>piirilõik<span style="color:red;">*</span></td>
 				<td>
 				<fo:select path="piiriloik" style="width:150px; height:25px; font-size:13px;" >
 				<c:forEach var="piir" items="${piiriloiks}">
@@ -49,15 +49,15 @@
 				</fo:select>
 				</td>
 			</tr>
-			<tr><td>koordnaadid: </td><td><fo:input path="GPS_latituud" style="width:65px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<fo:input path="GPS_longituud" style="width:65px"/><td/></tr>
-			<tr><td>algus: </td><td><field:datetime dateTimePattern="${intsident_toimumise_algus_date_format}" field="toimumise_algus" id="algus" required="true"/></td></tr>
-			<tr><td>lopp: </td><td><field:datetime dateTimePattern="${intsident_toimumise_lopp_date_format}" field="toimumise_lopp" id="lopp" required="true"/></td></tr>
+			<tr><td>koordnaadid<span style="color:red;">*</span></td><td><fo:input path="GPS_latituud" style="width:65px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<fo:input path="GPS_longituud" style="width:65px"/><td/></tr>
+			<tr><td>algus<span style="color:red;">* </span></td><td><field:datetime dateTimePattern="${intsident_toimumise_algus_date_format}" field="toimumise_algus" id="algus" required="true" label=" "/></td></tr>
+			<tr><td>lopp<span style="color:red;">* </span></td><td><field:datetime dateTimePattern="${intsident_toimumise_lopp_date_format}" field="toimumise_lopp" id="lopp" required="true" label=" "/></td></tr>
 		</table>
  	</div> 
 	
 	<div id="parem_div">
 		<table>
-			<tr><td>Kirjeldus</td><td></td></tr>
+			<tr><td>Kirjeldus<span style="color:red;">*</span></td><td></td></tr>
 			<tr><td><fo:textarea path="kirjeldus" rows="4" cols="25"></fo:textarea></td></tr>
 			<tr height=50px><td></td></tr>
 			<tr><td>Kommentaar</td><td></td></tr>
@@ -70,6 +70,11 @@
 
 	<table>
 	<tr><td><FONT color="red"><fo:errors path="kood"/></FONT></td></tr>
+	<tr><td><FONT color="red"><fo:errors path="nimetus"/></FONT></td></tr>
+<%-- 	<tr><td><FONT color="red"><fo:errors path="toimumise_algus"/></FONT></td></tr> --%>
+<%-- 	<tr><td><FONT color="red"><fo:errors path="toimumise_lopp"/></FONT></td></tr> --%>
+	<tr><td><FONT color="red"><fo:errors path="kirjeldus"/></FONT></td></tr>
+	<tr><td><FONT color="red"><fo:errors path="GPS_latituud"/></FONT></td></tr>
 	</table>
 
 	<% 

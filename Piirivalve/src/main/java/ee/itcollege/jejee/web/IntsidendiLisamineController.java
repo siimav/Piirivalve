@@ -36,8 +36,6 @@ public class IntsidendiLisamineController {
         return "intsidendi_lisamine/create";
     }
 	
-//	http://levelup.lishman.com/spring/form-processing/validation.php
-	
 	
 }
 
