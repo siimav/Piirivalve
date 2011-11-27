@@ -26,10 +26,10 @@ public class Piirivalvur_intsidendis implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
 	private Long piirivalvur_intsidendis_ID;
-	@DateTimeFormat(style = "M-")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull
 	private Date alates;
-	@DateTimeFormat(style = "M-")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull
 	private Date kuni;
 	@NotNull
@@ -37,16 +37,16 @@ public class Piirivalvur_intsidendis implements Serializable {
 	private String kommentaar;
 	@NotNull
 	private String avaja;
-	@DateTimeFormat(style = "M-")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull
 	private Date avatud;
 	@NotNull
 	private String muutja;
-	@DateTimeFormat(style = "M-")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull
 	private Date muudetud;
 	private String sulgeja;
-	@DateTimeFormat(style = "M-")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull
 	private Date suletud;
 	
