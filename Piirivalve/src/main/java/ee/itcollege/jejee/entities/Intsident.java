@@ -28,23 +28,23 @@ public class Intsident implements Serializable {
 	private Long intsident_ID;
 	@NotNull
 	private String avaja;
-	@DateTimeFormat(style = "M-")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull
 	private Date avatud;
 	@NotNull
 	private String muutja;
-	@DateTimeFormat(style = "M-")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull
 	private Date muudetud;
 	private String sulgeja;
-	@DateTimeFormat(style = "M-")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull
 	private Date suletud;
 	private String kood;
 	private String nimetus;
-	@DateTimeFormat(style = "M-")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date toimumise_algus;
-	@DateTimeFormat(style = "M-")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date toimumise_lopp;
 	private String kirjeldus;
 	private String kommentaar;

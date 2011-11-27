@@ -7,6 +7,7 @@ import javax.persistence.PersistenceContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,6 +22,14 @@ import ee.itcollege.jejee.entities.Piiriloik;
 @RequestMapping("/reg")
 @Controller
 public class IntsidendiRegistreerimineController {
+	
+	 @Autowired
+     private RegistrationValidation registrationValidation;
+
+     public void setRegistrationValidation(
+                     RegistrationValidation registrationValidation) {
+             this.registrationValidation = registrationValidation;
+     }
 
 	@PersistenceContext
 	EntityManager entityManager;
@@ -36,15 +45,11 @@ public class IntsidendiRegistreerimineController {
 	
 	@RequestMapping(method = RequestMethod.POST)
     public String post(HttpServletRequest httpServletRequest, Model uiModel, @Valid Intsident intsident, BindingResult result) {
-		System.out.println("Method: "+httpServletRequest.getMethod());
-		System.out.println("ID: "+intsident.getIntsident_ID());
-		System.out.println("Kirjeldus: "+intsident.getKirjeldus());
-		System.out.println("Nimetus: "+intsident.getNimetus());
-		System.out.println("Kood: "+intsident.getKood());
-		System.out.println("Algus: "+intsident.getToimumise_algus());
-		System.out.println("Liik: "+intsident.getIntsidendi_liik());
-		System.out.println("Piiriloik: "+intsident.getPiiriloik());
+//		
+		System.out.println("Avaja: "+intsident.getAvaja());
+		System.out.println("Avatud: "+intsident.getAvatud());
 		
+		//need tehakse reg.jsp's ära
 		intsident.setAvaja("avaja");
 		intsident.setAvatud(new Date());
 		intsident.setSulgeja("sulgeja");
@@ -54,8 +59,16 @@ public class IntsidendiRegistreerimineController {
 		
 		//intsident.persist();
 		
+		registrationValidation.validate(intsident, result);
+        if (result.hasErrors()) {
+        	//System.out.println(result.getFieldErrors());
+        	//System.out.println(result.getAllErrors());
+        	return "intsidendi_registreerimine/view"; //TODO: comboboxid uuesti väärtustads!!
+        }
+        else{
 //		return "intsidendi_registreerimine/view";
 		return "redirect:/create";	//nÃ¤itab kÃµiki intsidente
+        }
 	}
 
 }

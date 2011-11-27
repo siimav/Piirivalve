@@ -436,4 +436,7 @@ fieldset th {
 	height: 30px;
 }
 
+.hidden{
+	visibility: hidden;
+}
 

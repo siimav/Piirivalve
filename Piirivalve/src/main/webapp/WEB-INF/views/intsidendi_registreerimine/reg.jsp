@@ -68,6 +68,22 @@
 		<input type="reset" value="Loobu" class="btn_reg">
  	</div> 
 
+	<table>
+	<tr><td><FONT color="red"><fo:errors path="kood"/></FONT></td></tr>
+	</table>
+
+	<% 
+	java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd");
+	String dateAsString = simpleDateFormat.format(new java.util.Date());
+	%>
+
+	<fo:input path="avaja" cssClass="hidden" value="avaja"/>
+	<fo:input path="avatud" cssClass="hidden" value="<%= dateAsString %>"/>
+	<fo:input path="sulgeja" cssClass="hidden" value="sulgeja"/>
+	<fo:input path="suletud" cssClass="hidden" value="<%= dateAsString %>"/>
+	<fo:input path="muutja" cssClass="hidden" value="muutja"/>
+	<fo:input path="muudetud" cssClass="hidden" value="<%= dateAsString %>"/>
+
 	</fo:form>
 	
 </div>
