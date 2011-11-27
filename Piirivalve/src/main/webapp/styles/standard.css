@@ -229,7 +229,7 @@ ul li {
 table {
 	background: #EEEEEE;
 	margin: 2px 0 0 0;
-	border: 1px solid #BBBBBB;
+/* 	border: 1px solid #BBBBBB; */
 	border-collapse: collapse;
 	width: 100%
 }
@@ -373,6 +373,34 @@ fieldset th {
 }
 
 
+/* custom  */
+
+#main_wrapper{
+	width:99%;
+	border:1px solid green;
+	height:500px;
+	background: #EEEEEE;
+}
+
+#vasak_div{
+	width:50%;
+	float:left;
+	margin-top:20px;
+	margin-left:30px;
+}
+
+#vasak_div td{
+	height:30px;
+}
+
+#parem_div{
+	width:40%;
+	float:right;
+	height:300px;
+	background: #EEEEEE;
+	margin-top:20px;
+	margin-right:20px;
+}
 
 .div_left {
 	float: left;
@@ -401,3 +429,11 @@ fieldset th {
 .table_left {
 	border: 1px solid black;
 }
+
+.btn_reg{
+	float:right;
+	width:80px;
+	height: 30px;
+}
+
+
