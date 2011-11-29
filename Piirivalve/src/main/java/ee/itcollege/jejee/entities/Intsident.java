@@ -3,6 +3,7 @@ package ee.itcollege.jejee.entities;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Query;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -238,5 +240,29 @@ public class Intsident implements Serializable {
 	public void setPiirivalvurid_intsidendis(Collection<Piirivalvur_intsidendis> piirivalvurid_intsidendis) {
 		this.piirivalvurid_intsidendis = piirivalvurid_intsidendis;
 	}
+	
+	 @SuppressWarnings("unchecked")
+		public static List<Intsident> findAllIntsidentsForPiiriloik(Piiriloik piir) {
+	    	Query q = entityManager().createQuery("SELECT o FROM Intsident o WHERE o.piiriloik=:piir", Intsident.class);
+	    	q.setParameter("piir", piir);
+	        return q.getResultList();
+	    }
+	
+	 @SuppressWarnings("unchecked")
+		public static List<Intsident> findIntsidentsForPiiriloikWithInterval(Piiriloik piir, Date toimumise_algus, Date toimumise_lopp) {
+	    	Query q = entityManager().createQuery("SELECT o FROM Intsident o WHERE o.piiriloik=:piir and o.toimumise_algus>=:toimumise_algus and o.toimumise_lopp<=:toimumise_lopp", Intsident.class);
+	    	q.setParameter("piir", piir);
+	    	q.setParameter("toimumise_algus", toimumise_algus);
+	    	q.setParameter("toimumise_lopp", toimumise_lopp);
+	        return q.getResultList();
+	    }
+	 
+	 @SuppressWarnings("unchecked")
+		public static List<Intsident> findAllIntsidentsWithInterval(Date toimumise_algus, Date toimumise_lopp) {
+	    	Query q = entityManager().createQuery("SELECT o FROM Intsident o WHERE o.toimumise_algus>=:toimumise_algus and o.toimumise_lopp<=:toimumise_lopp", Intsident.class);
+	    	q.setParameter("toimumise_algus", toimumise_algus);
+	    	q.setParameter("toimumise_lopp", toimumise_lopp);
+	        return q.getResultList();
+	    }
 
 }
