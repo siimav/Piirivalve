@@ -4,4 +4,7 @@
     <definition extends="default" name="intsidendi_redaktor/view">
         <put-attribute name="body" value="/WEB-INF/views/intsidendi_redaktor/view.jsp"/>
     </definition>
+    <definition extends="default" name="intsidendi_redaktor/add_piirivalvur">
+        <put-attribute name="body" value="/WEB-INF/views/intsidendi_redaktor/add_piirivalvur.jsp"/>
+    </definition>
 </tiles-definitions>

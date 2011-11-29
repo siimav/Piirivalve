@@ -195,6 +195,13 @@ public class Piirivalvur implements Serializable {
     	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur o JOIN o.piirivalvur_intsidendis pi WHERE pi.intsident=:ints", Piirivalvur.class);
     	q.setParameter("ints", ints);
         return q.getResultList();
+    }    
+    
+    @SuppressWarnings("unchecked")
+	public static List<Piirivalvur> findAllPiirivalvuridNotInIntsident(Intsident ints) {
+    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o NOT IN (SELECT o1 FROM Piirivalvur o1 JOIN o1.piirivalvur_intsidendis pi WHERE pi.intsident=:ints)", Piirivalvur.class);
+    	q.setParameter("ints", ints);
+        return q.getResultList();
     }
 
 }

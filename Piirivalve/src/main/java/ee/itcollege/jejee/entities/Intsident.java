@@ -10,6 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
+import javax.persistence.PreRemove;
+import javax.persistence.PreUpdate;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -69,6 +72,22 @@ public class Intsident implements Serializable {
 	
 	@OneToMany(mappedBy = "intsident")
 	private Collection<Piirivalvur_intsidendis> piirivalvurid_intsidendis;
+	
+	
+    @PrePersist
+    public void recordCreated() {
+        setAvatud(new Date());
+    }
+
+    @PreUpdate
+    public void recordModified() {
+    	setMuudetud(new Date());
+    }
+
+    @PreRemove
+    public void preventRemove() {
+        throw new SecurityException("Removing is prohibited!");
+    }
 
 	
 	public Long getIntsident_ID() {
@@ -237,6 +256,11 @@ public class Intsident implements Serializable {
 
 	public void setPiirivalvurid_intsidendis(Collection<Piirivalvur_intsidendis> piirivalvurid_intsidendis) {
 		this.piirivalvurid_intsidendis = piirivalvurid_intsidendis;
+	}
+	
+	
+	public void markAsDeleted(String userName) {
+		
 	}
 
 }
