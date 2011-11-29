@@ -1,5 +1,6 @@
 package ee.itcollege.jejee.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -16,8 +17,16 @@ public class Piirivalvur_intsidendis_abi {
 	private Date alates;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date kuni;
-
+	private ArrayList<Piirivalvur_intsidendis> pints_arr = new ArrayList<Piirivalvur_intsidendis>();
 	
+	
+	
+	public ArrayList<Piirivalvur_intsidendis> getPints_arr() {
+		return pints_arr;
+	}
+	public void setPints_arr(ArrayList<Piirivalvur_intsidendis> pints_arr) {
+		this.pints_arr = pints_arr;
+	}
 	public Long getPiiriloik_ID() {
 		return piiriloik_ID;
 	}
