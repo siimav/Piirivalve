@@ -203,5 +203,31 @@ public class Piirivalvur implements Serializable {
     	q.setParameter("ints", ints);
         return q.getResultList();
     }
+    
+    
+    
+    @SuppressWarnings("unchecked")
+	public static List<Piirivalvur> findAllPiirivalvuridForPiiriloik(Piiriloik piir) {
+    	Query q = entityManager().createQuery("SELECT p FROM Piirivalvur p JOIN p.piirivalvur_intsidendis pi WHERE pi.intsident.piiriloik=:piir", Piirivalvur.class);
+    	q.setParameter("piir", piir);
+        return q.getResultList();
+    }
+
+//	@SuppressWarnings("unchecked")
+//	public static List<Piirivalvur> findAllPiirivalvurIntsidentsForPiiriloikWithInterval(Piiriloik piir, Date alates, Date kuni) {
+//    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi JOIN pi.intsident i WHERE i.piiriloik=:piir and (pi.alates>=:alates and pi.kuni<=:kuni)", Piirivalvur_intsidendis.class);
+//    	q.setParameter("piir", piir);
+//    	q.setParameter("alates", alates);
+//    	q.setParameter("kuni", kuni);
+//        return q.getResultList();
+//    }
+//	
+//	@SuppressWarnings("unchecked")
+//	public static List<Piirivalvur> findAllPiirivalvurIntsidentsWithInterval(Date alates, Date kuni) {
+//    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi WHERE pi.alates>=:alates and pi.kuni<=:kuni", Piirivalvur_intsidendis.class);
+//    	q.setParameter("alates", alates);
+//    	q.setParameter("kuni", kuni);
+//        return q.getResultList();
+//    }
 
 }

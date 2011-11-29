@@ -1,4 +1,7 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@page import="ee.itcollege.jejee.entities.Piiriloik"%>
+<%@page import="ee.itcollege.jejee.entities.Intsident"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -12,22 +15,20 @@
 </head>
 <body>
 
-<%Piiriloik p = new Piiriloik(); %>
-
 <div id="ipiir_wrapper">
 	<div id="ylemine_div">
-		<fo:form action="http://localhost:8080/Piirivalve/ipiir" method="POST" commandName="piirivalvur_intsidendis_abi">
+		<fo:form action="http://localhost:8080/Piirivalve/ipiir" method="GET" commandName="piirivalvur_intsidendis_abi" >
 			<table>
 				<tr>
 					<td>
 						<field:datetime id="alates" field="alates" dateTimePattern="yyyy-MM-dd" label="Alates" ></field:datetime>
 					</td>
 					<td>
-						<field:datetime id="kuni" field="kuni" dateTimePattern="${piirivalvur_intsidendis_kuni_date_format}" label="Kuni"></field:datetime>
+						<field:datetime id="kuni" field="kuni" dateTimePattern="yyyy-MM-dd" label="Kuni"></field:datetime>
 					</td>
 					<td>
-						<fo:select path="piiriloik" style="width:100px">
-<%-- 						<fo:option value="---"></fo:option> --%>
+						<fo:select path="piiriloik_ID" style="width:100px" itemLabel="Piirilõik">
+						<fo:option value="0">---</fo:option>
 						<c:forEach var="piir" items="${piiriloiks}">
 							<fo:option value="${piir.piiriloik_ID}">${piir.nimetus}</fo:option>
 						</c:forEach>
@@ -40,7 +41,43 @@
 			</table>
 		</fo:form>	
 	</div>
+	
 	<div id="alumine_div">
+	<c:forEach var="ints" items="${ints_piiriloigul_piirivalvur}">
+		<div>
+		<table>
+			<tr>
+				<th>${ints.piirivalvur.soduri_kood}: ${ints.piirivalvur.perekonnanimi}, ${ints.piirivalvur.eesnimed}</th>
+    			<th></th>
+			</tr>
+			<tr>
+				<td width="500px">
+					${ints.intsident.nimetus}
+				</td>
+				<td>
+					<input type="button" name="btn" value="Vaata">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					${ints.alates}
+				</td>
+				<td>
+			
+				</td>
+			</tr>
+			<tr>
+				<td width="100px">
+					${ints.kuni}
+				</td>
+				<td>
+					
+				</td>
+			</tr>
+		</table>
+		</div>
+		<br/>
+	</c:forEach>
 	
 	</div>
 </div>

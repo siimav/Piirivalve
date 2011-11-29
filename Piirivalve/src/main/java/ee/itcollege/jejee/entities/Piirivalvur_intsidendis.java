@@ -2,12 +2,14 @@ package ee.itcollege.jejee.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Query;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -173,5 +175,38 @@ public class Piirivalvur_intsidendis implements Serializable {
 	public void setVahtkond_intsidendis(Vahtkond_intsidendis vahtkond_intsidendis) {
 		this.vahtkond_intsidendis = vahtkond_intsidendis;
 	}
-
+	
+	
+	 @SuppressWarnings("unchecked")
+		public static List<Piirivalvur_intsidendis> findAllPiirivalvurIntsidentsForPiiriloik(Piiriloik piir) {
+	    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi JOIN pi.intsident i WHERE i.piiriloik=:piir", Piirivalvur_intsidendis.class);
+	    	q.setParameter("piir", piir);
+	        return q.getResultList();
+	    }
+	
+		@SuppressWarnings("unchecked")
+		public static List<Piirivalvur_intsidendis> findAllPiirivalvurIntsidentsForPiiriloikWithInterval(Piiriloik piir, Date alates, Date kuni) {
+	    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi JOIN pi.intsident i WHERE i.piiriloik=:piir and (pi.alates>=:alates and pi.kuni<=:kuni)", Piirivalvur_intsidendis.class);
+	    	q.setParameter("piir", piir);
+	    	q.setParameter("alates", alates);
+	    	q.setParameter("kuni", kuni);
+	        return q.getResultList();
+	    }
+		
+		@SuppressWarnings("unchecked")
+		public static List<Piirivalvur_intsidendis> findAllPiirivalvurIntsidentsWithInterval(Date alates, Date kuni) {
+	    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi WHERE pi.alates>=:alates and pi.kuni<=:kuni", Piirivalvur_intsidendis.class);
+	    	q.setParameter("alates", alates);
+	    	q.setParameter("kuni", kuni);
+	        return q.getResultList();
+	    }
+		
+		@SuppressWarnings("unchecked")
+		public static List<Piirivalvur_intsidendis> findAllPiirivalvurIntsidentsForPiirivalvur(Piirivalvur piirivalvur) {
+	    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi WHERE pi.piirivalvur=:piirivalvur", Piirivalvur_intsidendis.class);
+	    	q.setParameter("piirivalvur", piirivalvur);
+	        return q.getResultList();
+	    }
+	
+	
 }

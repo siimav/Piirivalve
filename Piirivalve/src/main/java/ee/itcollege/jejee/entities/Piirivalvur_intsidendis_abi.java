@@ -9,13 +9,21 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Piirivalvur_intsidendis_abi {
 
 	private Piirivalvur_intsidendis piirivalvur_intsidendis;
+	private Long piiriloik_ID;
 	private Piirivalvur piirivalvur;
 	private Piiriloik piiriloik;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date alates;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date kuni;
+
 	
+	public Long getPiiriloik_ID() {
+		return piiriloik_ID;
+	}
+	public void setPiiriloik_ID(Long piiriloik_ID) {
+		this.piiriloik_ID = piiriloik_ID;
+	}
 	public Piirivalvur_intsidendis getPiirivalvur_intsidendis() {
 		return piirivalvur_intsidendis;
 	}
