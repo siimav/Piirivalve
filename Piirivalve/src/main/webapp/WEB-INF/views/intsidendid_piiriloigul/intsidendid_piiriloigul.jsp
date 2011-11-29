@@ -30,7 +30,7 @@
 						<fo:select path="piiriloik_ID" style="width:100px" itemLabel="Piirilõik">
 						<fo:option value="0">---</fo:option>
 						<c:forEach var="piir" items="${piiriloiks}">
-							<fo:option value="${piir.piiriloik_ID}">${piir.nimetus}</fo:option>
+							<fo:option value="${piir.id}">${piir.nimetus}</fo:option>
 						</c:forEach>
 						</fo:select>
 					</td>
@@ -50,30 +50,18 @@
 				<th>${ints.piirivalvur.soduri_kood}: ${ints.piirivalvur.perekonnanimi}, ${ints.piirivalvur.eesnimed}</th>
     			<th></th>
 			</tr>
-			<tr>
-				<td width="500px">
-					${ints.intsident.nimetus}
-				</td>
-				<td>
-					<input type="button" name="btn" value="Vaata">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					${ints.alates}
-				</td>
-				<td>
 			
-				</td>
-			</tr>
-			<tr>
-				<td width="100px">
-					${ints.kuni}
-				</td>
-				<td>
-					
-				</td>
-			</tr>
+			<c:forEach var="i" items="${ints.pints_arr}">
+				<tr>
+					<td width="500px">
+						${i.intsident.nimetus}
+					</td>
+					<td>
+						<input type="button" name="btn" value="Vaata" onclick="alert(${i.id})" />
+					</td>
+				</tr>
+			</c:forEach>
+			
 		</table>
 		</div>
 		<br/>

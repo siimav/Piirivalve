@@ -35,7 +35,7 @@
 			<td height="30px">
 			<fo:select path="intsidendi_liik">
 				<c:forEach var="ints" items="${intsidendi_liiks}">
-					<fo:option value="${ints.intsidendi_liik_ID}">${ints.nimetus}</fo:option>
+					<fo:option value="${ints.id}">${ints.nimetus}</fo:option>
 				</c:forEach>
 			</fo:select>			
 			</td></tr>
@@ -44,7 +44,7 @@
 				<td>
 				<fo:select path="piiriloik" style="width:150px; height:25px; font-size:13px;" >
 				<c:forEach var="piir" items="${piiriloiks}">
-					<fo:option value="${piir.piiriloik_ID}">${piir.nimetus}</fo:option>
+					<fo:option value="${piir.id}">${piir.nimetus}</fo:option>
 				</c:forEach>
 				</fo:select>
 				</td>

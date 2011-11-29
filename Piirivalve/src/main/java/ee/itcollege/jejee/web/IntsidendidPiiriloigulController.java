@@ -1,21 +1,18 @@
 package ee.itcollege.jejee.web;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 
-import org.apache.taglibs.standard.tag.common.core.ParamSupport;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import ee.itcollege.jejee.entities.Intsidendi_liik;
 import ee.itcollege.jejee.entities.Intsident;
 import ee.itcollege.jejee.entities.Piiriloik;
 import ee.itcollege.jejee.entities.Piirivalvur_intsidendis;
@@ -28,18 +25,9 @@ public class IntsidendidPiiriloigulController {
 	@PersistenceContext
 	EntityManager entityManager;
 	
-	
-//	@RequestMapping(value = "/{intsident_ID}", method = RequestMethod.GET)
-//    public String show(@PathVariable("intsident_ID") Long intsident_ID, Model uiModel) {
-//    	Intsident i = Intsident.findIntsident(intsident_ID);
-//    	System.out.println(i.getNimetus());
-//        uiModel.addAttribute("intsident", i);
-//        return "intsidendi_lisamine/update";
-//    }
 
 	@RequestMapping(params = "form", method = RequestMethod.GET)
     public String show(HttpServletRequest httpServletRequest, Model uiModel) {
-		System.out.println("joudis form()");
 		Piirivalvur_intsidendis_abi pi = new Piirivalvur_intsidendis_abi();
 		uiModel.addAttribute("piirivalvur_intsidendis_abi", pi);
 		uiModel.addAttribute("piirivalvur_intsidendis", Piirivalvur_intsidendis.findAllPiirivalvur_intsidendises());
@@ -51,27 +39,61 @@ public class IntsidendidPiiriloigulController {
 	
 	@RequestMapping(method = RequestMethod.GET)
     public String post(HttpServletRequest httpServletRequest, Model uiModel, Piirivalvur_intsidendis_abi pia, BindingResult result) {
-		System.out.println("joudis tulemus");
+		
 		uiModel.addAttribute("piiriloiks", Piiriloik.findAllPiiriloiks());
-		if(pia.getPiiriloik_ID()==0){ //--- valik (kuva kõik)
-			if(pia.getAlates()!=null && pia.getKuni()!=null){ //comboväärtus 0, kuupäevad olemas
-				uiModel.addAttribute("ints_piiriloigul_piirivalvur", Piirivalvur_intsidendis.findAllPiirivalvurIntsidentsWithInterval(pia.getAlates(), pia.getKuni()));
+		
+		List<Piirivalvur_intsidendis_abi> tmp;
+		
+		if(pia.getPiiriloik_ID()==0){ //--- valik (kuva kÃµik)
+			if(pia.getAlates()!=null && pia.getKuni()!=null){ //combovÃ¤Ã¤rtus 0, kuupÃ¤evad olemas
+				tmp = korrasta(Piirivalvur_intsidendis.findAllPiirivalvurIntsidentsWithInterval(pia.getAlates(), pia.getKuni()));
+				uiModel.addAttribute("ints_piiriloigul_piirivalvur", tmp);
 			}
-			else uiModel.addAttribute("ints_piiriloigul_piirivalvur", Piirivalvur_intsidendis.findAllPiirivalvur_intsidendises());
+			else{
+				tmp = korrasta(Piirivalvur_intsidendis.findAllPiirivalvur_intsidendises());
+				uiModel.addAttribute("ints_piiriloigul_piirivalvur", tmp);
+			}
 		}
 		else{
 			if(pia.getAlates()==null && pia.getKuni()==null){
-				uiModel.addAttribute("ints_piiriloigul_piirivalvur", Piirivalvur_intsidendis.findAllPiirivalvurIntsidentsForPiiriloik(Piiriloik.findPiiriloik(pia.getPiiriloik_ID())));
+				tmp = korrasta(Piirivalvur_intsidendis.findAllPiirivalvurIntsidentsForPiiriloik(Piiriloik.findPiiriloik(pia.getPiiriloik_ID())));
+				uiModel.addAttribute("ints_piiriloigul_piirivalvur", tmp);
 			}
-			else {				
-				uiModel.addAttribute("ints_piiriloigul_piirivalvur", Piirivalvur_intsidendis.findAllPiirivalvurIntsidentsForPiiriloikWithInterval(Piiriloik.findPiiriloik(pia.getPiiriloik_ID()), pia.getAlates(), pia.getKuni()));
+			else {	
+				tmp = korrasta(Piirivalvur_intsidendis.findAllPiirivalvurIntsidentsForPiiriloikWithInterval(Piiriloik.findPiiriloik(pia.getPiiriloik_ID()), pia.getAlates(), pia.getKuni()));				
+				uiModel.addAttribute("ints_piiriloigul_piirivalvur", tmp);
+				
 			}
 		}
 		
-	    //System.out.println("ALATES "+httpServletRequest.getParameter("alates"));
-		//System.out.println("ALATES2 "+pia.getAlates().toString());
-//		System.out.println(pia.getPiiriloik_ID().toString());
 		return "intsidendid_piiriloigul/ipiir";
+	}
+
+
+	private List<Piirivalvur_intsidendis_abi> korrasta(List<Piirivalvur_intsidendis> ints_arr) {
+		Piirivalvur_intsidendis_abi tmp;
+		Boolean olemas = false;
+		List<Piirivalvur_intsidendis_abi> tmp_arr = new ArrayList<Piirivalvur_intsidendis_abi>();
+		if(!ints_arr.isEmpty()){
+			for (Piirivalvur_intsidendis pi : ints_arr) {
+				olemas=false;
+				for (Piirivalvur_intsidendis_abi pia : tmp_arr) { 
+					if(pi.getPiirivalvur()==pia.getPiirivalvur()){ //kas sama piirivalvur juba olemas
+						pia.getPints_arr().add(pi);
+						olemas=true;
+					}
+					
+				}
+				
+				if(!olemas){
+					tmp = new Piirivalvur_intsidendis_abi();
+					tmp.setPiirivalvur(pi.getPiirivalvur());
+					tmp.getPints_arr().add(pi);
+					tmp_arr.add(tmp);
+				}
+			}
+		}
+		return tmp_arr;
 	}
 	
 	
