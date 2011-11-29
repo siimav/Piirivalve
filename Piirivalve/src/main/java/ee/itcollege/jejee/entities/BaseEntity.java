@@ -42,6 +42,8 @@ public class BaseEntity implements Serializable {
     @PrePersist
     public void recordCreated() {
         setAvatud(new Date());
+        setMuudetud(new Date());
+        setSuletud(new Date(253402232400000l));	  // 9999-12-31
     }
 
     @PreUpdate

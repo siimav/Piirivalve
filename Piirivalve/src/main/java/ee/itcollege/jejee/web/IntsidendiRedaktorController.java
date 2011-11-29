@@ -49,23 +49,32 @@ public class IntsidendiRedaktorController {
     public String lisaPiirivalvur(@PathVariable("intsident_ID") Long intsident_ID, Model uiModel) {
 		Intsident ints = Intsident.findIntsident(intsident_ID);
     	Collection<Piirivalvur> piirivalvurid = Piirivalvur.findAllPiirivalvuridNotInIntsident(ints);
-
+    	Piirivalvur_intsidendis pi = new Piirivalvur_intsidendis();
+    	
+    	uiModel.addAttribute("piirivalvur_intsidendis", pi);
     	uiModel.addAttribute("id", intsident_ID);
         uiModel.addAttribute("piirivalvurid", piirivalvurid);
+        uiModel.addAttribute("dateFormat", "yyyy-MM-dd");
         return "intsidendi_redaktor/add_piirivalvur";
     }
 	
 	
 	@RequestMapping (value = "/{intsident_ID}/lisa_piirivalvur", method = RequestMethod.POST)
-	public String submitCB(@PathVariable("intsident_ID") Long intsident_ID, @RequestParam("ids") String[] ids) {
-		Intsident ints = Intsident.findIntsident(intsident_ID);
-		for (int i = 0; i < ids.length; i++) {
-			Piirivalvur piirivalvur = Piirivalvur.findPiirivalvur(Long.parseLong(ids[i]));
-			Piirivalvur_intsidendis pi = new Piirivalvur_intsidendis();
-			pi.setIntsident(ints);
-			pi.setPiirivalvur(piirivalvur);
+	public String submitCB(@PathVariable("intsident_ID") Long intsident_ID, Piirivalvur_intsidendis pi, @RequestParam(value="ids", required=false) String[] ids) throws CloneNotSupportedException {
+		if(ids != null) {
+			Intsident ints = Intsident.findIntsident(intsident_ID);
+			if(ints != null) {
+				Piirivalvur_intsidendis tmp = (Piirivalvur_intsidendis) pi.clone();
+				for (int i = 0; i < ids.length; i++) {
+					Piirivalvur piirivalvur = Piirivalvur.findPiirivalvur(Long.parseLong(ids[i]));
+					tmp.setIntsident(ints);
+					tmp.setPiirivalvur(piirivalvur);
+					tmp.setAvaja("Fedja");	//TODO
+					tmp.setMuutja("Fedja");	//TODO
+				}
+				tmp.persist();
+			}
 		}
-		
 		
 	    return "redirect:/intsident/" + intsident_ID;
 	}

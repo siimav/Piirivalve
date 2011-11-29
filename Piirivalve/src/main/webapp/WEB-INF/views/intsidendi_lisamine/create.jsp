@@ -11,7 +11,7 @@
 <p>Intsidendid:</p>
 
 <c:forEach var="ints" items="${intsidents}">
-	<div>ID: ${ints.intsident_ID}</div>
+	<div>ID: ${ints.id}</div>
 	<div>Kood: ${ints.kood}</div>
 	<div>Nimetus: ${ints.nimetus}</div>
 	<div>Kirjeldus: ${ints.kirjeldus}</div>
@@ -19,7 +19,7 @@
 	<div>Algus: ${ints.toimumise_algus}</div>
 	<div>Lõpp: ${ints.toimumise_lopp}</div>
 	<div>Liik: ${ints.intsidendi_liik}</div>
-	<div>Piir: ${ints.piiriloik.piiriloik_ID}</div>
+	<div>Piir: ${ints.piiriloik.id}</div>
 	<br/>
 </c:forEach>
 

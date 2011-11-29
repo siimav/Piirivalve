@@ -17,7 +17,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 @RooEntity
 @Entity
-public class Piirivalvur_intsidendis extends BaseEntity {
+public class Piirivalvur_intsidendis extends BaseEntity implements Cloneable {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -96,6 +96,12 @@ public class Piirivalvur_intsidendis extends BaseEntity {
 
 	public void setVahtkond_intsidendis(Vahtkond_intsidendis vahtkond_intsidendis) {
 		this.vahtkond_intsidendis = vahtkond_intsidendis;
+	}
+	
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
 	}
 	
 	

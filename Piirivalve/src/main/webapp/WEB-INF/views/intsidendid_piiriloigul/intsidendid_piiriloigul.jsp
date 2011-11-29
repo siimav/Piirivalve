@@ -30,7 +30,7 @@
 						<fo:select path="piiriloik_ID" style="width:100px" itemLabel="Piirilõik">
 						<fo:option value="0">---</fo:option>
 						<c:forEach var="piir" items="${piiriloiks}">
-							<fo:option value="${piir.piiriloik_ID}">${piir.nimetus}</fo:option>
+							<fo:option value="${piir.id}">${piir.nimetus}</fo:option>
 						</c:forEach>
 						</fo:select>
 					</td>

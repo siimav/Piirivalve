@@ -38,6 +38,7 @@ public class IntsidendiRegistreerimineController {
 		uiModel.addAttribute("intsident", i);
 		uiModel.addAttribute("intsidendi_liiks", Intsidendi_liik.findAllIntsidendi_liiks());
 		uiModel.addAttribute("piiriloiks", Piiriloik.findAllPiiriloiks());
+		uiModel.addAttribute("intsident_toimumise_algus_date_format", "yyyy-MM-dd");
         return "intsidendi_registreerimine/view";
     }
 	
@@ -48,7 +49,7 @@ public class IntsidendiRegistreerimineController {
 		uiModel.addAttribute("piiriloiks", Piiriloik.findAllPiiriloiks());
 		
 		//lisab andmebaasi uue kirje
-		//intsident.persist(); 
+		intsident.persist(); 
 		
 		registrationValidation.validate(intsident, result);
         if (result.hasErrors()) {
