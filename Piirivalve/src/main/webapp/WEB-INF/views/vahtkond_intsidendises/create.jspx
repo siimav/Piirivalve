@@ -13,8 +13,8 @@
         <field:datetime dateTimePattern="${vahtkond_intsidendis_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_muudetud" required="true" z="vKb5OTwx3KQjt3nRQK0OiUNxyXc="/>
         <field:input field="sulgeja" id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_sulgeja" z="1NXIYLaehhWLVJAxjxveHTNz8FE="/>
         <field:datetime dateTimePattern="${vahtkond_intsidendis_suletud_date_format}" field="suletud" id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_suletud" required="true" z="feQp9DHLc7Wc2OOZ6O/+1O+5YBw="/>
-        <field:select field="intsident" id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_intsident" itemValue="intsident_ID" items="${intsidents}" path="/intsidents" required="true" z="lfvyrKaSuooAwIY4a998EHKXCQE="/>
-        <field:select field="vahtkond" id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_vahtkond" itemValue="vahtkond_ID" items="${vahtkonds}" path="/vahtkonds" required="true" z="vdQTsETrJEGAz6/Zv70cF+89d+8="/>
+        <field:select field="intsident" id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_intsident" itemValue="id" items="${intsidents}" path="/intsidents" required="true" z="Nul3UKEI8cnpdaH5wVYt5V9kkcw="/>
+        <field:select field="vahtkond" id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_vahtkond" itemValue="id" items="${vahtkonds}" path="/vahtkonds" required="true" z="M0620sQfwQlAiloVgeCUcoNZ+To="/>
         <field:simple field="piirivalvurid_intsidendis" id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_piirivalvurid_intsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Piirivalvur_intsidendis" z="TmQDizVR2hg6WLL1/4dc0RpNV2E="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_jejee_entities_Vahtkond_intsidendis" render="${not empty dependencies}" z="OurZ+gJkoBGfIUyJR7GDGqsBhbU="/>

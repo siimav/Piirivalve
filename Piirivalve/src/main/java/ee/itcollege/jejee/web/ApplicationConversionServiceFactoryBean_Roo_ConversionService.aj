@@ -71,14 +71,14 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.Isik_intsidendisConverter implements Converter<Isik_intsidendis, String> {
         public String convert(Isik_intsidendis isik_intsidendis) {
-            return new StringBuilder().append(isik_intsidendis.getAlates()).append(" ").append(isik_intsidendis.getKuni()).append(" ").append(isik_intsidendis.getKirjeldus()).append(" ").append(isik_intsidendis.getAvaja()).toString();
+            return new StringBuilder().append(isik_intsidendis.getAvaja()).append(" ").append(isik_intsidendis.getAvatud()).append(" ").append(isik_intsidendis.getMuutja()).append(" ").append(isik_intsidendis.getMuudetud()).toString();
         }
         
     }
     
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.ObjektConverter implements Converter<Objekt, String> {
         public String convert(Objekt objekt) {
-            return new StringBuilder().append(objekt.getNimetus()).append(" ").append(objekt.getAvaja()).append(" ").append(objekt.getAvatud()).append(" ").append(objekt.getSulgeja()).toString();
+            return new StringBuilder().append(objekt.getAvaja()).append(" ").append(objekt.getAvatud()).append(" ").append(objekt.getMuutja()).append(" ").append(objekt.getMuudetud()).toString();
         }
         
     }
@@ -92,7 +92,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.Objekti_liikConverter implements Converter<Objekti_liik, String> {
         public String convert(Objekti_liik objekti_liik) {
-            return new StringBuilder().append(objekti_liik.getKood()).append(" ").append(objekti_liik.getNimetus()).append(" ").append(objekti_liik.getAvaja()).append(" ").append(objekti_liik.getAvatud()).toString();
+            return new StringBuilder().append(objekti_liik.getAvaja()).append(" ").append(objekti_liik.getAvatud()).append(" ").append(objekti_liik.getMuutja()).append(" ").append(objekti_liik.getMuudetud()).toString();
         }
         
     }
@@ -106,70 +106,70 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.PiiripunktConverter implements Converter<Piiripunkt, String> {
         public String convert(Piiripunkt piiripunkt) {
-            return new StringBuilder().append(piiripunkt.getKood()).append(" ").append(piiripunkt.getNimetus()).append(" ").append(piiripunkt.getGPS_longitude()).append(" ").append(piiripunkt.getGPS_latitude()).toString();
+            return new StringBuilder().append(piiripunkt.getAvaja()).append(" ").append(piiripunkt.getAvatud()).append(" ").append(piiripunkt.getMuutja()).append(" ").append(piiripunkt.getMuudetud()).toString();
         }
         
     }
     
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.PiiririkkujaConverter implements Converter<Piiririkkuja, String> {
         public String convert(Piiririkkuja piiririkkuja) {
-            return new StringBuilder().append(piiririkkuja.getIsikukood()).append(" ").append(piiririkkuja.getEesnimi()).append(" ").append(piiririkkuja.getPerek_nimi()).append(" ").append(piiririkkuja.getSugu()).toString();
+            return new StringBuilder().append(piiririkkuja.getAvaja()).append(" ").append(piiririkkuja.getAvatud()).append(" ").append(piiririkkuja.getMuutja()).append(" ").append(piiririkkuja.getMuudetud()).toString();
         }
         
     }
     
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.PiirivalvurConverter implements Converter<Piirivalvur, String> {
         public String convert(Piirivalvur piirivalvur) {
-            return new StringBuilder().append(piirivalvur.getIsikukood()).append(" ").append(piirivalvur.getEesnimed()).append(" ").append(piirivalvur.getPerekonnanimi()).append(" ").append(piirivalvur.getSugu()).toString();
+            return new StringBuilder().append(piirivalvur.getAvaja()).append(" ").append(piirivalvur.getAvatud()).append(" ").append(piirivalvur.getMuutja()).append(" ").append(piirivalvur.getMuudetud()).toString();
         }
         
     }
     
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.Piirivalvur_intsidendisConverter implements Converter<Piirivalvur_intsidendis, String> {
         public String convert(Piirivalvur_intsidendis piirivalvur_intsidendis) {
-            return new StringBuilder().append(piirivalvur_intsidendis.getAlates()).append(" ").append(piirivalvur_intsidendis.getKuni()).append(" ").append(piirivalvur_intsidendis.getKirjeldus()).append(" ").append(piirivalvur_intsidendis.getKommentaar()).toString();
+            return new StringBuilder().append(piirivalvur_intsidendis.getAvaja()).append(" ").append(piirivalvur_intsidendis.getAvatud()).append(" ").append(piirivalvur_intsidendis.getMuutja()).append(" ").append(piirivalvur_intsidendis.getMuudetud()).toString();
         }
         
     }
     
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.Riigi_admin_yksusConverter implements Converter<Riigi_admin_yksus, String> {
         public String convert(Riigi_admin_yksus riigi_admin_yksus) {
-            return new StringBuilder().append(riigi_admin_yksus.getKood()).append(" ").append(riigi_admin_yksus.getNimetus()).append(" ").append(riigi_admin_yksus.getAlates()).append(" ").append(riigi_admin_yksus.getKuni()).toString();
+            return new StringBuilder().append(riigi_admin_yksus.getAvaja()).append(" ").append(riigi_admin_yksus.getAvatud()).append(" ").append(riigi_admin_yksus.getMuutja()).append(" ").append(riigi_admin_yksus.getMuudetud()).toString();
         }
         
     }
     
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.Riigi_admin_yksuse_liikConverter implements Converter<Riigi_admin_yksuse_liik, String> {
         public String convert(Riigi_admin_yksuse_liik riigi_admin_yksuse_liik) {
-            return new StringBuilder().append(riigi_admin_yksuse_liik.getKood()).append(" ").append(riigi_admin_yksuse_liik.getNimetus()).append(" ").append(riigi_admin_yksuse_liik.getAlates()).append(" ").append(riigi_admin_yksuse_liik.getKuni()).toString();
+            return new StringBuilder().append(riigi_admin_yksuse_liik.getAvaja()).append(" ").append(riigi_admin_yksuse_liik.getAvatud()).append(" ").append(riigi_admin_yksuse_liik.getMuutja()).append(" ").append(riigi_admin_yksuse_liik.getMuudetud()).toString();
         }
         
     }
     
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.SeadusConverter implements Converter<Seadus, String> {
         public String convert(Seadus seadus) {
-            return new StringBuilder().append(seadus.getKood()).append(" ").append(seadus.getNimetus()).append(" ").append(seadus.getKehtiv_alates()).append(" ").append(seadus.getKehtiv_kuni()).toString();
+            return new StringBuilder().append(seadus.getAvaja()).append(" ").append(seadus.getAvatud()).append(" ").append(seadus.getMuutja()).append(" ").append(seadus.getMuudetud()).toString();
         }
         
     }
     
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.VaeosaConverter implements Converter<Vaeosa, String> {
         public String convert(Vaeosa vaeosa) {
-            return new StringBuilder().append(vaeosa.getKood()).append(" ").append(vaeosa.getNimetus()).append(" ").append(vaeosa.getAlates()).append(" ").append(vaeosa.getKuni()).toString();
+            return new StringBuilder().append(vaeosa.getAvaja()).append(" ").append(vaeosa.getAvatud()).append(" ").append(vaeosa.getMuutja()).append(" ").append(vaeosa.getMuudetud()).toString();
         }
         
     }
     
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.VahtkondConverter implements Converter<Vahtkond, String> {
         public String convert(Vahtkond vahtkond) {
-            return new StringBuilder().append(vahtkond.getKood()).append(" ").append(vahtkond.getNimetus()).append(" ").append(vahtkond.getAlates()).append(" ").append(vahtkond.getKuni()).toString();
+            return new StringBuilder().append(vahtkond.getAvaja()).append(" ").append(vahtkond.getAvatud()).append(" ").append(vahtkond.getMuutja()).append(" ").append(vahtkond.getMuudetud()).toString();
         }
         
     }
     
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.Vahtkond_intsidendisConverter implements Converter<Vahtkond_intsidendis, String> {
         public String convert(Vahtkond_intsidendis vahtkond_intsidendis) {
-            return new StringBuilder().append(vahtkond_intsidendis.getAlates()).append(" ").append(vahtkond_intsidendis.getKuni()).append(" ").append(vahtkond_intsidendis.getKirjeldus()).append(" ").append(vahtkond_intsidendis.getKommentaar()).toString();
+            return new StringBuilder().append(vahtkond_intsidendis.getAvaja()).append(" ").append(vahtkond_intsidendis.getAvatud()).append(" ").append(vahtkond_intsidendis.getMuutja()).append(" ").append(vahtkond_intsidendis.getMuudetud()).toString();
         }
         
     }
@@ -183,7 +183,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.Vahtkonna_liigeConverter implements Converter<Vahtkonna_liige, String> {
         public String convert(Vahtkonna_liige vahtkonna_liige) {
-            return new StringBuilder().append(vahtkonna_liige.getAlates()).append(" ").append(vahtkonna_liige.getKuni()).append(" ").append(vahtkonna_liige.getAvaja()).append(" ").append(vahtkonna_liige.getAvatud()).toString();
+            return new StringBuilder().append(vahtkonna_liige.getAvaja()).append(" ").append(vahtkonna_liige.getAvatud()).append(" ").append(vahtkonna_liige.getMuutja()).append(" ").append(vahtkonna_liige.getMuudetud()).toString();
         }
         
     }

@@ -14,7 +14,7 @@
         <field:input field="muutja" id="c_ee_itcollege_jejee_entities_Riigi_admin_yksus_muutja" required="true" z="fvRhEKMHx2fy44d1MzioBEUTAoY="/>
         <field:datetime dateTimePattern="${riigi_admin_yksus_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_jejee_entities_Riigi_admin_yksus_muudetud" required="true" z="j76mZ+4wYIgyzXCOsopx0dINWCA="/>
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Riigi_admin_yksus_kommentaar" z="FXxl/WsLr/GQC0zXrnIjAZQPfjM="/>
-        <field:select field="riigi_admin_yksuse_liik" id="c_ee_itcollege_jejee_entities_Riigi_admin_yksus_riigi_admin_yksuse_liik" itemValue="riigi_admin_yksuse_liik_ID" items="${riigi_admin_yksuse_liiks}" path="/riigi_admin_yksuse_liiks" required="true" z="6jv6s3O2juXVnkbYt98UQ8nxgfc="/>
+        <field:select field="riigi_admin_yksuse_liik" id="c_ee_itcollege_jejee_entities_Riigi_admin_yksus_riigi_admin_yksuse_liik" itemValue="id" items="${riigi_admin_yksuse_liiks}" path="/riigi_admin_yksuse_liiks" required="true" z="UpWhRbfGrbCvpzV7kA42mg/+glY="/>
         <field:simple field="vaeosa" id="c_ee_itcollege_jejee_entities_Riigi_admin_yksus_vaeosa" messageCode="entity_reference_not_managed" messageCodeAttribute="Vaeosa" z="15jJQjB6aPcRK6bzuYN7iJW5znQ="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_jejee_entities_Riigi_admin_yksus" render="${not empty dependencies}" z="sAofq5OrGV6UlV51c/ikjB26D4A="/>

@@ -42,7 +42,7 @@ privileged aspect Riigi_admin_yksuse_liik_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Riigi_admin_yksuse_liik attached = Riigi_admin_yksuse_liik.findRiigi_admin_yksuse_liik(this.riigi_admin_yksuse_liik_ID);
+            Riigi_admin_yksuse_liik attached = Riigi_admin_yksuse_liik.findRiigi_admin_yksuse_liik(this.id);
             this.entityManager.remove(attached);
         }
     }
@@ -81,9 +81,9 @@ privileged aspect Riigi_admin_yksuse_liik_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Riigi_admin_yksuse_liik o", Riigi_admin_yksuse_liik.class).getResultList();
     }
     
-    public static Riigi_admin_yksuse_liik Riigi_admin_yksuse_liik.findRiigi_admin_yksuse_liik(Long riigi_admin_yksuse_liik_ID) {
-        if (riigi_admin_yksuse_liik_ID == null) return null;
-        return entityManager().find(Riigi_admin_yksuse_liik.class, riigi_admin_yksuse_liik_ID);
+    public static Riigi_admin_yksuse_liik Riigi_admin_yksuse_liik.findRiigi_admin_yksuse_liik(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Riigi_admin_yksuse_liik.class, id);
     }
     
     public static List<Riigi_admin_yksuse_liik> Riigi_admin_yksuse_liik.findRiigi_admin_yksuse_liikEntries(int firstResult, int maxResults) {

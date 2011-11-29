@@ -42,7 +42,7 @@ privileged aspect Vahtkonna_liige_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Vahtkonna_liige attached = Vahtkonna_liige.findVahtkonna_liige(this.vahtkonna_liige_ID);
+            Vahtkonna_liige attached = Vahtkonna_liige.findVahtkonna_liige(this.id);
             this.entityManager.remove(attached);
         }
     }
@@ -81,9 +81,9 @@ privileged aspect Vahtkonna_liige_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Vahtkonna_liige o", Vahtkonna_liige.class).getResultList();
     }
     
-    public static Vahtkonna_liige Vahtkonna_liige.findVahtkonna_liige(Long vahtkonna_liige_ID) {
-        if (vahtkonna_liige_ID == null) return null;
-        return entityManager().find(Vahtkonna_liige.class, vahtkonna_liige_ID);
+    public static Vahtkonna_liige Vahtkonna_liige.findVahtkonna_liige(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Vahtkonna_liige.class, id);
     }
     
     public static List<Vahtkonna_liige> Vahtkonna_liige.findVahtkonna_liigeEntries(int firstResult, int maxResults) {

@@ -42,7 +42,7 @@ privileged aspect Intsident_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Intsident attached = Intsident.findIntsident(this.intsident_ID);
+            Intsident attached = Intsident.findIntsident(this.id);
             this.entityManager.remove(attached);
         }
     }
@@ -81,9 +81,9 @@ privileged aspect Intsident_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Intsident o", Intsident.class).getResultList();
     }
     
-    public static Intsident Intsident.findIntsident(Long intsident_ID) {
-        if (intsident_ID == null) return null;
-        return entityManager().find(Intsident.class, intsident_ID);
+    public static Intsident Intsident.findIntsident(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Intsident.class, id);
     }
     
     public static List<Intsident> Intsident.findIntsidentEntries(int firstResult, int maxResults) {

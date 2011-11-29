@@ -13,8 +13,8 @@ privileged aspect Intsident_Roo_ToString {
         sb.append("Avatud: ").append(getAvatud()).append(", ");
         sb.append("GPS_latituud: ").append(getGPS_latituud()).append(", ");
         sb.append("GPS_longituud: ").append(getGPS_longituud()).append(", ");
+        sb.append("Id: ").append(getId()).append(", ");
         sb.append("Intsidendi_liik: ").append(getIntsidendi_liik()).append(", ");
-        sb.append("Intsident_ID: ").append(getIntsident_ID()).append(", ");
         sb.append("Isik_intsidendis: ").append(getIsik_intsidendis() == null ? "null" : getIsik_intsidendis().size()).append(", ");
         sb.append("Kirjeldus: ").append(getKirjeldus()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");

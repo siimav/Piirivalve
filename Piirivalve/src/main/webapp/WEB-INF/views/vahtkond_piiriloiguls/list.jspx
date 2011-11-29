@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_jejee_entities_Vahtkond_piiriloigul" items="${vahtkond_piiriloiguls}" z="utNh3Fcbl0R/L4oSOz7YsErXYEU=">
-        <table:table data="${vahtkond_piiriloiguls}" id="l_ee_itcollege_jejee_entities_Vahtkond_piiriloigul" path="/vahtkond_piiriloiguls" typeIdFieldName="vahtkond_piiriloigul_ID" z="pF/9hZrCeQyuD1F3vgqhqiPshwk=">
+        <table:table data="${vahtkond_piiriloiguls}" id="l_ee_itcollege_jejee_entities_Vahtkond_piiriloigul" path="/vahtkond_piiriloiguls" z="G8F8krOqOeW041Kw+BpvmdTk//g=">
             <table:column id="c_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_avaja" property="avaja" z="/ygx7LDQzkIz7sQodpWBobJpWkY="/>
             <table:column date="true" dateTimePattern="${vahtkond_piiriloigul_avatud_date_format}" id="c_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_avatud" property="avatud" z="oXoL/V8547gpVGbJzdgL1ph8TpU="/>
             <table:column id="c_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_muutja" property="muutja" z="eD55OH8xk8M7K7zyMCO7Hef/4TY="/>

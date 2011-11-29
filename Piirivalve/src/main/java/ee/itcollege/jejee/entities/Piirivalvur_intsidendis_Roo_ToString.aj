@@ -12,6 +12,7 @@ privileged aspect Piirivalvur_intsidendis_Roo_ToString {
         sb.append("Alates: ").append(getAlates()).append(", ");
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud()).append(", ");
+        sb.append("Id: ").append(getId()).append(", ");
         sb.append("Intsident: ").append(getIntsident()).append(", ");
         sb.append("Kirjeldus: ").append(getKirjeldus()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
@@ -19,7 +20,6 @@ privileged aspect Piirivalvur_intsidendis_Roo_ToString {
         sb.append("Muudetud: ").append(getMuudetud()).append(", ");
         sb.append("Muutja: ").append(getMuutja()).append(", ");
         sb.append("Piirivalvur: ").append(getPiirivalvur()).append(", ");
-        sb.append("Piirivalvur_intsidendis_ID: ").append(getPiirivalvur_intsidendis_ID()).append(", ");
         sb.append("Suletud: ").append(getSuletud()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
         sb.append("Vahtkond_intsidendis: ").append(getVahtkond_intsidendis()).append(", ");

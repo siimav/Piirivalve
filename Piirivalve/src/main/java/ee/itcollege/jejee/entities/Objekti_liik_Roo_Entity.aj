@@ -42,7 +42,7 @@ privileged aspect Objekti_liik_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Objekti_liik attached = Objekti_liik.findObjekti_liik(this.objekt_liik_ID);
+            Objekti_liik attached = Objekti_liik.findObjekti_liik(this.id);
             this.entityManager.remove(attached);
         }
     }
@@ -81,9 +81,9 @@ privileged aspect Objekti_liik_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Objekti_liik o", Objekti_liik.class).getResultList();
     }
     
-    public static Objekti_liik Objekti_liik.findObjekti_liik(Long objekt_liik_ID) {
-        if (objekt_liik_ID == null) return null;
-        return entityManager().find(Objekti_liik.class, objekt_liik_ID);
+    public static Objekti_liik Objekti_liik.findObjekti_liik(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Objekti_liik.class, id);
     }
     
     public static List<Objekti_liik> Objekti_liik.findObjekti_liikEntries(int firstResult, int maxResults) {

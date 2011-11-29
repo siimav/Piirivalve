@@ -42,7 +42,7 @@ privileged aspect Piirivalvur_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Piirivalvur attached = Piirivalvur.findPiirivalvur(this.piirivalvur_ID);
+            Piirivalvur attached = Piirivalvur.findPiirivalvur(this.id);
             this.entityManager.remove(attached);
         }
     }
@@ -81,9 +81,9 @@ privileged aspect Piirivalvur_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Piirivalvur o", Piirivalvur.class).getResultList();
     }
     
-    public static Piirivalvur Piirivalvur.findPiirivalvur(Long piirivalvur_ID) {
-        if (piirivalvur_ID == null) return null;
-        return entityManager().find(Piirivalvur.class, piirivalvur_ID);
+    public static Piirivalvur Piirivalvur.findPiirivalvur(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Piirivalvur.class, id);
     }
     
     public static List<Piirivalvur> Piirivalvur.findPiirivalvurEntries(int firstResult, int maxResults) {

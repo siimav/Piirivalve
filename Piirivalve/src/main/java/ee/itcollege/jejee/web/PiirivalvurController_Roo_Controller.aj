@@ -13,8 +13,6 @@ import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.joda.time.format.DateTimeFormat;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -36,7 +34,7 @@ privileged aspect PiirivalvurController_Roo_Controller {
         }
         uiModel.asMap().clear();
         piirivalvur.persist();
-        return "redirect:/piirivalvurs/" + encodeUrlPathSegment(piirivalvur.getPiirivalvur_ID().toString(), httpServletRequest);
+        return "redirect:/piirivalvurs/" + encodeUrlPathSegment(piirivalvur.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
@@ -46,11 +44,11 @@ privileged aspect PiirivalvurController_Roo_Controller {
         return "piirivalvurs/create";
     }
     
-    @RequestMapping(value = "/{piirivalvur_ID}", method = RequestMethod.GET)
-    public String PiirivalvurController.show(@PathVariable("piirivalvur_ID") Long piirivalvur_ID, Model uiModel) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String PiirivalvurController.show(@PathVariable("id") Long id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("piirivalvur", Piirivalvur.findPiirivalvur(piirivalvur_ID));
-        uiModel.addAttribute("itemId", piirivalvur_ID);
+        uiModel.addAttribute("piirivalvur", Piirivalvur.findPiirivalvur(id));
+        uiModel.addAttribute("itemId", id);
         return "piirivalvurs/show";
     }
     
@@ -77,19 +75,19 @@ privileged aspect PiirivalvurController_Roo_Controller {
         }
         uiModel.asMap().clear();
         piirivalvur.merge();
-        return "redirect:/piirivalvurs/" + encodeUrlPathSegment(piirivalvur.getPiirivalvur_ID().toString(), httpServletRequest);
+        return "redirect:/piirivalvurs/" + encodeUrlPathSegment(piirivalvur.getId().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{piirivalvur_ID}", params = "form", method = RequestMethod.GET)
-    public String PiirivalvurController.updateForm(@PathVariable("piirivalvur_ID") Long piirivalvur_ID, Model uiModel) {
-        uiModel.addAttribute("piirivalvur", Piirivalvur.findPiirivalvur(piirivalvur_ID));
+    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
+    public String PiirivalvurController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+        uiModel.addAttribute("piirivalvur", Piirivalvur.findPiirivalvur(id));
         addDateTimeFormatPatterns(uiModel);
         return "piirivalvurs/update";
     }
     
-    @RequestMapping(value = "/{piirivalvur_ID}", method = RequestMethod.DELETE)
-    public String PiirivalvurController.delete(@PathVariable("piirivalvur_ID") Long piirivalvur_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Piirivalvur.findPiirivalvur(piirivalvur_ID).remove();
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public String PiirivalvurController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Piirivalvur.findPiirivalvur(id).remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
@@ -112,9 +110,9 @@ privileged aspect PiirivalvurController_Roo_Controller {
     }
     
     void PiirivalvurController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("piirivalvur_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("piirivalvur_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("piirivalvur_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("piirivalvur_avatud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("piirivalvur_muudetud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("piirivalvur_suletud_date_format", "yyyy-MM-dd");
     }
     
     String PiirivalvurController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

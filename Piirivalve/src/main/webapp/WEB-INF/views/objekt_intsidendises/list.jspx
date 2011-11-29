@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_jejee_entities_Objekt_intsidendis" items="${objekt_intsidendises}" z="PKmVywzce3+XVckV1GDK13VHg8k=">
-        <table:table data="${objekt_intsidendises}" id="l_ee_itcollege_jejee_entities_Objekt_intsidendis" path="/objekt_intsidendises" typeIdFieldName="objekt_intsidendis_ID" z="sg9jdyZ8wLye16Ro5uS7lpfmzD0=">
+        <table:table data="${objekt_intsidendises}" id="l_ee_itcollege_jejee_entities_Objekt_intsidendis" path="/objekt_intsidendises" z="W7Hi0rcBIIk8XG51hrKq5hCZmic=">
             <table:column id="c_ee_itcollege_jejee_entities_Objekt_intsidendis_avaja" property="avaja" z="jiFEpxJEEuBblUWwqMjdeozmwsk="/>
             <table:column date="true" dateTimePattern="${objekt_intsidendis_avatud_date_format}" id="c_ee_itcollege_jejee_entities_Objekt_intsidendis_avatud" property="avatud" z="IeGo3WzanELdsUywJ5avx0Ay7f4="/>
             <table:column id="c_ee_itcollege_jejee_entities_Objekt_intsidendis_muutja" property="muutja" z="JKlzO+1dYwB/dmkyLdqm3irXGa8="/>

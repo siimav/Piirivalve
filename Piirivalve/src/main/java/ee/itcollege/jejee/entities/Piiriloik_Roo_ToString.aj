@@ -12,13 +12,13 @@ privileged aspect Piiriloik_Roo_ToString {
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud()).append(", ");
         sb.append("GPS_koordinaadid: ").append(getGPS_koordinaadid()).append(", ");
+        sb.append("Id: ").append(getId()).append(", ");
         sb.append("Intsident: ").append(getIntsident() == null ? "null" : getIntsident().size()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
         sb.append("Kood: ").append(getKood()).append(", ");
         sb.append("Muudetud: ").append(getMuudetud()).append(", ");
         sb.append("Muutja: ").append(getMuutja()).append(", ");
         sb.append("Nimetus: ").append(getNimetus()).append(", ");
-        sb.append("Piiriloik_ID: ").append(getPiiriloik_ID()).append(", ");
         sb.append("Suletud: ").append(getSuletud()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
         sb.append("Vahtkond_piiriloigul: ").append(getVahtkond_piiriloigul() == null ? "null" : getVahtkond_piiriloigul().size()).append(", ");

@@ -13,8 +13,6 @@ import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.joda.time.format.DateTimeFormat;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -36,7 +34,7 @@ privileged aspect Vahtkonna_liigeController_Roo_Controller {
         }
         uiModel.asMap().clear();
         vahtkonna_liige.persist();
-        return "redirect:/vahtkonna_liiges/" + encodeUrlPathSegment(vahtkonna_liige.getVahtkonna_liige_ID().toString(), httpServletRequest);
+        return "redirect:/vahtkonna_liiges/" + encodeUrlPathSegment(vahtkonna_liige.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
@@ -46,11 +44,11 @@ privileged aspect Vahtkonna_liigeController_Roo_Controller {
         return "vahtkonna_liiges/create";
     }
     
-    @RequestMapping(value = "/{vahtkonna_liige_ID}", method = RequestMethod.GET)
-    public String Vahtkonna_liigeController.show(@PathVariable("vahtkonna_liige_ID") Long vahtkonna_liige_ID, Model uiModel) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String Vahtkonna_liigeController.show(@PathVariable("id") Long id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("vahtkonna_liige", Vahtkonna_liige.findVahtkonna_liige(vahtkonna_liige_ID));
-        uiModel.addAttribute("itemId", vahtkonna_liige_ID);
+        uiModel.addAttribute("vahtkonna_liige", Vahtkonna_liige.findVahtkonna_liige(id));
+        uiModel.addAttribute("itemId", id);
         return "vahtkonna_liiges/show";
     }
     
@@ -77,19 +75,19 @@ privileged aspect Vahtkonna_liigeController_Roo_Controller {
         }
         uiModel.asMap().clear();
         vahtkonna_liige.merge();
-        return "redirect:/vahtkonna_liiges/" + encodeUrlPathSegment(vahtkonna_liige.getVahtkonna_liige_ID().toString(), httpServletRequest);
+        return "redirect:/vahtkonna_liiges/" + encodeUrlPathSegment(vahtkonna_liige.getId().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{vahtkonna_liige_ID}", params = "form", method = RequestMethod.GET)
-    public String Vahtkonna_liigeController.updateForm(@PathVariable("vahtkonna_liige_ID") Long vahtkonna_liige_ID, Model uiModel) {
-        uiModel.addAttribute("vahtkonna_liige", Vahtkonna_liige.findVahtkonna_liige(vahtkonna_liige_ID));
+    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
+    public String Vahtkonna_liigeController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+        uiModel.addAttribute("vahtkonna_liige", Vahtkonna_liige.findVahtkonna_liige(id));
         addDateTimeFormatPatterns(uiModel);
         return "vahtkonna_liiges/update";
     }
     
-    @RequestMapping(value = "/{vahtkonna_liige_ID}", method = RequestMethod.DELETE)
-    public String Vahtkonna_liigeController.delete(@PathVariable("vahtkonna_liige_ID") Long vahtkonna_liige_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Vahtkonna_liige.findVahtkonna_liige(vahtkonna_liige_ID).remove();
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public String Vahtkonna_liigeController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Vahtkonna_liige.findVahtkonna_liige(id).remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
@@ -112,11 +110,11 @@ privileged aspect Vahtkonna_liigeController_Roo_Controller {
     }
     
     void Vahtkonna_liigeController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("vahtkonna_liige_alates_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vahtkonna_liige_kuni_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vahtkonna_liige_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vahtkonna_liige_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vahtkonna_liige_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("vahtkonna_liige_avatud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("vahtkonna_liige_muudetud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("vahtkonna_liige_suletud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("vahtkonna_liige_alates_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("vahtkonna_liige_kuni_date_format", "yyyy-MM-dd");
     }
     
     String Vahtkonna_liigeController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

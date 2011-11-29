@@ -3,13 +3,13 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_jejee_entities_Objekt" items="${objekts}" z="0kubmX2STJ8qaRyXO6hzPbHmjkQ=">
-        <table:table data="${objekts}" id="l_ee_itcollege_jejee_entities_Objekt" path="/objekts" typeIdFieldName="objekt_ID" z="Wl3DaGLZxaxXt691uh3rtAL5bi0=">
-            <table:column id="c_ee_itcollege_jejee_entities_Objekt_nimetus" property="nimetus" z="C09oszceUMdsRN38tS6PxELgKgE="/>
+        <table:table data="${objekts}" id="l_ee_itcollege_jejee_entities_Objekt" path="/objekts" z="KAB+Ef14jTykkCuQp+OOjpXu0/c=">
             <table:column id="c_ee_itcollege_jejee_entities_Objekt_avaja" property="avaja" z="u1W2G4WRGKp6KBgN0e64Os/gOqM="/>
             <table:column date="true" dateTimePattern="${objekt_avatud_date_format}" id="c_ee_itcollege_jejee_entities_Objekt_avatud" property="avatud" z="HjWBR3CcLl4VXUMLmGvpnQLQKYk="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Objekt_muutja" property="muutja" z="Z4vgBH7KA4+6zn3pOOqU/3pYFUI="/>
+            <table:column date="true" dateTimePattern="${objekt_muudetud_date_format}" id="c_ee_itcollege_jejee_entities_Objekt_muudetud" property="muudetud" z="blMGJCUVB7RIbsxtCHyuyTS2v0I="/>
             <table:column id="c_ee_itcollege_jejee_entities_Objekt_sulgeja" property="sulgeja" z="loOZtc1U1qlGl+seRbLXsYT+8xk="/>
             <table:column date="true" dateTimePattern="${objekt_suletud_date_format}" id="c_ee_itcollege_jejee_entities_Objekt_suletud" property="suletud" z="BCNXuCk+0RjDLyu0ip+FX5+rYh4="/>
-            <table:column id="c_ee_itcollege_jejee_entities_Objekt_muutja" property="muutja" z="Z4vgBH7KA4+6zn3pOOqU/3pYFUI="/>
         </table:table>
     </page:list>
 </div>

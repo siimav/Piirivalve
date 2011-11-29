@@ -3,13 +3,13 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_jejee_entities_Piiripunkt" items="${piiripunkts}" z="h07CQoSiZhSoMp4fzJrNiuK/PlY=">
-        <table:table data="${piiripunkts}" id="l_ee_itcollege_jejee_entities_Piiripunkt" path="/piiripunkts" typeIdFieldName="piiripunkt_ID" z="fHTPKidbzvRJVLOtPlo86WRg2Gw=">
-            <table:column id="c_ee_itcollege_jejee_entities_Piiripunkt_kood" property="kood" z="zPrvqn6r4uFA4ANMC/OKHh0VIpw="/>
-            <table:column id="c_ee_itcollege_jejee_entities_Piiripunkt_nimetus" property="nimetus" z="dCM+FUGc+B7xjrnV5m75onXdVjA="/>
-            <table:column id="c_ee_itcollege_jejee_entities_Piiripunkt_GPS_longitude" property="GPS_longitude" z="uO/U2u7uJaZ/VjkR0IoKtIfL8Nw="/>
-            <table:column id="c_ee_itcollege_jejee_entities_Piiripunkt_GPS_latitude" property="GPS_latitude" z="Azxki24Qfq6CtSxA+dOADZ5tUtg="/>
-            <table:column id="c_ee_itcollege_jejee_entities_Piiripunkt_korgus_merepinnast" property="korgus_merepinnast" z="xAXca/aT5QH0IiAhZspy5NK4KHk="/>
-            <table:column date="true" dateTimePattern="${piiripunkt_alates_date_format}" id="c_ee_itcollege_jejee_entities_Piiripunkt_alates" property="alates" z="Lznlhnbg5XCiSDsaThjbWXkJYO0="/>
+        <table:table data="${piiripunkts}" id="l_ee_itcollege_jejee_entities_Piiripunkt" path="/piiripunkts" z="6JBMC3vmFOD5xn+qnq5hd++BPI4=">
+            <table:column id="c_ee_itcollege_jejee_entities_Piiripunkt_avaja" property="avaja" z="BkdtErpDjCM74rY0Ci7p+C1qpz0="/>
+            <table:column date="true" dateTimePattern="${piiripunkt_avatud_date_format}" id="c_ee_itcollege_jejee_entities_Piiripunkt_avatud" property="avatud" z="ACRD2AghK1rsdnWwc7/Gbd8nJek="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Piiripunkt_muutja" property="muutja" z="X6ECKalbCJVBW6gw9SQ57XQ8xnU="/>
+            <table:column date="true" dateTimePattern="${piiripunkt_muudetud_date_format}" id="c_ee_itcollege_jejee_entities_Piiripunkt_muudetud" property="muudetud" z="z20GXiG7mdrXTt+fybyDK1zGbaU="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Piiripunkt_sulgeja" property="sulgeja" z="FSbdEwsDlnAHe0cohM122PnsHC4="/>
+            <table:column date="true" dateTimePattern="${piiripunkt_suletud_date_format}" id="c_ee_itcollege_jejee_entities_Piiripunkt_suletud" property="suletud" z="Dh5nXcqdzuUwylyvhICnDGCTk6g="/>
         </table:table>
     </page:list>
 </div>

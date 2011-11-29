@@ -3,13 +3,13 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik" items="${riigi_admin_yksuse_liiks}" z="e9DAEDQ+fj8dmWMgHFswpH8L7AY=">
-        <table:table data="${riigi_admin_yksuse_liiks}" id="l_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik" path="/riigi_admin_yksuse_liiks" typeIdFieldName="riigi_admin_yksuse_liik_ID" z="Ch0Y3V7WLEj6CeXQvUn9Sd+bdiQ=">
-            <table:column id="c_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_kood" property="kood" z="x9FMiIJYXdxmeiJSU+iAwGncMRA="/>
-            <table:column id="c_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_nimetus" property="nimetus" z="mC97Z+7L2BTU3A2fMfTPSJxG9QE="/>
-            <table:column date="true" dateTimePattern="${riigi_admin_yksuse_liik_alates_date_format}" id="c_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_alates" property="alates" z="ERLanMHfnzkkCUXekbaMbuJVRIk="/>
-            <table:column date="true" dateTimePattern="${riigi_admin_yksuse_liik_kuni_date_format}" id="c_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_kuni" property="kuni" z="3qfqiBeqdcrARyc5rJiiGpymCuc="/>
+        <table:table data="${riigi_admin_yksuse_liiks}" id="l_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik" path="/riigi_admin_yksuse_liiks" z="3JvRTCcdh6C96c+73obbvG17slk=">
             <table:column id="c_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_avaja" property="avaja" z="UDsc33+oVqOj3zO50TxInd64mRQ="/>
             <table:column date="true" dateTimePattern="${riigi_admin_yksuse_liik_avatud_date_format}" id="c_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_avatud" property="avatud" z="yIF4nPO1nqvJJhLaTfUqLN4nMNw="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_muutja" property="muutja" z="cwq7OlXGtYGGL8O5BHcCvkH6zXs="/>
+            <table:column date="true" dateTimePattern="${riigi_admin_yksuse_liik_muudetud_date_format}" id="c_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_muudetud" property="muudetud" z="1s4coLktA46ccqSeJH3jMkuGl6w="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_sulgeja" property="sulgeja" z="sY1OLNsbC4ppJbkX1TdgdRqiPRw="/>
+            <table:column date="true" dateTimePattern="${riigi_admin_yksuse_liik_suletud_date_format}" id="c_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_suletud" property="suletud" z="RZ4BOG8nRgzOf+F2xZfISzJY2DQ="/>
         </table:table>
     </page:list>
 </div>

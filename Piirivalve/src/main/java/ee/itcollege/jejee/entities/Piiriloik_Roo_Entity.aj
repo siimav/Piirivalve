@@ -42,7 +42,7 @@ privileged aspect Piiriloik_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Piiriloik attached = Piiriloik.findPiiriloik(this.piiriloik_ID);
+            Piiriloik attached = Piiriloik.findPiiriloik(this.id);
             this.entityManager.remove(attached);
         }
     }
@@ -81,9 +81,9 @@ privileged aspect Piiriloik_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Piiriloik o", Piiriloik.class).getResultList();
     }
     
-    public static Piiriloik Piiriloik.findPiiriloik(Long piiriloik_ID) {
-        if (piiriloik_ID == null) return null;
-        return entityManager().find(Piiriloik.class, piiriloik_ID);
+    public static Piiriloik Piiriloik.findPiiriloik(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Piiriloik.class, id);
     }
     
     public static List<Piiriloik> Piiriloik.findPiiriloikEntries(int firstResult, int maxResults) {

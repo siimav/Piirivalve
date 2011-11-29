@@ -3,13 +3,13 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_jejee_entities_Vaeosa" items="${vaeosas}" z="iqzq5hbmGUPcXAylveVl/cKhYcQ=">
-        <table:table data="${vaeosas}" id="l_ee_itcollege_jejee_entities_Vaeosa" path="/vaeosas" typeIdFieldName="vaeosa_ID" z="v097POu50CfVOXiDgczgOH3zmgM=">
-            <table:column id="c_ee_itcollege_jejee_entities_Vaeosa_kood" property="kood" z="prthaEuGB/WQ6mdU1q8H+p0atmQ="/>
-            <table:column id="c_ee_itcollege_jejee_entities_Vaeosa_nimetus" property="nimetus" z="7nhqhQLftboNKjCGsKzpxHOVLW0="/>
-            <table:column date="true" dateTimePattern="${vaeosa_alates_date_format}" id="c_ee_itcollege_jejee_entities_Vaeosa_alates" property="alates" z="fOkNZwPWUQkEuDL92SsVDpMol8k="/>
-            <table:column date="true" dateTimePattern="${vaeosa_kuni_date_format}" id="c_ee_itcollege_jejee_entities_Vaeosa_kuni" property="kuni" z="Xm91I8eYbONrlVYCcDANWl2cK38="/>
+        <table:table data="${vaeosas}" id="l_ee_itcollege_jejee_entities_Vaeosa" path="/vaeosas" z="C6Xmx6DeCiCSUXXCRv9wTCyBD1A=">
             <table:column id="c_ee_itcollege_jejee_entities_Vaeosa_avaja" property="avaja" z="Y7SVZzna2kViYOEd7RbPwkmejhQ="/>
             <table:column date="true" dateTimePattern="${vaeosa_avatud_date_format}" id="c_ee_itcollege_jejee_entities_Vaeosa_avatud" property="avatud" z="MvtHiBr3IXsOJU+HRq42ugVzG4k="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Vaeosa_muutja" property="muutja" z="vYgiCql9e6TMAhWJZ6TTN0ISvPQ="/>
+            <table:column date="true" dateTimePattern="${vaeosa_muudetud_date_format}" id="c_ee_itcollege_jejee_entities_Vaeosa_muudetud" property="muudetud" z="4uGQu+13TJTBzm9tLi6YE3UYnVQ="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Vaeosa_sulgeja" property="sulgeja" z="3OmhEtKvsICoq2WcswINQv8rIQw="/>
+            <table:column date="true" dateTimePattern="${vaeosa_suletud_date_format}" id="c_ee_itcollege_jejee_entities_Vaeosa_suletud" property="suletud" z="YI1ihWKv8yJHm1kzJt7SR4frJxQ="/>
         </table:table>
     </page:list>
 </div>

@@ -1,56 +1,27 @@
 package ee.itcollege.jejee.entities;
 
-import java.io.Serializable;
-import java.util.Date;
+import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Query;
-import javax.validation.constraints.NotNull;
 
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
-import ee.itcollege.jejee.entities.Vahtkonna_liige;
-import javax.persistence.OneToMany;
-import java.util.Collection;
 
-/**
- * Entity implementation class for Entity: Piirivalvur
- * 
- */
 @Entity
 @RooEntity
 @RooToString
-public class Piirivalvur implements Serializable {
+public class Piirivalvur extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Id
-	private Long piirivalvur_ID;
 	private String isikukood;
 	private String eesnimed;
 	private String perekonnanimi;
 	private String sugu;
 	private String soduri_kood;
-	@NotNull
-	private String avaja;
-	@DateTimeFormat(style = "M-")
-	@NotNull
-	private Date avatud;
-	private String sulgeja;
-	@DateTimeFormat(style = "M-")
-	@NotNull
-	private Date suletud;
-	@NotNull
-	private String muutja;
-	@DateTimeFormat(style = "M-")
-	@NotNull
-	private Date muudetud;
 	private String kommentaar;
 
 	@OneToMany(mappedBy = "piirivalvur")
@@ -62,14 +33,6 @@ public class Piirivalvur implements Serializable {
 	
 	public Piirivalvur() {
 		super();
-	}
-
-	public Long getPiirivalvur_ID() {
-		return this.piirivalvur_ID;
-	}
-
-	public void setPiirivalvur_ID(Long piirivalvur_ID) {
-		this.piirivalvur_ID = piirivalvur_ID;
 	}
 
 	public String getIsikukood() {
@@ -110,54 +73,6 @@ public class Piirivalvur implements Serializable {
 
 	public void setSoduri_kood(String soduri_kood) {
 		this.soduri_kood = soduri_kood;
-	}
-
-	public String getAvaja() {
-		return this.avaja;
-	}
-
-	public void setAvaja(String avaja) {
-		this.avaja = avaja;
-	}
-
-	public Date getAvatud() {
-		return this.avatud;
-	}
-
-	public void setAvatud(Date avatud) {
-		this.avatud = avatud;
-	}
-
-	public String getSulgeja() {
-		return this.sulgeja;
-	}
-
-	public void setSulgeja(String sulgeja) {
-		this.sulgeja = sulgeja;
-	}
-
-	public Date getSuletud() {
-		return this.suletud;
-	}
-
-	public void setSuletud(Date suletud) {
-		this.suletud = suletud;
-	}
-
-	public String getMuutja() {
-		return this.muutja;
-	}
-
-	public void setMuutja(String muutja) {
-		this.muutja = muutja;
-	}
-
-	public Date getMuudetud() {
-		return this.muudetud;
-	}
-
-	public void setMuudetud(Date muudetud) {
-		this.muudetud = muudetud;
 	}
 
 	public String getKommentaar() {

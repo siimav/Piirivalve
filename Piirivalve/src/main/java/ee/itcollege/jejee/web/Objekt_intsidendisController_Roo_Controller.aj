@@ -15,8 +15,6 @@ import java.util.Collection;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.joda.time.format.DateTimeFormat;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -38,7 +36,7 @@ privileged aspect Objekt_intsidendisController_Roo_Controller {
         }
         uiModel.asMap().clear();
         objekt_intsidendis.persist();
-        return "redirect:/objekt_intsidendises/" + encodeUrlPathSegment(objekt_intsidendis.getObjekt_intsidendis_ID().toString(), httpServletRequest);
+        return "redirect:/objekt_intsidendises/" + encodeUrlPathSegment(objekt_intsidendis.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
@@ -56,11 +54,11 @@ privileged aspect Objekt_intsidendisController_Roo_Controller {
         return "objekt_intsidendises/create";
     }
     
-    @RequestMapping(value = "/{objekt_intsidendis_ID}", method = RequestMethod.GET)
-    public String Objekt_intsidendisController.show(@PathVariable("objekt_intsidendis_ID") Long objekt_intsidendis_ID, Model uiModel) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String Objekt_intsidendisController.show(@PathVariable("id") Long id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("objekt_intsidendis", Objekt_intsidendis.findObjekt_intsidendis(objekt_intsidendis_ID));
-        uiModel.addAttribute("itemId", objekt_intsidendis_ID);
+        uiModel.addAttribute("objekt_intsidendis", Objekt_intsidendis.findObjekt_intsidendis(id));
+        uiModel.addAttribute("itemId", id);
         return "objekt_intsidendises/show";
     }
     
@@ -87,19 +85,19 @@ privileged aspect Objekt_intsidendisController_Roo_Controller {
         }
         uiModel.asMap().clear();
         objekt_intsidendis.merge();
-        return "redirect:/objekt_intsidendises/" + encodeUrlPathSegment(objekt_intsidendis.getObjekt_intsidendis_ID().toString(), httpServletRequest);
+        return "redirect:/objekt_intsidendises/" + encodeUrlPathSegment(objekt_intsidendis.getId().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{objekt_intsidendis_ID}", params = "form", method = RequestMethod.GET)
-    public String Objekt_intsidendisController.updateForm(@PathVariable("objekt_intsidendis_ID") Long objekt_intsidendis_ID, Model uiModel) {
-        uiModel.addAttribute("objekt_intsidendis", Objekt_intsidendis.findObjekt_intsidendis(objekt_intsidendis_ID));
+    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
+    public String Objekt_intsidendisController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+        uiModel.addAttribute("objekt_intsidendis", Objekt_intsidendis.findObjekt_intsidendis(id));
         addDateTimeFormatPatterns(uiModel);
         return "objekt_intsidendises/update";
     }
     
-    @RequestMapping(value = "/{objekt_intsidendis_ID}", method = RequestMethod.DELETE)
-    public String Objekt_intsidendisController.delete(@PathVariable("objekt_intsidendis_ID") Long objekt_intsidendis_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Objekt_intsidendis.findObjekt_intsidendis(objekt_intsidendis_ID).remove();
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public String Objekt_intsidendisController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Objekt_intsidendis.findObjekt_intsidendis(id).remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
@@ -122,11 +120,11 @@ privileged aspect Objekt_intsidendisController_Roo_Controller {
     }
     
     void Objekt_intsidendisController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("objekt_intsidendis_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("objekt_intsidendis_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("objekt_intsidendis_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("objekt_intsidendis_alates_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("objekt_intsidendis_kuni_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("objekt_intsidendis_avatud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("objekt_intsidendis_muudetud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("objekt_intsidendis_suletud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("objekt_intsidendis_alates_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("objekt_intsidendis_kuni_date_format", "yyyy-MM-dd");
     }
     
     String Objekt_intsidendisController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

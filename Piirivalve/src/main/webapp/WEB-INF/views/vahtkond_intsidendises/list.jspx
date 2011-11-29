@@ -3,13 +3,13 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_jejee_entities_Vahtkond_intsidendis" items="${vahtkond_intsidendises}" z="X9qtI+5Y7nkL+5E5uZrfbV3JQ/c=">
-        <table:table data="${vahtkond_intsidendises}" id="l_ee_itcollege_jejee_entities_Vahtkond_intsidendis" path="/vahtkond_intsidendises" typeIdFieldName="piirivalvur_intsidendis_ID" z="IDQ9s8iyaqemObJKFrq0U13Q/Us=">
-            <table:column date="true" dateTimePattern="${vahtkond_intsidendis_alates_date_format}" id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_alates" property="alates" z="d4nqL7G+HZu1hVnsozSKmsx5xXo="/>
-            <table:column date="true" dateTimePattern="${vahtkond_intsidendis_kuni_date_format}" id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_kuni" property="kuni" z="kXbzZ85QVa8GEwS5Oh77YN1NiR4="/>
-            <table:column id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_kirjeldus" property="kirjeldus" z="hNLrKMaByGIYjoeT80H7hS0J3iE="/>
-            <table:column id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_kommentaar" property="kommentaar" z="Yjh7/XqgVXeJ3VgxB1RrAiRYr6E="/>
+        <table:table data="${vahtkond_intsidendises}" id="l_ee_itcollege_jejee_entities_Vahtkond_intsidendis" path="/vahtkond_intsidendises" z="bWQ/6JYLLllkWKrcO94edToE2eU=">
             <table:column id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_avaja" property="avaja" z="uzwusjshE+tK5vhCHHMnYXMiNbM="/>
             <table:column date="true" dateTimePattern="${vahtkond_intsidendis_avatud_date_format}" id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_avatud" property="avatud" z="fPzPR3tlM1ghLbyV1Tp+VCbrMDs="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_muutja" property="muutja" z="lpYgEvh1U+qdU2X8cPGI/Q2EzeE="/>
+            <table:column date="true" dateTimePattern="${vahtkond_intsidendis_muudetud_date_format}" id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_muudetud" property="muudetud" z="KF7kaOaZUejpdT+Ci8+hDdmY6Os="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_sulgeja" property="sulgeja" z="VrGf0ha85aQPZO98Y2yVx+Zb3Nk="/>
+            <table:column date="true" dateTimePattern="${vahtkond_intsidendis_suletud_date_format}" id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_suletud" property="suletud" z="TyikembPahfRekejCwpvNQentIQ="/>
         </table:table>
     </page:list>
 </div>

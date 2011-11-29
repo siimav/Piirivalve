@@ -16,8 +16,6 @@ import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.joda.time.format.DateTimeFormat;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -39,7 +37,7 @@ privileged aspect VahtkondController_Roo_Controller {
         }
         uiModel.asMap().clear();
         vahtkond.persist();
-        return "redirect:/vahtkonds/" + encodeUrlPathSegment(vahtkond.getVahtkond_ID().toString(), httpServletRequest);
+        return "redirect:/vahtkonds/" + encodeUrlPathSegment(vahtkond.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
@@ -49,11 +47,11 @@ privileged aspect VahtkondController_Roo_Controller {
         return "vahtkonds/create";
     }
     
-    @RequestMapping(value = "/{vahtkond_ID}", method = RequestMethod.GET)
-    public String VahtkondController.show(@PathVariable("vahtkond_ID") Long vahtkond_ID, Model uiModel) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String VahtkondController.show(@PathVariable("id") Long id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("vahtkond", Vahtkond.findVahtkond(vahtkond_ID));
-        uiModel.addAttribute("itemId", vahtkond_ID);
+        uiModel.addAttribute("vahtkond", Vahtkond.findVahtkond(id));
+        uiModel.addAttribute("itemId", id);
         return "vahtkonds/show";
     }
     
@@ -80,19 +78,19 @@ privileged aspect VahtkondController_Roo_Controller {
         }
         uiModel.asMap().clear();
         vahtkond.merge();
-        return "redirect:/vahtkonds/" + encodeUrlPathSegment(vahtkond.getVahtkond_ID().toString(), httpServletRequest);
+        return "redirect:/vahtkonds/" + encodeUrlPathSegment(vahtkond.getId().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{vahtkond_ID}", params = "form", method = RequestMethod.GET)
-    public String VahtkondController.updateForm(@PathVariable("vahtkond_ID") Long vahtkond_ID, Model uiModel) {
-        uiModel.addAttribute("vahtkond", Vahtkond.findVahtkond(vahtkond_ID));
+    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
+    public String VahtkondController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+        uiModel.addAttribute("vahtkond", Vahtkond.findVahtkond(id));
         addDateTimeFormatPatterns(uiModel);
         return "vahtkonds/update";
     }
     
-    @RequestMapping(value = "/{vahtkond_ID}", method = RequestMethod.DELETE)
-    public String VahtkondController.delete(@PathVariable("vahtkond_ID") Long vahtkond_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Vahtkond.findVahtkond(vahtkond_ID).remove();
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public String VahtkondController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Vahtkond.findVahtkond(id).remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
@@ -130,11 +128,11 @@ privileged aspect VahtkondController_Roo_Controller {
     }
     
     void VahtkondController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("vahtkond_alates_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vahtkond_kuni_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vahtkond_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vahtkond_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vahtkond_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("vahtkond_avatud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("vahtkond_muudetud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("vahtkond_suletud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("vahtkond_alates_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("vahtkond_kuni_date_format", "yyyy-MM-dd");
     }
     
     String VahtkondController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

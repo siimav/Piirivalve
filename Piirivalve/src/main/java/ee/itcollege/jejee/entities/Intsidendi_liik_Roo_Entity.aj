@@ -42,7 +42,7 @@ privileged aspect Intsidendi_liik_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Intsidendi_liik attached = Intsidendi_liik.findIntsidendi_liik(this.intsidendi_liik_ID);
+            Intsidendi_liik attached = Intsidendi_liik.findIntsidendi_liik(this.id);
             this.entityManager.remove(attached);
         }
     }
@@ -81,9 +81,9 @@ privileged aspect Intsidendi_liik_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Intsidendi_liik o", Intsidendi_liik.class).getResultList();
     }
     
-    public static Intsidendi_liik Intsidendi_liik.findIntsidendi_liik(Long intsidendi_liik_ID) {
-        if (intsidendi_liik_ID == null) return null;
-        return entityManager().find(Intsidendi_liik.class, intsidendi_liik_ID);
+    public static Intsidendi_liik Intsidendi_liik.findIntsidendi_liik(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Intsidendi_liik.class, id);
     }
     
     public static List<Intsidendi_liik> Intsidendi_liik.findIntsidendi_liikEntries(int firstResult, int maxResults) {

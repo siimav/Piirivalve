@@ -2,20 +2,18 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_ee_itcollege_jejee_entities_Isik_intsidendis" idField="isik_intsidendis_ID" modelAttribute="isik_intsidendis" path="/isik_intsidendises" versionField="Version" z="JBoihKVTQTlgIUG+TX+Y6ryJOPA=">
+    <form:update id="fu_ee_itcollege_jejee_entities_Isik_intsidendis" modelAttribute="isik_intsidendis" path="/isik_intsidendises" versionField="Version" z="/yyzLm37hZgCnViedUfOH1yxMrw=">
+        <field:input field="avaja" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_avaja" required="true" z="ic26NAdgOnT04wTE/yRvCWYeAPY="/>
+        <field:datetime dateTimePattern="${isik_intsidendis_avatud_date_format}" field="avatud" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_avatud" required="true" z="hZxJB/9Q4ISwbTIAaK13/y4e5AA="/>
+        <field:input field="muutja" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_muutja" required="true" z="mWqsfcNlOMHq0NViMtL2ctJGbP8="/>
+        <field:datetime dateTimePattern="${isik_intsidendis_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_muudetud" required="true" z="FI81LXuA8n82nBIpwJT32d4aCQI="/>
+        <field:input field="sulgeja" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_sulgeja" z="Ztj3ZjHFyuoeHEf2sA0NreUl2T4="/>
+        <field:datetime dateTimePattern="${isik_intsidendis_suletud_date_format}" field="suletud" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_suletud" required="true" z="+yFtYd7dpobSUnHy9pPza04StzA="/>
         <field:datetime dateTimePattern="${isik_intsidendis_alates_date_format}" field="alates" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_alates" required="true" z="qqOZozxHxhV4nklL9YhLg4FKYao="/>
         <field:datetime dateTimePattern="${isik_intsidendis_kuni_date_format}" field="kuni" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_kuni" required="true" z="Ib/mUa1vnAN4c8kB/Woaji3eq5g="/>
         <field:input field="kirjeldus" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_kirjeldus" required="true" z="sFYNpFIRMILeYzLzxeBARyCgzg8="/>
-        <field:input field="intsident_ID" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_intsident_ID" z="wwoaFuE9yrWPP1GupKiUt2OQySo="/>
-        <field:input field="piiririkkuja_ID" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_piiririkkuja_ID" z="KyJJFr6e7wPune7w2PjT0XbktzI="/>
-        <field:input field="avaja" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_avaja" required="true" z="ic26NAdgOnT04wTE/yRvCWYeAPY="/>
-        <field:datetime dateTimePattern="${isik_intsidendis_avatud_date_format}" field="avatud" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_avatud" required="true" z="hZxJB/9Q4ISwbTIAaK13/y4e5AA="/>
-        <field:input field="sulgeja" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_sulgeja" z="Ztj3ZjHFyuoeHEf2sA0NreUl2T4="/>
-        <field:datetime dateTimePattern="${isik_intsidendis_suletud_date_format}" field="suletud" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_suletud" required="true" z="+yFtYd7dpobSUnHy9pPza04StzA="/>
-        <field:input field="muutja" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_muutja" required="true" z="mWqsfcNlOMHq0NViMtL2ctJGbP8="/>
-        <field:datetime dateTimePattern="${isik_intsidendis_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_muudetud" required="true" z="FI81LXuA8n82nBIpwJT32d4aCQI="/>
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_kommentaar" z="I0MsaJfk0LPBQmtUYJxa90jO6zA="/>
-        <field:select field="intsident" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_intsident" itemValue="intsident_ID" items="${intsidents}" path="/intsidents" z="Z4P33Er1VZn3/kjONpUD5R4oW+o="/>
-        <field:select field="piiririkkuja" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_piiririkkuja" itemValue="piiririkkuja_ID" items="${piiririkkujas}" path="/piiririkkujas" z="tS50ZQAl20pT9EN1UpVqHrqnl9s="/>
+        <field:select field="intsident" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_intsident" itemValue="id" items="${intsidents}" path="/intsidents" z="e+ogb85wN8xs2Bg7gQTXMLidL+c="/>
+        <field:select field="piiririkkuja" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_piiririkkuja" itemValue="id" items="${piiririkkujas}" path="/piiririkkujas" z="kNvkKuINn3EV/Xd2N4fS8KWRKs8="/>
     </form:update>
 </div>

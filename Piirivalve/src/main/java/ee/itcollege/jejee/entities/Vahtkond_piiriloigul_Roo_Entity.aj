@@ -42,7 +42,7 @@ privileged aspect Vahtkond_piiriloigul_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Vahtkond_piiriloigul attached = Vahtkond_piiriloigul.findVahtkond_piiriloigul(this.vahtkond_piiriloigul_ID);
+            Vahtkond_piiriloigul attached = Vahtkond_piiriloigul.findVahtkond_piiriloigul(this.id);
             this.entityManager.remove(attached);
         }
     }
@@ -81,9 +81,9 @@ privileged aspect Vahtkond_piiriloigul_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Vahtkond_piiriloigul o", Vahtkond_piiriloigul.class).getResultList();
     }
     
-    public static Vahtkond_piiriloigul Vahtkond_piiriloigul.findVahtkond_piiriloigul(Long vahtkond_piiriloigul_ID) {
-        if (vahtkond_piiriloigul_ID == null) return null;
-        return entityManager().find(Vahtkond_piiriloigul.class, vahtkond_piiriloigul_ID);
+    public static Vahtkond_piiriloigul Vahtkond_piiriloigul.findVahtkond_piiriloigul(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Vahtkond_piiriloigul.class, id);
     }
     
     public static List<Vahtkond_piiriloigul> Vahtkond_piiriloigul.findVahtkond_piiriloigulEntries(int firstResult, int maxResults) {

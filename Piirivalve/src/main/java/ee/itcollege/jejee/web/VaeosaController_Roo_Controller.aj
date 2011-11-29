@@ -15,8 +15,6 @@ import java.util.Collection;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.joda.time.format.DateTimeFormat;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -38,7 +36,7 @@ privileged aspect VaeosaController_Roo_Controller {
         }
         uiModel.asMap().clear();
         vaeosa.persist();
-        return "redirect:/vaeosas/" + encodeUrlPathSegment(vaeosa.getVaeosa_ID().toString(), httpServletRequest);
+        return "redirect:/vaeosas/" + encodeUrlPathSegment(vaeosa.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
@@ -53,11 +51,11 @@ privileged aspect VaeosaController_Roo_Controller {
         return "vaeosas/create";
     }
     
-    @RequestMapping(value = "/{vaeosa_ID}", method = RequestMethod.GET)
-    public String VaeosaController.show(@PathVariable("vaeosa_ID") Long vaeosa_ID, Model uiModel) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String VaeosaController.show(@PathVariable("id") Long id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("vaeosa", Vaeosa.findVaeosa(vaeosa_ID));
-        uiModel.addAttribute("itemId", vaeosa_ID);
+        uiModel.addAttribute("vaeosa", Vaeosa.findVaeosa(id));
+        uiModel.addAttribute("itemId", id);
         return "vaeosas/show";
     }
     
@@ -84,19 +82,19 @@ privileged aspect VaeosaController_Roo_Controller {
         }
         uiModel.asMap().clear();
         vaeosa.merge();
-        return "redirect:/vaeosas/" + encodeUrlPathSegment(vaeosa.getVaeosa_ID().toString(), httpServletRequest);
+        return "redirect:/vaeosas/" + encodeUrlPathSegment(vaeosa.getId().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{vaeosa_ID}", params = "form", method = RequestMethod.GET)
-    public String VaeosaController.updateForm(@PathVariable("vaeosa_ID") Long vaeosa_ID, Model uiModel) {
-        uiModel.addAttribute("vaeosa", Vaeosa.findVaeosa(vaeosa_ID));
+    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
+    public String VaeosaController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+        uiModel.addAttribute("vaeosa", Vaeosa.findVaeosa(id));
         addDateTimeFormatPatterns(uiModel);
         return "vaeosas/update";
     }
     
-    @RequestMapping(value = "/{vaeosa_ID}", method = RequestMethod.DELETE)
-    public String VaeosaController.delete(@PathVariable("vaeosa_ID") Long vaeosa_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Vaeosa.findVaeosa(vaeosa_ID).remove();
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public String VaeosaController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Vaeosa.findVaeosa(id).remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
@@ -119,11 +117,11 @@ privileged aspect VaeosaController_Roo_Controller {
     }
     
     void VaeosaController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("vaeosa_alates_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vaeosa_kuni_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vaeosa_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vaeosa_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vaeosa_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("vaeosa_avatud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("vaeosa_muudetud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("vaeosa_suletud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("vaeosa_alates_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("vaeosa_kuni_date_format", "yyyy-MM-dd");
     }
     
     String VaeosaController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

@@ -16,8 +16,6 @@ import java.util.Collection;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.joda.time.format.DateTimeFormat;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -39,7 +37,7 @@ privileged aspect ObjektController_Roo_Controller {
         }
         uiModel.asMap().clear();
         objekt.persist();
-        return "redirect:/objekts/" + encodeUrlPathSegment(objekt.getObjekt_ID().toString(), httpServletRequest);
+        return "redirect:/objekts/" + encodeUrlPathSegment(objekt.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
@@ -54,11 +52,11 @@ privileged aspect ObjektController_Roo_Controller {
         return "objekts/create";
     }
     
-    @RequestMapping(value = "/{objekt_ID}", method = RequestMethod.GET)
-    public String ObjektController.show(@PathVariable("objekt_ID") Long objekt_ID, Model uiModel) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String ObjektController.show(@PathVariable("id") Long id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("objekt", Objekt.findObjekt(objekt_ID));
-        uiModel.addAttribute("itemId", objekt_ID);
+        uiModel.addAttribute("objekt", Objekt.findObjekt(id));
+        uiModel.addAttribute("itemId", id);
         return "objekts/show";
     }
     
@@ -85,19 +83,19 @@ privileged aspect ObjektController_Roo_Controller {
         }
         uiModel.asMap().clear();
         objekt.merge();
-        return "redirect:/objekts/" + encodeUrlPathSegment(objekt.getObjekt_ID().toString(), httpServletRequest);
+        return "redirect:/objekts/" + encodeUrlPathSegment(objekt.getId().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{objekt_ID}", params = "form", method = RequestMethod.GET)
-    public String ObjektController.updateForm(@PathVariable("objekt_ID") Long objekt_ID, Model uiModel) {
-        uiModel.addAttribute("objekt", Objekt.findObjekt(objekt_ID));
+    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
+    public String ObjektController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+        uiModel.addAttribute("objekt", Objekt.findObjekt(id));
         addDateTimeFormatPatterns(uiModel);
         return "objekts/update";
     }
     
-    @RequestMapping(value = "/{objekt_ID}", method = RequestMethod.DELETE)
-    public String ObjektController.delete(@PathVariable("objekt_ID") Long objekt_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Objekt.findObjekt(objekt_ID).remove();
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public String ObjektController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Objekt.findObjekt(id).remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
@@ -125,9 +123,9 @@ privileged aspect ObjektController_Roo_Controller {
     }
     
     void ObjektController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("objekt_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("objekt_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("objekt_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("objekt_avatud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("objekt_muudetud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("objekt_suletud_date_format", "yyyy-MM-dd");
     }
     
     String ObjektController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

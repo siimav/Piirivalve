@@ -15,8 +15,6 @@ import java.util.Collection;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.joda.time.format.DateTimeFormat;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -38,7 +36,7 @@ privileged aspect Vahtkond_piiriloigulController_Roo_Controller {
         }
         uiModel.asMap().clear();
         vahtkond_piiriloigul.persist();
-        return "redirect:/vahtkond_piiriloiguls/" + encodeUrlPathSegment(vahtkond_piiriloigul.getVahtkond_piiriloigul_ID().toString(), httpServletRequest);
+        return "redirect:/vahtkond_piiriloiguls/" + encodeUrlPathSegment(vahtkond_piiriloigul.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
@@ -56,11 +54,11 @@ privileged aspect Vahtkond_piiriloigulController_Roo_Controller {
         return "vahtkond_piiriloiguls/create";
     }
     
-    @RequestMapping(value = "/{vahtkond_piiriloigul_ID}", method = RequestMethod.GET)
-    public String Vahtkond_piiriloigulController.show(@PathVariable("vahtkond_piiriloigul_ID") Long vahtkond_piiriloigul_ID, Model uiModel) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String Vahtkond_piiriloigulController.show(@PathVariable("id") Long id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("vahtkond_piiriloigul", Vahtkond_piiriloigul.findVahtkond_piiriloigul(vahtkond_piiriloigul_ID));
-        uiModel.addAttribute("itemId", vahtkond_piiriloigul_ID);
+        uiModel.addAttribute("vahtkond_piiriloigul", Vahtkond_piiriloigul.findVahtkond_piiriloigul(id));
+        uiModel.addAttribute("itemId", id);
         return "vahtkond_piiriloiguls/show";
     }
     
@@ -87,19 +85,19 @@ privileged aspect Vahtkond_piiriloigulController_Roo_Controller {
         }
         uiModel.asMap().clear();
         vahtkond_piiriloigul.merge();
-        return "redirect:/vahtkond_piiriloiguls/" + encodeUrlPathSegment(vahtkond_piiriloigul.getVahtkond_piiriloigul_ID().toString(), httpServletRequest);
+        return "redirect:/vahtkond_piiriloiguls/" + encodeUrlPathSegment(vahtkond_piiriloigul.getId().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{vahtkond_piiriloigul_ID}", params = "form", method = RequestMethod.GET)
-    public String Vahtkond_piiriloigulController.updateForm(@PathVariable("vahtkond_piiriloigul_ID") Long vahtkond_piiriloigul_ID, Model uiModel) {
-        uiModel.addAttribute("vahtkond_piiriloigul", Vahtkond_piiriloigul.findVahtkond_piiriloigul(vahtkond_piiriloigul_ID));
+    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
+    public String Vahtkond_piiriloigulController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+        uiModel.addAttribute("vahtkond_piiriloigul", Vahtkond_piiriloigul.findVahtkond_piiriloigul(id));
         addDateTimeFormatPatterns(uiModel);
         return "vahtkond_piiriloiguls/update";
     }
     
-    @RequestMapping(value = "/{vahtkond_piiriloigul_ID}", method = RequestMethod.DELETE)
-    public String Vahtkond_piiriloigulController.delete(@PathVariable("vahtkond_piiriloigul_ID") Long vahtkond_piiriloigul_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Vahtkond_piiriloigul.findVahtkond_piiriloigul(vahtkond_piiriloigul_ID).remove();
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public String Vahtkond_piiriloigulController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Vahtkond_piiriloigul.findVahtkond_piiriloigul(id).remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
@@ -122,11 +120,11 @@ privileged aspect Vahtkond_piiriloigulController_Roo_Controller {
     }
     
     void Vahtkond_piiriloigulController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("vahtkond_piiriloigul_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vahtkond_piiriloigul_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vahtkond_piiriloigul_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vahtkond_piiriloigul_alates_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vahtkond_piiriloigul_kuni_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("vahtkond_piiriloigul_avatud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("vahtkond_piiriloigul_muudetud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("vahtkond_piiriloigul_suletud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("vahtkond_piiriloigul_alates_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("vahtkond_piiriloigul_kuni_date_format", "yyyy-MM-dd");
     }
     
     String Vahtkond_piiriloigulController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

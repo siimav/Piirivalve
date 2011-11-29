@@ -6,8 +6,6 @@
         <field:display date="true" dateTimePattern="${isik_intsidendis_alates_date_format}" field="alates" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_alates" object="${isik_intsidendis}" z="JAfvUc8Zr8u9TLU7F9C3iINdWac="/>
         <field:display date="true" dateTimePattern="${isik_intsidendis_kuni_date_format}" field="kuni" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_kuni" object="${isik_intsidendis}" z="4cOzojsNtGYG31FMKDKiPOEesYI="/>
         <field:display field="kirjeldus" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_kirjeldus" object="${isik_intsidendis}" z="ycWSunvm4H0oR4QQHQFfbgre2aw="/>
-        <field:display field="intsident_ID" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_intsident_ID" object="${isik_intsidendis}" z="SDdf0z2ntGg8vMcP6+xf77eRuqo="/>
-        <field:display field="piiririkkuja_ID" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_piiririkkuja_ID" object="${isik_intsidendis}" z="6kMvfnbl0g34beGHaUsabwd2tMA="/>
         <field:display field="avaja" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_avaja" object="${isik_intsidendis}" z="cQHMi7eN0yOVnNldXlCL1bOwUtE="/>
         <field:display date="true" dateTimePattern="${isik_intsidendis_avatud_date_format}" field="avatud" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_avatud" object="${isik_intsidendis}" z="HfvZvQYczZZZAFiBnC3DgWpkl30="/>
         <field:display field="sulgeja" id="s_ee_itcollege_jejee_entities_Isik_intsidendis_sulgeja" object="${isik_intsidendis}" z="6ZygwC0jLZMkYGrf6BIWPt3b81o="/>

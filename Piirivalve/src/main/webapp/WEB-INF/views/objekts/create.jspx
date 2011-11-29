@@ -11,7 +11,7 @@
         <field:input field="muutja" id="c_ee_itcollege_jejee_entities_Objekt_muutja" required="true" z="tAtkikyVoV4BNrkFSBHc/oHIWtM="/>
         <field:datetime dateTimePattern="${objekt_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_jejee_entities_Objekt_muudetud" required="true" z="f60TSfdNWqKQQ/OxwydLK4xvFRM="/>
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Objekt_kommentaar" z="+8Ih+hYMH6WFWagHvR7p7pjA0cU="/>
-        <field:select field="objekti_liik" id="c_ee_itcollege_jejee_entities_Objekt_objekti_liik" itemValue="objekt_liik_ID" items="${objekti_liiks}" path="/objekti_liiks" required="true" z="tEpPf5cEMc78YUZWJTv6kajlN/I="/>
+        <field:select field="objekti_liik" id="c_ee_itcollege_jejee_entities_Objekt_objekti_liik" itemValue="id" items="${objekti_liiks}" path="/objekti_liiks" required="true" z="Cje3nUzfKVKNRvgizLkWc6pzJfw="/>
         <field:simple field="objekt_intsidendis" id="c_ee_itcollege_jejee_entities_Objekt_objekt_intsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Objekt_intsidendis" z="BquJwnVACWcbskVOJCTYxdNybn4="/>
         <field:simple field="piiririkkuja" id="c_ee_itcollege_jejee_entities_Objekt_piiririkkuja" messageCode="entity_reference_not_managed" messageCodeAttribute="Piiririkkuja" z="8AAYxhPwTSG6mc5vFPJ1AO2y390="/>
     </form:create>

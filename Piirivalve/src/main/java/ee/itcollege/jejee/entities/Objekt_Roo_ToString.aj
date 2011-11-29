@@ -11,11 +11,11 @@ privileged aspect Objekt_Roo_ToString {
         StringBuilder sb = new StringBuilder();
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud()).append(", ");
+        sb.append("Id: ").append(getId()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
         sb.append("Muudetud: ").append(getMuudetud()).append(", ");
         sb.append("Muutja: ").append(getMuutja()).append(", ");
         sb.append("Nimetus: ").append(getNimetus()).append(", ");
-        sb.append("Objekt_ID: ").append(getObjekt_ID()).append(", ");
         sb.append("Objekt_intsidendis: ").append(getObjekt_intsidendis() == null ? "null" : getObjekt_intsidendis().size()).append(", ");
         sb.append("Objekti_liik: ").append(getObjekti_liik()).append(", ");
         sb.append("Piiririkkuja: ").append(getPiiririkkuja() == null ? "null" : getPiiririkkuja().size()).append(", ");

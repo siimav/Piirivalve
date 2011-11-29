@@ -12,6 +12,7 @@ privileged aspect Vahtkond_Roo_ToString {
         sb.append("Alates: ").append(getAlates()).append(", ");
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud()).append(", ");
+        sb.append("Id: ").append(getId()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
         sb.append("Kood: ").append(getKood()).append(", ");
         sb.append("Kuni: ").append(getKuni()).append(", ");
@@ -22,7 +23,6 @@ privileged aspect Vahtkond_Roo_ToString {
         sb.append("Suletud: ").append(getSuletud()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
         sb.append("Vaeosa: ").append(getVaeosa()).append(", ");
-        sb.append("Vahtkond_ID: ").append(getVahtkond_ID()).append(", ");
         sb.append("Vahtkond_piiriloigul: ").append(getVahtkond_piiriloigul() == null ? "null" : getVahtkond_piiriloigul().size()).append(", ");
         sb.append("Vahtkonna_liige: ").append(getVahtkonna_liige() == null ? "null" : getVahtkonna_liige().size()).append(", ");
         sb.append("Vahtkonnad_intsidendis: ").append(getVahtkonnad_intsidendis() == null ? "null" : getVahtkonnad_intsidendis().size()).append(", ");

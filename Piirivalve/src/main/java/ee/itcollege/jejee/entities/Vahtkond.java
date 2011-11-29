@@ -1,58 +1,31 @@
 package ee.itcollege.jejee.entities;
 
-import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Query;
-import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
-import ee.itcollege.jejee.entities.Vahtkond_piiriloigul;
 
-/**
- * Entity implementation class for Entity: Vahtkond
- * 
- */
 @Entity
 @RooEntity
 @RooToString
-public class Vahtkond implements Serializable {
+public class Vahtkond extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Id
-	private Long vahtkond_ID;
 	private String kood;
 	private String nimetus;
-	@DateTimeFormat(style = "M-")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date alates;
-	@DateTimeFormat(style = "M-")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date kuni;
-	@NotNull
-	private String avaja;
-	@DateTimeFormat(style = "M-")
-	@NotNull
-	private Date avatud;
-	private String sulgeja;
-	@DateTimeFormat(style = "M-")
-	@NotNull
-	private Date suletud;
-	@NotNull
-	private String muutja;
-	@DateTimeFormat(style = "M-")
-	@NotNull
-	private Date muudetud;
 	private String kommentaar;
 
 	@OneToMany(mappedBy = "vahtkond")
@@ -72,14 +45,6 @@ public class Vahtkond implements Serializable {
 
 	public Vahtkond() {
 		super();
-	}
-
-	public Long getVahtkond_ID() {
-		return vahtkond_ID;
-	}
-
-	public void setVahtkond_ID(Long vahtkond_ID) {
-		this.vahtkond_ID = vahtkond_ID;
 	}
 
 	public String getKood() {
@@ -112,54 +77,6 @@ public class Vahtkond implements Serializable {
 
 	public void setKuni(Date kuni) {
 		this.kuni = kuni;
-	}
-
-	public String getAvaja() {
-		return avaja;
-	}
-
-	public void setAvaja(String avaja) {
-		this.avaja = avaja;
-	}
-
-	public Date getAvatud() {
-		return avatud;
-	}
-
-	public void setAvatud(Date avatud) {
-		this.avatud = avatud;
-	}
-
-	public String getSulgeja() {
-		return sulgeja;
-	}
-
-	public void setSulgeja(String sulgeja) {
-		this.sulgeja = sulgeja;
-	}
-
-	public Date getSuletud() {
-		return suletud;
-	}
-
-	public void setSuletud(Date suletud) {
-		this.suletud = suletud;
-	}
-
-	public String getMuutja() {
-		return muutja;
-	}
-
-	public void setMuutja(String muutja) {
-		this.muutja = muutja;
-	}
-
-	public Date getMuudetud() {
-		return muudetud;
-	}
-
-	public void setMuudetud(Date muudetud) {
-		this.muudetud = muudetud;
 	}
 
 	public String getKommentaar() {

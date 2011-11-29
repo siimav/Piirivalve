@@ -15,9 +15,10 @@
         <field:datetime dateTimePattern="${vahtkond_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_jejee_entities_Vahtkond_muudetud" required="true" z="JeQMiU2eR8nEXmBrorP2goyUVwQ="/>
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Vahtkond_kommentaar" z="eDOrSG0xO0f69+VrIBwu3KNKKW8="/>
         <field:simple field="vahtkonna_liige" id="c_ee_itcollege_jejee_entities_Vahtkond_vahtkonna_liige" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkonna_liige" z="AietZikJud7+hiff8k2VDVFYBoQ="/>
-        <field:select field="vaeosa" id="c_ee_itcollege_jejee_entities_Vahtkond_vaeosa" itemValue="vaeosa_ID" items="${vaeosas}" path="/vaeosas" z="TWdYkCzEcCWMicDaxRR/HlDuLQI="/>
+        <field:select field="vaeosa" id="c_ee_itcollege_jejee_entities_Vahtkond_vaeosa" itemValue="id" items="${vaeosas}" path="/vaeosas" z="yF32vH0PLqbOGMLUnef5PBtepQM="/>
         <field:simple field="vahtkond_piiriloigul" id="c_ee_itcollege_jejee_entities_Vahtkond_vahtkond_piiriloigul" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkond_piiriloigul" z="n2/s487VlOSVV97T+EjfRuFW4qU="/>
-        <field:select field="piiripunkt" id="c_ee_itcollege_jejee_entities_Vahtkond_piiripunkt" itemValue="piiripunkt_ID" items="${piiripunkts}" path="/piiripunkts" z="afST4mlSsC9o6wWtvGS54LjPQI0="/>
+        <field:select field="piiripunkt" id="c_ee_itcollege_jejee_entities_Vahtkond_piiripunkt" itemValue="id" items="${piiripunkts}" path="/piiripunkts" z="P1Fqb0r+ojmMkpUz8XV8fUd3Ioo="/>
+        <field:simple field="vahtkonnad_intsidendis" id="c_ee_itcollege_jejee_entities_Vahtkond_vahtkonnad_intsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkond_intsidendis" z="HTbPzOIRrBI901FHraQKlQV6hm8="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_jejee_entities_Vahtkond" render="${not empty dependencies}" z="7XVh53brXGaUtjVvxyexE00w6L0="/>
 </div>

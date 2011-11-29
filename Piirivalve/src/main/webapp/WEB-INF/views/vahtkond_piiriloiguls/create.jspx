@@ -12,8 +12,8 @@
         <field:datetime dateTimePattern="${vahtkond_piiriloigul_alates_date_format}" field="alates" id="c_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_alates" z="q/dyYiWdBublSespu7786ru3Bzo="/>
         <field:datetime dateTimePattern="${vahtkond_piiriloigul_kuni_date_format}" field="kuni" id="c_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_kuni" z="9YDxSSQXIxHcoA+hTSukmvSmVOs="/>
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_kommentaar" z="IvbYWDd9b5FbAMhjvPOv6DvziCU="/>
-        <field:select field="piiriloik" id="c_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_piiriloik" itemValue="piiriloik_ID" items="${piiriloiks}" path="/piiriloiks" required="true" z="pjWcFPJEqA9U1xmg4it80TS5eVQ="/>
-        <field:select field="vahtkond" id="c_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_vahtkond" itemValue="vahtkond_ID" items="${vahtkonds}" path="/vahtkonds" required="true" z="+fwMSJJG3jh+PK8uXTVl/WuTMYA="/>
+        <field:select field="piiriloik" id="c_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_piiriloik" itemValue="id" items="${piiriloiks}" path="/piiriloiks" required="true" z="EJ0tOf1kzgkDYlk0+N/gzRagkgs="/>
+        <field:select field="vahtkond" id="c_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_vahtkond" itemValue="id" items="${vahtkonds}" path="/vahtkonds" required="true" z="DxkeJizaS9g5xPl+ecVaSjkQ6Dw="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_jejee_entities_Vahtkond_piiriloigul" render="${not empty dependencies}" z="mhK3xQxhFiXkqn3pOPM5ETki5r4="/>
 </div>

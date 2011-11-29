@@ -13,8 +13,8 @@
         <field:datetime dateTimePattern="${objekt_intsidendis_kuni_date_format}" field="kuni" id="c_ee_itcollege_jejee_entities_Objekt_intsidendis_kuni" z="dAIGTTAwijexaUw5ACHch08MkxQ="/>
         <field:input field="kirjeldus" id="c_ee_itcollege_jejee_entities_Objekt_intsidendis_kirjeldus" z="LQXh68Ic5SNJfHLJeTAmZSFTUsQ="/>
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Objekt_intsidendis_kommentaar" z="+r0q5m5zkA233XvYfWKPGwMM9B8="/>
-        <field:select field="intsident" id="c_ee_itcollege_jejee_entities_Objekt_intsidendis_intsident" itemValue="intsident_ID" items="${intsidents}" path="/intsidents" required="true" z="+DCquDaCUok5ZpGc+zLZh8U67jI="/>
-        <field:select field="objekt" id="c_ee_itcollege_jejee_entities_Objekt_intsidendis_objekt" itemValue="objekt_ID" items="${objekts}" path="/objekts" required="true" z="OuthD2ldmMkRxs2vxuTVNphJIoM="/>
+        <field:select field="intsident" id="c_ee_itcollege_jejee_entities_Objekt_intsidendis_intsident" itemValue="id" items="${intsidents}" path="/intsidents" required="true" z="RSpMYshuRznU+Q3IgRZoDJEf9Fc="/>
+        <field:select field="objekt" id="c_ee_itcollege_jejee_entities_Objekt_intsidendis_objekt" itemValue="id" items="${objekts}" path="/objekts" required="true" z="HuAMu4Tul9GCeq8SAXl8Ma4IKnI="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_jejee_entities_Objekt_intsidendis" render="${not empty dependencies}" z="7y2SbWT7W4natCPdUM+xKD5Bx70="/>
 </div>

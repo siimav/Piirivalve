@@ -3,11 +3,11 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_jejee_entities_Vahtkonna_liige" items="${vahtkonna_liiges}" z="AxDDVMo7fxbKk7g8avNXOn5yqhI=">
-        <table:table data="${vahtkonna_liiges}" id="l_ee_itcollege_jejee_entities_Vahtkonna_liige" path="/vahtkonna_liiges" typeIdFieldName="vahtkonna_liige_ID" z="Q5IFOeB3Mfyx+yteINPtRYnLLTk=">
-            <table:column date="true" dateTimePattern="${vahtkonna_liige_alates_date_format}" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_alates" property="alates" z="tks9BeTocY/gKF//DoiY5Zpj2Hk="/>
-            <table:column date="true" dateTimePattern="${vahtkonna_liige_kuni_date_format}" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_kuni" property="kuni" z="qbiltW3Ryju7tK/caTp5K3Kp1bo="/>
+        <table:table data="${vahtkonna_liiges}" id="l_ee_itcollege_jejee_entities_Vahtkonna_liige" path="/vahtkonna_liiges" z="zNVP9KUycwoC5h+fuRdT2Xn2Gr4=">
             <table:column id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_avaja" property="avaja" z="uLb/eAkk8Qok7n3q52U+osKxYBM="/>
             <table:column date="true" dateTimePattern="${vahtkonna_liige_avatud_date_format}" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_avatud" property="avatud" z="fd5F90RsiORTh65XLrNsB0oM3OE="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_muutja" property="muutja" z="mNm37xc/5z5oW1MGfO6tXl0iUcA="/>
+            <table:column date="true" dateTimePattern="${vahtkonna_liige_muudetud_date_format}" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_muudetud" property="muudetud" z="LbNaBYU3XUFpysHUTHPW5NcMT0Y="/>
             <table:column id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_sulgeja" property="sulgeja" z="Ahki5AqNl9sgqMha75M2+LYSpzw="/>
             <table:column date="true" dateTimePattern="${vahtkonna_liige_suletud_date_format}" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_suletud" property="suletud" z="VBeZK+ej8r660FKiS+22HTybZIA="/>
         </table:table>

@@ -3,13 +3,13 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_jejee_entities_Seadus" items="${seaduses}" z="6njpZhQUbYngQC3YlLRdHNb7LNk=">
-        <table:table data="${seaduses}" id="l_ee_itcollege_jejee_entities_Seadus" path="/seaduses" typeIdFieldName="seadus_ID" z="kCOQuDjl91j4KTQZTBCTjsZrgDc=">
-            <table:column id="c_ee_itcollege_jejee_entities_Seadus_kood" property="kood" z="CKMDXJKrygV36uIZT4ZBANGmrro="/>
-            <table:column id="c_ee_itcollege_jejee_entities_Seadus_nimetus" property="nimetus" z="5+4BIRNCIT79VHmlar2Tjt/dNfo="/>
-            <table:column id="c_ee_itcollege_jejee_entities_Seadus_kehtiv_alates" property="kehtiv_alates" z="YWA6NaIScJ+0Eeln9poG3Oqua2w="/>
-            <table:column id="c_ee_itcollege_jejee_entities_Seadus_kehtiv_kuni" property="kehtiv_kuni" z="ZT0RaVJtT2+R7H5D9vpT28sFdp8="/>
+        <table:table data="${seaduses}" id="l_ee_itcollege_jejee_entities_Seadus" path="/seaduses" z="jIy6NyhkD04dT0ltelYelimxb1w=">
             <table:column id="c_ee_itcollege_jejee_entities_Seadus_avaja" property="avaja" z="Br3tKD4QAREDxGTt4LRboaiy9+A="/>
             <table:column date="true" dateTimePattern="${seadus_avatud_date_format}" id="c_ee_itcollege_jejee_entities_Seadus_avatud" property="avatud" z="BfgwpHnFngfV9py+5zydIDGLdaw="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Seadus_muutja" property="muutja" z="aSFE6oVi2I6Zo3wIqrjMjVFldbk="/>
+            <table:column date="true" dateTimePattern="${seadus_muudetud_date_format}" id="c_ee_itcollege_jejee_entities_Seadus_muudetud" property="muudetud" z="6zXayLEl9vGieDhUunb9iMRkvhs="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Seadus_sulgeja" property="sulgeja" z="R05pqZc4lv6nxtwRjiz0x0D3VIU="/>
+            <table:column date="true" dateTimePattern="${seadus_suletud_date_format}" id="c_ee_itcollege_jejee_entities_Seadus_suletud" property="suletud" z="W/zHq+g1KvZOD0ROA3pxuqXCNqI="/>
         </table:table>
     </page:list>
 </div>

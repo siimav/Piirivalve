@@ -42,7 +42,7 @@ privileged aspect Piiririkkuja_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Piiririkkuja attached = Piiririkkuja.findPiiririkkuja(this.piiririkkuja_ID);
+            Piiririkkuja attached = Piiririkkuja.findPiiririkkuja(this.id);
             this.entityManager.remove(attached);
         }
     }
@@ -81,9 +81,9 @@ privileged aspect Piiririkkuja_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Piiririkkuja o", Piiririkkuja.class).getResultList();
     }
     
-    public static Piiririkkuja Piiririkkuja.findPiiririkkuja(Long piiririkkuja_ID) {
-        if (piiririkkuja_ID == null) return null;
-        return entityManager().find(Piiririkkuja.class, piiririkkuja_ID);
+    public static Piiririkkuja Piiririkkuja.findPiiririkkuja(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Piiririkkuja.class, id);
     }
     
     public static List<Piiririkkuja> Piiririkkuja.findPiiririkkujaEntries(int firstResult, int maxResults) {

@@ -19,8 +19,6 @@ import java.util.Collection;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.joda.time.format.DateTimeFormat;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -42,7 +40,7 @@ privileged aspect IntsidentController_Roo_Controller {
         }
         uiModel.asMap().clear();
         intsident.persist();
-        return "redirect:/intsidents/" + encodeUrlPathSegment(intsident.getIntsident_ID().toString(), httpServletRequest);
+        return "redirect:/intsidents/" + encodeUrlPathSegment(intsident.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
@@ -57,11 +55,11 @@ privileged aspect IntsidentController_Roo_Controller {
         return "intsidents/create";
     }
     
-    @RequestMapping(value = "/{intsident_ID}", method = RequestMethod.GET)
-    public String IntsidentController.show(@PathVariable("intsident_ID") Long intsident_ID, Model uiModel) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String IntsidentController.show(@PathVariable("id") Long id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("intsident", Intsident.findIntsident(intsident_ID));
-        uiModel.addAttribute("itemId", intsident_ID);
+        uiModel.addAttribute("intsident", Intsident.findIntsident(id));
+        uiModel.addAttribute("itemId", id);
         return "intsidents/show";
     }
     
@@ -88,19 +86,19 @@ privileged aspect IntsidentController_Roo_Controller {
         }
         uiModel.asMap().clear();
         intsident.merge();
-        return "redirect:/intsidents/" + encodeUrlPathSegment(intsident.getIntsident_ID().toString(), httpServletRequest);
+        return "redirect:/intsidents/" + encodeUrlPathSegment(intsident.getId().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{intsident_ID}", params = "form", method = RequestMethod.GET)
-    public String IntsidentController.updateForm(@PathVariable("intsident_ID") Long intsident_ID, Model uiModel) {
-        uiModel.addAttribute("intsident", Intsident.findIntsident(intsident_ID));
+    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
+    public String IntsidentController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+        uiModel.addAttribute("intsident", Intsident.findIntsident(id));
         addDateTimeFormatPatterns(uiModel);
         return "intsidents/update";
     }
     
-    @RequestMapping(value = "/{intsident_ID}", method = RequestMethod.DELETE)
-    public String IntsidentController.delete(@PathVariable("intsident_ID") Long intsident_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Intsident.findIntsident(intsident_ID).remove();
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public String IntsidentController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Intsident.findIntsident(id).remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
@@ -143,11 +141,11 @@ privileged aspect IntsidentController_Roo_Controller {
     }
     
     void IntsidentController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("intsident_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("intsident_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("intsident_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("intsident_toimumise_algus_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("intsident_toimumise_lopp_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("intsident_avatud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("intsident_muudetud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("intsident_suletud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("intsident_toimumise_algus_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("intsident_toimumise_lopp_date_format", "yyyy-MM-dd");
     }
     
     String IntsidentController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

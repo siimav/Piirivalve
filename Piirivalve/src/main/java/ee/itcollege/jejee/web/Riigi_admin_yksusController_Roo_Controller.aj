@@ -15,8 +15,6 @@ import java.util.Collection;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.joda.time.format.DateTimeFormat;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -38,7 +36,7 @@ privileged aspect Riigi_admin_yksusController_Roo_Controller {
         }
         uiModel.asMap().clear();
         riigi_admin_yksus.persist();
-        return "redirect:/riigi_admin_yksuses/" + encodeUrlPathSegment(riigi_admin_yksus.getRiigi_admin_yksus_ID().toString(), httpServletRequest);
+        return "redirect:/riigi_admin_yksuses/" + encodeUrlPathSegment(riigi_admin_yksus.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
@@ -53,11 +51,11 @@ privileged aspect Riigi_admin_yksusController_Roo_Controller {
         return "riigi_admin_yksuses/create";
     }
     
-    @RequestMapping(value = "/{riigi_admin_yksus_ID}", method = RequestMethod.GET)
-    public String Riigi_admin_yksusController.show(@PathVariable("riigi_admin_yksus_ID") Long riigi_admin_yksus_ID, Model uiModel) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String Riigi_admin_yksusController.show(@PathVariable("id") Long id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("riigi_admin_yksus", Riigi_admin_yksus.findRiigi_admin_yksus(riigi_admin_yksus_ID));
-        uiModel.addAttribute("itemId", riigi_admin_yksus_ID);
+        uiModel.addAttribute("riigi_admin_yksus", Riigi_admin_yksus.findRiigi_admin_yksus(id));
+        uiModel.addAttribute("itemId", id);
         return "riigi_admin_yksuses/show";
     }
     
@@ -84,19 +82,19 @@ privileged aspect Riigi_admin_yksusController_Roo_Controller {
         }
         uiModel.asMap().clear();
         riigi_admin_yksus.merge();
-        return "redirect:/riigi_admin_yksuses/" + encodeUrlPathSegment(riigi_admin_yksus.getRiigi_admin_yksus_ID().toString(), httpServletRequest);
+        return "redirect:/riigi_admin_yksuses/" + encodeUrlPathSegment(riigi_admin_yksus.getId().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{riigi_admin_yksus_ID}", params = "form", method = RequestMethod.GET)
-    public String Riigi_admin_yksusController.updateForm(@PathVariable("riigi_admin_yksus_ID") Long riigi_admin_yksus_ID, Model uiModel) {
-        uiModel.addAttribute("riigi_admin_yksus", Riigi_admin_yksus.findRiigi_admin_yksus(riigi_admin_yksus_ID));
+    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
+    public String Riigi_admin_yksusController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+        uiModel.addAttribute("riigi_admin_yksus", Riigi_admin_yksus.findRiigi_admin_yksus(id));
         addDateTimeFormatPatterns(uiModel);
         return "riigi_admin_yksuses/update";
     }
     
-    @RequestMapping(value = "/{riigi_admin_yksus_ID}", method = RequestMethod.DELETE)
-    public String Riigi_admin_yksusController.delete(@PathVariable("riigi_admin_yksus_ID") Long riigi_admin_yksus_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Riigi_admin_yksus.findRiigi_admin_yksus(riigi_admin_yksus_ID).remove();
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public String Riigi_admin_yksusController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Riigi_admin_yksus.findRiigi_admin_yksus(id).remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
@@ -119,11 +117,11 @@ privileged aspect Riigi_admin_yksusController_Roo_Controller {
     }
     
     void Riigi_admin_yksusController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("riigi_admin_yksus_alates_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("riigi_admin_yksus_kuni_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("riigi_admin_yksus_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("riigi_admin_yksus_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("riigi_admin_yksus_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("riigi_admin_yksus_avatud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("riigi_admin_yksus_muudetud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("riigi_admin_yksus_suletud_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("riigi_admin_yksus_alates_date_format", "yyyy-MM-dd");
+        uiModel.addAttribute("riigi_admin_yksus_kuni_date_format", "yyyy-MM-dd");
     }
     
     String Riigi_admin_yksusController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

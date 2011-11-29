@@ -42,7 +42,7 @@ privileged aspect Piiripunkt_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Piiripunkt attached = Piiripunkt.findPiiripunkt(this.piiripunkt_ID);
+            Piiripunkt attached = Piiripunkt.findPiiripunkt(this.id);
             this.entityManager.remove(attached);
         }
     }
@@ -81,9 +81,9 @@ privileged aspect Piiripunkt_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Piiripunkt o", Piiripunkt.class).getResultList();
     }
     
-    public static Piiripunkt Piiripunkt.findPiiripunkt(Long piiripunkt_ID) {
-        if (piiripunkt_ID == null) return null;
-        return entityManager().find(Piiripunkt.class, piiripunkt_ID);
+    public static Piiripunkt Piiripunkt.findPiiripunkt(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Piiripunkt.class, id);
     }
     
     public static List<Piiripunkt> Piiripunkt.findPiiripunktEntries(int firstResult, int maxResults) {

@@ -2,17 +2,17 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_ee_itcollege_jejee_entities_Seadus" idField="seadus_ID" modelAttribute="seadus" path="/seaduses" versionField="Version" z="uepOYOc9oE8PsXFXk0MB4mmdpgc=">
+    <form:update id="fu_ee_itcollege_jejee_entities_Seadus" modelAttribute="seadus" path="/seaduses" versionField="Version" z="kTGs6pOIcFQFoXJ328vwMb79NF0=">
+        <field:input field="avaja" id="c_ee_itcollege_jejee_entities_Seadus_avaja" required="true" z="v7FWlOiSI2nF4QlTBx5s6qxpJps="/>
+        <field:datetime dateTimePattern="${seadus_avatud_date_format}" field="avatud" id="c_ee_itcollege_jejee_entities_Seadus_avatud" required="true" z="E9lnZ3k8WCdrqDKJXcEij6obDcM="/>
+        <field:input field="muutja" id="c_ee_itcollege_jejee_entities_Seadus_muutja" required="true" z="DfsCD5FWhAr9XBs4m27kQHSG8Ow="/>
+        <field:datetime dateTimePattern="${seadus_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_jejee_entities_Seadus_muudetud" required="true" z="BWHZ/0KeJdN1S51bE4VaseGmjDM="/>
+        <field:input field="sulgeja" id="c_ee_itcollege_jejee_entities_Seadus_sulgeja" z="78TQnHObWlGP9JLlOdO2YFuwRNw="/>
+        <field:datetime dateTimePattern="${seadus_suletud_date_format}" field="suletud" id="c_ee_itcollege_jejee_entities_Seadus_suletud" required="true" z="yoSdoncamCCkl1LRgWfhO3nuCkc="/>
         <field:input field="kood" id="c_ee_itcollege_jejee_entities_Seadus_kood" required="true" z="5rUcfoGDL4OEIxysm9SmGlklGGI="/>
         <field:input field="nimetus" id="c_ee_itcollege_jejee_entities_Seadus_nimetus" required="true" z="DA1R3KZQMd5jw2z5Yc/eQHiNuoI="/>
         <field:input field="kehtiv_alates" id="c_ee_itcollege_jejee_entities_Seadus_kehtiv_alates" z="7AxmQo8CyN9h3dvIcrW8pdfXTQc="/>
         <field:input field="kehtiv_kuni" id="c_ee_itcollege_jejee_entities_Seadus_kehtiv_kuni" z="I0vgkcTT13VBZl8+O61fTmh/N6I="/>
-        <field:input field="avaja" id="c_ee_itcollege_jejee_entities_Seadus_avaja" required="true" z="v7FWlOiSI2nF4QlTBx5s6qxpJps="/>
-        <field:datetime dateTimePattern="${seadus_avatud_date_format}" field="avatud" id="c_ee_itcollege_jejee_entities_Seadus_avatud" required="true" z="E9lnZ3k8WCdrqDKJXcEij6obDcM="/>
-        <field:input field="sulgeja" id="c_ee_itcollege_jejee_entities_Seadus_sulgeja" z="78TQnHObWlGP9JLlOdO2YFuwRNw="/>
-        <field:datetime dateTimePattern="${seadus_suletud_date_format}" field="suletud" id="c_ee_itcollege_jejee_entities_Seadus_suletud" required="true" z="yoSdoncamCCkl1LRgWfhO3nuCkc="/>
-        <field:input field="muutja" id="c_ee_itcollege_jejee_entities_Seadus_muutja" required="true" z="DfsCD5FWhAr9XBs4m27kQHSG8Ow="/>
-        <field:datetime dateTimePattern="${seadus_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_jejee_entities_Seadus_muudetud" required="true" z="BWHZ/0KeJdN1S51bE4VaseGmjDM="/>
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Seadus_kommentaar" required="true" z="+f1GQOpf8pqSifLb2LTxF4x66NI="/>
     </form:update>
 </div>

@@ -3,13 +3,13 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_jejee_entities_Piirivalvur" items="${piirivalvurs}" z="JO4+tDijp+8V4mJrTFyTjawP0e4=">
-        <table:table data="${piirivalvurs}" id="l_ee_itcollege_jejee_entities_Piirivalvur" path="/piirivalvurs" typeIdFieldName="piirivalvur_ID" z="TQBgz2uzLDzqS2Gi9lIxdWlx6Co=">
-            <table:column id="c_ee_itcollege_jejee_entities_Piirivalvur_isikukood" property="isikukood" z="ji8dG01EP150myLytkwMXRYrwCY="/>
-            <table:column id="c_ee_itcollege_jejee_entities_Piirivalvur_eesnimed" property="eesnimed" z="/FIALOrukh10glVDrWzh+oeY3nI="/>
-            <table:column id="c_ee_itcollege_jejee_entities_Piirivalvur_perekonnanimi" property="perekonnanimi" z="WWNeHVShvumsgthpzfJeZU7nF2E="/>
-            <table:column id="c_ee_itcollege_jejee_entities_Piirivalvur_sugu" property="sugu" z="rmu6dbuSLIZ19P++oKnQzh09f7Y="/>
-            <table:column id="c_ee_itcollege_jejee_entities_Piirivalvur_soduri_kood" property="soduri_kood" z="T1HuV0Nfe0yfmpmzTMQadbesUXU="/>
+        <table:table data="${piirivalvurs}" id="l_ee_itcollege_jejee_entities_Piirivalvur" path="/piirivalvurs" z="BFKj0Ht9ca5p4GGsvXk4PpRi6qI=">
             <table:column id="c_ee_itcollege_jejee_entities_Piirivalvur_avaja" property="avaja" z="pxDFrYnrxYsFrGSs0mFB/wn/6wE="/>
+            <table:column date="true" dateTimePattern="${piirivalvur_avatud_date_format}" id="c_ee_itcollege_jejee_entities_Piirivalvur_avatud" property="avatud" z="/1/z8wYm66JiJq5K3rmrNR1X1nA="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Piirivalvur_muutja" property="muutja" z="2nSDQlIuhgreO/L+TkFfx7zAYjU="/>
+            <table:column date="true" dateTimePattern="${piirivalvur_muudetud_date_format}" id="c_ee_itcollege_jejee_entities_Piirivalvur_muudetud" property="muudetud" z="BgLlawDl69SjHf4hZIbJ0qs5M7s="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Piirivalvur_sulgeja" property="sulgeja" z="tqXBoyhiXhwQg4gQOJ/GnuoaROw="/>
+            <table:column date="true" dateTimePattern="${piirivalvur_suletud_date_format}" id="c_ee_itcollege_jejee_entities_Piirivalvur_suletud" property="suletud" z="/0GipddLp9Arln9uqRHBFwIYBQo="/>
         </table:table>
     </page:list>
 </div>

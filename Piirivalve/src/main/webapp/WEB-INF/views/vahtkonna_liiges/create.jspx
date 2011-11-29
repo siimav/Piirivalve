@@ -12,8 +12,8 @@
         <field:input field="muutja" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_muutja" required="true" z="xpTPB+/gMyJLHWzzNHM0JkZkKKc="/>
         <field:datetime dateTimePattern="${vahtkonna_liige_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_muudetud" required="true" z="GmYFTpknSrj2qLNgS+U7ixDr2GA="/>
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_kommentaar" z="/kPmykIhVW9Cis7sSB1U1Kj5O/c="/>
-        <field:select field="vahtkond" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_vahtkond" itemValue="vahtkond_ID" items="${vahtkonds}" path="/vahtkonds" z="foskMp1jrLCen/S+qrI3x1YQsxI="/>
-        <field:select field="piirivalvur" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_piirivalvur" itemValue="piirivalvur_ID" items="${piirivalvurs}" path="/piirivalvurs" z="Cv9GH7bnqBH/XZD/2lT948jbnWk="/>
+        <field:select field="vahtkond" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_vahtkond" itemValue="id" items="${vahtkonds}" path="/vahtkonds" z="0k+eUqqFOci38VKlJnYk/8gAubk="/>
+        <field:select field="piirivalvur" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_piirivalvur" itemValue="id" items="${piirivalvurs}" path="/piirivalvurs" z="tzDNkvM7KEjhJrT1mIzyZo7v6p0="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_jejee_entities_Vahtkonna_liige" render="${not empty dependencies}" z="HbGajoKiV6wfmzhMpcLHIsAKohc="/>
 </div>

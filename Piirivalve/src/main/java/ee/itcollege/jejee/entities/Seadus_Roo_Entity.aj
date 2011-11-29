@@ -42,7 +42,7 @@ privileged aspect Seadus_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Seadus attached = Seadus.findSeadus(this.seadus_ID);
+            Seadus attached = Seadus.findSeadus(this.id);
             this.entityManager.remove(attached);
         }
     }
@@ -81,9 +81,9 @@ privileged aspect Seadus_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Seadus o", Seadus.class).getResultList();
     }
     
-    public static Seadus Seadus.findSeadus(Long seadus_ID) {
-        if (seadus_ID == null) return null;
-        return entityManager().find(Seadus.class, seadus_ID);
+    public static Seadus Seadus.findSeadus(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Seadus.class, id);
     }
     
     public static List<Seadus> Seadus.findSeadusEntries(int firstResult, int maxResults) {

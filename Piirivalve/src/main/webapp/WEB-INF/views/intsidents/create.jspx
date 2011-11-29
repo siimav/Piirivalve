@@ -17,10 +17,12 @@
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Intsident_kommentaar" z="HcKXnO+lB+yg883ipRHgV2lnZhc="/>
         <field:input field="GPS_longituud" id="c_ee_itcollege_jejee_entities_Intsident_GPS_longituud" z="mXV115lFZYQM+n2UmTFb8P4LKnc="/>
         <field:input field="GPS_latituud" id="c_ee_itcollege_jejee_entities_Intsident_GPS_latituud" z="tikb+8BN8Xu1ji3maxMWiX+zn0o="/>
-        <field:select field="piiriloik" id="c_ee_itcollege_jejee_entities_Intsident_piiriloik" itemValue="piiriloik_ID" items="${piiriloiks}" path="/piiriloiks" z="sBZ3UkEx2TGQj21Ejx37EUyHRLk="/>
-        <field:select field="intsidendi_liik" id="c_ee_itcollege_jejee_entities_Intsident_intsidendi_liik" itemValue="intsidendi_liik_ID" items="${intsidendi_liiks}" path="/intsidendi_liiks" required="true" z="g46l2RVzTF+td+C8AR3KJawNnVU="/>
+        <field:select field="piiriloik" id="c_ee_itcollege_jejee_entities_Intsident_piiriloik" itemValue="id" items="${piiriloiks}" path="/piiriloiks" z="yYKUtU8MjBtR0NI6VzjdskV2nTs="/>
+        <field:select field="intsidendi_liik" id="c_ee_itcollege_jejee_entities_Intsident_intsidendi_liik" itemValue="id" items="${intsidendi_liiks}" path="/intsidendi_liiks" required="true" z="aNXggHiVk/wVj7Rx3YPslB8+Dqk="/>
         <field:simple field="objekt_intsidendis" id="c_ee_itcollege_jejee_entities_Intsident_objekt_intsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Objekt_intsidendis" z="bLW6SlPTtxw3VUKgO9snbJNK9GU="/>
         <field:simple field="isik_intsidendis" id="c_ee_itcollege_jejee_entities_Intsident_isik_intsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Isik_intsidendis" z="uQn3d9bVwsbMb74TSOQVa7c3hvg="/>
+        <field:simple field="vahtkonnad_intsidendis" id="c_ee_itcollege_jejee_entities_Intsident_vahtkonnad_intsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkond_intsidendis" z="qUpqFbh6tYmM8XqRdKMzHarj3m4="/>
+        <field:simple field="piirivalvurid_intsidendis" id="c_ee_itcollege_jejee_entities_Intsident_piirivalvurid_intsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Piirivalvur_intsidendis" z="x4qMK+j1YAi+GbwVqYDyIFNjeZ0="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_jejee_entities_Intsident" render="${not empty dependencies}" z="nGMKV3KLohGimi9AiKkoPXa92Z8="/>
 </div>

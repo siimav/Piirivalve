@@ -42,7 +42,7 @@ privileged aspect Vaeosa_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Vaeosa attached = Vaeosa.findVaeosa(this.vaeosa_ID);
+            Vaeosa attached = Vaeosa.findVaeosa(this.id);
             this.entityManager.remove(attached);
         }
     }
@@ -81,9 +81,9 @@ privileged aspect Vaeosa_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Vaeosa o", Vaeosa.class).getResultList();
     }
     
-    public static Vaeosa Vaeosa.findVaeosa(Long vaeosa_ID) {
-        if (vaeosa_ID == null) return null;
-        return entityManager().find(Vaeosa.class, vaeosa_ID);
+    public static Vaeosa Vaeosa.findVaeosa(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Vaeosa.class, id);
     }
     
     public static List<Vaeosa> Vaeosa.findVaeosaEntries(int firstResult, int maxResults) {

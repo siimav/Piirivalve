@@ -1,13 +1,9 @@
 package ee.itcollege.jejee.entities;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Query;
 import javax.validation.constraints.NotNull;
@@ -21,13 +17,10 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 @RooEntity
 @Entity
-public class Piirivalvur_intsidendis implements Serializable {
+public class Piirivalvur_intsidendis extends BaseEntity {
 	
 	private static final long serialVersionUID = 1L;
-	
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Id
-	private Long piirivalvur_intsidendis_ID;
+
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull
 	private Date alates;
@@ -37,20 +30,6 @@ public class Piirivalvur_intsidendis implements Serializable {
 	@NotNull
 	private String kirjeldus;
 	private String kommentaar;
-	@NotNull
-	private String avaja;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@NotNull
-	private Date avatud;
-	@NotNull
-	private String muutja;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@NotNull
-	private Date muudetud;
-	private String sulgeja;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@NotNull
-	private Date suletud;
 	
 	@NotNull
 	@ManyToOne
@@ -62,15 +41,6 @@ public class Piirivalvur_intsidendis implements Serializable {
 	
 	@ManyToOne
 	private Vahtkond_intsidendis vahtkond_intsidendis;
-	
-
-	public Long getPiirivalvur_intsidendis_ID() {
-		return piirivalvur_intsidendis_ID;
-	}
-
-	public void setPiirivalvur_intsidendis_ID(Long piirivalvur_intsidendis_ID) {
-		this.piirivalvur_intsidendis_ID = piirivalvur_intsidendis_ID;
-	}
 
 	public Date getAlates() {
 		return alates;
@@ -102,54 +72,6 @@ public class Piirivalvur_intsidendis implements Serializable {
 
 	public void setKommentaar(String kommentaar) {
 		this.kommentaar = kommentaar;
-	}
-
-	public String getAvaja() {
-		return avaja;
-	}
-
-	public void setAvaja(String avaja) {
-		this.avaja = avaja;
-	}
-
-	public Date getAvatud() {
-		return avatud;
-	}
-
-	public void setAvatud(Date avatud) {
-		this.avatud = avatud;
-	}
-
-	public String getMuutja() {
-		return muutja;
-	}
-
-	public void setMuutja(String muutja) {
-		this.muutja = muutja;
-	}
-
-	public Date getMuudetud() {
-		return muudetud;
-	}
-
-	public void setMuudetud(Date muudetud) {
-		this.muudetud = muudetud;
-	}
-
-	public String getSulgeja() {
-		return sulgeja;
-	}
-
-	public void setSulgeja(String sulgeja) {
-		this.sulgeja = sulgeja;
-	}
-
-	public Date getSuletud() {
-		return suletud;
-	}
-
-	public void setSuletud(Date suletud) {
-		this.suletud = suletud;
 	}
 
 	public Intsident getIntsident() {
