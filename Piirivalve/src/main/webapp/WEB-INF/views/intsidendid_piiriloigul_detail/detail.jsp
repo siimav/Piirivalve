@@ -18,7 +18,7 @@
 <div id="detail_main_div">
 
 	<div id="detail_ylemine_div"><p>Intsident ${pints.intsident.kood} - ${pints.intsident.piiriloik.nimetus} - ${pints.intsident.nimetus}</p></div>
-	
+	<fo:form method="POST" commandName="uusInts" action="http://localhost:8080/Piirivalve/detail/${pints.id}/p/${pvalvur.id}/muuda">
 	<div id="detail_vasak_div">
 	<table>
 		<tr>
@@ -42,7 +42,7 @@
 				Sugu
 			</td>
 			<td>
-				<span style="float:left";>${pvalvur.sugu}</span><span style="float:right";><input type="button" value="Muuda" onclick="window.location='http://localhost:8080/Piirivalve/detail/${pints.id}/p/${pvalvur.id}/muuda_piirivalvur'"></span>
+				<span style="float:left;">${pvalvur.sugu}</span><span style="float:right;"><input type="button" value="Muuda" onclick="window.location='http://localhost:8080/Piirivalve/detail/${pints.id}/p/${pvalvur.id}/muuda_piirivalvur'"></span>
 			</td>
 		</tr>
 		<tr>
@@ -50,7 +50,8 @@
 				Kirjeldus
 			</td>
 			<td>
-				<textarea rows="4" cols="20"></textarea>
+<%-- 				<fo:textarea rows="4" cols="20" >${pints.kirjeldus}</fo:textarea> --%>
+				<field:textarea id="kirjeldus" field="kirjeldus" label="a" required="true">${pints.kirjeldus}</field:textarea>
 			</td>
 		</tr>
 		<tr>
@@ -58,7 +59,8 @@
 				Kommentaar
 			</td>
 			<td>
-				<textarea rows="4" cols="20"></textarea>
+<%-- 				<textarea rows="4" cols="20">${pints.kommentaar}</textarea> --%>
+				<field:textarea id="kommentaar" field="kommentaar" label="a" required="true">${pints.kommentaar}</field:textarea>
 			</td>
 		</tr>
 	</table>
@@ -94,10 +96,12 @@
 				</td>
 			</tr>
 		</table>
-		<input type="submit" value="Lisa" style="float:right;margin-right:5px;margin-top:5px">
+		<input type="button" value="Lisa" style="float:right;margin-right:5px;margin-top:5px">
 	</div>
-<div style="clear:both";></div>
+<div style="clear:both;"></div>
 <div id="detail_btns"><input type="submit" value="Salvesta">&nbsp;&nbsp;&nbsp;<input type="reset" value="Loobu"></div>
+</fo:form>
+
 </div>
 
 </body>
