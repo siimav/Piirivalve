@@ -51,16 +51,29 @@
     			<th></th>
 			</tr>
 			
-			<c:forEach var="i" items="${ints.pints_arr}">
+			<c:forEach var="i" items="${ints.pints_arr}" >
 				<tr>
 					<td width="500px">
 						${i.intsident.nimetus}
 					</td>
 					<td>
-						<input type="button" name="btn" value="Vaata" onclick="alert(${i.id})" />
+						<input type="button" name="btn" value="Vaata" onclick="window.location='http://localhost:8080/Piirivalve/detail/${i.id}/p/${i.piirivalvur.id}'" />
 					</td>
 				</tr>
 			</c:forEach>
+			
+			<tr>
+				<td height="10px"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>
+					<i>intsidente kokku - ${ints.kogus}</i>
+				</td>
+				<td>
+				
+				</td>
+			</tr>
 			
 		</table>
 		</div>

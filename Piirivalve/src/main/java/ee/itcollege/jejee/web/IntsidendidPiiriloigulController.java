@@ -44,8 +44,8 @@ public class IntsidendidPiiriloigulController {
 		
 		List<Piirivalvur_intsidendis_abi> tmp;
 		
-		if(pia.getPiiriloik_ID()==0){ //--- valik (kuva kÃµik)
-			if(pia.getAlates()!=null && pia.getKuni()!=null){ //combovÃ¤Ã¤rtus 0, kuupÃ¤evad olemas
+		if(pia.getPiiriloik_ID()==0){ //--- valik (kuva kÃƒÂµik)
+			if(pia.getAlates()!=null && pia.getKuni()!=null){ //combovÃƒÂ¤ÃƒÂ¤rtus 0, kuupÃƒÂ¤evad olemas
 				tmp = korrasta(Piirivalvur_intsidendis.findAllPiirivalvurIntsidentsWithInterval(pia.getAlates(), pia.getKuni()));
 				uiModel.addAttribute("ints_piiriloigul_piirivalvur", tmp);
 			}
@@ -80,6 +80,7 @@ public class IntsidendidPiiriloigulController {
 				for (Piirivalvur_intsidendis_abi pia : tmp_arr) { 
 					if(pi.getPiirivalvur()==pia.getPiirivalvur()){ //kas sama piirivalvur juba olemas
 						pia.getPints_arr().add(pi);
+						pia.setKogus(pia.getKogus()+1);
 						olemas=true;
 					}
 					
@@ -89,6 +90,7 @@ public class IntsidendidPiiriloigulController {
 					tmp = new Piirivalvur_intsidendis_abi();
 					tmp.setPiirivalvur(pi.getPiirivalvur());
 					tmp.getPints_arr().add(pi);
+					tmp.setKogus(1);
 					tmp_arr.add(tmp);
 				}
 			}

@@ -128,21 +128,11 @@ public class Piirivalvur extends BaseEntity {
         return q.getResultList();
     }
 
-//	@SuppressWarnings("unchecked")
-//	public static List<Piirivalvur> findAllPiirivalvurIntsidentsForPiiriloikWithInterval(Piiriloik piir, Date alates, Date kuni) {
-//    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi JOIN pi.intsident i WHERE i.piiriloik=:piir and (pi.alates>=:alates and pi.kuni<=:kuni)", Piirivalvur_intsidendis.class);
-//    	q.setParameter("piir", piir);
-//    	q.setParameter("alates", alates);
-//    	q.setParameter("kuni", kuni);
-//        return q.getResultList();
-//    }
-//	
-//	@SuppressWarnings("unchecked")
-//	public static List<Piirivalvur> findAllPiirivalvurIntsidentsWithInterval(Date alates, Date kuni) {
-//    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi WHERE pi.alates>=:alates and pi.kuni<=:kuni", Piirivalvur_intsidendis.class);
-//    	q.setParameter("alates", alates);
-//    	q.setParameter("kuni", kuni);
-//        return q.getResultList();
-//    }
+    @SuppressWarnings("unchecked")
+	public static List<Piirivalvur> findAllPiirivalvuridExceptFor(Piirivalvur piirivalvur) {
+    	Query q = entityManager().createQuery("SELECT p FROM Piirivalvur p WHERE p!=:piirivalvur", Piirivalvur.class);
+    	q.setParameter("piirivalvur", piirivalvur);
+        return q.getResultList();
+    }
 
 }
