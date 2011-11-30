@@ -17,10 +17,16 @@ public class Piirivalvur_intsidendis_abi {
 	private Date alates;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date kuni;
+	private int kogus;
 	private ArrayList<Piirivalvur_intsidendis> pints_arr = new ArrayList<Piirivalvur_intsidendis>();
 	
 	
-	
+	public int getKogus() {
+		return kogus;
+	}
+	public void setKogus(int kogus) {
+		this.kogus = kogus;
+	}
 	public ArrayList<Piirivalvur_intsidendis> getPints_arr() {
 		return pints_arr;
 	}

@@ -440,3 +440,33 @@ fieldset th {
 	visibility: hidden;
 }
 
+#detail_parem_div{
+	float:right;
+	width:45%;
+	padding:10px;
+/* 	border:1px solid red; */
+}
+
+#detail_vasak_div{
+	float:left;
+	width:260px;
+	padding:10px;
+/* 	border:1px solid green; */
+}
+
+#detail_main_div{
+	width:99%;
+	height:400px;
+	background-color: #EEEEEE;
+}
+
+#detail_ylemine_div{
+	padding:10px;
+}
+
+#detail_btns{
+	float:right;
+	margin-right:50px;
+}
+
+
