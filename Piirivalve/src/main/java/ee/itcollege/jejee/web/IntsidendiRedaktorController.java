@@ -1,12 +1,17 @@
 package ee.itcollege.jejee.web;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,6 +31,13 @@ public class IntsidendiRedaktorController {
 
 	@PersistenceContext
 	EntityManager entityManager;
+	
+	@Autowired
+    private RedaktorValidation redaktorValidation;
+
+    public void setRedaktorValidation(RedaktorValidation redaktorValidation) {
+    	this.redaktorValidation = redaktorValidation;
+    }
 	
 	@RequestMapping(value = "/{intsident_ID}", method = RequestMethod.GET)
     public String show(@PathVariable("intsident_ID") Long intsident_ID, Model uiModel) {
@@ -60,7 +72,32 @@ public class IntsidendiRedaktorController {
 	
 	
 	@RequestMapping (value = "/{intsident_ID}/lisa_piirivalvur", method = RequestMethod.POST)
-	public String submitCB(@PathVariable("intsident_ID") Long intsident_ID, Piirivalvur_intsidendis pi, @RequestParam(value="ids", required=false) String[] ids) throws CloneNotSupportedException {
+	public String submitCB(Model uiModel, @PathVariable("intsident_ID") Long intsident_ID, Piirivalvur_intsidendis pi, BindingResult result, 
+			@RequestParam(value="ids", required=false) String[] ids) throws CloneNotSupportedException {
+		
+		redaktorValidation.validate(pi, result);
+        if (result.hasErrors()) {
+    		Intsident ints = Intsident.findIntsident(intsident_ID);
+        	Collection<Piirivalvur> piirivalvurid = Piirivalvur.findAllPiirivalvuridNotInIntsident(ints);
+        	
+        	Collection<String> checked = new ArrayList<String>(piirivalvurid.size());
+        	for (Piirivalvur piirivalvur : piirivalvurid) {
+        		if(ids != null && Arrays.binarySearch(ids, Long.toString(piirivalvur.getId())) >= 0) {
+        			checked.add("checked = \"checked\"");
+                }
+        		else {
+        			checked.add("bla");
+				}
+			}
+
+        	uiModel.addAttribute("id", intsident_ID);
+            uiModel.addAttribute("piirivalvurid", piirivalvurid);
+            uiModel.addAttribute("dateFormat", "yyyy-MM-dd");
+            uiModel.addAttribute("checks", checked);
+            
+        	return "intsidendi_redaktor/add_piirivalvur";        	
+        }
+		
 		if(ids != null) {
 			Intsident ints = Intsident.findIntsident(intsident_ID);
 			if(ints != null) {

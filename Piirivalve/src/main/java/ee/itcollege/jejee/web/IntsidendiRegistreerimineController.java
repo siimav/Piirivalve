@@ -24,8 +24,7 @@ public class IntsidendiRegistreerimineController {
 	 @Autowired
      private RegistrationValidation registrationValidation;
 
-     public void setRegistrationValidation(
-                     RegistrationValidation registrationValidation) {
+     public void setRegistrationValidation(RegistrationValidation registrationValidation) {
              this.registrationValidation = registrationValidation;
      }
 
