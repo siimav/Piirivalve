@@ -12,5 +12,6 @@
         <field:display field="kood" id="s_ee_itcollege_jejee_entities_Intsidendi_liik_kood" object="${intsidendi_liik}" z="kVX3pQuEJe3GCGhhXBanQGP4QW4="/>
         <field:display field="nimetus" id="s_ee_itcollege_jejee_entities_Intsidendi_liik_nimetus" object="${intsidendi_liik}" z="r0bTFHT8+2neOKfTNq5D8wxkrh8="/>
         <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Intsidendi_liik_kommentaar" object="${intsidendi_liik}" z="Lx/OaRSxVeAB7fM0P0mS5kVpthg="/>
+        <field:display field="entityManager" id="s_ee_itcollege_jejee_entities_Intsidendi_liik_entityManager" object="${intsidendi_liik}" z="Tdz4IUgp00GIOqyfoWvkn+Uonc4="/>
     </page:show>
 </div>

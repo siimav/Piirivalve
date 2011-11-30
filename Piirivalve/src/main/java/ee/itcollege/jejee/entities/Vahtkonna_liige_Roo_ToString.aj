@@ -12,6 +12,7 @@ privileged aspect Vahtkonna_liige_Roo_ToString {
         sb.append("Alates: ").append(getAlates()).append(", ");
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud()).append(", ");
+        sb.append("EntityManager: ").append(getEntityManager()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
         sb.append("Kuni: ").append(getKuni()).append(", ");

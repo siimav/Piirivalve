@@ -8,15 +8,10 @@ import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
 import javax.persistence.Column;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Objekt_intsidendis_Roo_Entity {
-    
-    @PersistenceContext
-    transient EntityManager Objekt_intsidendis.entityManager;
     
     @Version
     @Column(name = "version")
@@ -28,12 +23,6 @@ privileged aspect Objekt_intsidendis_Roo_Entity {
     
     public void Objekt_intsidendis.setVersion(Integer version) {
         this.version = version;
-    }
-    
-    @Transactional
-    public void Objekt_intsidendis.persist() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.persist(this);
     }
     
     @Transactional
@@ -65,12 +54,6 @@ privileged aspect Objekt_intsidendis_Roo_Entity {
         Objekt_intsidendis merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
-    }
-    
-    public static final EntityManager Objekt_intsidendis.entityManager() {
-        EntityManager em = new Objekt_intsidendis().entityManager;
-        if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
-        return em;
     }
     
     public static long Objekt_intsidendis.countObjekt_intsidendises() {

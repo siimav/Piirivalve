@@ -12,6 +12,7 @@ privileged aspect Vahtkond_intsidendis_Roo_ToString {
         sb.append("Alates: ").append(getAlates()).append(", ");
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud()).append(", ");
+        sb.append("EntityManager: ").append(getEntityManager()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");
         sb.append("Intsident: ").append(getIntsident()).append(", ");
         sb.append("Kirjeldus: ").append(getKirjeldus()).append(", ");

@@ -1,5 +1,6 @@
 package ee.itcollege.jejee.entities;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -135,6 +136,13 @@ public class Piirivalvur_intsidendis extends BaseEntity implements Cloneable {
 	    	q.setParameter("piirivalvur", piirivalvur);
 	        return q.getResultList();
 	    }
+
+		@SuppressWarnings("unchecked")
+		public static Collection<Piirivalvur_intsidendis> findAllPiirivalvurIntsidendisForIntsident(Intsident ints) {
+	    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi WHERE pi.intsident=:ints", Piirivalvur_intsidendis.class);
+	    	q.setParameter("ints", ints);
+	        return q.getResultList();
+		}
 	
 	
 }

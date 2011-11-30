@@ -10,12 +10,13 @@
         <field:input field="sulgeja" id="c_ee_itcollege_jejee_entities_Piiririkkuja_sulgeja" z="Neg6trkpElpbGG9b2f5mUWvNoAQ="/>
         <field:datetime dateTimePattern="${piiririkkuja_suletud_date_format}" field="suletud" id="c_ee_itcollege_jejee_entities_Piiririkkuja_suletud" required="true" z="l2YUhQA6cTjky9N1Fnwgl5yza2U="/>
         <field:input field="isikukood" id="c_ee_itcollege_jejee_entities_Piiririkkuja_isikukood" z="roXY/+bjd/oAz99aI5BP3tvKPn0="/>
-        <field:input field="eesnimi" id="c_ee_itcollege_jejee_entities_Piiririkkuja_eesnimi" z="cDG9yzXIx2OlaI7YrxEB9k4ypw0="/>
-        <field:input field="perek_nimi" id="c_ee_itcollege_jejee_entities_Piiririkkuja_perek_nimi" z="/eTHiAd0+oPIn8xTaVmwajTDusU="/>
-        <field:input field="sugu" id="c_ee_itcollege_jejee_entities_Piiririkkuja_sugu" z="D0dVUEVhBbZMpjbQ5gvzruWeq4I="/>
+        <field:input field="eesnimi" id="c_ee_itcollege_jejee_entities_Piiririkkuja_eesnimi" required="true" z="bL0oqg+1KIDjvERLINWKnjg3k4U="/>
+        <field:input field="perek_nimi" id="c_ee_itcollege_jejee_entities_Piiririkkuja_perek_nimi" required="true" z="hmkazP59aLpHptSsp0fjCoJc1Ko="/>
+        <field:input field="sugu" id="c_ee_itcollege_jejee_entities_Piiririkkuja_sugu" required="true" z="jIDuiKKZg6MBxhpsr/m2ehpDmbE="/>
         <field:datetime dateTimePattern="${piiririkkuja_synniaeg_date_format}" field="synniaeg" id="c_ee_itcollege_jejee_entities_Piiririkkuja_synniaeg" z="+cj+uU9/Y61Na45yk22seocLIsQ="/>
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Piiririkkuja_kommentaar" z="V+YqxA/anBxpUbio89DqeOBgGp8="/>
         <field:select field="objekt" id="c_ee_itcollege_jejee_entities_Piiririkkuja_objekt" itemValue="id" items="${objekts}" path="/objekts" z="SZHV3b3N+g9/bKb2jmvkZQPG/X4="/>
         <field:simple field="isik_intsidendis" id="c_ee_itcollege_jejee_entities_Piiririkkuja_isik_intsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Isik_intsidendis" z="+WUw8EG/GVps8OEqsQI8oRWLR4Y="/>
+        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Piiririkkuja_entityManager" z="13Vs49+TGuodlzzs30+X3wLdZBU="/>
     </form:update>
 </div>

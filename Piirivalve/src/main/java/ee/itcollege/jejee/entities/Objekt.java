@@ -83,5 +83,12 @@ public class Objekt extends BaseEntity {
     	q.setParameter("ints", ints);
         return q.getResultList();
     }
+    
+    @SuppressWarnings("unchecked")
+	public static Collection<Objekt> findAllObjektidNotInIntsident(Intsident ints) {
+    	Query q = entityManager().createQuery("SELECT o FROM Objekt o WHERE o NOT IN (SELECT o1 FROM Objekt o1 JOIN o1.objekt_intsidendis oi WHERE oi.intsident=:ints)", Objekt.class);
+    	q.setParameter("ints", ints);
+        return q.getResultList();
+    }
    
 }

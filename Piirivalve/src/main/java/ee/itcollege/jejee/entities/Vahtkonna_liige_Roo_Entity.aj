@@ -8,15 +8,10 @@ import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
 import javax.persistence.Column;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Vahtkonna_liige_Roo_Entity {
-    
-    @PersistenceContext
-    transient EntityManager Vahtkonna_liige.entityManager;
     
     @Version
     @Column(name = "version")
@@ -28,12 +23,6 @@ privileged aspect Vahtkonna_liige_Roo_Entity {
     
     public void Vahtkonna_liige.setVersion(Integer version) {
         this.version = version;
-    }
-    
-    @Transactional
-    public void Vahtkonna_liige.persist() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.persist(this);
     }
     
     @Transactional
@@ -65,12 +54,6 @@ privileged aspect Vahtkonna_liige_Roo_Entity {
         Vahtkonna_liige merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
-    }
-    
-    public static final EntityManager Vahtkonna_liige.entityManager() {
-        EntityManager em = new Vahtkonna_liige().entityManager;
-        if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
-        return em;
     }
     
     public static long Vahtkonna_liige.countVahtkonna_liiges() {

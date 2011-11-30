@@ -16,5 +16,6 @@
         <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Vahtkond_kommentaar" object="${vahtkond}" z="DlqJ04BRDGkeyU26mkwpChoqMhY="/>
         <field:display field="vaeosa" id="s_ee_itcollege_jejee_entities_Vahtkond_vaeosa" object="${vahtkond}" z="RHZmIE0hog5gVMD3oblEVx3bzFo="/>
         <field:display field="piiripunkt" id="s_ee_itcollege_jejee_entities_Vahtkond_piiripunkt" object="${vahtkond}" z="aPLwh0i3ka/WBD88j13T2DfeyDw="/>
+        <field:display field="entityManager" id="s_ee_itcollege_jejee_entities_Vahtkond_entityManager" object="${vahtkond}" z="Vw7J2oDmpDbzxENR+q+7qHqCLRg="/>
     </page:show>
 </div>

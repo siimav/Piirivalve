@@ -12,6 +12,7 @@ privileged aspect Piiripunkt_Roo_ToString {
         sb.append("Alates: ").append(getAlates()).append(", ");
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud()).append(", ");
+        sb.append("EntityManager: ").append(getEntityManager()).append(", ");
         sb.append("GPS_latitude: ").append(getGPS_latitude()).append(", ");
         sb.append("GPS_longitude: ").append(getGPS_longitude()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");

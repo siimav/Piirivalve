@@ -130,7 +130,14 @@ public class Vahtkond extends BaseEntity {
 
 	@SuppressWarnings("unchecked")
 	public static List<Vahtkond> findAllVahtkonnadForIntsident(Intsident ints) {
-    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond o JOIN o.vahtkond_piiriloigul vp JOIN vp.piiriloik pl JOIN pl.intsident ints WHERE ints=:ints", Vahtkond.class);
+    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond o JOIN o.vahtkonnad_intsidendis vi WHERE vi.intsident=:ints", Vahtkond.class);
+    	q.setParameter("ints", ints);
+        return q.getResultList();
+    }
+
+    @SuppressWarnings("unchecked")
+	public static Collection<Vahtkond> findAllVahtkonnadNotInIntsident(Intsident ints) {
+    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond o WHERE o NOT IN (SELECT o1 FROM Vahtkond o1 JOIN o1.vahtkonnad_intsidendis vi WHERE vi.intsident=:ints)", Vahtkond.class);
     	q.setParameter("ints", ints);
         return q.getResultList();
     }

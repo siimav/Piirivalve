@@ -15,5 +15,6 @@
         <field:display date="true" dateTimePattern="${vaeosa_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_jejee_entities_Vaeosa_muudetud" object="${vaeosa}" z="z7bOZFi33QMLlbch/6m249tdgPU="/>
         <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Vaeosa_kommentaar" object="${vaeosa}" z="UkgpKBjSZaBriZdOSVb27+e27Io="/>
         <field:display field="riigi_admin_yksus" id="s_ee_itcollege_jejee_entities_Vaeosa_riigi_admin_yksus" object="${vaeosa}" z="hP/ZcUVleoij/wkjUGAgjk5TxSQ="/>
+        <field:display field="entityManager" id="s_ee_itcollege_jejee_entities_Vaeosa_entityManager" object="${vaeosa}" z="w0Mje+7UNnG+s0gbUC0KqIxSRsQ="/>
     </page:show>
 </div>

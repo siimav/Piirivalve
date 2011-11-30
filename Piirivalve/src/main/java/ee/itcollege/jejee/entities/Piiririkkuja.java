@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Query;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
@@ -21,8 +22,11 @@ public class Piiririkkuja extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 
 	private String isikukood;
+	@NotNull
 	private String eesnimi;
+	@NotNull
 	private String perek_nimi;
+	@NotNull
 	private String sugu;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date synniaeg;
@@ -104,13 +108,21 @@ public class Piiririkkuja extends BaseEntity {
 
 	
 	public String getName() {
-		return eesnimi + " " + perek_nimi;
+		return eesnimi + " " + perek_nimi;		
 	}
 	
 	
     @SuppressWarnings("unchecked")
 	public static List<Piiririkkuja> findAllPiiririkkujadForIntsident(Intsident ints) {
     	Query q = entityManager().createQuery("SELECT o FROM Piiririkkuja o JOIN o.isik_intsidendis ii WHERE ii.intsident=:ints", Piiririkkuja.class);
+    	q.setParameter("ints", ints);
+        return q.getResultList();
+    }
+    
+    
+    @SuppressWarnings("unchecked")
+	public static Collection<Piiririkkuja> findAllPiiririkkujadNotInIntsident(Intsident ints) {
+    	Query q = entityManager().createQuery("SELECT o FROM Piiririkkuja o WHERE o NOT IN (SELECT o1 FROM Piiririkkuja o1 JOIN o1.isik_intsidendis ii WHERE ii.intsident=:ints)", Piiririkkuja.class);
     	q.setParameter("ints", ints);
         return q.getResultList();
     }

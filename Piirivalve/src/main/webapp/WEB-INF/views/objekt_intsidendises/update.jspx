@@ -15,5 +15,6 @@
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Objekt_intsidendis_kommentaar" z="+r0q5m5zkA233XvYfWKPGwMM9B8="/>
         <field:select field="intsident" id="c_ee_itcollege_jejee_entities_Objekt_intsidendis_intsident" itemValue="id" items="${intsidents}" path="/intsidents" required="true" z="RSpMYshuRznU+Q3IgRZoDJEf9Fc="/>
         <field:select field="objekt" id="c_ee_itcollege_jejee_entities_Objekt_intsidendis_objekt" itemValue="id" items="${objekts}" path="/objekts" required="true" z="HuAMu4Tul9GCeq8SAXl8Ma4IKnI="/>
+        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Objekt_intsidendis_entityManager" z="jcKLIXUpxryJxVCpbxb58d5bzRQ="/>
     </form:update>
 </div>

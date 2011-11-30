@@ -12,5 +12,6 @@
         <field:display field="muutja" id="s_ee_itcollege_jejee_entities_Objekti_liik_muutja" object="${objekti_liik}" z="5c/MItrC8PwwwbIFxDc8HQPfFp8="/>
         <field:display date="true" dateTimePattern="${objekti_liik_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_jejee_entities_Objekti_liik_muudetud" object="${objekti_liik}" z="m7TH/rpgR5vDQh2FQO0PpZBlYEU="/>
         <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Objekti_liik_kommentaar" object="${objekti_liik}" z="TSD0FWJGseXAytPx8W/Kd62M308="/>
+        <field:display field="entityManager" id="s_ee_itcollege_jejee_entities_Objekti_liik_entityManager" object="${objekti_liik}" z="QoVhedZnJdJ68Pl/6P69oYqXnOQ="/>
     </page:show>
 </div>

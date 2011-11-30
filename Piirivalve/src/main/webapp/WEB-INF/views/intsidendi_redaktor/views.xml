@@ -7,4 +7,13 @@
     <definition extends="default" name="intsidendi_redaktor/add_piirivalvur">
         <put-attribute name="body" value="/WEB-INF/views/intsidendi_redaktor/add_piirivalvur.jsp"/>
     </definition>
+    <definition extends="default" name="intsidendi_redaktor/add_piiririkkuja">
+        <put-attribute name="body" value="/WEB-INF/views/intsidendi_redaktor/add_isik.jsp"/>
+    </definition>
+    <definition extends="default" name="intsidendi_redaktor/add_objekt">
+        <put-attribute name="body" value="/WEB-INF/views/intsidendi_redaktor/add_objekt.jsp"/>
+    </definition>
+        <definition extends="default" name="intsidendi_redaktor/add_vahtkond">
+        <put-attribute name="body" value="/WEB-INF/views/intsidendi_redaktor/add_vahtkond.jsp"/>
+    </definition>
 </tiles-definitions>

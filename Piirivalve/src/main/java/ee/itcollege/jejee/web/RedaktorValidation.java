@@ -4,7 +4,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 
-import ee.itcollege.jejee.entities.Intsident;
+import ee.itcollege.jejee.entities.Isik_intsidendis;
+import ee.itcollege.jejee.entities.Objekt_intsidendis;
 import ee.itcollege.jejee.entities.Piirivalvur_intsidendis;
 
 
@@ -12,11 +13,12 @@ import ee.itcollege.jejee.entities.Piirivalvur_intsidendis;
 public class RedaktorValidation {
 	
 	public boolean supports(Class<?> klass) {
-		return Piirivalvur_intsidendis.class.isAssignableFrom(klass);
+		return Piirivalvur_intsidendis.class.isAssignableFrom(klass) || 
+			   Isik_intsidendis.class.isAssignableFrom(klass) ||
+			   Objekt_intsidendis.class.isAssignableFrom(klass);
 	}
 
-	public void validate(Object target, Errors errors) {
-//		Piirivalvur_intsidendis pi = (Piirivalvur_intsidendis) target;
+	public void validate(Object target, String [] cbs, Errors errors) {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "kirjeldus",
 				null,
 				" Sisesta kirjeldus!");
@@ -26,6 +28,6 @@ public class RedaktorValidation {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "kuni",
 				null,
 				" Sisesta väärtus LÕPULE!");
-
 	}
+	
 }

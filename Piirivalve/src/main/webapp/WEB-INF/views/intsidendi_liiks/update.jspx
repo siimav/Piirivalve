@@ -13,5 +13,6 @@
         <field:input field="nimetus" id="c_ee_itcollege_jejee_entities_Intsidendi_liik_nimetus" z="flbsU2uhsjCU3bU8VoqDXScmWP0="/>
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Intsidendi_liik_kommentaar" z="QWCnpdWZqkZxoBGbfRyR7UwRsuU="/>
         <field:simple field="intsident" id="c_ee_itcollege_jejee_entities_Intsidendi_liik_intsident" messageCode="entity_reference_not_managed" messageCodeAttribute="Intsident" z="gspZp5FGvwAN6Yw86sULVpN5g1M="/>
+        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Intsidendi_liik_entityManager" z="ADnlqL6TPZONxzbz78uNsdwHPJg="/>
     </form:update>
 </div>

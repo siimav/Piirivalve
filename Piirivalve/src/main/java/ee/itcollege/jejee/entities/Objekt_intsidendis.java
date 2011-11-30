@@ -17,7 +17,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 @RooEntity
 @Entity
-public class Objekt_intsidendis extends BaseEntity {
+public class Objekt_intsidendis extends BaseEntity implements Cloneable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -86,6 +86,12 @@ public class Objekt_intsidendis extends BaseEntity {
 
 	public void setObjekt(Objekt objekt) {
 		this.objekt = objekt;
+	}
+	
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
 	}
 
     

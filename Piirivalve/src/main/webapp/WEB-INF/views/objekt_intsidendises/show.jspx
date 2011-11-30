@@ -15,5 +15,6 @@
         <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Objekt_intsidendis_kommentaar" object="${objekt_intsidendis}" z="ZaamwirD80iaQOYwoqdUz2ef1No="/>
         <field:display field="intsident" id="s_ee_itcollege_jejee_entities_Objekt_intsidendis_intsident" object="${objekt_intsidendis}" z="nZiWRMkJ7VlVw9QOQvWlTFpy+/4="/>
         <field:display field="objekt" id="s_ee_itcollege_jejee_entities_Objekt_intsidendis_objekt" object="${objekt_intsidendis}" z="5Et35IghsyDmkGyZpHZYZQbidGY="/>
+        <field:display field="entityManager" id="s_ee_itcollege_jejee_entities_Objekt_intsidendis_entityManager" object="${objekt_intsidendis}" z="NHNhBCp/7Zy3z3OhRh1dIjdKVGA="/>
     </page:show>
 </div>

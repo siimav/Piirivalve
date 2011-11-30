@@ -17,5 +17,6 @@
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Piirivalvur_kommentaar" z="vJJkqGCUIn9El0/o0e2vRhRGndE="/>
         <field:simple field="vahtkonna_liige" id="c_ee_itcollege_jejee_entities_Piirivalvur_vahtkonna_liige" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkonna_liige" z="M4pYKQ9w1T0+NITOiSDbF7mz+4I="/>
         <field:simple field="piirivalvur_intsidendis" id="c_ee_itcollege_jejee_entities_Piirivalvur_piirivalvur_intsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Piirivalvur_intsidendis" z="Rxb8spWfkUrwiZmymTNDkBkh8+8="/>
+        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Piirivalvur_entityManager" z="pGuyTYw0yJCXPRRsjHuzVtQb4Gc="/>
     </form:update>
 </div>

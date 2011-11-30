@@ -15,6 +15,7 @@
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_kommentaar" z="I0MsaJfk0LPBQmtUYJxa90jO6zA="/>
         <field:select field="intsident" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_intsident" itemValue="id" items="${intsidents}" path="/intsidents" z="e+ogb85wN8xs2Bg7gQTXMLidL+c="/>
         <field:select field="piiririkkuja" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_piiririkkuja" itemValue="id" items="${piiririkkujas}" path="/piiririkkujas" z="kNvkKuINn3EV/Xd2N4fS8KWRKs8="/>
+        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Isik_intsidendis_entityManager" z="aZiq0po0u0QB8dPdbbqLMaOChRE="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_jejee_entities_Isik_intsidendis" render="${not empty dependencies}" z="nQjLJtsE5/U/jYH5UhH64zwIJYw="/>
 </div>

@@ -17,5 +17,6 @@
         <field:display field="muutja" id="s_ee_itcollege_jejee_entities_Piiripunkt_muutja" object="${piiripunkt}" z="csv70J/ha+lzFyCVA7SSCOTlZ+U="/>
         <field:display date="true" dateTimePattern="${piiripunkt_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_jejee_entities_Piiripunkt_muudetud" object="${piiripunkt}" z="kMPAErwFOhfNCaaHhYnfMWI7dlE="/>
         <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Piiripunkt_kommentaar" object="${piiripunkt}" z="gM4XcrIzeGxDSRcw40sPKwpaa3c="/>
+        <field:display field="entityManager" id="s_ee_itcollege_jejee_entities_Piiripunkt_entityManager" object="${piiripunkt}" z="MhMudxMre2UT4RCbfF/oxL2Bfrg="/>
     </page:show>
 </div>

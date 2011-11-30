@@ -8,15 +8,10 @@ import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
 import javax.persistence.Column;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Piirivalvur_Roo_Entity {
-    
-    @PersistenceContext
-    transient EntityManager Piirivalvur.entityManager;
     
     @Version
     @Column(name = "version")
@@ -28,12 +23,6 @@ privileged aspect Piirivalvur_Roo_Entity {
     
     public void Piirivalvur.setVersion(Integer version) {
         this.version = version;
-    }
-    
-    @Transactional
-    public void Piirivalvur.persist() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.persist(this);
     }
     
     @Transactional
@@ -65,12 +54,6 @@ privileged aspect Piirivalvur_Roo_Entity {
         Piirivalvur merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
-    }
-    
-    public static final EntityManager Piirivalvur.entityManager() {
-        EntityManager em = new Piirivalvur().entityManager;
-        if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
-        return em;
     }
     
     public static long Piirivalvur.countPiirivalvurs() {

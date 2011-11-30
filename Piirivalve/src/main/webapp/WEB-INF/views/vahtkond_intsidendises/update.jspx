@@ -16,5 +16,6 @@
         <field:select field="intsident" id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_intsident" itemValue="id" items="${intsidents}" path="/intsidents" required="true" z="Nul3UKEI8cnpdaH5wVYt5V9kkcw="/>
         <field:select field="vahtkond" id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_vahtkond" itemValue="id" items="${vahtkonds}" path="/vahtkonds" required="true" z="M0620sQfwQlAiloVgeCUcoNZ+To="/>
         <field:simple field="piirivalvurid_intsidendis" id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_piirivalvurid_intsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Piirivalvur_intsidendis" z="TmQDizVR2hg6WLL1/4dc0RpNV2E="/>
+        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Vahtkond_intsidendis_entityManager" z="a+YMfoLr3IDsuW4Bk3EEmK4bp1c="/>
     </form:update>
 </div>

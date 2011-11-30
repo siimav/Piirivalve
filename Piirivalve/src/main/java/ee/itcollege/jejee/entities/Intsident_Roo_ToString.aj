@@ -11,6 +11,7 @@ privileged aspect Intsident_Roo_ToString {
         StringBuilder sb = new StringBuilder();
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud()).append(", ");
+        sb.append("EntityManager: ").append(getEntityManager()).append(", ");
         sb.append("GPS_latituud: ").append(getGPS_latituud()).append(", ");
         sb.append("GPS_longituud: ").append(getGPS_longituud()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");

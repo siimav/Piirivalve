@@ -23,6 +23,7 @@
         <field:simple field="isik_intsidendis" id="c_ee_itcollege_jejee_entities_Intsident_isik_intsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Isik_intsidendis" z="uQn3d9bVwsbMb74TSOQVa7c3hvg="/>
         <field:simple field="vahtkonnad_intsidendis" id="c_ee_itcollege_jejee_entities_Intsident_vahtkonnad_intsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkond_intsidendis" z="qUpqFbh6tYmM8XqRdKMzHarj3m4="/>
         <field:simple field="piirivalvurid_intsidendis" id="c_ee_itcollege_jejee_entities_Intsident_piirivalvurid_intsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Piirivalvur_intsidendis" z="x4qMK+j1YAi+GbwVqYDyIFNjeZ0="/>
+        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Intsident_entityManager" z="C0I08Hl2UGbGGejtwac+SdQQKaY="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_jejee_entities_Intsident" render="${not empty dependencies}" z="nGMKV3KLohGimi9AiKkoPXa92Z8="/>
 </div>

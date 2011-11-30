@@ -8,15 +8,10 @@ import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
 import javax.persistence.Column;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Riigi_admin_yksuse_liik_Roo_Entity {
-    
-    @PersistenceContext
-    transient EntityManager Riigi_admin_yksuse_liik.entityManager;
     
     @Version
     @Column(name = "version")
@@ -28,12 +23,6 @@ privileged aspect Riigi_admin_yksuse_liik_Roo_Entity {
     
     public void Riigi_admin_yksuse_liik.setVersion(Integer version) {
         this.version = version;
-    }
-    
-    @Transactional
-    public void Riigi_admin_yksuse_liik.persist() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.persist(this);
     }
     
     @Transactional
@@ -65,12 +54,6 @@ privileged aspect Riigi_admin_yksuse_liik_Roo_Entity {
         Riigi_admin_yksuse_liik merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
-    }
-    
-    public static final EntityManager Riigi_admin_yksuse_liik.entityManager() {
-        EntityManager em = new Riigi_admin_yksuse_liik().entityManager;
-        if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
-        return em;
     }
     
     public static long Riigi_admin_yksuse_liik.countRiigi_admin_yksuse_liiks() {

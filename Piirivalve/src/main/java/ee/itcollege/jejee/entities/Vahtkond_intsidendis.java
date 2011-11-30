@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Query;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -17,7 +18,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 @RooEntity
 @Entity
-public class Vahtkond_intsidendis extends BaseEntity {
+public class Vahtkond_intsidendis extends BaseEntity implements Cloneable {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -99,5 +100,17 @@ public class Vahtkond_intsidendis extends BaseEntity {
 	}
 	
 	
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+
+
+	@SuppressWarnings("unchecked")
+	public static Collection<Vahtkond_intsidendis> findAllVahtkonnadIntsidendisForIntsident(Intsident ints) {
+    	Query q = entityManager().createQuery("SELECT vi FROM Vahtkond_intsidendis vi WHERE vi.intsident=:ints", Vahtkond_intsidendis.class);
+    	q.setParameter("ints", ints);
+        return q.getResultList();
+	}
 
 }

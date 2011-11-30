@@ -12,5 +12,6 @@
         <field:display date="true" dateTimePattern="${objekt_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_jejee_entities_Objekt_muudetud" object="${objekt}" z="8G7oqMg3/ecoyFM4k25NSWrdM44="/>
         <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Objekt_kommentaar" object="${objekt}" z="9UYSrjh502AW4xpL7dJfpBARxsE="/>
         <field:display field="objekti_liik" id="s_ee_itcollege_jejee_entities_Objekt_objekti_liik" object="${objekt}" z="22yICQKtduXu7YGfgjwMMVkeXuU="/>
+        <field:display field="entityManager" id="s_ee_itcollege_jejee_entities_Objekt_entityManager" object="${objekt}" z="twn+otwmZ9yEKAdHmHTsxYcfyCA="/>
     </page:show>
 </div>

@@ -14,6 +14,7 @@
         <field:input field="muutja" id="c_ee_itcollege_jejee_entities_Seadus_muutja" required="true" z="DfsCD5FWhAr9XBs4m27kQHSG8Ow="/>
         <field:datetime dateTimePattern="${seadus_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_jejee_entities_Seadus_muudetud" required="true" z="BWHZ/0KeJdN1S51bE4VaseGmjDM="/>
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Seadus_kommentaar" required="true" z="+f1GQOpf8pqSifLb2LTxF4x66NI="/>
+        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Seadus_entityManager" z="AvefNpniDjBlvwo8ReDH322S+RU="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_jejee_entities_Seadus" render="${not empty dependencies}" z="DKOrzxvK0ZyLv7EKxsy+BBke9Xs="/>
 </div>
