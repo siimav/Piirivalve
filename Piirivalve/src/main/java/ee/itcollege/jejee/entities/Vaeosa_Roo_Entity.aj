@@ -4,57 +4,10 @@
 package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Vaeosa;
-import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Version;
-import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Vaeosa_Roo_Entity {
-    
-    @Version
-    @Column(name = "version")
-    private Integer Vaeosa.version;
-    
-    public Integer Vaeosa.getVersion() {
-        return this.version;
-    }
-    
-    public void Vaeosa.setVersion(Integer version) {
-        this.version = version;
-    }
-    
-    @Transactional
-    public void Vaeosa.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Vaeosa attached = Vaeosa.findVaeosa(this.id);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
-    public void Vaeosa.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
-    }
-    
-    @Transactional
-    public void Vaeosa.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
-    }
-    
-    @Transactional
-    public Vaeosa Vaeosa.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        Vaeosa merged = this.entityManager.merge(this);
-        this.entityManager.flush();
-        return merged;
-    }
     
     public static long Vaeosa.countVaeosas() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Vaeosa o", Long.class).getSingleResult();

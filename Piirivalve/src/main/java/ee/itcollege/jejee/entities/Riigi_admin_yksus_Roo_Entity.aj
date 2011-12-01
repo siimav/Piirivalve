@@ -4,57 +4,10 @@
 package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Riigi_admin_yksus;
-import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Version;
-import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Riigi_admin_yksus_Roo_Entity {
-    
-    @Version
-    @Column(name = "version")
-    private Integer Riigi_admin_yksus.version;
-    
-    public Integer Riigi_admin_yksus.getVersion() {
-        return this.version;
-    }
-    
-    public void Riigi_admin_yksus.setVersion(Integer version) {
-        this.version = version;
-    }
-    
-    @Transactional
-    public void Riigi_admin_yksus.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Riigi_admin_yksus attached = Riigi_admin_yksus.findRiigi_admin_yksus(this.id);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
-    public void Riigi_admin_yksus.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
-    }
-    
-    @Transactional
-    public void Riigi_admin_yksus.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
-    }
-    
-    @Transactional
-    public Riigi_admin_yksus Riigi_admin_yksus.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        Riigi_admin_yksus merged = this.entityManager.merge(this);
-        this.entityManager.flush();
-        return merged;
-    }
     
     public static long Riigi_admin_yksus.countRiigi_admin_yksuses() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Riigi_admin_yksus o", Long.class).getSingleResult();

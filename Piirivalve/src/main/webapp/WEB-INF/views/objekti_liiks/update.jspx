@@ -13,6 +13,5 @@
         <field:input field="nimetus" id="c_ee_itcollege_jejee_entities_Objekti_liik_nimetus" required="true" z="wXuimPFg0NX6IYRfl55cepi+5G8="/>
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Objekti_liik_kommentaar" z="osGd6+FRrA2B6xaufIEyTBEH2LA="/>
         <field:simple field="objekt" id="c_ee_itcollege_jejee_entities_Objekti_liik_objekt" messageCode="entity_reference_not_managed" messageCodeAttribute="Objekt" z="0sHaKqPSCjfEDZy7rN8wI3FcCLM="/>
-        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Objekti_liik_entityManager" z="7Xnz732v3NyzmOq+U7c+sAOxCvQ="/>
     </form:update>
 </div>

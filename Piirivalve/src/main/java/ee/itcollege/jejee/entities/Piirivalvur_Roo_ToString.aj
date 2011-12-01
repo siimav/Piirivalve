@@ -12,7 +12,6 @@ privileged aspect Piirivalvur_Roo_ToString {
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud()).append(", ");
         sb.append("Eesnimed: ").append(getEesnimed()).append(", ");
-        sb.append("EntityManager: ").append(getEntityManager()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");
         sb.append("Isikukood: ").append(getIsikukood()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");

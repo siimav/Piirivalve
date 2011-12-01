@@ -16,6 +16,5 @@
         <field:display field="intsident" id="s_ee_itcollege_jejee_entities_Piirivalvur_intsidendis_intsident" object="${piirivalvur_intsidendis}" z="tqQQZXcTP3cH1HZojZt0i6WEXnY="/>
         <field:display field="piirivalvur" id="s_ee_itcollege_jejee_entities_Piirivalvur_intsidendis_piirivalvur" object="${piirivalvur_intsidendis}" z="tlR06Iqhf1/pWWczLmGMOCFdk6Q="/>
         <field:display field="vahtkond_intsidendis" id="s_ee_itcollege_jejee_entities_Piirivalvur_intsidendis_vahtkond_intsidendis" object="${piirivalvur_intsidendis}" z="myGfbD3hYBrBlLBiqiu2sQT1iJI="/>
-        <field:display field="entityManager" id="s_ee_itcollege_jejee_entities_Piirivalvur_intsidendis_entityManager" object="${piirivalvur_intsidendis}" z="IkFvNhwuW/kpK4f5tnEa22cRwPQ="/>
     </page:show>
 </div>

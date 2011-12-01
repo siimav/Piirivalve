@@ -16,6 +16,5 @@
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Vaeosa_kommentaar" z="aAY1oa7iPRm/Gty1eW7GxTNvi4o="/>
         <field:select field="riigi_admin_yksus" id="c_ee_itcollege_jejee_entities_Vaeosa_riigi_admin_yksus" itemValue="id" items="${riigi_admin_yksuses}" path="/riigi_admin_yksuses" required="true" z="nM+pd3l7727kwFMR91nbbFBe238="/>
         <field:simple field="vahtkond" id="c_ee_itcollege_jejee_entities_Vaeosa_vahtkond" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkond" z="TCwTALCm15DYvI2UJfUHBzGabE0="/>
-        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Vaeosa_entityManager" z="h90SS+ojVOU41Zognyt27V3MkHo="/>
     </form:update>
 </div>

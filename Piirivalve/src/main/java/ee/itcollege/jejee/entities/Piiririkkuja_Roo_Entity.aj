@@ -4,57 +4,10 @@
 package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Piiririkkuja;
-import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Version;
-import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Piiririkkuja_Roo_Entity {
-    
-    @Version
-    @Column(name = "version")
-    private Integer Piiririkkuja.version;
-    
-    public Integer Piiririkkuja.getVersion() {
-        return this.version;
-    }
-    
-    public void Piiririkkuja.setVersion(Integer version) {
-        this.version = version;
-    }
-    
-    @Transactional
-    public void Piiririkkuja.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Piiririkkuja attached = Piiririkkuja.findPiiririkkuja(this.id);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
-    public void Piiririkkuja.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
-    }
-    
-    @Transactional
-    public void Piiririkkuja.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
-    }
-    
-    @Transactional
-    public Piiririkkuja Piiririkkuja.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        Piiririkkuja merged = this.entityManager.merge(this);
-        this.entityManager.flush();
-        return merged;
-    }
     
     public static long Piiririkkuja.countPiiririkkujas() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Piiririkkuja o", Long.class).getSingleResult();

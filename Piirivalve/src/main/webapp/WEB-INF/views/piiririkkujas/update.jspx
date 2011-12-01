@@ -17,6 +17,5 @@
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Piiririkkuja_kommentaar" z="V+YqxA/anBxpUbio89DqeOBgGp8="/>
         <field:select field="objekt" id="c_ee_itcollege_jejee_entities_Piiririkkuja_objekt" itemValue="id" items="${objekts}" path="/objekts" z="SZHV3b3N+g9/bKb2jmvkZQPG/X4="/>
         <field:simple field="isik_intsidendis" id="c_ee_itcollege_jejee_entities_Piiririkkuja_isik_intsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Isik_intsidendis" z="+WUw8EG/GVps8OEqsQI8oRWLR4Y="/>
-        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Piiririkkuja_entityManager" z="13Vs49+TGuodlzzs30+X3wLdZBU="/>
     </form:update>
 </div>

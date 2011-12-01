@@ -18,7 +18,6 @@
         <field:datetime dateTimePattern="${piiripunkt_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_jejee_entities_Piiripunkt_muudetud" required="true" z="+ioKdvqpz7qj42TEfZUU9ta4c64="/>
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Piiripunkt_kommentaar" z="Vn8hluAvptQKnxcig6c6VKC6Hyw="/>
         <field:simple field="vahtkond" id="c_ee_itcollege_jejee_entities_Piiripunkt_vahtkond" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkond" z="rm04sxOb3HW5Nyca7LX2AU+UCME="/>
-        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Piiripunkt_entityManager" z="JzELK+LMpefTibXzvIzpTgGZHsw="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_jejee_entities_Piiripunkt" render="${not empty dependencies}" z="ThgZGHOLf3PBZOT9cFy4TyJvTmk="/>
 </div>

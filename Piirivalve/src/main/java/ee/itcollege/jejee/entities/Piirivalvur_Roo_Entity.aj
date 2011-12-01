@@ -4,57 +4,10 @@
 package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Piirivalvur;
-import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Version;
-import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Piirivalvur_Roo_Entity {
-    
-    @Version
-    @Column(name = "version")
-    private Integer Piirivalvur.version;
-    
-    public Integer Piirivalvur.getVersion() {
-        return this.version;
-    }
-    
-    public void Piirivalvur.setVersion(Integer version) {
-        this.version = version;
-    }
-    
-    @Transactional
-    public void Piirivalvur.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Piirivalvur attached = Piirivalvur.findPiirivalvur(this.id);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
-    public void Piirivalvur.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
-    }
-    
-    @Transactional
-    public void Piirivalvur.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
-    }
-    
-    @Transactional
-    public Piirivalvur Piirivalvur.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        Piirivalvur merged = this.entityManager.merge(this);
-        this.entityManager.flush();
-        return merged;
-    }
     
     public static long Piirivalvur.countPiirivalvurs() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Piirivalvur o", Long.class).getSingleResult();

@@ -4,57 +4,10 @@
 package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Vahtkond;
-import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Version;
-import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Vahtkond_Roo_Entity {
-    
-    @Version
-    @Column(name = "version")
-    private Integer Vahtkond.version;
-    
-    public Integer Vahtkond.getVersion() {
-        return this.version;
-    }
-    
-    public void Vahtkond.setVersion(Integer version) {
-        this.version = version;
-    }
-    
-    @Transactional
-    public void Vahtkond.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Vahtkond attached = Vahtkond.findVahtkond(this.id);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
-    public void Vahtkond.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
-    }
-    
-    @Transactional
-    public void Vahtkond.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
-    }
-    
-    @Transactional
-    public Vahtkond Vahtkond.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        Vahtkond merged = this.entityManager.merge(this);
-        this.entityManager.flush();
-        return merged;
-    }
     
     public static long Vahtkond.countVahtkonds() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Vahtkond o", Long.class).getSingleResult();

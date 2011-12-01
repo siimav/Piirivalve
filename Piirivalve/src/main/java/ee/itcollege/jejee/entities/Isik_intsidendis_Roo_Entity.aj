@@ -4,57 +4,10 @@
 package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Isik_intsidendis;
-import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Version;
-import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Isik_intsidendis_Roo_Entity {
-    
-    @Version
-    @Column(name = "version")
-    private Integer Isik_intsidendis.version;
-    
-    public Integer Isik_intsidendis.getVersion() {
-        return this.version;
-    }
-    
-    public void Isik_intsidendis.setVersion(Integer version) {
-        this.version = version;
-    }
-    
-    @Transactional
-    public void Isik_intsidendis.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Isik_intsidendis attached = Isik_intsidendis.findIsik_intsidendis(this.id);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
-    public void Isik_intsidendis.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
-    }
-    
-    @Transactional
-    public void Isik_intsidendis.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
-    }
-    
-    @Transactional
-    public Isik_intsidendis Isik_intsidendis.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        Isik_intsidendis merged = this.entityManager.merge(this);
-        this.entityManager.flush();
-        return merged;
-    }
     
     public static long Isik_intsidendis.countIsik_intsidendises() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Isik_intsidendis o", Long.class).getSingleResult();

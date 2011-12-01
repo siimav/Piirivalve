@@ -14,7 +14,6 @@
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_kommentaar" z="/kPmykIhVW9Cis7sSB1U1Kj5O/c="/>
         <field:select field="vahtkond" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_vahtkond" itemValue="id" items="${vahtkonds}" path="/vahtkonds" z="0k+eUqqFOci38VKlJnYk/8gAubk="/>
         <field:select field="piirivalvur" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_piirivalvur" itemValue="id" items="${piirivalvurs}" path="/piirivalvurs" z="tzDNkvM7KEjhJrT1mIzyZo7v6p0="/>
-        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Vahtkonna_liige_entityManager" z="1eKph2tbGcxv+7cA5ipnGG2zRH0="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_jejee_entities_Vahtkonna_liige" render="${not empty dependencies}" z="HbGajoKiV6wfmzhMpcLHIsAKohc="/>
 </div>

@@ -4,57 +4,10 @@
 package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Vahtkonna_liige;
-import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Version;
-import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Vahtkonna_liige_Roo_Entity {
-    
-    @Version
-    @Column(name = "version")
-    private Integer Vahtkonna_liige.version;
-    
-    public Integer Vahtkonna_liige.getVersion() {
-        return this.version;
-    }
-    
-    public void Vahtkonna_liige.setVersion(Integer version) {
-        this.version = version;
-    }
-    
-    @Transactional
-    public void Vahtkonna_liige.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Vahtkonna_liige attached = Vahtkonna_liige.findVahtkonna_liige(this.id);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
-    public void Vahtkonna_liige.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
-    }
-    
-    @Transactional
-    public void Vahtkonna_liige.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
-    }
-    
-    @Transactional
-    public Vahtkonna_liige Vahtkonna_liige.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        Vahtkonna_liige merged = this.entityManager.merge(this);
-        this.entityManager.flush();
-        return merged;
-    }
     
     public static long Vahtkonna_liige.countVahtkonna_liiges() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Vahtkonna_liige o", Long.class).getSingleResult();

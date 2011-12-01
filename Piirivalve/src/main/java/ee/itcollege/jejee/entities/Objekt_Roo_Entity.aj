@@ -4,57 +4,10 @@
 package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Objekt;
-import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Version;
-import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Objekt_Roo_Entity {
-    
-    @Version
-    @Column(name = "version")
-    private Integer Objekt.version;
-    
-    public Integer Objekt.getVersion() {
-        return this.version;
-    }
-    
-    public void Objekt.setVersion(Integer version) {
-        this.version = version;
-    }
-    
-    @Transactional
-    public void Objekt.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Objekt attached = Objekt.findObjekt(this.id);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
-    public void Objekt.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
-    }
-    
-    @Transactional
-    public void Objekt.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
-    }
-    
-    @Transactional
-    public Objekt Objekt.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        Objekt merged = this.entityManager.merge(this);
-        this.entityManager.flush();
-        return merged;
-    }
     
     public static long Objekt.countObjekts() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Objekt o", Long.class).getSingleResult();

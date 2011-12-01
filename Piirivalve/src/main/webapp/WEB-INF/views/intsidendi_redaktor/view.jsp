@@ -26,7 +26,7 @@
 			</tr>
 			<c:forEach var="ii" items="${isikud_intsidendis}">			
 				<tr>
-					<td width="100%"><p>${ii.isik.getName()}</p></td>
+					<td width="100%"><p>${ii.piiririkkuja.getName()}</p></td>
 					<td><label> <input type="submit" name="inf3" id="inf4" value="Info" />
 					</label></td>
 					<td><input type="button" id="kustuta" value="Kustuta" onClick="redirectTo('kustuta_piiririkkuja/${ii.id}')" /></td>

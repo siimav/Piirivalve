@@ -14,7 +14,6 @@
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_kommentaar" z="IvbYWDd9b5FbAMhjvPOv6DvziCU="/>
         <field:select field="piiriloik" id="c_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_piiriloik" itemValue="id" items="${piiriloiks}" path="/piiriloiks" required="true" z="EJ0tOf1kzgkDYlk0+N/gzRagkgs="/>
         <field:select field="vahtkond" id="c_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_vahtkond" itemValue="id" items="${vahtkonds}" path="/vahtkonds" required="true" z="DxkeJizaS9g5xPl+ecVaSjkQ6Dw="/>
-        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_entityManager" z="aSGDot4IJZEkDMAcabGQoD3kVZY="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_jejee_entities_Vahtkond_piiriloigul" render="${not empty dependencies}" z="mhK3xQxhFiXkqn3pOPM5ETki5r4="/>
 </div>

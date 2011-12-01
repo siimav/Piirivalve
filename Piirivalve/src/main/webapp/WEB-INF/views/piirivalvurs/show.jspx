@@ -15,6 +15,5 @@
         <field:display field="muutja" id="s_ee_itcollege_jejee_entities_Piirivalvur_muutja" object="${piirivalvur}" z="dkbMnViZjP7TJa7n8fQ7kq/uluE="/>
         <field:display date="true" dateTimePattern="${piirivalvur_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_jejee_entities_Piirivalvur_muudetud" object="${piirivalvur}" z="7YYd6Z+N7Xip/xl9UTp5bIZQjiM="/>
         <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Piirivalvur_kommentaar" object="${piirivalvur}" z="6xxkLqjtvU0vPxbqLBcDWVy4mM0="/>
-        <field:display field="entityManager" id="s_ee_itcollege_jejee_entities_Piirivalvur_entityManager" object="${piirivalvur}" z="q4UzR1XnWq5BVqU8ZHg2bAvkdos="/>
     </page:show>
 </div>

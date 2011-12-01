@@ -4,57 +4,10 @@
 package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Piiripunkt;
-import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Version;
-import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Piiripunkt_Roo_Entity {
-    
-    @Version
-    @Column(name = "version")
-    private Integer Piiripunkt.version;
-    
-    public Integer Piiripunkt.getVersion() {
-        return this.version;
-    }
-    
-    public void Piiripunkt.setVersion(Integer version) {
-        this.version = version;
-    }
-    
-    @Transactional
-    public void Piiripunkt.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Piiripunkt attached = Piiripunkt.findPiiripunkt(this.id);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
-    public void Piiripunkt.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
-    }
-    
-    @Transactional
-    public void Piiripunkt.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
-    }
-    
-    @Transactional
-    public Piiripunkt Piiripunkt.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        Piiripunkt merged = this.entityManager.merge(this);
-        this.entityManager.flush();
-        return merged;
-    }
     
     public static long Piiripunkt.countPiiripunkts() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Piiripunkt o", Long.class).getSingleResult();

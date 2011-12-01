@@ -19,6 +19,5 @@
         <field:display field="GPS_latituud" id="s_ee_itcollege_jejee_entities_Intsident_GPS_latituud" object="${intsident}" z="AMaNPJ5L5ueUDFbzaxvMgIwZjKc="/>
         <field:display field="piiriloik" id="s_ee_itcollege_jejee_entities_Intsident_piiriloik" object="${intsident}" z="fIcx/kvVW/8O+ryCQEfTSe7Ny3E="/>
         <field:display field="intsidendi_liik" id="s_ee_itcollege_jejee_entities_Intsident_intsidendi_liik" object="${intsident}" z="crd/8KFr80tRN1+2LnbkZ7EKsoc="/>
-        <field:display field="entityManager" id="s_ee_itcollege_jejee_entities_Intsident_entityManager" object="${intsident}" z="Puir7bUYj/w2UXtanLxVeRmlGhc="/>
     </page:show>
 </div>

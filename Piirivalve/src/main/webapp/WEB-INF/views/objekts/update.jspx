@@ -14,6 +14,5 @@
         <field:select field="objekti_liik" id="c_ee_itcollege_jejee_entities_Objekt_objekti_liik" itemValue="id" items="${objekti_liiks}" path="/objekti_liiks" required="true" z="Cje3nUzfKVKNRvgizLkWc6pzJfw="/>
         <field:simple field="objekt_intsidendis" id="c_ee_itcollege_jejee_entities_Objekt_objekt_intsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Objekt_intsidendis" z="BquJwnVACWcbskVOJCTYxdNybn4="/>
         <field:simple field="piiririkkuja" id="c_ee_itcollege_jejee_entities_Objekt_piiririkkuja" messageCode="entity_reference_not_managed" messageCodeAttribute="Piiririkkuja" z="8AAYxhPwTSG6mc5vFPJ1AO2y390="/>
-        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Objekt_entityManager" z="WBO6u3U5JyJ9m2RH1uyhjoEchT8="/>
     </form:update>
 </div>

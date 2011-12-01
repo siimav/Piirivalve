@@ -15,6 +15,5 @@
         <field:display date="true" dateTimePattern="${vahtkond_intsidendis_suletud_date_format}" field="suletud" id="s_ee_itcollege_jejee_entities_Vahtkond_intsidendis_suletud" object="${vahtkond_intsidendis}" z="qoPaZCc5e4drHAYC+Lc6JomSEcI="/>
         <field:display field="intsident" id="s_ee_itcollege_jejee_entities_Vahtkond_intsidendis_intsident" object="${vahtkond_intsidendis}" z="GhWVP201E6/6wzgKO797Wn2MemI="/>
         <field:display field="vahtkond" id="s_ee_itcollege_jejee_entities_Vahtkond_intsidendis_vahtkond" object="${vahtkond_intsidendis}" z="Li8FBZckXZf/EXA/lbKAZGqnFM0="/>
-        <field:display field="entityManager" id="s_ee_itcollege_jejee_entities_Vahtkond_intsidendis_entityManager" object="${vahtkond_intsidendis}" z="wS5iEn+0jsMb6twnGJjr1Tso1kA="/>
     </page:show>
 </div>

@@ -4,57 +4,10 @@
 package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Piiriloik;
-import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Version;
-import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Piiriloik_Roo_Entity {
-    
-    @Version
-    @Column(name = "version")
-    private Integer Piiriloik.version;
-    
-    public Integer Piiriloik.getVersion() {
-        return this.version;
-    }
-    
-    public void Piiriloik.setVersion(Integer version) {
-        this.version = version;
-    }
-    
-    @Transactional
-    public void Piiriloik.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Piiriloik attached = Piiriloik.findPiiriloik(this.id);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
-    public void Piiriloik.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
-    }
-    
-    @Transactional
-    public void Piiriloik.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
-    }
-    
-    @Transactional
-    public Piiriloik Piiriloik.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        Piiriloik merged = this.entityManager.merge(this);
-        this.entityManager.flush();
-        return merged;
-    }
     
     public static long Piiriloik.countPiiriloiks() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Piiriloik o", Long.class).getSingleResult();

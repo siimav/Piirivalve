@@ -11,7 +11,6 @@ privileged aspect Seadus_Roo_ToString {
         StringBuilder sb = new StringBuilder();
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud()).append(", ");
-        sb.append("EntityManager: ").append(getEntityManager()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");
         sb.append("Kehtiv_alates: ").append(getKehtiv_alates()).append(", ");
         sb.append("Kehtiv_kuni: ").append(getKehtiv_kuni()).append(", ");

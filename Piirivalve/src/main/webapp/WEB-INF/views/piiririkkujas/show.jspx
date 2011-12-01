@@ -16,6 +16,5 @@
         <field:display date="true" dateTimePattern="${piiririkkuja_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_jejee_entities_Piiririkkuja_muudetud" object="${piiririkkuja}" z="zjBNv+H37b/kpsMyIkv97NNTq2Q="/>
         <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Piiririkkuja_kommentaar" object="${piiririkkuja}" z="IzFqTo4EH0oQCI7YMIkDbrKmBu4="/>
         <field:display field="objekt" id="s_ee_itcollege_jejee_entities_Piiririkkuja_objekt" object="${piiririkkuja}" z="DYTuOx/nldLFHLMPWSy/BmQQitY="/>
-        <field:display field="entityManager" id="s_ee_itcollege_jejee_entities_Piiririkkuja_entityManager" object="${piiririkkuja}" z="nW/CD/Xv6f28nXfvzHEE9dn2TuM="/>
     </page:show>
 </div>

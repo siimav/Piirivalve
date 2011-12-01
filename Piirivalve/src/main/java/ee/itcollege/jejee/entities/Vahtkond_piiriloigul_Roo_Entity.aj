@@ -4,57 +4,10 @@
 package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Vahtkond_piiriloigul;
-import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Version;
-import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Vahtkond_piiriloigul_Roo_Entity {
-    
-    @Version
-    @Column(name = "version")
-    private Integer Vahtkond_piiriloigul.version;
-    
-    public Integer Vahtkond_piiriloigul.getVersion() {
-        return this.version;
-    }
-    
-    public void Vahtkond_piiriloigul.setVersion(Integer version) {
-        this.version = version;
-    }
-    
-    @Transactional
-    public void Vahtkond_piiriloigul.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Vahtkond_piiriloigul attached = Vahtkond_piiriloigul.findVahtkond_piiriloigul(this.id);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
-    public void Vahtkond_piiriloigul.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
-    }
-    
-    @Transactional
-    public void Vahtkond_piiriloigul.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
-    }
-    
-    @Transactional
-    public Vahtkond_piiriloigul Vahtkond_piiriloigul.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        Vahtkond_piiriloigul merged = this.entityManager.merge(this);
-        this.entityManager.flush();
-        return merged;
-    }
     
     public static long Vahtkond_piiriloigul.countVahtkond_piiriloiguls() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Vahtkond_piiriloigul o", Long.class).getSingleResult();

@@ -14,6 +14,5 @@
         <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_kommentaar" object="${vahtkond_piiriloigul}" z="YVUjbzlnB8+cPINntQlMvCIWFTc="/>
         <field:display field="piiriloik" id="s_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_piiriloik" object="${vahtkond_piiriloigul}" z="Py2086HbFqS3ECHPT+gdPS6FurQ="/>
         <field:display field="vahtkond" id="s_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_vahtkond" object="${vahtkond_piiriloigul}" z="u1IqAJBdwNVl/Yg10Ua7rVAvTJk="/>
-        <field:display field="entityManager" id="s_ee_itcollege_jejee_entities_Vahtkond_piiriloigul_entityManager" object="${vahtkond_piiriloigul}" z="d9wmVAgtKAyUtDaunxMgpiV9qyg="/>
     </page:show>
 </div>

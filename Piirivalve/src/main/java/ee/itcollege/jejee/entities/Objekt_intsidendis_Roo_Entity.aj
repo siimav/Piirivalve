@@ -4,57 +4,10 @@
 package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Objekt_intsidendis;
-import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Version;
-import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Objekt_intsidendis_Roo_Entity {
-    
-    @Version
-    @Column(name = "version")
-    private Integer Objekt_intsidendis.version;
-    
-    public Integer Objekt_intsidendis.getVersion() {
-        return this.version;
-    }
-    
-    public void Objekt_intsidendis.setVersion(Integer version) {
-        this.version = version;
-    }
-    
-    @Transactional
-    public void Objekt_intsidendis.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Objekt_intsidendis attached = Objekt_intsidendis.findObjekt_intsidendis(this.id);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
-    public void Objekt_intsidendis.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
-    }
-    
-    @Transactional
-    public void Objekt_intsidendis.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
-    }
-    
-    @Transactional
-    public Objekt_intsidendis Objekt_intsidendis.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        Objekt_intsidendis merged = this.entityManager.merge(this);
-        this.entityManager.flush();
-        return merged;
-    }
     
     public static long Objekt_intsidendis.countObjekt_intsidendises() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Objekt_intsidendis o", Long.class).getSingleResult();

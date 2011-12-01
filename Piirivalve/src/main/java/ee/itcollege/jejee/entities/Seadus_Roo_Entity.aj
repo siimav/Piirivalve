@@ -4,57 +4,10 @@
 package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Seadus;
-import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Version;
-import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Seadus_Roo_Entity {
-    
-    @Version
-    @Column(name = "version")
-    private Integer Seadus.version;
-    
-    public Integer Seadus.getVersion() {
-        return this.version;
-    }
-    
-    public void Seadus.setVersion(Integer version) {
-        this.version = version;
-    }
-    
-    @Transactional
-    public void Seadus.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Seadus attached = Seadus.findSeadus(this.id);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
-    public void Seadus.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
-    }
-    
-    @Transactional
-    public void Seadus.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
-    }
-    
-    @Transactional
-    public Seadus Seadus.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        Seadus merged = this.entityManager.merge(this);
-        this.entityManager.flush();
-        return merged;
-    }
     
     public static long Seadus.countSeaduses() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Seadus o", Long.class).getSingleResult();

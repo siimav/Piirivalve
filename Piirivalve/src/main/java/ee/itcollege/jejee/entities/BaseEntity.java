@@ -3,12 +3,10 @@ package ee.itcollege.jejee.entities;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.EntityManager;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.PersistenceContext;
 import javax.persistence.PrePersist;
 import javax.persistence.PreRemove;
 import javax.persistence.PreUpdate;
@@ -17,16 +15,17 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
 import org.springframework.transaction.annotation.Transactional;
 
 @MappedSuperclass
 @Configurable
-public class BaseEntity implements Serializable {
+@RooToString
+@RooEntity(mappedSuperclass=true)
+public abstract class BaseEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-	@PersistenceContext
-	transient EntityManager entityManager;
 
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
@@ -63,13 +62,6 @@ public class BaseEntity implements Serializable {
     @PreRemove
     public void preventRemove() {
         throw new SecurityException("Removing is prohibited!");
-    }
-    
-    
-    @Transactional
-    public void persist() {
-        if (entityManager == null) this.entityManager = entityManager();
-        this.entityManager.persist(this);
     }
     
 
@@ -128,40 +120,12 @@ public class BaseEntity implements Serializable {
 	public void setSuletud(Date suletud) {
 		this.suletud = suletud;
 	}
-	
-	public EntityManager getEntityManager() {
-		return entityManager;
-	}
-	
-	public void setEntityManager(EntityManager entityManager) {
-		this.entityManager = entityManager;
-	}
-	
-	public static EntityManager entityManager() {
-	    EntityManager em = new BaseEntity().entityManager;        
-	    if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");        
-	    return em;        
-	}
-	
-//    @Transactional
-//    public void Intsidendi_liik.remove() {
-//        if (this.entityManager == null) this.entityManager = entityManager();
-//        if (this.entityManager.contains(this)) {
-//            this.entityManager.remove(this);
-//        } else {
-//            Intsidendi_liik attached = Intsidendi_liik.findIntsidendi_liik(this.id);
-//            this.entityManager.remove(attached);
-//        }
-//    }
+
 	
 	@Transactional
-    public void remove(String sulgeja) {
-        if (this.entityManager == null) {
-        	this.entityManager = entityManager();
-        }
-        
+    public void remove(String sulgeja) {        
         String table = this.getClass().getSimpleName();
-        Query q =  this.entityManager.createQuery("UPDATE " + table + " SET suletud=:date WHERE id=" + id);
+        Query q = entityManager().createQuery("UPDATE " + table + " SET suletud=:date WHERE id=" + id);
         q.setParameter("date", new Date());
 //        this.entityManager.getTransaction().begin();
         if(q.executeUpdate() != 1) {
@@ -171,7 +135,7 @@ public class BaseEntity implements Serializable {
         	return;
         }
 
-        q =  this.entityManager.createQuery("UPDATE " + table + " SET sulgeja=:sulgeja WHERE id=" + id);
+        q =  entityManager().createQuery("UPDATE " + table + " SET sulgeja=:sulgeja WHERE id=" + id);
         q.setParameter("sulgeja", sulgeja);
         if(q.executeUpdate() != 1) {
         	//FAILED

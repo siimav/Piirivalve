@@ -15,6 +15,5 @@
         <field:datetime dateTimePattern="${riigi_admin_yksuse_liik_kuni_date_format}" field="kuni" id="c_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_kuni" required="true" z="wslfAUre0JKE6NiDhWEGlEJPqjQ="/>
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_kommentaar" z="YsqFLkkiOwp5xWuIrRwfSlouqVg="/>
         <field:simple field="riigi_admin_yksus" id="c_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_riigi_admin_yksus" messageCode="entity_reference_not_managed" messageCodeAttribute="Riigi_admin_yksus" z="U8s1cFEe1CyqjfwxCI6cV6V6YBU="/>
-        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_entityManager" z="GmHXWTRkPYyhbsE5oHbunFaCTVo="/>
     </form:update>
 </div>

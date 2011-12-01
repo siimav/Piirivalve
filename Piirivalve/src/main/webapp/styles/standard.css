@@ -192,11 +192,11 @@ a img {
 }
 
 tr:nth-child(odd) {
-	background-color: #FFFFFF;
+	background-color: #EEEEEE;
 }
 
 tr:nth-child(even) {
-	background-color: #EFEFEF;
+	background-color: #EEEEEE;
 }
 
 a:link {

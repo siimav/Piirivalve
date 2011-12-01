@@ -15,7 +15,6 @@
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Piiriloik_kommentaar" z="IUPq72bJ1gsvQ/+p/eXFsSZeB5E="/>
         <field:simple field="intsident" id="c_ee_itcollege_jejee_entities_Piiriloik_intsident" messageCode="entity_reference_not_managed" messageCodeAttribute="Intsident" z="9f+lSYp4a/NsoZX4LIRFytldDEQ="/>
         <field:simple field="vahtkond_piiriloigul" id="c_ee_itcollege_jejee_entities_Piiriloik_vahtkond_piiriloigul" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkond_piiriloigul" z="R0THMG4KzGpvto7JlNB0mBJBJmg="/>
-        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Piiriloik_entityManager" z="1PGLqVWcHI7osV5f3X7kKQq/YFM="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_jejee_entities_Piiriloik" render="${not empty dependencies}" z="ZZTTl6aK614esjklRTjJQnK5CAU="/>
 </div>

@@ -13,6 +13,5 @@
         <field:display field="nimetus" id="s_ee_itcollege_jejee_entities_Piiriloik_nimetus" object="${piiriloik}" z="4yfYu9OXxJoouiNeOMqp6c/+yh0="/>
         <field:display field="GPS_koordinaadid" id="s_ee_itcollege_jejee_entities_Piiriloik_GPS_koordinaadid" object="${piiriloik}" z="hfSvgAY+STscVu70pmEywIj3umE="/>
         <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Piiriloik_kommentaar" object="${piiriloik}" z="msmEhaLoqCyK1PfBLyqBpyuhvU4="/>
-        <field:display field="entityManager" id="s_ee_itcollege_jejee_entities_Piiriloik_entityManager" object="${piiriloik}" z="Z7evnV41mcfFZWRSk5FiEdXFsPE="/>
     </page:show>
 </div>

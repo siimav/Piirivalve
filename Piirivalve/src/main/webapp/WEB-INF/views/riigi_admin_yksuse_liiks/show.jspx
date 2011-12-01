@@ -14,6 +14,5 @@
         <field:display field="muutja" id="s_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_muutja" object="${riigi_admin_yksuse_liik}" z="9XlV9EOJwqbsEMzOy9C1HfszJJk="/>
         <field:display date="true" dateTimePattern="${riigi_admin_yksuse_liik_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_muudetud" object="${riigi_admin_yksuse_liik}" z="WC6d3AloKVMb8FrG4N/r0XpW5lM="/>
         <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_kommentaar" object="${riigi_admin_yksuse_liik}" z="e4UG4QNyUZ+3mstT1a1g5lJSogQ="/>
-        <field:display field="entityManager" id="s_ee_itcollege_jejee_entities_Riigi_admin_yksuse_liik_entityManager" object="${riigi_admin_yksuse_liik}" z="sDLjCjVoGySwLqC3gBZZNxVqBZw="/>
     </page:show>
 </div>

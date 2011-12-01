@@ -13,7 +13,6 @@
         <field:datetime dateTimePattern="${objekti_liik_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_jejee_entities_Objekti_liik_muudetud" required="true" z="K2EUyxqan4+l3iC7ZWXaBQj5V7w="/>
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Objekti_liik_kommentaar" z="osGd6+FRrA2B6xaufIEyTBEH2LA="/>
         <field:simple field="objekt" id="c_ee_itcollege_jejee_entities_Objekti_liik_objekt" messageCode="entity_reference_not_managed" messageCodeAttribute="Objekt" z="0sHaKqPSCjfEDZy7rN8wI3FcCLM="/>
-        <field:input field="entityManager" id="c_ee_itcollege_jejee_entities_Objekti_liik_entityManager" z="7Xnz732v3NyzmOq+U7c+sAOxCvQ="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_jejee_entities_Objekti_liik" render="${not empty dependencies}" z="LAV39RCoechMT0K+icgctVpUsGI="/>
 </div>

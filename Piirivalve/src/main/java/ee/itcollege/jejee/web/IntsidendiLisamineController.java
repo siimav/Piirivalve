@@ -28,7 +28,6 @@ public class IntsidendiLisamineController {
 //        return "intsidendi_lisamine/update";
 //    }
 
-	@SuppressWarnings("deprecation")
 	@RequestMapping(method = RequestMethod.GET)
     public String uus(HttpServletRequest httpServletRequest, Model uiModel) {
 		
