@@ -5,25 +5,12 @@ package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Objekt;
 import java.lang.Long;
-import java.util.List;
 
 privileged aspect Objekt_Roo_Entity {
-    
-    public static long Objekt.countObjekts() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Objekt o", Long.class).getSingleResult();
-    }
-    
-    public static List<Objekt> Objekt.findAllObjekts() {
-        return entityManager().createQuery("SELECT o FROM Objekt o", Objekt.class).getResultList();
-    }
     
     public static Objekt Objekt.findObjekt(Long id) {
         if (id == null) return null;
         return entityManager().find(Objekt.class, id);
-    }
-    
-    public static List<Objekt> Objekt.findObjektEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Objekt o", Objekt.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

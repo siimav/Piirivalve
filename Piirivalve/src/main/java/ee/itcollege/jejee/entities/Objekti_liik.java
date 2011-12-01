@@ -1,9 +1,11 @@
 package ee.itcollege.jejee.entities;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.Query;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.roo.addon.entity.RooEntity;
@@ -60,5 +62,25 @@ public class Objekti_liik extends BaseEntity {
 	    this.objekt = param;
 	}
 
+	
+    public static long countObjekti_liiks() {
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Objekti_liik o WHERE o.suletud=:d", Long.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return (Long) q.getSingleResult();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Objekti_liik> findAllObjekti_liiks() {
+    	Query q = entityManager().createQuery("SELECT o FROM Objekti_liik o WHERE o.suletud=:d", Objekti_liik.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Objekti_liik> findObjekti_liikEntries(int firstResult, int maxResults) {
+    	Query q = entityManager().createQuery("SELECT o FROM Objekti_liik o WHERE o.suletud=:d", Objekti_liik.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
    
 }

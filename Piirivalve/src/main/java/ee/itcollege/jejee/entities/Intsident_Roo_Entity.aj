@@ -5,25 +5,12 @@ package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Intsident;
 import java.lang.Long;
-import java.util.List;
 
 privileged aspect Intsident_Roo_Entity {
-    
-    public static long Intsident.countIntsidents() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Intsident o", Long.class).getSingleResult();
-    }
-    
-    public static List<Intsident> Intsident.findAllIntsidents() {
-        return entityManager().createQuery("SELECT o FROM Intsident o", Intsident.class).getResultList();
-    }
     
     public static Intsident Intsident.findIntsident(Long id) {
         if (id == null) return null;
         return entityManager().find(Intsident.class, id);
-    }
-    
-    public static List<Intsident> Intsident.findIntsidentEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Intsident o", Intsident.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

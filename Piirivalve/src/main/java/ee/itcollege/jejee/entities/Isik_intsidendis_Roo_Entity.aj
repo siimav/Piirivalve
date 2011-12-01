@@ -5,25 +5,12 @@ package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Isik_intsidendis;
 import java.lang.Long;
-import java.util.List;
 
 privileged aspect Isik_intsidendis_Roo_Entity {
-    
-    public static long Isik_intsidendis.countIsik_intsidendises() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Isik_intsidendis o", Long.class).getSingleResult();
-    }
-    
-    public static List<Isik_intsidendis> Isik_intsidendis.findAllIsik_intsidendises() {
-        return entityManager().createQuery("SELECT o FROM Isik_intsidendis o", Isik_intsidendis.class).getResultList();
-    }
     
     public static Isik_intsidendis Isik_intsidendis.findIsik_intsidendis(Long id) {
         if (id == null) return null;
         return entityManager().find(Isik_intsidendis.class, id);
-    }
-    
-    public static List<Isik_intsidendis> Isik_intsidendis.findIsik_intsidendisEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Isik_intsidendis o", Isik_intsidendis.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

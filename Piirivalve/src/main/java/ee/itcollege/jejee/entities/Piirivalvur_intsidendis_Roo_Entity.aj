@@ -5,25 +5,12 @@ package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Piirivalvur_intsidendis;
 import java.lang.Long;
-import java.util.List;
 
 privileged aspect Piirivalvur_intsidendis_Roo_Entity {
-    
-    public static long Piirivalvur_intsidendis.countPiirivalvur_intsidendises() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Piirivalvur_intsidendis o", Long.class).getSingleResult();
-    }
-    
-    public static List<Piirivalvur_intsidendis> Piirivalvur_intsidendis.findAllPiirivalvur_intsidendises() {
-        return entityManager().createQuery("SELECT o FROM Piirivalvur_intsidendis o", Piirivalvur_intsidendis.class).getResultList();
-    }
     
     public static Piirivalvur_intsidendis Piirivalvur_intsidendis.findPiirivalvur_intsidendis(Long id) {
         if (id == null) return null;
         return entityManager().find(Piirivalvur_intsidendis.class, id);
-    }
-    
-    public static List<Piirivalvur_intsidendis> Piirivalvur_intsidendis.findPiirivalvur_intsidendisEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Piirivalvur_intsidendis o", Piirivalvur_intsidendis.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

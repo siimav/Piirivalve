@@ -5,25 +5,12 @@ package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Piiriloik;
 import java.lang.Long;
-import java.util.List;
 
 privileged aspect Piiriloik_Roo_Entity {
-    
-    public static long Piiriloik.countPiiriloiks() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Piiriloik o", Long.class).getSingleResult();
-    }
-    
-    public static List<Piiriloik> Piiriloik.findAllPiiriloiks() {
-        return entityManager().createQuery("SELECT o FROM Piiriloik o", Piiriloik.class).getResultList();
-    }
     
     public static Piiriloik Piiriloik.findPiiriloik(Long id) {
         if (id == null) return null;
         return entityManager().find(Piiriloik.class, id);
-    }
-    
-    public static List<Piiriloik> Piiriloik.findPiiriloikEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Piiriloik o", Piiriloik.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

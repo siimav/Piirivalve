@@ -1,9 +1,11 @@
 package ee.itcollege.jejee.entities;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.Query;
 
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
@@ -46,5 +48,26 @@ public class Intsidendi_liik  extends BaseEntity {
 	public void setIntsident(Collection<Intsident> param) {
 	    this.intsident = param;
 	}
+	
+	
+    public static long countIntsidendi_liiks() {
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Intsidendi_liik o WHERE o.suletud=:d", Long.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return (Long) q.getSingleResult();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Intsidendi_liik> findAllIntsidendi_liiks() {
+    	Query q = entityManager().createQuery("SELECT o FROM Intsidendi_liik o WHERE o.suletud=:d", Intsidendi_liik.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Intsidendi_liik> findIntsidendi_liikEntries(int firstResult, int maxResults) {
+    	Query q = entityManager().createQuery("SELECT o FROM Intsidendi_liik o WHERE o.suletud=:d", Intsidendi_liik.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
 	
 }

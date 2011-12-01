@@ -27,6 +27,8 @@ public abstract class BaseEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	public static final Date SURROGATE_DATE = new Date(253402232400000l);	// 9999-12-31
+	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
 	private Long id;
@@ -51,7 +53,7 @@ public abstract class BaseEntity implements Serializable {
     public void recordCreated() {
         setAvatud(new Date());
         setMuudetud(new Date());
-        setSuletud(new Date(253402232400000l));	  // 9999-12-31
+        setSuletud(SURROGATE_DATE);	  
     }
 
     @PreUpdate
@@ -120,7 +122,7 @@ public abstract class BaseEntity implements Serializable {
 	public void setSuletud(Date suletud) {
 		this.suletud = suletud;
 	}
-
+	
 	
 	@Transactional
     public void remove(String sulgeja) {        

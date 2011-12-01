@@ -93,11 +93,32 @@ public class Objekt_intsidendis extends BaseEntity implements Cloneable {
 	public Object clone() throws CloneNotSupportedException {
 		return super.clone();
 	}
+	
+	
+    public static long countObjekt_intsidendises() {
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Objekt_intsidendis o WHERE o.suletud=:d", Long.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return (Long) q.getSingleResult();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Objekt_intsidendis> findAllObjekt_intsidendises() {
+    	Query q = entityManager().createQuery("SELECT o FROM Objekt_intsidendis o WHERE o.suletud=:d", Objekt_intsidendis.class);
+    	q.setParameter("d", SURROGATE_DATE);
+    	return q.getResultList();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Objekt_intsidendis> findObjekt_intsidendisEntries(int firstResult, int maxResults) {
+    	Query q = entityManager().createQuery("SELECT o FROM Objekt_intsidendis o WHERE o.suletud=:d", Objekt_intsidendis.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
 
     
     @SuppressWarnings("unchecked")
 	public static List<Objekt_intsidendis> findAllObjekt_intsidendisForIntsident(Intsident ints) {
-    	Query q = entityManager().createQuery("SELECT o FROM Objekt_intsidendis o WHERE o.intsident=:ints", Objekt_intsidendis.class);
+    	Query q = entityManager().createQuery("SELECT o FROM Objekt_intsidendis o WHERE o.intsident=:ints AND o.suletud=:d", Objekt_intsidendis.class);
     	q.setParameter("ints", ints);
         return q.getResultList();
     }

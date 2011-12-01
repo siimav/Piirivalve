@@ -2,9 +2,11 @@ package ee.itcollege.jejee.entities;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.Query;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -116,4 +118,24 @@ public class Piiripunkt extends BaseEntity {
 	}   
 	
    
+    public static long countPiiripunkts() {
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Piiripunkt o WHERE o.suletud=:d", Long.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return (Long) q.getSingleResult();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Piiripunkt> findAllPiiripunkts() {
+    	Query q = entityManager().createQuery("SELECT o FROM Piiripunkt o WHERE o.suletud=:d", Piiripunkt.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Piiripunkt> findPiiripunktEntries(int firstResult, int maxResults) {
+    	Query q = entityManager().createQuery("SELECT o FROM Piiripunkt o WHERE o.suletud=:d", Piiripunkt.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
+    
 }

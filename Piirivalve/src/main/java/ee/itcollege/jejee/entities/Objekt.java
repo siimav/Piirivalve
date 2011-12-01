@@ -76,18 +76,41 @@ public class Objekt extends BaseEntity {
 	    this.piiririkkuja = param;
 	}
 	
+	
+    public static long countObjekts() {
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Objekt o WHERE o.suletud=:d", Long.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return (Long) q.getSingleResult();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Objekt> findAllObjekts() {
+    	Query q = entityManager().createQuery("SELECT o FROM Objekt o WHERE o.suletud=:d", Objekt.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Objekt> findObjektEntries(int firstResult, int maxResults) {
+    	Query q = entityManager().createQuery("SELECT o FROM Objekt o WHERE o.suletud=:d", Objekt.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
+	
 
     @SuppressWarnings("unchecked")
 	public static List<Objekt> findAllObjektidForIntsident(Intsident ints) {
-    	Query q = entityManager().createQuery("SELECT o FROM Objekt o JOIN o.objekt_intsidendis oi WHERE oi.intsident=:ints", Objekt.class);
+    	Query q = entityManager().createQuery("SELECT o FROM Objekt o JOIN o.objekt_intsidendis oi WHERE oi.intsident=:ints AND o.suletud=:d", Objekt.class);
     	q.setParameter("ints", ints);
+    	q.setParameter("d", SURROGATE_DATE);
         return q.getResultList();
     }
     
     @SuppressWarnings("unchecked")
 	public static Collection<Objekt> findAllObjektidNotInIntsident(Intsident ints) {
-    	Query q = entityManager().createQuery("SELECT o FROM Objekt o WHERE o NOT IN (SELECT o1 FROM Objekt o1 JOIN o1.objekt_intsidendis oi WHERE oi.intsident=:ints)", Objekt.class);
+    	Query q = entityManager().createQuery("SELECT o FROM Objekt o WHERE o NOT IN (SELECT o1 FROM Objekt o1 JOIN o1.objekt_intsidendis oi WHERE oi.intsident=:ints) AND o.suletud=:d", Objekt.class);
     	q.setParameter("ints", ints);
+    	q.setParameter("d", SURROGATE_DATE);
         return q.getResultList();
     }
    

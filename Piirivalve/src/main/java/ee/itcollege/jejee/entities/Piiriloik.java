@@ -1,9 +1,11 @@
 package ee.itcollege.jejee.entities;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.Query;
 
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -64,5 +66,26 @@ public class Piiriloik extends BaseEntity {
 	public void setVahtkond_piiriloigul(Collection<Vahtkond_piiriloigul> param) {
 	    this.vahtkond_piiriloigul = param;
 	}
+	
+	
+    public static long countPiiriloiks() {
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Piiriloik o WHERE o.suletud=:d", Long.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return (Long) q.getSingleResult();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Piiriloik> findAllPiiriloiks() {
+    	Query q = entityManager().createQuery("SELECT o FROM Piiriloik o WHERE o.suletud=:d", Piiriloik.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Piiriloik> findPiiriloikEntries(int firstResult, int maxResults) {
+    	Query q = entityManager().createQuery("SELECT o FROM Piiriloik o WHERE o.suletud=:d", Piiriloik.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
 	
 }
