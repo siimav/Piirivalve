@@ -5,6 +5,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib  uri="http://www.springframework.org/tags/form" prefix="fo" %>
 <%@ taglib tagdir="/WEB-INF/tags/form/fields" prefix="field" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -17,7 +18,8 @@
 
 <div id="ipiir_wrapper">
 	<div id="ylemine_div">
-		<fo:form action="http://localhost:8080/Piirivalve/ipiir" method="GET" commandName="piirivalvur_intsidendis_abi" >
+		<spring:url value="/ipiir" var="url" />
+		<fo:form action="${url}" method="GET" commandName="piirivalvur_intsidendis_abi" >
 			<table>
 				<tr>
 					<td>
@@ -50,14 +52,15 @@
 				<th>${ints.piirivalvur.soduri_kood}: ${ints.piirivalvur.perekonnanimi}, ${ints.piirivalvur.eesnimed}</th>
     			<th></th>
 			</tr>
-			
+						
 			<c:forEach var="i" items="${ints.pints_arr}" >
 				<tr>
 					<td width="500px">
 						${i.intsident.nimetus}
 					</td>
 					<td>
-						<input type="button" name="btn" value="Vaata" onclick="window.location='http://localhost:8080/Piirivalve/detail/${i.id}/p/${i.piirivalvur.id}'" />
+						<spring:url value="/detail/${i.id}/p/${i.piirivalvur.id}" var="url" />
+						<input type="button" name="btn" value="Vaata" onclick="window.location='${url}'" />
 					</td>
 				</tr>
 			</c:forEach>

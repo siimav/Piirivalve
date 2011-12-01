@@ -29,7 +29,7 @@ public class IntsidendidPiiriloigulDetailController {
 		Piirivalvur_intsidendis p_ints = Piirivalvur_intsidendis.findPiirivalvur_intsidendis(id);
 		uiModel.addAttribute("pints", p_ints);
 		
-		return "redirect:http://localhost:8080/Piirivalve/detail/1/p/1";
+		return "redirect:/detail/1/p/1";
 	}
 	
 	@RequestMapping(value = "/{id}/p/{p_id}", method = RequestMethod.GET)
@@ -82,7 +82,7 @@ public class IntsidendidPiiriloigulDetailController {
 		//uiModel.addAttribute("pints", p_ints);
 		//uiModel.addAttribute("piirivalvurid", Piirivalvur.findAllPiirivalvuridExceptFor(p_ints.getPiirivalvur()));
 		
-		return "redirect:http://localhost:8080/Piirivalve/detail/"+id+"/p/"+valik;
+		return "redirect:/detail/"+id+"/p/"+valik;
 	}
 	
 }

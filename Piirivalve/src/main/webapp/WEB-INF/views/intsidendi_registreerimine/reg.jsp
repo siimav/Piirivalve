@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib  uri="http://www.springframework.org/tags/form" prefix="fo" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -27,7 +28,8 @@
 
 
 <div id="main_wrapper">
-<fo:form action="http://localhost:8080/Piirivalve/reg" method="POST" commandName="intsident">
+<spring:url value="/reg" var="url" />
+<fo:form action="${url}" method="POST" commandName="intsident">
 	<div id="vasak_div">
 		<table border="0">
 			<tr><td>kood<span style="color:red;">*</span></td><td><fo:input path="kood" /></td></tr>

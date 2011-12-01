@@ -1,5 +1,6 @@
 <%@page import="ee.itcollege.jejee.entities.Vahtkond"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib  uri="http://www.springframework.org/tags/form" prefix="fo" %>
 <%@ taglib tagdir="/WEB-INF/tags/form/fields" prefix="field" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -12,7 +13,8 @@
 </head>
 <body>
 
-<fo:form action="/Piirivalve/intsident/${id}/lisa_vahtkond" method="POST" commandName="vahtkond_intsidendis">
+<spring:url value="/intsident/${id}/lisa_vahtkond" var="url" />
+<fo:form action="${url}" method="POST" commandName="vahtkond_intsidendis">
     <field:datetime dateTimePattern="${dateFormat}" field="alates" id="alates" required="true" label="Alates"/>
     <field:datetime dateTimePattern="${dateFormat}" field="kuni" id="kuni" required="true" label="Kuni"/>
 	Kirjeldus <br /> <fo:textarea path="kirjeldus" rows="4" cols="25" required="true"></fo:textarea> <br />

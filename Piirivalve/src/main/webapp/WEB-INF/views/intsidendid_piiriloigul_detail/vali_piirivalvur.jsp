@@ -6,6 +6,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib  uri="http://www.springframework.org/tags/form" prefix="fo" %>
 <%@ taglib tagdir="/WEB-INF/tags/form/fields" prefix="field" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -17,7 +18,8 @@
 <body>
 
 <div align="center" style="background-color: #EEEEEE;"><br>
-	<form name="myform" action="http://localhost:8080/Piirivalve/detail/${pints.id}/p/${pvalvur.id}/muuda_piirivalvur" method="GET">
+	<spring:url value="/detail/${pints.id}/p/${pvalvur.id}/muuda_piirivalvur" var="url" />
+	<form name="myform" action="${url}" method="GET">
 	<table>
 	<c:forEach var="piir" items="${piirivalvurid}">
 		<tr>
@@ -30,7 +32,7 @@
 		</tr>
 	</c:forEach>
 	</table>
-	</br>
+	<br />
 	<input type="submit" value="Muuda">&nbsp;&nbsp;&nbsp;<input type="Button" value="Tagasi" onclick="history.back()">
 	</form>
 </div>

@@ -5,6 +5,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib  uri="http://www.springframework.org/tags/form" prefix="fo" %>
 <%@ taglib tagdir="/WEB-INF/tags/form/fields" prefix="field" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -18,7 +19,8 @@
 <div id="detail_main_div">
 
 	<div id="detail_ylemine_div"><p>Intsident ${pints.intsident.kood} - ${pints.intsident.piiriloik.nimetus} - ${pints.intsident.nimetus}</p></div>
-	<fo:form method="POST" commandName="uusInts" action="http://localhost:8080/Piirivalve/detail/${pints.id}/p/${pvalvur.id}/muuda">
+	<spring:url value="/detail/${pints.id}/p/${pvalvur.id}/muuda" var="url" />
+	<fo:form method="POST" commandName="uusInts" action="${url}">
 	<div id="detail_vasak_div">
 	<table>
 		<tr>
@@ -42,7 +44,8 @@
 				Sugu
 			</td>
 			<td>
-				<span style="float:left;">${pvalvur.sugu}</span><span style="float:right;"><input type="button" value="Muuda" onclick="window.location='http://localhost:8080/Piirivalve/detail/${pints.id}/p/${pvalvur.id}/muuda_piirivalvur'"></span>
+				<spring:url value="/detail/${pints.id}/p/${pvalvur.id}/muuda_piirivalvur" var="url" />
+				<span style="float:left;">${pvalvur.sugu}</span><span style="float:right;"><input type="button" value="Muuda" onclick="window.location='${url}'"></span>
 			</td>
 		</tr>
 		<tr>
