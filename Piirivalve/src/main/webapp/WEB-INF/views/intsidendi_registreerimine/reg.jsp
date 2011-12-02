@@ -52,8 +52,8 @@
 				</td>
 			</tr>
 			<tr><td>koordnaadid<span style="color:red;">*</span></td><td><fo:input path="GPS_latituud" style="width:65px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<fo:input path="GPS_longituud" style="width:65px"/><td/></tr>
-			<tr><td>algus<span style="color:red;">* </span></td><td><field:datetime dateTimePattern="${intsident_toimumise_algus_date_format}" field="toimumise_algus" id="algus" required="true" label=" "/></td></tr>
-			<tr><td>lopp<span style="color:red;">* </span></td><td><field:datetime dateTimePattern="${intsident_toimumise_lopp_date_format}" field="toimumise_lopp" id="lopp" required="true" label=" "/></td></tr>
+			<tr><td>algus<span style="color:red;">* </span></td><td><field:datetime dateTimePattern="yyyy-MM-dd" field="toimumise_algus" id="algus" required="true" label=" "/></td></tr>
+			<tr><td>lopp<span style="color:red;">* </span></td><td><field:datetime dateTimePattern="yyyy-MM-dd" field="toimumise_lopp" id="lopp" required="true" label=" "/></td></tr>
 		</table>
  	</div> 
 	

@@ -58,7 +58,7 @@ public abstract class BaseEntity implements Serializable {
 
     @PreUpdate
     public void recordModified() {
-    	setMuudetud(new Date());
+    	setMuudetud(new Date());	
     }
 
     @PreRemove

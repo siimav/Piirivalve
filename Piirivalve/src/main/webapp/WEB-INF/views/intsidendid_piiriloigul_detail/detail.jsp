@@ -20,7 +20,7 @@
 
 	<div id="detail_ylemine_div"><p>Intsident ${pints.intsident.kood} - ${pints.intsident.piiriloik.nimetus} - ${pints.intsident.nimetus}</p></div>
 	<spring:url value="/detail/${pints.id}/p/${pvalvur.id}/muuda" var="url" />
-	<fo:form method="POST" commandName="uusInts" action="${url}">
+	<fo:form method="POST" commandName="piirivalvur_intsidendis" action="${url}" >
 	<div id="detail_vasak_div">
 	<table>
 		<tr>
@@ -53,17 +53,22 @@
 				Kirjeldus
 			</td>
 			<td>
-<%-- 				<fo:textarea rows="4" cols="20" >${pints.kirjeldus}</fo:textarea> --%>
-				<field:textarea id="kirjeldus" field="kirjeldus" label="a" required="true">${pints.kirjeldus}</field:textarea>
+				<fo:textarea rows="4" cols="20" path="kirjeldus"/>
+<%-- 				<field:textarea id="kirjeldus" field="kirjeldus" label="a" required="true">${pints.kirjeldus}</field:textarea> --%>
 			</td>
+		</tr>
+		<tr>
+		<td></td>
+		<td><FONT color="red"><fo:errors path="kirjeldus"/></FONT></td>
 		</tr>
 		<tr>
 			<td>
 				Kommentaar
 			</td>
 			<td>
+				<fo:textarea rows="4" cols="20" path="kommentaar" />
 <%-- 				<textarea rows="4" cols="20">${pints.kommentaar}</textarea> --%>
-				<field:textarea id="kommentaar" field="kommentaar" label="a" required="true">${pints.kommentaar}</field:textarea>
+<%-- 				<field:textarea id="kommentaar" field="kommentaar" label="a" required="true">${pints.kommentaar}</field:textarea> --%>
 			</td>
 		</tr>
 	</table>
@@ -103,6 +108,7 @@
 	</div>
 <div style="clear:both;"></div>
 <div id="detail_btns"><input type="submit" value="Salvesta">&nbsp;&nbsp;&nbsp;<input type="reset" value="Loobu"></div>
+
 </fo:form>
 
 </div>

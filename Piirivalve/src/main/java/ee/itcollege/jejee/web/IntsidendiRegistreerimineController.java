@@ -47,16 +47,14 @@ public class IntsidendiRegistreerimineController {
 		uiModel.addAttribute("intsidendi_liiks", Intsidendi_liik.findAllIntsidendi_liiks());
 		uiModel.addAttribute("piiriloiks", Piiriloik.findAllPiiriloiks());
 		
-		//lisab andmebaasi uue kirje
-		intsident.persist(); 
-		
 		registrationValidation.validate(intsident, result);
         if (result.hasErrors()) {
-        	return "intsidendi_registreerimine/view";
-        	
+        	return "intsidendi_registreerimine/view";	
         }
         else{
-        	return "redirect:/create";	//nÃ¤itab kÃµiki intsidente
+        	//lisab andmebaasi uue kirje
+    		intsident.persist(); 
+        	return "redirect:/intsident/"+intsident.getId();	//intsidendi redaktor
         }
 	}
 
