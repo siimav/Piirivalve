@@ -5,25 +5,12 @@ package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Seadus;
 import java.lang.Long;
-import java.util.List;
 
 privileged aspect Seadus_Roo_Entity {
-    
-    public static long Seadus.countSeaduses() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Seadus o", Long.class).getSingleResult();
-    }
-    
-    public static List<Seadus> Seadus.findAllSeaduses() {
-        return entityManager().createQuery("SELECT o FROM Seadus o", Seadus.class).getResultList();
-    }
     
     public static Seadus Seadus.findSeadus(Long id) {
         if (id == null) return null;
         return entityManager().find(Seadus.class, id);
-    }
-    
-    public static List<Seadus> Seadus.findSeadusEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Seadus o", Seadus.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

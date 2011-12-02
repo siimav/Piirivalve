@@ -2,10 +2,12 @@ package ee.itcollege.jejee.entities;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Query;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -98,5 +100,25 @@ public class Vaeosa extends BaseEntity {
 	    this.vahtkond = param;
 	}
 	
+	
+    public static long countVaeosas() {
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Vaeosa o WHERE o.suletud=:d", Long.class);
+		q.setParameter("d", SURROGATE_DATE);
+        return (Long) q.getSingleResult();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Vaeosa> findAllVaeosas() {
+    	Query q = entityManager().createQuery("SELECT o FROM Vaeosa o WHERE o.suletud=:d", Vaeosa.class);
+		q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Vaeosa> findVaeosaEntries(int firstResult, int maxResults) {
+    	Query q = entityManager().createQuery("SELECT o FROM Vaeosa o WHERE o.suletud=:d", Vaeosa.class).setFirstResult(firstResult).setMaxResults(maxResults);
+		q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
    
 }

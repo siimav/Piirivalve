@@ -2,6 +2,7 @@ package ee.itcollege.jejee.entities;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -104,12 +105,34 @@ public class Vahtkond_intsidendis extends BaseEntity implements Cloneable {
 	public Object clone() throws CloneNotSupportedException {
 		return super.clone();
 	}
+	
+	
+    public static long countVahtkond_intsidendises() {
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Vahtkond_intsidendis o WHERE o.suletud=:d", Long.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return (Long) q.getSingleResult();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Vahtkond_intsidendis> findAllVahtkond_intsidendises() {
+    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond_intsidendis o WHERE o.suletud=:d", Vahtkond_intsidendis.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Vahtkond_intsidendis> findVahtkond_intsidendisEntries(int firstResult, int maxResults) {
+    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond_intsidendis o WHERE o.suletud=:d", Vahtkond_intsidendis.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
 
 
 	@SuppressWarnings("unchecked")
 	public static Collection<Vahtkond_intsidendis> findAllVahtkonnadIntsidendisForIntsident(Intsident ints) {
-    	Query q = entityManager().createQuery("SELECT vi FROM Vahtkond_intsidendis vi WHERE vi.intsident=:ints", Vahtkond_intsidendis.class);
+    	Query q = entityManager().createQuery("SELECT vi FROM Vahtkond_intsidendis vi WHERE vi.intsident=:ints AND vi.suletud=:d", Vahtkond_intsidendis.class);
     	q.setParameter("ints", ints);
+    	q.setParameter("d", SURROGATE_DATE);
         return q.getResultList();
 	}
 

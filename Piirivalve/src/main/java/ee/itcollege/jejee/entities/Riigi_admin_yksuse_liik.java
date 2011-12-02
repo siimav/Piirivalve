@@ -2,9 +2,11 @@ package ee.itcollege.jejee.entities;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.Query;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -85,6 +87,26 @@ public class Riigi_admin_yksuse_liik extends BaseEntity {
 	    this.riigi_admin_yksus = param;
 	}
 
+	
+    public static long countRiigi_admin_yksuse_liiks() {
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Riigi_admin_yksuse_liik o WHERE o.suletud=:d", Long.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return (Long) q.getSingleResult();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Riigi_admin_yksuse_liik> findAllRiigi_admin_yksuse_liiks() {
+    	Query q = entityManager().createQuery("SELECT o FROM Riigi_admin_yksuse_liik o WHERE o.suletud=:d", Riigi_admin_yksuse_liik.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Riigi_admin_yksuse_liik> findRiigi_admin_yksuse_liikEntries(int firstResult, int maxResults) {
+    	Query q = entityManager().createQuery("SELECT o FROM Riigi_admin_yksuse_liik o WHERE o.suletud=:d", Riigi_admin_yksuse_liik.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("d", SURROGATE_DATE);
+    	return q.getResultList();
+    }
 	  
 }
 

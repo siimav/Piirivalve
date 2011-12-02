@@ -1,9 +1,11 @@
 package ee.itcollege.jejee.entities;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Query;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
@@ -71,5 +73,26 @@ public class Vahtkonna_liige extends BaseEntity {
 	public Piirivalvur getPiirivalvur() {
 		return piirivalvur;
 	}
+	
+	
+    public static long countVahtkonna_liiges() {
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Vahtkonna_liige o WHERE o.suletud=:d", Long.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return (Long) q.getSingleResult();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Vahtkonna_liige> findAllVahtkonna_liiges() {
+    	Query q = entityManager().createQuery("SELECT o FROM Vahtkonna_liige o WHERE o.suletud=:d", Vahtkonna_liige.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Vahtkonna_liige> findVahtkonna_liigeEntries(int firstResult, int maxResults) {
+    	Query q = entityManager().createQuery("SELECT o FROM Vahtkonna_liige o WHERE o.suletud=:d", Vahtkonna_liige.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
 
 }

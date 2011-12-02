@@ -1,6 +1,9 @@
 package ee.itcollege.jejee.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.Query;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.roo.addon.entity.RooEntity;
@@ -65,5 +68,26 @@ public class Seadus extends BaseEntity {
 	public void setKommentaar(String kommentaar) {
 		this.kommentaar = kommentaar;
 	}
+	
+	
+    public static long countSeaduses() {
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Seadus o WHERE o.suletud=:d", Long.class);
+    	q.setParameter("d", SURROGATE_DATE);
+    	return (Long) q.getSingleResult();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Seadus> findAllSeaduses() {
+    	Query q = entityManager().createQuery("SELECT o FROM Seadus o WHERE o.suletud=:d", Seadus.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Seadus> findSeadusEntries(int firstResult, int maxResults) {
+    	Query q = entityManager().createQuery("SELECT o FROM Seadus o WHERE o.suletud=:d", Seadus.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
 
 }

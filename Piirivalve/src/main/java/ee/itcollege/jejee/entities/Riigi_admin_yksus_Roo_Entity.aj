@@ -5,25 +5,12 @@ package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Riigi_admin_yksus;
 import java.lang.Long;
-import java.util.List;
 
 privileged aspect Riigi_admin_yksus_Roo_Entity {
-    
-    public static long Riigi_admin_yksus.countRiigi_admin_yksuses() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Riigi_admin_yksus o", Long.class).getSingleResult();
-    }
-    
-    public static List<Riigi_admin_yksus> Riigi_admin_yksus.findAllRiigi_admin_yksuses() {
-        return entityManager().createQuery("SELECT o FROM Riigi_admin_yksus o", Riigi_admin_yksus.class).getResultList();
-    }
     
     public static Riigi_admin_yksus Riigi_admin_yksus.findRiigi_admin_yksus(Long id) {
         if (id == null) return null;
         return entityManager().find(Riigi_admin_yksus.class, id);
-    }
-    
-    public static List<Riigi_admin_yksus> Riigi_admin_yksus.findRiigi_admin_yksusEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Riigi_admin_yksus o", Riigi_admin_yksus.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

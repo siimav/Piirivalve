@@ -5,25 +5,12 @@ package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Vahtkond_intsidendis;
 import java.lang.Long;
-import java.util.List;
 
 privileged aspect Vahtkond_intsidendis_Roo_Entity {
-    
-    public static long Vahtkond_intsidendis.countVahtkond_intsidendises() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Vahtkond_intsidendis o", Long.class).getSingleResult();
-    }
-    
-    public static List<Vahtkond_intsidendis> Vahtkond_intsidendis.findAllVahtkond_intsidendises() {
-        return entityManager().createQuery("SELECT o FROM Vahtkond_intsidendis o", Vahtkond_intsidendis.class).getResultList();
-    }
     
     public static Vahtkond_intsidendis Vahtkond_intsidendis.findVahtkond_intsidendis(Long id) {
         if (id == null) return null;
         return entityManager().find(Vahtkond_intsidendis.class, id);
-    }
-    
-    public static List<Vahtkond_intsidendis> Vahtkond_intsidendis.findVahtkond_intsidendisEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Vahtkond_intsidendis o", Vahtkond_intsidendis.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

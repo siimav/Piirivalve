@@ -5,25 +5,12 @@ package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Piirivalvur;
 import java.lang.Long;
-import java.util.List;
 
 privileged aspect Piirivalvur_Roo_Entity {
-    
-    public static long Piirivalvur.countPiirivalvurs() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Piirivalvur o", Long.class).getSingleResult();
-    }
-    
-    public static List<Piirivalvur> Piirivalvur.findAllPiirivalvurs() {
-        return entityManager().createQuery("SELECT o FROM Piirivalvur o", Piirivalvur.class).getResultList();
-    }
     
     public static Piirivalvur Piirivalvur.findPiirivalvur(Long id) {
         if (id == null) return null;
         return entityManager().find(Piirivalvur.class, id);
-    }
-    
-    public static List<Piirivalvur> Piirivalvur.findPiirivalvurEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Piirivalvur o", Piirivalvur.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

@@ -5,25 +5,12 @@ package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Vahtkonna_liige;
 import java.lang.Long;
-import java.util.List;
 
 privileged aspect Vahtkonna_liige_Roo_Entity {
-    
-    public static long Vahtkonna_liige.countVahtkonna_liiges() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Vahtkonna_liige o", Long.class).getSingleResult();
-    }
-    
-    public static List<Vahtkonna_liige> Vahtkonna_liige.findAllVahtkonna_liiges() {
-        return entityManager().createQuery("SELECT o FROM Vahtkonna_liige o", Vahtkonna_liige.class).getResultList();
-    }
     
     public static Vahtkonna_liige Vahtkonna_liige.findVahtkonna_liige(Long id) {
         if (id == null) return null;
         return entityManager().find(Vahtkonna_liige.class, id);
-    }
-    
-    public static List<Vahtkonna_liige> Vahtkonna_liige.findVahtkonna_liigeEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Vahtkonna_liige o", Vahtkonna_liige.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

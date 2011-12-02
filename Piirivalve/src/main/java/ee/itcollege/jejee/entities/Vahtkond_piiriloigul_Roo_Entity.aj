@@ -5,25 +5,12 @@ package ee.itcollege.jejee.entities;
 
 import ee.itcollege.jejee.entities.Vahtkond_piiriloigul;
 import java.lang.Long;
-import java.util.List;
 
 privileged aspect Vahtkond_piiriloigul_Roo_Entity {
-    
-    public static long Vahtkond_piiriloigul.countVahtkond_piiriloiguls() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Vahtkond_piiriloigul o", Long.class).getSingleResult();
-    }
-    
-    public static List<Vahtkond_piiriloigul> Vahtkond_piiriloigul.findAllVahtkond_piiriloiguls() {
-        return entityManager().createQuery("SELECT o FROM Vahtkond_piiriloigul o", Vahtkond_piiriloigul.class).getResultList();
-    }
     
     public static Vahtkond_piiriloigul Vahtkond_piiriloigul.findVahtkond_piiriloigul(Long id) {
         if (id == null) return null;
         return entityManager().find(Vahtkond_piiriloigul.class, id);
-    }
-    
-    public static List<Vahtkond_piiriloigul> Vahtkond_piiriloigul.findVahtkond_piiriloigulEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Vahtkond_piiriloigul o", Vahtkond_piiriloigul.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

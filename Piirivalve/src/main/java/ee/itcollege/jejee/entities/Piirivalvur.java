@@ -105,17 +105,40 @@ public class Piirivalvur extends BaseEntity {
 	}
 	
 	
+    public static long countPiirivalvurs() {
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Piirivalvur o WHERE o.suletud=:d", Long.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return (Long) q.getSingleResult();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Piirivalvur> findAllPiirivalvurs() {
+    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud=:d", Piirivalvur.class);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public static List<Piirivalvur> findPiirivalvurEntries(int firstResult, int maxResults) {
+    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud=:d", Piirivalvur.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("d", SURROGATE_DATE);
+        return q.getResultList();
+    }
+	
+	
     @SuppressWarnings("unchecked")
 	public static List<Piirivalvur> findAllPiirivalvuridForIntsident(Intsident ints) {
-    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur o JOIN o.piirivalvur_intsidendis pi WHERE pi.intsident=:ints", Piirivalvur.class);
+    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur o JOIN o.piirivalvur_intsidendis pi WHERE pi.intsident=:ints AND o.suletud=:d", Piirivalvur.class);
     	q.setParameter("ints", ints);
+    	q.setParameter("d", SURROGATE_DATE);
         return q.getResultList();
     }    
     
     @SuppressWarnings("unchecked")
 	public static List<Piirivalvur> findAllPiirivalvuridNotInIntsident(Intsident ints) {
-    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o NOT IN (SELECT o1 FROM Piirivalvur o1 JOIN o1.piirivalvur_intsidendis pi WHERE pi.intsident=:ints)", Piirivalvur.class);
+    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud=:d AND o NOT IN (SELECT o1 FROM Piirivalvur o1 JOIN o1.piirivalvur_intsidendis pi WHERE pi.intsident=:ints)", Piirivalvur.class);
     	q.setParameter("ints", ints);
+    	q.setParameter("d", SURROGATE_DATE);
         return q.getResultList();
     }
     
@@ -123,15 +146,17 @@ public class Piirivalvur extends BaseEntity {
     
     @SuppressWarnings("unchecked")
 	public static List<Piirivalvur> findAllPiirivalvuridForPiiriloik(Piiriloik piir) {
-    	Query q = entityManager().createQuery("SELECT p FROM Piirivalvur p JOIN p.piirivalvur_intsidendis pi WHERE pi.intsident.piiriloik=:piir", Piirivalvur.class);
+    	Query q = entityManager().createQuery("SELECT p FROM Piirivalvur p JOIN p.piirivalvur_intsidendis pi WHERE pi.intsident.piiriloik=:piir AND p.suletud=:d", Piirivalvur.class);
     	q.setParameter("piir", piir);
+    	q.setParameter("d", SURROGATE_DATE);
         return q.getResultList();
     }
 
     @SuppressWarnings("unchecked")
 	public static List<Piirivalvur> findAllPiirivalvuridExceptFor(Piirivalvur piirivalvur) {
-    	Query q = entityManager().createQuery("SELECT p FROM Piirivalvur p WHERE p!=:piirivalvur", Piirivalvur.class);
+    	Query q = entityManager().createQuery("SELECT p FROM Piirivalvur p WHERE p!=:piirivalvur AND p.suletud=:d", Piirivalvur.class);
     	q.setParameter("piirivalvur", piirivalvur);
+    	q.setParameter("d", SURROGATE_DATE);
         return q.getResultList();
     }
 
