@@ -120,6 +120,7 @@ public class Objekt_intsidendis extends BaseEntity implements Cloneable {
 	public static List<Objekt_intsidendis> findAllObjekt_intsidendisForIntsident(Intsident ints) {
     	Query q = entityManager().createQuery("SELECT o FROM Objekt_intsidendis o WHERE o.intsident=:ints AND o.suletud=:d", Objekt_intsidendis.class);
     	q.setParameter("ints", ints);
+    	q.setParameter("d", SURROGATE_DATE);
         return q.getResultList();
     }
 	
