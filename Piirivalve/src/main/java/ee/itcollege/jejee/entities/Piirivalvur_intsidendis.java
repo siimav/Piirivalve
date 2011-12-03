@@ -13,6 +13,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
+import ee.itcollege.jejee.entities.Piirivalvuri_seadus_intsidendi;
+import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
@@ -42,6 +44,9 @@ public class Piirivalvur_intsidendis extends BaseEntity implements Cloneable {
 	
 	@ManyToOne
 	private Vahtkond_intsidendis vahtkond_intsidendis;
+
+	@OneToMany(mappedBy = "piirivalvur_intsidendis")
+	private Collection<Piirivalvuri_seadus_intsidendi> piirivalvuri_seadus_intsidendi;
 
 	public Date getAlates() {
 		return alates;
@@ -168,6 +173,14 @@ public class Piirivalvur_intsidendis extends BaseEntity implements Cloneable {
 	    	q.setParameter("ints", ints);
 	    	q.setParameter("d", SURROGATE_DATE);
 	        return q.getResultList();
+		}
+
+		public Collection<Piirivalvuri_seadus_intsidendi> getPiirivalvuri_seadus_intsidendi() {
+		    return piirivalvuri_seadus_intsidendi;
+		}
+
+		public void setPiirivalvuri_seadus_intsidendi(Collection<Piirivalvuri_seadus_intsidendi> param) {
+		    this.piirivalvuri_seadus_intsidendi = param;
 		}
 	
 	

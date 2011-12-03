@@ -5,21 +5,21 @@ package ee.itcollege.jejee.entities;
 
 import java.lang.String;
 
-privileged aspect Seadus_Roo_ToString {
+privileged aspect Piirivalvuri_seadus_intsidendi_Roo_ToString {
     
-    public String Seadus.toString() {
+    public String Piirivalvuri_seadus_intsidendi.toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Alates: ").append(getAlates()).append(", ");
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");
-        sb.append("Kehtiv_alates: ").append(getKehtiv_alates()).append(", ");
-        sb.append("Kehtiv_kuni: ").append(getKehtiv_kuni()).append(", ");
+        sb.append("Kirjeldus: ").append(getKirjeldus()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
-        sb.append("Kood: ").append(getKood()).append(", ");
+        sb.append("Kuni: ").append(getKuni()).append(", ");
         sb.append("Muudetud: ").append(getMuudetud()).append(", ");
         sb.append("Muutja: ").append(getMuutja()).append(", ");
-        sb.append("Nimetus: ").append(getNimetus()).append(", ");
-        sb.append("Seaduse_punkt: ").append(getSeaduse_punkt() == null ? "null" : getSeaduse_punkt().size()).append(", ");
+        sb.append("Piirivalvur_intsidendis: ").append(getPiirivalvur_intsidendis()).append(", ");
+        sb.append("Seaduse_punkt: ").append(getSeaduse_punkt()).append(", ");
         sb.append("Suletud: ").append(getSuletud()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
         sb.append("Version: ").append(getVersion());

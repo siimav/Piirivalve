@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_itcollege_jejee_entities_Piirivalvuri_seadus_intsidendi" items="${piirivalvuri_seadus_intsidendis}" z="l90d2ya0K30XToPaDjJKzQZNpwU=">
+        <table:table data="${piirivalvuri_seadus_intsidendis}" id="l_ee_itcollege_jejee_entities_Piirivalvuri_seadus_intsidendi" path="/piirivalvuri_seadus_intsidendis" z="6LEDYDael7i5L52ra2W9EGo+gsI=">
+            <table:column id="c_ee_itcollege_jejee_entities_Piirivalvuri_seadus_intsidendi_avaja" property="avaja" z="EXvxQO1tDj4HdIxTo7CYzS4RyXQ="/>
+            <table:column date="true" dateTimePattern="${piirivalvuri_seadus_intsidendi_avatud_date_format}" id="c_ee_itcollege_jejee_entities_Piirivalvuri_seadus_intsidendi_avatud" property="avatud" z="XGBPUkWZ63ngQESlU4oQ5Hpvcq0="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Piirivalvuri_seadus_intsidendi_muutja" property="muutja" z="QIr08tnBXP/28THVPjkuCc1UgMo="/>
+            <table:column date="true" dateTimePattern="${piirivalvuri_seadus_intsidendi_muudetud_date_format}" id="c_ee_itcollege_jejee_entities_Piirivalvuri_seadus_intsidendi_muudetud" property="muudetud" z="s1kAb30wj4JREdc6+NfSSo6EQDs="/>
+            <table:column id="c_ee_itcollege_jejee_entities_Piirivalvuri_seadus_intsidendi_sulgeja" property="sulgeja" z="FWBqy3b/Ipd7cK+6vlLAbYFdPPk="/>
+            <table:column date="true" dateTimePattern="${piirivalvuri_seadus_intsidendi_suletud_date_format}" id="c_ee_itcollege_jejee_entities_Piirivalvuri_seadus_intsidendi_suletud" property="suletud" z="nGquoasKyO/o4FflLJSIVrRtOFg="/>
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_jejee_entities_Seaduse_punkt" object="${seaduse_punkt}" path="/seaduse_punkts" z="/7e4rQXuHVtG3NNonkg3bI3bXcQ=">
+        <field:display field="avaja" id="s_ee_itcollege_jejee_entities_Seaduse_punkt_avaja" object="${seaduse_punkt}" z="CjkfEtsaT5iuIbQdl5LR2lYX1JY="/>
+        <field:display date="true" dateTimePattern="${seaduse_punkt_avatud_date_format}" field="avatud" id="s_ee_itcollege_jejee_entities_Seaduse_punkt_avatud" object="${seaduse_punkt}" z="IGkP1u1gDj0PqwZlLJDkFUyEUXQ="/>
+        <field:display field="muutja" id="s_ee_itcollege_jejee_entities_Seaduse_punkt_muutja" object="${seaduse_punkt}" z="DFl+go5KGS2gV1WmdsCtNNm5zHc="/>
+        <field:display date="true" dateTimePattern="${seaduse_punkt_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_jejee_entities_Seaduse_punkt_muudetud" object="${seaduse_punkt}" z="F5S9LO5XuEjPDEwEPNd5Qk6Cc1o="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_jejee_entities_Seaduse_punkt_sulgeja" object="${seaduse_punkt}" z="ugU7HFt+JIhkx4wpzfURHq6yqq0="/>
+        <field:display date="true" dateTimePattern="${seaduse_punkt_suletud_date_format}" field="suletud" id="s_ee_itcollege_jejee_entities_Seaduse_punkt_suletud" object="${seaduse_punkt}" z="XpAAWx4/H8mB+f05ddyzvYCVUnA="/>
+        <field:display field="paragrahv" id="s_ee_itcollege_jejee_entities_Seaduse_punkt_paragrahv" object="${seaduse_punkt}" z="Q2hywpIJADDJTtQaPtFAKZE7+is="/>
+        <field:display field="pais" id="s_ee_itcollege_jejee_entities_Seaduse_punkt_pais" object="${seaduse_punkt}" z="ALTrXpUBibj3HVO9ghpse3XF6wE="/>
+        <field:display field="tekst" id="s_ee_itcollege_jejee_entities_Seaduse_punkt_tekst" object="${seaduse_punkt}" z="JupNpravC7NPxRRqQ3eTqNTh9jM="/>
+        <field:display date="true" dateTimePattern="${seaduse_punkt_kehtiv_alates_date_format}" field="kehtiv_alates" id="s_ee_itcollege_jejee_entities_Seaduse_punkt_kehtiv_alates" object="${seaduse_punkt}" z="lSIYItLsKgk+Z1LAFQ+XzCu6IHg="/>
+        <field:display date="true" dateTimePattern="${seaduse_punkt_kehtiv_kuni_date_format}" field="kehtiv_kuni" id="s_ee_itcollege_jejee_entities_Seaduse_punkt_kehtiv_kuni" object="${seaduse_punkt}" z="ISSSMRbKNNILVB3OyNcrQrXKtvM="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_jejee_entities_Seaduse_punkt_kommentaar" object="${seaduse_punkt}" z="pcoaOaCrBbAPHyHoh+ekzVEhF/o="/>
+        <field:display field="seadus" id="s_ee_itcollege_jejee_entities_Seaduse_punkt_seadus" object="${seaduse_punkt}" z="K9x2BkAkEgCUmlkYgLLe3W+Rabg="/>
+    </page:show>
+</div>
