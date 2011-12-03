@@ -9,18 +9,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Lisa vahtkond intsidenti</title>
+<title><spring:message code="add_vahtkond_pealkiri"/></title>
 </head>
 <body>
 
 <spring:url value="/intsident/${id}/lisa_vahtkond" var="url" />
 <fo:form action="${url}" method="POST" commandName="vahtkond_intsidendis">
-    <field:datetime dateTimePattern="${dateFormat}" field="alates" id="alates" required="true" label="Alates"/>
-    <field:datetime dateTimePattern="${dateFormat}" field="kuni" id="kuni" required="true" label="Kuni"/>
-	Kirjeldus <br /> <fo:textarea path="kirjeldus" rows="4" cols="25" required="true"></fo:textarea> <br />
-	Kommentaar <br /> <fo:textarea path="kommentaar" rows="4" cols="25"></fo:textarea> <br /><br />
+	<spring:message code="label_alates" var="str_alates"/>
+    <field:datetime dateTimePattern="${dateFormat}" field="alates" id="alates" required="true" label="${str_alates}"/>
+    <spring:message code="label_kuni" var="str_kuni"/>
+    <field:datetime dateTimePattern="${dateFormat}" field="kuni" id="kuni" required="true" label="${str_kuni}"/>
+	<spring:message code="label_kirjeldus"/> <br /> <fo:textarea path="kirjeldus" rows="4" cols="25" required="true"></fo:textarea> <br />
+	<spring:message code="label_kommentaar"/> <br /> <fo:textarea path="kommentaar" rows="4" cols="25"></fo:textarea> <br /><br />
 	
-	Vali vahtkonnad: <br />
+	<spring:message code="label_vali_vahtkonnad"/>: <br />
 	<c:set var="i" value="0" />
     <c:forEach var = "vahtkond" items = "${vahtkonnad}">
         <input type = "checkbox" name = "ids" value = "${vahtkond.id}"
@@ -32,7 +34,7 @@
     </c:forEach>
     
     <br />
-	<input type="submit" value="Submit" />	
+	<input type="submit" value="<spring:message code="button_submit"/>" />	
 </fo:form>
 
 </body>
