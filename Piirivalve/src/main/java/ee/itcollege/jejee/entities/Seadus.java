@@ -8,6 +8,9 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import ee.itcollege.jejee.entities.Seaduse_punkt;
+import java.util.Collection;
+import javax.persistence.OneToMany;
 
 @Entity
 @RooEntity
@@ -24,6 +27,9 @@ public class Seadus extends BaseEntity {
 	private String kehtiv_kuni;
 	@NotNull
 	private String kommentaar;
+
+	@OneToMany(mappedBy = "seadus")
+	private Collection<Seaduse_punkt> seaduse_punkt;
 	
 	public Seadus() {
 		super();
@@ -89,5 +95,13 @@ public class Seadus extends BaseEntity {
     	q.setParameter("d", SURROGATE_DATE);
         return q.getResultList();
     }
+
+	public Collection<Seaduse_punkt> getSeaduse_punkt() {
+	    return seaduse_punkt;
+	}
+
+	public void setSeaduse_punkt(Collection<Seaduse_punkt> param) {
+	    this.seaduse_punkt = param;
+	}
 
 }

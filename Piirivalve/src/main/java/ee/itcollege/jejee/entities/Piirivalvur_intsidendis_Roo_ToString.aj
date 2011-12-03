@@ -20,6 +20,7 @@ privileged aspect Piirivalvur_intsidendis_Roo_ToString {
         sb.append("Muudetud: ").append(getMuudetud()).append(", ");
         sb.append("Muutja: ").append(getMuutja()).append(", ");
         sb.append("Piirivalvur: ").append(getPiirivalvur()).append(", ");
+        sb.append("Piirivalvuri_seadus_intsidendi: ").append(getPiirivalvuri_seadus_intsidendi() == null ? "null" : getPiirivalvuri_seadus_intsidendi().size()).append(", ");
         sb.append("Suletud: ").append(getSuletud()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
         sb.append("Vahtkond_intsidendis: ").append(getVahtkond_intsidendis()).append(", ");

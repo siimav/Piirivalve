@@ -20,7 +20,7 @@ import ee.itcollege.jejee.entities.Piiriloik;
 @RequestMapping("/reg")
 @Controller
 public class IntsidendiRegistreerimineController {
-	
+
 	 @Autowired
      private RegistrationValidation registrationValidation;
 
@@ -30,7 +30,7 @@ public class IntsidendiRegistreerimineController {
 
 	@PersistenceContext
 	EntityManager entityManager;
-	
+
 	@RequestMapping(method = RequestMethod.GET)
     public String show(Model uiModel) {
 		Intsident i = new Intsident();
@@ -40,25 +40,22 @@ public class IntsidendiRegistreerimineController {
 		uiModel.addAttribute("intsident_toimumise_algus_date_format", "yyyy-MM-dd");
         return "intsidendi_registreerimine/view";
     }
-	
+
 	@RequestMapping(method = RequestMethod.POST)
     public String post(HttpServletRequest httpServletRequest, Model uiModel, @Valid Intsident intsident, BindingResult result) {
-		
+
 		uiModel.addAttribute("intsidendi_liiks", Intsidendi_liik.findAllIntsidendi_liiks());
 		uiModel.addAttribute("piiriloiks", Piiriloik.findAllPiiriloiks());
-		
-		//lisab andmebaasi uue kirje
-		intsident.persist(); 
-		
+
 		registrationValidation.validate(intsident, result);
         if (result.hasErrors()) {
-        	return "intsidendi_registreerimine/view";
-        	
+        	return "intsidendi_registreerimine/view";	
         }
         else{
-        	return "redirect:/create";	//nÃ¤itab kÃµiki intsidente
+        	//lisab andmebaasi uue kirje
+    		intsident.persist(); 
+        	return "redirect:/intsident/"+intsident.getId();	//intsidendi redaktor
         }
 	}
 
 }
-

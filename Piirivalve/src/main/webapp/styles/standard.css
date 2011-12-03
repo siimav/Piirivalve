@@ -24,7 +24,7 @@ body {
 
 	/* fix max-width incompatibility in IE6 */
 	width:expression(document.body.clientWidth > 800? "800px": "auto" );
-	
+
 	overflow:hidden;
 	display:block;
 }
@@ -145,7 +145,7 @@ div .box {
 /* menu elements*/
 
 a.menu, a.menu:link, a.menu:visited {display:block; width:150px; height:25px;} 
-	
+
 /* text styles */
 
 h1,h2,h3 {
@@ -405,12 +405,12 @@ fieldset th {
 .div_left {
 	float: left;
 	width: 49%;
-	
+
 }
 .div_right {
 	float: right;
 	width: 49%;
-	
+
 }
 .button_right {
 	margin-top: 0px;
@@ -434,6 +434,7 @@ fieldset th {
 	float:right;
 	width:80px;
 	height: 30px;
+	margin-right:10px;
 }
 
 .hidden{
@@ -469,4 +470,16 @@ fieldset th {
 	margin-right:50px;
 }
 
+.input_width{
+	width:50px
+}
+
+.reg_combobox{
+	width:90px;
+	height:20px;
+}
+
+.reg_input_adjust{
+	width:180px;
+}
 

@@ -32,31 +32,44 @@
 <fo:form action="${url}" method="POST" commandName="intsident">
 	<div id="vasak_div">
 		<table border="0">
-			<tr><td>kood<span style="color:red;">*</span></td><td><fo:input path="kood" /></td></tr>
-			<tr><td>liik<span style="color:red;">*</span></td>
-			<td height="30px">
-			<fo:select path="intsidendi_liik">
-				<c:forEach var="ints" items="${intsidendi_liiks}">
-					<fo:option value="${ints.id}">${ints.nimetus}</fo:option>
-				</c:forEach>
-			</fo:select>			
-			</td></tr>
-			<tr><td>nimetus<span style="color:red;">* </span></td><td><fo:input path="nimetus" /></td></tr>
+			<tr>
+				<td>kood<span style="color:red;">*</span></td>
+				<td><fo:input path="kood" cssClass="input_width"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;liik<span style="color:red;">*</span>
+
+				<fo:select path="intsidendi_liik" cssClass="reg_combobox">
+					<c:forEach var="ints" items="${intsidendi_liiks}">
+						<fo:option value="${ints.id}">${ints.nimetus}</fo:option>
+					</c:forEach>
+				</fo:select>	
+
+				</td>
+			</tr>
+<!-- 			<tr> -->
+<!-- 				<td>liik<span style="color:red;">*</span></td> -->
+<!-- 				<td height="30px"> -->
+<%-- 				<fo:select path="intsidendi_liik"> --%>
+<%-- 					<c:forEach var="ints" items="${intsidendi_liiks}"> --%>
+<%-- 						<fo:option value="${ints.id}">${ints.nimetus}</fo:option> --%>
+<%-- 					</c:forEach> --%>
+<%-- 				</fo:select>			 --%>
+<!-- 				</td> -->
+<!-- 			</tr> -->
+			<tr><td>nimetus<span style="color:red;">* </span></td><td><fo:input path="nimetus" cssClass="reg_input_adjust"/></td></tr>
 			<tr><td>piirilõik<span style="color:red;">*</span></td>
 				<td>
-				<fo:select path="piiriloik" style="width:150px; height:25px; font-size:13px;" >
+				<fo:select path="piiriloik" style="width:185px; height:25px; font-size:13px;" >
 				<c:forEach var="piir" items="${piiriloiks}">
 					<fo:option value="${piir.id}">${piir.nimetus}</fo:option>
 				</c:forEach>
 				</fo:select>
 				</td>
 			</tr>
-			<tr><td>koordnaadid<span style="color:red;">*</span></td><td><fo:input path="GPS_latituud" style="width:65px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<fo:input path="GPS_longituud" style="width:65px"/><td/></tr>
-			<tr><td>algus<span style="color:red;">* </span></td><td><field:datetime dateTimePattern="${intsident_toimumise_algus_date_format}" field="toimumise_algus" id="algus" required="true" label=" "/></td></tr>
-			<tr><td>lopp<span style="color:red;">* </span></td><td><field:datetime dateTimePattern="${intsident_toimumise_lopp_date_format}" field="toimumise_lopp" id="lopp" required="true" label=" "/></td></tr>
+			<tr><td>koordnaadid<span style="color:red;">*</span></td><td><fo:input path="GPS_latituud" style="width:80px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<fo:input path="GPS_longituud" style="width:80px"/><td/></tr>
+			<tr><td>algus<span style="color:red;">* </span></td><td><field:datetime dateTimePattern="yyyy-MM-dd" field="toimumise_algus" id="algus" required="true" label=" "/></td></tr>
+			<tr><td>lopp<span style="color:red;">* </span></td><td><field:datetime dateTimePattern="yyyy-MM-dd" field="toimumise_lopp" id="lopp" required="true" label=" "/></td></tr>
 		</table>
  	</div> 
-	
+
 	<div id="parem_div">
 		<table>
 			<tr><td>Kirjeldus<span style="color:red;">*</span></td><td></td></tr>
@@ -66,8 +79,8 @@
 			<tr><td><fo:textarea path="kommentaar" rows="4" cols="25"></fo:textarea></td></tr>
 		</table>
 		<br/><br/>
-		<input type="submit" name="mysubmit" value="Salvesta" class="btn_reg"/>
 		<input type="reset" value="Loobu" class="btn_reg">
+		<input type="submit" name="mysubmit" value="Salvesta" class="btn_reg"/>	
  	</div> 
 
 	<table>
@@ -92,7 +105,7 @@
 	<fo:input path="muudetud" cssClass="hidden" value="<%= dateAsString %>"/>
 
 	</fo:form>
-	
+
 </div>
 
 

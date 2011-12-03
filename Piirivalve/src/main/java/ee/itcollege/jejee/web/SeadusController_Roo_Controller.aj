@@ -4,6 +4,7 @@
 package ee.itcollege.jejee.web;
 
 import ee.itcollege.jejee.entities.Seadus;
+import ee.itcollege.jejee.entities.Seaduse_punkt;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
 import java.lang.Long;
@@ -95,6 +96,11 @@ privileged aspect SeadusController_Roo_Controller {
     @ModelAttribute("seaduses")
     public Collection<Seadus> SeadusController.populateSeaduses() {
         return Seadus.findAllSeaduses();
+    }
+    
+    @ModelAttribute("seaduse_punkts")
+    public Collection<Seaduse_punkt> SeadusController.populateSeaduse_punkts() {
+        return Seaduse_punkt.findAllSeaduse_punkts();
     }
     
     void SeadusController.addDateTimeFormatPatterns(Model uiModel) {

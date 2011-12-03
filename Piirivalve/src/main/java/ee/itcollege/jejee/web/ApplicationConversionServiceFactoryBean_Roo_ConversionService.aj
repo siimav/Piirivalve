@@ -14,9 +14,11 @@ import ee.itcollege.jejee.entities.Piiripunkt;
 import ee.itcollege.jejee.entities.Piiririkkuja;
 import ee.itcollege.jejee.entities.Piirivalvur;
 import ee.itcollege.jejee.entities.Piirivalvur_intsidendis;
+import ee.itcollege.jejee.entities.Piirivalvuri_seadus_intsidendi;
 import ee.itcollege.jejee.entities.Riigi_admin_yksus;
 import ee.itcollege.jejee.entities.Riigi_admin_yksuse_liik;
 import ee.itcollege.jejee.entities.Seadus;
+import ee.itcollege.jejee.entities.Seaduse_punkt;
 import ee.itcollege.jejee.entities.Vaeosa;
 import ee.itcollege.jejee.entities.Vahtkond;
 import ee.itcollege.jejee.entities.Vahtkond_intsidendis;
@@ -40,9 +42,11 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(new PiiririkkujaConverter());
         registry.addConverter(new PiirivalvurConverter());
         registry.addConverter(new Piirivalvur_intsidendisConverter());
+        registry.addConverter(new Piirivalvuri_seadus_intsidendiConverter());
         registry.addConverter(new Riigi_admin_yksusConverter());
         registry.addConverter(new Riigi_admin_yksuse_liikConverter());
         registry.addConverter(new SeadusConverter());
+        registry.addConverter(new Seaduse_punktConverter());
         registry.addConverter(new VaeosaConverter());
         registry.addConverter(new VahtkondConverter());
         registry.addConverter(new Vahtkond_intsidendisConverter());
@@ -132,6 +136,13 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         
     }
     
+    static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.Piirivalvuri_seadus_intsidendiConverter implements Converter<Piirivalvuri_seadus_intsidendi, String> {
+        public String convert(Piirivalvuri_seadus_intsidendi piirivalvuri_seadus_intsidendi) {
+            return new StringBuilder().append(piirivalvuri_seadus_intsidendi.getAvaja()).append(" ").append(piirivalvuri_seadus_intsidendi.getAvatud()).append(" ").append(piirivalvuri_seadus_intsidendi.getMuutja()).append(" ").append(piirivalvuri_seadus_intsidendi.getMuudetud()).toString();
+        }
+        
+    }
+    
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.Riigi_admin_yksusConverter implements Converter<Riigi_admin_yksus, String> {
         public String convert(Riigi_admin_yksus riigi_admin_yksus) {
             return new StringBuilder().append(riigi_admin_yksus.getAvaja()).append(" ").append(riigi_admin_yksus.getAvatud()).append(" ").append(riigi_admin_yksus.getMuutja()).append(" ").append(riigi_admin_yksus.getMuudetud()).toString();
@@ -149,6 +160,13 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.SeadusConverter implements Converter<Seadus, String> {
         public String convert(Seadus seadus) {
             return new StringBuilder().append(seadus.getAvaja()).append(" ").append(seadus.getAvatud()).append(" ").append(seadus.getMuutja()).append(" ").append(seadus.getMuudetud()).toString();
+        }
+        
+    }
+    
+    static class ee.itcollege.jejee.web.ApplicationConversionServiceFactoryBean.Seaduse_punktConverter implements Converter<Seaduse_punkt, String> {
+        public String convert(Seaduse_punkt seaduse_punkt) {
+            return new StringBuilder().append(seaduse_punkt.getAvaja()).append(" ").append(seaduse_punkt.getAvatud()).append(" ").append(seaduse_punkt.getMuutja()).append(" ").append(seaduse_punkt.getMuudetud()).toString();
         }
         
     }
