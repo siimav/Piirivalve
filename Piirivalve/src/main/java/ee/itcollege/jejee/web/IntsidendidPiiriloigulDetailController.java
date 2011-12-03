@@ -72,6 +72,7 @@ public class IntsidendidPiiriloigulDetailController {
         		p_ints.setKirjeldus(tmp.getKirjeldus());
         		p_ints.setKommentaar(tmp.getKommentaar());
         		p_ints.merge();
+        		return "redirect:/detail/"+id+"/p/"+p_id;
         	}
         	else{ //uus piirivalvur on valitud
         		//Piirivalvur_intsidendis pi = (Piirivalvur_intsidendis) p_ints.clone();
@@ -97,9 +98,9 @@ public class IntsidendidPiiriloigulDetailController {
         		
         		p_ints.setSuletud(new Date()); //eelmise intsidendi sulgemine
         		p_ints.merge();
+        		return "redirect:/detail/"+count+"/p/"+p_id;
         	}
         	
-        	return "redirect:/detail/"+count+"/p/"+p_id;
         }
 		
 	}

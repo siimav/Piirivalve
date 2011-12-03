@@ -434,6 +434,7 @@ fieldset th {
 	float:right;
 	width:80px;
 	height: 30px;
+	margin-right:10px;
 }
 
 .hidden{
@@ -467,6 +468,19 @@ fieldset th {
 #detail_btns{
 	float:right;
 	margin-right:50px;
+}
+
+.input_width{
+	width:50px
+}
+
+.reg_combobox{
+	width:90px;
+	height:20px;
+}
+
+.reg_input_adjust{
+	width:180px;
 }
 
 
