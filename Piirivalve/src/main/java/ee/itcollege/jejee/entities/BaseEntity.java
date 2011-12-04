@@ -145,7 +145,7 @@ public abstract class BaseEntity implements Serializable {
 
         String user = SecurityContextHolder.getContext().getAuthentication().getName();
         q =  entityManager().createQuery("UPDATE " + table + " SET sulgeja=:sulgeja WHERE id=" + id);
-        q.setParameter("sulgeja", sulgeja);
+        q.setParameter("sulgeja", user);
         if(q.executeUpdate() != 1) {
         	//FAILED
 //        	this.entityManager.getTransaction().rollback();

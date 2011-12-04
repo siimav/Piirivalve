@@ -88,6 +88,7 @@ body {
 	border:none;
 	margin-top:15px;
 	border-top:1px solid #999999;
+	clear:both;
 }
 
 #footer .new {
@@ -229,9 +230,7 @@ ul li {
 table {
 	background: #EEEEEE;
 	margin: 2px 0 0 0;
-/* 	border: 1px solid #BBBBBB; */
 	border-collapse: collapse;
-	width: 100%
 }
 
 table table {
@@ -405,17 +404,18 @@ fieldset th {
 .div_left {
 	float: left;
 	width: 49%;
-
+	margin-bottom:20px;
 }
+
 .div_right {
 	float: right;
 	width: 49%;
-
+	margin-bottom:20px;
 }
+
 .button_right {
 	margin-top: 0px;
-/* 	text-align: right; */
-	margin-right:10px;
+ 	text-align: right;
 }
 
 .noBorder {

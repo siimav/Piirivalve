@@ -20,14 +20,14 @@ public class RedaktorValidation {
 
 	public void validate(Object target, String [] cbs, Errors errors) {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "kirjeldus",
-				null,
-				" Sisesta kirjeldus!");
+				"error_kirjeldus",
+				"Sisesta kirjeldus!");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "alates",
-				null,
-				" Sisesta väärtus ALGUSELE!");
+				"error_alates",
+				"Sisesta väärtus ALGUSELE!");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "kuni",
-				null,
-				" Sisesta väärtus LÕPULE!");
+				"error_kuni",
+				"Sisesta väärtus LÕPULE!");
 	}
 	
 }

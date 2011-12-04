@@ -26,7 +26,7 @@ public class IntsidendidPiiriloigulController {
 	EntityManager entityManager;
 	
 
-	@RequestMapping(params = "form", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
     public String show(HttpServletRequest httpServletRequest, Model uiModel) {
 		Piirivalvur_intsidendis_abi pi = new Piirivalvur_intsidendis_abi();
 		uiModel.addAttribute("piirivalvur_intsidendis_abi", pi);
@@ -37,7 +37,7 @@ public class IntsidendidPiiriloigulController {
     }
 	
 	
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(params = "piiriloik_ID", method = RequestMethod.GET)
     public String post(HttpServletRequest httpServletRequest, Model uiModel, Piirivalvur_intsidendis_abi pia, BindingResult result) {
 		
 		uiModel.addAttribute("piiriloiks", Piiriloik.findAllPiiriloiks());

@@ -23,12 +23,15 @@
 			<table>
 				<tr>
 					<td>
-						<field:datetime id="alates" field="alates" dateTimePattern="yyyy-MM-dd" label="Alates" ></field:datetime>
+						<spring:message code="label_alates" var="str_alates"/>
+						<field:datetime id="alates" field="alates" dateTimePattern="yyyy-MM-dd" label="${str_alates}" ></field:datetime>
 					</td>
 					<td>
-						<field:datetime id="kuni" field="kuni" dateTimePattern="yyyy-MM-dd" label="Kuni"></field:datetime>
+						<spring:message code="label_kuni" var="str_kuni"/>
+						<field:datetime id="kuni" field="kuni" dateTimePattern="yyyy-MM-dd" label="${str_kuni}"></field:datetime>
 					</td>
 					<td>
+						<p style="margin-top: -15px; margin-bottom: 0px;"><spring:message code="label_ee_itcollege_jejee_entities_piiriloik"/></p>
 						<fo:select path="piiriloik_ID" style="width:100px" itemLabel="Piirilõik">
 						<fo:option value="0">---</fo:option>
 						<c:forEach var="piir" items="${piiriloiks}">

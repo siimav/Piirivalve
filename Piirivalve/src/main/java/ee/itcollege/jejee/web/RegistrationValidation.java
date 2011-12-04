@@ -16,19 +16,19 @@ public class RegistrationValidation {
   public void validate(Object target, Errors errors) {
 	  Intsident intsident = (Intsident) target;
     ValidationUtils.rejectIfEmptyOrWhitespace(errors, "kood",
-        "NotEmpty.intsident.kood",
+        "error_kood",
         " Sisesta väärtus KOODILE!");
     ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nimetus",
-            "NotEmpty.intsident.nimetus",
+            "error_nimetus",
             " Sisesta väärtus NIMETUSELE!");
     ValidationUtils.rejectIfEmptyOrWhitespace(errors, "toimumise_algus",
-            "NotEmpty.intsident.toimumise_algus",
+            "error_algus",
             " Sisesta väärtus ALGUSELE!");
     ValidationUtils.rejectIfEmptyOrWhitespace(errors, "toimumise_lopp",
-            "NotEmpty.intsident.toimumise_lopp",
+            "error_lopp",
             " Sisesta väärtus LÕPULE!");
     ValidationUtils.rejectIfEmptyOrWhitespace(errors, "kirjeldus",
-            "NotEmpty.intsident.kirjeldus",
+            "error_kirjeldus",
             " Sisesta väärtus KIRJELDUSELE!");
     
     String gps_lat = intsident.getGPS_latituud();
@@ -41,7 +41,7 @@ public class RegistrationValidation {
 	}
     if(!ok_lat){
     	errors.rejectValue("GPS_latituud",
-              "lengthOfNimetus.intsident.GPS_latituud",
+              "error_gps_lat",
               "GPS_latituudi väärtus vale!");
     }
     
@@ -51,21 +51,9 @@ public class RegistrationValidation {
 	}
     if(!ok_long){
     	errors.rejectValue("GPS_longituud",
-              "lengthOfNimetus.intsident.GPS_longituud",
+              "error_gps_long",
               "GPS_longituudi väärtus vale!");
     }
     
-//    String nimetus = intsident.getNimetus();
-//    if ((nimetus.length()) > 10) {
-//      errors.rejectValue("nimetus",
-//          "lengthOfNimetus.intsident.nimetus",
-//          "Nimetus must not more than 10 characters.");
-//    }
-//    if (!(intsident.getPassword()).equals(registration
-//        .getConfirmPassword())) {
-//      errors.rejectValue("password",
-//          "matchingPassword.registration.password",
-//          "Password and Confirm Password Not match.");
-//    }
   }
 }

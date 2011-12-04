@@ -32,18 +32,15 @@
 			<c:forEach var="ii" items="${isikud_intsidendis}">			
 				<tr>
 					<td width="100%"><p>${ii.piiririkkuja.getName()}</p></td>
-					<td><label> <input type="button" name="info" value="Info" onClick="showNIY()" />
-					</label></td>
+					<td><input type="button" name="info" value="Info" onClick="showNIY()" /></td>
 					<td><input type="button" name="kustuta" value="<spring:message code="label_kustuta"/>" onClick="redirectTo('kustuta_piiririkkuja/${ii.id}')" /></td>
 				</tr>
 			</c:forEach>
 		</table>
 	
-	<p class="button_right">
-	  <label>
-	    <input type="button" name="lisa" value="<spring:message code="label_lisa"/>" onClick="redirectTo('lisa_piiririkkuja')" />
-	  </label>
-	</p>
+		<div class="button_right">
+	    	<input type="button" name="lisa" value="<spring:message code="label_lisa"/>" onClick="redirectTo('lisa_piiririkkuja')" />
+		</div>
 	
 	<br/><br/><br/>
 	
@@ -54,18 +51,15 @@
 			<c:forEach var="vi" items="${vahtkonnad_intsidendis}">			
 				<tr>
 					<td width="100%"><p>${vi.vahtkond.nimetus}</p></td>
-					<td><label> <input type="button" name="info" value="Info" onClick="showNIY()" />
-					</label></td>
+					<td><input type="button" name="info" value="Info" onClick="showNIY()" /></td>
 					<td><input type="button" name="kustuta" value="<spring:message code="label_kustuta"/>" onClick="redirectTo('kustuta_vahtkond/${vi.id}')" /></td>
 				</tr>
 			</c:forEach>
 		</table>
 	
-	<p class="button_right">
-	  <label>
-	    <input type="button" name="lisa" value="<spring:message code="label_lisa"/>" onClick="redirectTo('lisa_vahtkond')" />
-	  </label>
-	</p>
+		<div class="button_right">
+	    	<input type="button" name="lisa" value="<spring:message code="label_lisa"/>" onClick="redirectTo('lisa_vahtkond')" />
+		</div>
 	
 	</div>
 	
@@ -79,18 +73,15 @@
 			<c:forEach var="oi" items="${objektid_intsidendis}">			
 				<tr>
 					<td width="100%"><p>${oi.objekt.nimetus}</p></td>
-					<td><label> <input type="button" name="info" value="Info" onClick="showNIY()" />
-					</label></td>
+					<td><input type="button" name="info" value="Info" onClick="showNIY()" /></td>
 					<td><input type="button" name="kustuta" value="<spring:message code="label_kustuta"/>" onClick="redirectTo('kustuta_objekt/${oi.id}')" /></td>
 				</tr>
 			</c:forEach>
 		</table>
 		
-		<p class="button_right">
-	  <label>
-	    <input type="button" name="lisa" value="<spring:message code="label_lisa"/>" onClick="redirectTo('lisa_objekt')" />
-	  </label>
-	</p>
+		<div class="button_right">
+	    	<input type="button" name="lisa" value="<spring:message code="label_lisa"/>" onClick="redirectTo('lisa_objekt')" />
+		</div>
 	
 	<br/><br/><br/>
 	
@@ -101,19 +92,15 @@
 			<c:forEach var="pi" items="${piirivalvurid_intsidendis}">
 				<tr>
 					<td width="100%"><p>${pi.piirivalvur.getName()}</p></td>
-					<td><label> <input type="button" name="info" value="Info" onClick="showNIY()" />
-					</label></td>
+					<td><input type="button" name="info" value="Info" onClick="showNIY()" /></td>
 					<td><input type="button" name="kustuta" value="<spring:message code="label_kustuta"/>" onClick="redirectTo('kustuta_piirivalvur/${pi.id}')" /></td>
 				</tr>
 			</c:forEach>
 		</table>
 
-	  	<p class="button_right">
-	  	<label>
-	    <input type="button" name="lisa" value="<spring:message code="label_lisa"/>" onClick="redirectTo('lisa_piirivalvur')" />
-	  	</label>
-	</p>
-
+		<div class="button_right">
+	    	<input type="button" name="lisa" value="<spring:message code="label_lisa"/>" onClick="redirectTo('lisa_piirivalvur')" />
+		</div>
 	
 	</div>
 

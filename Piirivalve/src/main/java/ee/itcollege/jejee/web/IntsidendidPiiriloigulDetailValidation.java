@@ -16,7 +16,7 @@ public class IntsidendidPiiriloigulDetailValidation {
 
 	public void validate(Object target, Errors errors) {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "kirjeldus",
-				null,
+				"error_kirjeldus",
 				" Sisesta kirjeldus!");
 
 	}
