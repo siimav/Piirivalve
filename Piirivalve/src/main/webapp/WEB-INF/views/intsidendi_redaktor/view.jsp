@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>midagi</title>
-<c:url value="/intsident/${intsident.id}/" var="url" />
+<spring:url value="/intsident/${intsident.id}/" var="url" />
 <script language="javascript"> 
 	function redirectTo(url) {		
 		window.location = "${url}" + url;
@@ -20,7 +20,13 @@
 
 </head>
 <body>
-
+	url1: ${url} <br />
+	<spring:url value="/intsident/${intsident.id}/" var="url2" />
+	url2: ${url2} <br />
+	<spring:url value="/intsident/" var="url3" />
+	url3: ${url3} <br />
+	<spring:url value="intsident" var="url4" />
+	url4: ${url4} <br />
     <p><spring:message code="label_ee_itcollege_jejee_entities_intsident"/> ${intsident.kood} - ${intsident.piiriloik.nimetus} - ${intsident.nimetus}</p>
     
 	<div class="div_left">
