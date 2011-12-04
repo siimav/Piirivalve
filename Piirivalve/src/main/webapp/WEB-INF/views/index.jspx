@@ -8,7 +8,8 @@
       <spring:message code="welcome_h3" arguments="${app_name}" />
     </h3>
     <p>
-      <spring:message code="welcome_text" />
+      <spring:url value="/filldb/" var="url"></spring:url>
+      <spring:message code="welcome_text" /> <a href="${url}"> <spring:message code="label_siia" /></a>
     </p>
   </util:panel>
 </div>
