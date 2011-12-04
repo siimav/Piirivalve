@@ -130,8 +130,9 @@ public abstract class BaseEntity implements Serializable {
 	}
 	
 	
+	// Saaks teha ka objekt.merge() abil, aga siis muudetakse muutmise kuupäev ka ära
 	@Transactional
-    public void remove() {        
+    public void remove() { 
         String table = this.getClass().getSimpleName();
         Query q = entityManager().createQuery("UPDATE " + table + " SET suletud=:date WHERE id=" + id);
         q.setParameter("date", new Date());

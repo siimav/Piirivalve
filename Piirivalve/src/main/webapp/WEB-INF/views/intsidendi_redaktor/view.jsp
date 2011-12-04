@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>midagi</title>
-<spring:url value="/intsident/${intsident.id}/" var="url" />
+<c:url value="/intsident/${intsident.id}/" var="url" />
 <script language="javascript"> 
 	function redirectTo(url) {		
 		window.location = "${url}" + url;
