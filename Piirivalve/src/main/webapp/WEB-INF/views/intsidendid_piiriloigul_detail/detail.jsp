@@ -81,38 +81,18 @@
 			<c:forEach var="psi" items="${psi}">
 			<tr>
 				<td width="200px">
-					${psi.seaduse_punkt.seadus.nimetus}	${psi.seaduse_punkt.paragrahv} ${psi.seaduse_punkt.pais}
+					${psi.seaduse_punkt.seadus.nimetus}	&sect;${psi.seaduse_punkt.paragrahv} lg${psi.seaduse_punkt.pais}
 				</td>
 				<td>
-					<input type="button" value="Info">
+					<spring:url value="/detail/${pints.id}/p/${pvalvur.id}/vaata_seadus/${psi.seaduse_punkt.id}" var="url_vaataSeadus" />
+					<input type="button" value="Info" onclick="window.location='${url_vaataSeadus}'">
 				</td>
 				<td>
-					<input type="button" value="Eemalda">
+					<spring:url value="/detail/${pints.id}/p/${pvalvur.id}/eemalda_seadus/${psi.id}" var="url_eemaldaSeadus" />
+					<input type="button" value="Eemalda" onclick="window.location='${url_eemaldaSeadus}'">
 				</td>
 			</tr>
 			</c:forEach>
-<!-- 			<tr> -->
-<!-- 				<td width="200px"> -->
-<!-- 					Relvaseadus -->
-<!-- 				</td> -->
-<!-- 				<td> -->
-<!-- 					<input type="button" value="Info"> -->
-<!-- 				</td> -->
-<!-- 				<td> -->
-<!-- 					<input type="button" value="Eemalda"> -->
-<!-- 				</td> -->
-<!-- 			</tr> -->
-<!-- 			<tr> -->
-<!-- 				<td> -->
-<!-- 					Piiriseadus -->
-<!-- 				</td> -->
-<!-- 				<td> -->
-<!-- 					<input type="button" value="Info"> -->
-<!-- 				</td> -->
-<!-- 				<td> -->
-<!-- 					<input type="button" value="Eemalda"> -->
-<!-- 				</td> -->
-<!-- 			</tr> -->
 		</table>
 		<spring:url value="/detail/${pints.id}/p/${pvalvur.id}/lisa_seadus" var="url_lisaSeadus" />
 		<input type="button" value="Lisa" style="float:right;margin-right:5px;margin-top:5px" onclick="window.location='${url_lisaSeadus}'">

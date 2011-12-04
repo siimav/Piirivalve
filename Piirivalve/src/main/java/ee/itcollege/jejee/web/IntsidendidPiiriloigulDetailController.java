@@ -79,8 +79,6 @@ public class IntsidendidPiiriloigulDetailController {
 		uiModel.addAttribute("pvalvur", pvalvur);
 		uiModel.addAttribute("pints", p_ints);
 		
-		System.out.println("VALIK "+valik);
-		
 		if(valik.length()>1){
 			for (String s : valik.split(",")) {
 				sisestaUusSeadus(Long.parseLong(s), p_ints);			
@@ -111,6 +109,23 @@ public class IntsidendidPiiriloigulDetailController {
 		psi.persist();
 	}
 
+	@RequestMapping(value = "/{id}/p/{p_id}/vaata_seadus/{s_id}", method = RequestMethod.GET)
+    public String vaataSeadus(@PathVariable("id") Long id, @PathVariable("p_id") Long p_id, @PathVariable("s_id") Long s_id, Model uiModel) {	
+		uiModel.addAttribute("sp", Seaduse_punkt.findSeaduse_punkt(s_id));
+
+		return "intsidendid_piiriloigul_detail/vaata_seadus";
+	}
+	
+	@RequestMapping(value = "/{id}/p/{p_id}/eemalda_seadus/{psi_id}", method = RequestMethod.GET)
+    public String eemaldaSeadus(@PathVariable("id") Long id, @PathVariable("p_id") Long p_id, @PathVariable("psi_id") Long psi_id, Model uiModel) {	
+		Piirivalvuri_seadus_intsidendi psi = Piirivalvuri_seadus_intsidendi.findPiirivalvuri_seadus_intsidendi(psi_id);
+		psi.setSuletud(new Date());
+		psi.merge();
+		
+		return "redirect:/detail/"+id+"/p/"+p_id;
+	}
+	
+	
 	@RequestMapping(value = "/{id}/p/{p_id}/muuda", method = RequestMethod.POST)
     public String muuda(@PathVariable("id") Long id, @PathVariable("p_id") Long p_id, HttpServletRequest httpServletRequest, Model uiModel,Piirivalvur_intsidendis tmp, BindingResult result) throws CloneNotSupportedException {	
 		Piirivalvur_intsidendis p_ints = Piirivalvur_intsidendis.findPiirivalvur_intsidendis(id);
