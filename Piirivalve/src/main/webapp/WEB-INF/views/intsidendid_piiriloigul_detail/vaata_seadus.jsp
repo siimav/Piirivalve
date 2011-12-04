@@ -10,7 +10,7 @@
 
 <table>
 	<tr>
-		<th>Seadus</th><th>Paragrahv</th><th>Pais</th><th>Tekst</th><th>Kehtiv alates</th><th>Kehtiv kuni</th>
+		<th><spring:message code='menu_category_seadus_label'/></th><th><spring:message code='label_paragrahv'/></th><th><spring:message code='label_pais'/></th><th><spring:message code='label_tekst'/></th><th><spring:message code='label_kehtiv_alates'/></th><th><spring:message code='label_kehtiv_kuni'/></th>
 	</tr>
 	<tr>
 		<td>
@@ -34,7 +34,7 @@
 	</tr>
 </table>
 </br>
-<input type="button" value="Tagasi" onclick="history.back()">
+<input type="button" value="<spring:message code='label_tagasi'/>" onclick="history.back()">
 
 </body>
 </html>

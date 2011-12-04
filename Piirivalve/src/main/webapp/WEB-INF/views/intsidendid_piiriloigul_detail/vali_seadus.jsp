@@ -24,7 +24,7 @@
 	</c:forEach>
 	</table>
 	<br />
-	<input type="submit" value="Muuda">&nbsp;&nbsp;&nbsp;<input type="Button" value="Tagasi" onclick="window.location='${url_back}'">
+	<input type="submit" value="<spring:message code='label_muuda'/>">&nbsp;&nbsp;&nbsp;<input type="Button" value="<spring:message code='label_tagasi'/>" onclick="window.location='${url_back}'">
 	</form>
 
 

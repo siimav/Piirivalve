@@ -18,14 +18,14 @@
 
 <div id="detail_main_div">
 
-	<div id="detail_ylemine_div"><p>Intsident ${pints.intsident.kood} - ${pints.intsident.piiriloik.nimetus} - ${pints.intsident.nimetus}</p></div>
+	<div id="detail_ylemine_div"><p><spring:message code='menu_item_intsident_new_label'/> ${pints.intsident.kood} - ${pints.intsident.piiriloik.nimetus} - ${pints.intsident.nimetus}</p></div>
 	<spring:url value="/detail/${pints.id}/p/${pvalvur.id}/muuda" var="url" />
 	<fo:form method="POST" commandName="piirivalvur_intsidendis" action="${url}" >
 	<div id="detail_vasak_div">
 	<table>
 		<tr>
 			<td>
-				Piirivalvur
+				<spring:message code='label_ee_itcollege_jejee_entities_vahtkonna_liige_piirivalvur'/>
 			</td>
 			<td>
 				${pvalvur.perekonnanimi}, ${pvalvur.eesnimed}
@@ -33,7 +33,7 @@
 		</tr>
 		<tr>
 			<td>
-				Sõdurikood
+				<spring:message code='label_ee_itcollege_jejee_entities_piirivalvur_soduri_kood'/>
 			</td>
 			<td>
 				${pvalvur.soduri_kood}
@@ -41,16 +41,16 @@
 		</tr>
 		<tr>
 			<td>
-				Sugu
+				<spring:message code='label_ee_itcollege_jejee_entities_piirivalvur_sugu'/>
 			</td>
 			<td>
 				<spring:url value="/detail/${pints.id}/p/${pvalvur.id}/muuda_piirivalvur" var="url" />
-				<span style="float:left;">${pvalvur.sugu}</span><span style="float:right;"><input type="button" value="Muuda" onclick="window.location='${url}'"></span>
+				<span style="float:left;">${pvalvur.sugu}</span><span style="float:right;"><input type="button" value="<spring:message code='label_muuda'/>" onclick="window.location='${url}'"></span>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				Kirjeldus
+				<spring:message code='label_kirjeldus'/>
 			</td>
 			<td>
 				<fo:textarea rows="4" cols="20" path="kirjeldus"/>
@@ -62,7 +62,7 @@
 		</tr>
 		<tr>
 			<td>
-				Kommentaar
+				<spring:message code='label_kommentaar'/>
 			</td>
 			<td>
 				<fo:textarea rows="4" cols="20" path="kommentaar" />
@@ -74,7 +74,7 @@
 	<div id="detail_parem_div">
 		<table>
 			<tr>
-				<th>Seadus</th>
+				<th><spring:message code='menu_item_seadus_new_label'/></th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -85,20 +85,20 @@
 				</td>
 				<td>
 					<spring:url value="/detail/${pints.id}/p/${pvalvur.id}/vaata_seadus/${psi.seaduse_punkt.id}" var="url_vaataSeadus" />
-					<input type="button" value="Info" onclick="window.location='${url_vaataSeadus}'">
+					<input type="button" value="<spring:message code='label_info'/>" onclick="window.location='${url_vaataSeadus}'">
 				</td>
 				<td>
 					<spring:url value="/detail/${pints.id}/p/${pvalvur.id}/eemalda_seadus/${psi.id}" var="url_eemaldaSeadus" />
-					<input type="button" value="Eemalda" onclick="window.location='${url_eemaldaSeadus}'">
+					<input type="button" value="<spring:message code='label_eemalda'/>" onclick="window.location='${url_eemaldaSeadus}'">
 				</td>
 			</tr>
 			</c:forEach>
 		</table>
 		<spring:url value="/detail/${pints.id}/p/${pvalvur.id}/lisa_seadus" var="url_lisaSeadus" />
-		<input type="button" value="Lisa" style="float:right;margin-right:5px;margin-top:5px" onclick="window.location='${url_lisaSeadus}'">
+		<input type="button" value="<spring:message code='label_lisa'/>" style="float:right;margin-right:5px;margin-top:5px" onclick="window.location='${url_lisaSeadus}'">
 	</div>
 <div style="clear:both;"></div>
-<div id="detail_btns"><input type="submit" value="Salvesta">&nbsp;&nbsp;&nbsp;<input type="reset" value="Loobu"></div>
+<div id="detail_btns"><input type="submit" value="<spring:message code='label_salvesta'/>">&nbsp;&nbsp;&nbsp;<input type="reset" value="<spring:message code='label_loobu'/>"></div>
 
 </fo:form>
 

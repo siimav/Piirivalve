@@ -37,7 +37,7 @@
 						</fo:select>
 					</td>
 					<td width="100px">
-						<input type="submit" name="mysubmit" value="Värskenda" />
+						<input type="submit" name="mysubmit" value="<spring:message code='label_varskenda'/>" />
 					</td>
 				</tr>
 			</table>
@@ -60,7 +60,7 @@
 					</td>
 					<td>
 						<spring:url value="/detail/${i.id}/p/${i.piirivalvur.id}" var="url" />
-						<input type="button" name="btn" value="Vaata" onclick="window.location='${url}'" />
+						<input type="button" name="btn" value="<spring:message code='label_vaata'/>" onclick="window.location='${url}'" />
 					</td>
 				</tr>
 			</c:forEach>
@@ -71,7 +71,7 @@
 			</tr>
 			<tr>
 				<td>
-					<i>intsidente kokku - ${ints.kogus}</i>
+					<i><spring:message code='label_intsidente_kokku'/> - ${ints.kogus}</i>
 				</td>
 				<td>
 				

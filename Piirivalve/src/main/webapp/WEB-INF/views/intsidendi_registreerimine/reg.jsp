@@ -59,10 +59,11 @@
 			<tr><td><fo:textarea path="kommentaar" rows="4" cols="25"></fo:textarea></td></tr>
 		</table>
 		<br/><br/>
-		<input type="reset" value="Loobu" class="btn_reg">
-		<input type="submit" name="mysubmit" value="Salvesta" class="btn_reg"/>	
+		<input type="reset" value="<spring:message code='label_loobu'/>" class="btn_reg">
+		<input type="submit" name="mysubmit" value="<spring:message code='label_salvesta'/>" class="btn_reg"/>	
  	</div> 
 
+	<div style="clear:both;">
 	<table>
 	<tr><td><FONT color="red"><fo:errors path="kood"/></FONT></td></tr>
 	<tr><td><FONT color="red"><fo:errors path="nimetus"/></FONT></td></tr>
@@ -71,19 +72,22 @@
 	<tr><td><FONT color="red"><fo:errors path="kirjeldus"/></FONT></td></tr>
 	<tr><td><FONT color="red"><fo:errors path="GPS_latituud"/></FONT></td></tr>
 	</table>
-
+	</div>	
+	
 	<% 
 	java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd");
 	String dateAsString = simpleDateFormat.format(new java.util.Date());
 	%>
 
+	<div>
 	<fo:input path="avaja" cssClass="hidden" value="avaja"/>
 	<fo:input path="avatud" cssClass="hidden" value="<%= dateAsString %>"/>
 	<fo:input path="sulgeja" cssClass="hidden" value="sulgeja"/>
 	<fo:input path="suletud" cssClass="hidden" value="<%= dateAsString %>"/>
 	<fo:input path="muutja" cssClass="hidden" value="muutja"/>
 	<fo:input path="muudetud" cssClass="hidden" value="<%= dateAsString %>"/>
-
+	</div>
+	
 	</fo:form>
 
 </div>

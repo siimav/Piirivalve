@@ -33,7 +33,7 @@
 	</c:forEach>
 	</table>
 	<br />
-	<input type="submit" value="Muuda">&nbsp;&nbsp;&nbsp;<input type="Button" value="Tagasi" onclick="history.back()">
+	<input type="submit" value="<spring:message code='label_muuda'/>">&nbsp;&nbsp;&nbsp;<input type="Button" value="<spring:message code='label_tagasi'/>" onclick="history.back()">
 	</form>
 </div>
 
