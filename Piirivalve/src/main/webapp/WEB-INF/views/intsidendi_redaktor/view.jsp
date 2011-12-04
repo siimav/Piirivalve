@@ -27,6 +27,7 @@
 	url3: ${url3} <br />
 	<spring:url value="intsident" var="url4" />
 	url4: ${url4} <br />
+	url5: <spring:url value="intsident" /> <br />
     <p><spring:message code="label_ee_itcollege_jejee_entities_intsident"/> ${intsident.kood} - ${intsident.piiriloik.nimetus} - ${intsident.nimetus}</p>
     
 	<div class="div_left">
