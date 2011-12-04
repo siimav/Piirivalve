@@ -7,4 +7,7 @@
     <definition extends="default" name="intsidendid_piiriloigul_detail/vali_piirivalvur">
         <put-attribute name="body" value="/WEB-INF/views/intsidendid_piiriloigul_detail/vali_piirivalvur.jsp"/>
     </definition>
+    <definition extends="default" name="intsidendid_piiriloigul_detail/vali_seadus">
+        <put-attribute name="body" value="/WEB-INF/views/intsidendid_piiriloigul_detail/vali_seadus.jsp"/>
+    </definition>
 </tiles-definitions>

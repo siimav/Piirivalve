@@ -14,5 +14,6 @@
         <field:input field="kehtiv_alates" id="c_ee_itcollege_jejee_entities_Seadus_kehtiv_alates" z="7AxmQo8CyN9h3dvIcrW8pdfXTQc="/>
         <field:input field="kehtiv_kuni" id="c_ee_itcollege_jejee_entities_Seadus_kehtiv_kuni" z="I0vgkcTT13VBZl8+O61fTmh/N6I="/>
         <field:input field="kommentaar" id="c_ee_itcollege_jejee_entities_Seadus_kommentaar" required="true" z="+f1GQOpf8pqSifLb2LTxF4x66NI="/>
+        <field:simple field="seaduse_punkt" id="c_ee_itcollege_jejee_entities_Seadus_seaduse_punkt" messageCode="entity_reference_not_managed" messageCodeAttribute="Seaduse_punkt" z="MJJM5r3CQNeQRkCpXQNe3ytNX3g="/>
     </form:update>
 </div>

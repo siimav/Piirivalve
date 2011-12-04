@@ -77,4 +77,12 @@ public class Piirivalvuri_seadus_intsidendi extends BaseEntity {
 	}
 	
 	
+	@SuppressWarnings("unchecked")
+	public static List<Piirivalvuri_seadus_intsidendi> findAllPSIForPiirivalvurIntsidendis(Piirivalvur_intsidendis pi) {
+		Query q = entityManager().createQuery("SELECT o FROM Piirivalvuri_seadus_intsidendi o WHERE o.piirivalvur_intsidendis=:pi AND o.suletud=:d", Piirivalvuri_seadus_intsidendi.class);
+		q.setParameter("pi", pi);
+		q.setParameter("d", SURROGATE_DATE);
+		return q.getResultList();
+	}
+	
 }

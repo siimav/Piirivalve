@@ -54,7 +54,6 @@
 			</td>
 			<td>
 				<fo:textarea rows="4" cols="20" path="kirjeldus"/>
-<%-- 				<field:textarea id="kirjeldus" field="kirjeldus" label="a" required="true">${pints.kirjeldus}</field:textarea> --%>
 			</td>
 		</tr>
 		<tr>
@@ -67,8 +66,6 @@
 			</td>
 			<td>
 				<fo:textarea rows="4" cols="20" path="kommentaar" />
-<%-- 				<textarea rows="4" cols="20">${pints.kommentaar}</textarea> --%>
-<%-- 				<field:textarea id="kommentaar" field="kommentaar" label="a" required="true">${pints.kommentaar}</field:textarea> --%>
 			</td>
 		</tr>
 	</table>
@@ -81,9 +78,10 @@
 				<th></th>
 				<th></th>
 			</tr>
+			<c:forEach var="psi" items="${psi}">
 			<tr>
 				<td width="200px">
-					Relvaseadus
+					${psi.seaduse_punkt.seadus.nimetus}	${psi.seaduse_punkt.paragrahv} ${psi.seaduse_punkt.pais}
 				</td>
 				<td>
 					<input type="button" value="Info">
@@ -92,19 +90,32 @@
 					<input type="button" value="Eemalda">
 				</td>
 			</tr>
-			<tr>
-				<td>
-					Piiriseadus
-				</td>
-				<td>
-					<input type="button" value="Info">
-				</td>
-				<td>
-					<input type="button" value="Eemalda">
-				</td>
-			</tr>
+			</c:forEach>
+<!-- 			<tr> -->
+<!-- 				<td width="200px"> -->
+<!-- 					Relvaseadus -->
+<!-- 				</td> -->
+<!-- 				<td> -->
+<!-- 					<input type="button" value="Info"> -->
+<!-- 				</td> -->
+<!-- 				<td> -->
+<!-- 					<input type="button" value="Eemalda"> -->
+<!-- 				</td> -->
+<!-- 			</tr> -->
+<!-- 			<tr> -->
+<!-- 				<td> -->
+<!-- 					Piiriseadus -->
+<!-- 				</td> -->
+<!-- 				<td> -->
+<!-- 					<input type="button" value="Info"> -->
+<!-- 				</td> -->
+<!-- 				<td> -->
+<!-- 					<input type="button" value="Eemalda"> -->
+<!-- 				</td> -->
+<!-- 			</tr> -->
 		</table>
-		<input type="button" value="Lisa" style="float:right;margin-right:5px;margin-top:5px">
+		<spring:url value="/detail/${pints.id}/p/${pvalvur.id}/lisa_seadus" var="url_lisaSeadus" />
+		<input type="button" value="Lisa" style="float:right;margin-right:5px;margin-top:5px" onclick="window.location='${url_lisaSeadus}'">
 	</div>
 <div style="clear:both;"></div>
 <div id="detail_btns"><input type="submit" value="Salvesta">&nbsp;&nbsp;&nbsp;<input type="reset" value="Loobu"></div>
