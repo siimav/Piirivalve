@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Transactional;
 
 @MappedSuperclass
@@ -53,12 +54,17 @@ public abstract class BaseEntity implements Serializable {
     public void recordCreated() {
         setAvatud(new Date());
         setMuudetud(new Date());
-        setSuletud(SURROGATE_DATE);	  
+        setSuletud(SURROGATE_DATE);
+        String user = SecurityContextHolder.getContext().getAuthentication().getName();
+        setAvaja(user);
+        setMuutja(user);
     }
 
     @PreUpdate
     public void recordModified() {
     	setMuudetud(new Date());
+        String user = SecurityContextHolder.getContext().getAuthentication().getName();
+        setMuutja(user);
     }
 
     @PreRemove
@@ -125,7 +131,7 @@ public abstract class BaseEntity implements Serializable {
 	
 	
 	@Transactional
-    public void remove(String sulgeja) {        
+    public void remove() {        
         String table = this.getClass().getSimpleName();
         Query q = entityManager().createQuery("UPDATE " + table + " SET suletud=:date WHERE id=" + id);
         q.setParameter("date", new Date());
@@ -137,6 +143,7 @@ public abstract class BaseEntity implements Serializable {
         	return;
         }
 
+        String user = SecurityContextHolder.getContext().getAuthentication().getName();
         q =  entityManager().createQuery("UPDATE " + table + " SET sulgeja=:sulgeja WHERE id=" + id);
         q.setParameter("sulgeja", sulgeja);
         if(q.executeUpdate() != 1) {
@@ -144,7 +151,7 @@ public abstract class BaseEntity implements Serializable {
 //        	this.entityManager.getTransaction().rollback();
         	//TODO: write to log
         	return;
-        }
+        }        
         
 //        this.entityManager.getTransaction().commit();
     }

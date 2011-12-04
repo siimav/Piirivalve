@@ -76,7 +76,7 @@ public class IntsidendiRedaktorController {
     public String kustutaPiirivalvur(@PathVariable("intsident_ID") Long intsident_ID, @PathVariable("pi_ID") Long pi_ID,
     								 Model uiModel) {
 		Piirivalvur_intsidendis pi = Piirivalvur_intsidendis.findPiirivalvur_intsidendis(pi_ID);
-		pi.remove("Fedja");
+		pi.remove();
 		
         return "redirect:/intsident/" + intsident_ID;
     }
@@ -146,7 +146,7 @@ public class IntsidendiRedaktorController {
     public String kustutaPiiririkkuja(@PathVariable("intsident_ID") Long intsident_ID, @PathVariable("ii_ID") Long ii_ID,
     								 Model uiModel) {
 		Isik_intsidendis ii = Isik_intsidendis.findIsik_intsidendis(ii_ID);
-		ii.remove("Fedja");	//TODO
+		ii.remove();
 		
         return "redirect:/intsident/" + intsident_ID;
     }
@@ -216,7 +216,7 @@ public class IntsidendiRedaktorController {
     public String kustutaObjekt(@PathVariable("intsident_ID") Long intsident_ID, @PathVariable("oi_ID") Long oi_ID,
     								 Model uiModel) {
 		Objekt_intsidendis oi = Objekt_intsidendis.findObjekt_intsidendis(oi_ID);
-		oi.remove("Fedja");	//TODO:
+		oi.remove();
 		
         return "redirect:/intsident/" + intsident_ID;
     }
@@ -286,7 +286,7 @@ public class IntsidendiRedaktorController {
     public String kustutaVahtkond(@PathVariable("intsident_ID") Long intsident_ID, @PathVariable("vi_ID") Long vi_ID,
     								 Model uiModel) {
 		Vahtkond_intsidendis vi = Vahtkond_intsidendis.findVahtkond_intsidendis(vi_ID);
-		vi.remove("Fedja");	//TODO:
+		vi.remove();
 		
         return "redirect:/intsident/" + intsident_ID;
     }
