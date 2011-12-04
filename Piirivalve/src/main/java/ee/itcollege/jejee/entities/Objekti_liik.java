@@ -29,6 +29,15 @@ public class Objekti_liik extends BaseEntity {
 	public Objekti_liik() {
 		super();
 	}
+	
+
+	public Objekti_liik(String kood, String nimetus, String kommentaar) {
+		super();
+		this.kood = kood;
+		this.nimetus = nimetus;
+		this.kommentaar = kommentaar;
+	}
+
 
 	public String getKood() {
 		return kood;

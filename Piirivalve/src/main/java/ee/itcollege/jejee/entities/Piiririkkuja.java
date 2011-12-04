@@ -38,6 +38,19 @@ public class Piiririkkuja extends BaseEntity {
 	@OneToMany(mappedBy = "piiririkkuja")
 	private Collection<Isik_intsidendis> isik_intsidendis;
 
+	
+	public Piiririkkuja(String isikukood, String eesnimi, String perek_nimi,
+			String sugu, Date synniaeg, String kommentaar, Objekt objekt) {
+		super();
+		this.isikukood = isikukood;
+		this.eesnimi = eesnimi;
+		this.perek_nimi = perek_nimi;
+		this.sugu = sugu;
+		this.synniaeg = synniaeg;
+		this.kommentaar = kommentaar;
+		this.objekt = objekt;
+	}
+
 	public String getIsikukood() {
 		return isikukood;
 	}

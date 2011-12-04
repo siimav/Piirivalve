@@ -40,6 +40,19 @@ public class Objekt_intsidendis extends BaseEntity implements Cloneable {
 		
 	}
 
+	public Objekt_intsidendis(Date alates, Date kuni, String kirjeldus,
+			String kommentaar, Intsident intsident, Objekt objekt) {
+		super();
+		this.alates = alates;
+		this.kuni = kuni;
+		this.kirjeldus = kirjeldus;
+		this.kommentaar = kommentaar;
+		this.intsident = intsident;
+		this.objekt = objekt;
+	}
+
+
+
 	public Date getAlates() {
 		return alates;
 	}

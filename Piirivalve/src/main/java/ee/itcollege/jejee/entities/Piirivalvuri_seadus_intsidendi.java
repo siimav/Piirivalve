@@ -38,6 +38,21 @@ public class Piirivalvuri_seadus_intsidendi extends BaseEntity {
 	@ManyToOne
 	private Piirivalvur_intsidendis piirivalvur_intsidendis;
 	
+	public Piirivalvuri_seadus_intsidendi(){
+		super();
+	}
+	
+	public Piirivalvuri_seadus_intsidendi(String kirjeldus, String kommentaar,
+			Date alates, Date kuni, Seaduse_punkt seaduse_punkt,
+			Piirivalvur_intsidendis piirivalvur_intsidendis) {
+		super();
+		this.kirjeldus = kirjeldus;
+		this.kommentaar = kommentaar;
+		this.alates = alates;
+		this.kuni = kuni;
+		this.seaduse_punkt = seaduse_punkt;
+		this.piirivalvur_intsidendis = piirivalvur_intsidendis;
+	}
 	public String getKirjeldus() {
 		return kirjeldus;
 	}

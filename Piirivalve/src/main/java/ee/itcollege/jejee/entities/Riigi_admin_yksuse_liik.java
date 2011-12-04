@@ -38,6 +38,18 @@ public class Riigi_admin_yksuse_liik extends BaseEntity {
 	public Riigi_admin_yksuse_liik() {
 		super();
 	}
+	
+	public Riigi_admin_yksuse_liik(String kood, String nimetus, Date alates,
+			Date kuni, String kommentaar) {
+		super();
+		this.kood = kood;
+		this.nimetus = nimetus;
+		this.alates = alates;
+		this.kuni = kuni;
+		this.kommentaar = kommentaar;
+	}
+
+
 
 	public String getKood() {
 		return kood;

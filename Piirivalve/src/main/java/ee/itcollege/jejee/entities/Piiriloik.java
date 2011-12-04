@@ -30,6 +30,18 @@ public class Piiriloik extends BaseEntity {
 	@OneToMany(mappedBy = "piiriloik")
 	private Collection<Vahtkond_piiriloigul> vahtkond_piiriloigul;
 
+	public Piiriloik(){
+		super();
+	}
+	
+	public Piiriloik(String kood, String nimetus, String gPS_koordinaadid,
+			String kommentaar) {
+		super();
+		this.kood = kood;
+		this.nimetus = nimetus;
+		this.GPS_koordinaadid = gPS_koordinaadid;
+		this.kommentaar = kommentaar;
+	}
 	public String getKood() {
 		return kood;
 	}

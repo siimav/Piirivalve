@@ -34,6 +34,18 @@ public class Vahtkonna_liige extends BaseEntity {
 		super();
 	}
 	
+	public Vahtkonna_liige(Date alates, Date kuni, String kommentaar,
+			Vahtkond vahtkond, Piirivalvur piirivalvur) {
+		super();
+		this.alates = alates;
+		this.kuni = kuni;
+		this.kommentaar = kommentaar;
+		this.vahtkond = vahtkond;
+		this.piirivalvur = piirivalvur;
+	}
+
+
+
 	public Date getAlates() {
 		return alates;
 	}

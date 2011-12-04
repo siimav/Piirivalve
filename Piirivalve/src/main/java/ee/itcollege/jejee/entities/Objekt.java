@@ -35,6 +35,16 @@ public class Objekt extends BaseEntity {
 	public Objekt() {
 		super();
 	}
+	
+
+	public Objekt(String nimetus, String kommentaar, Objekti_liik objekti_liik) {
+		super();
+		this.nimetus = nimetus;
+		this.kommentaar = kommentaar;
+		this.objekti_liik = objekti_liik;
+	}
+
+
 
 	public String getNimetus() {
 		return nimetus;

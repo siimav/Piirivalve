@@ -43,6 +43,20 @@ public class Vaeosa extends BaseEntity {
 	public Vaeosa() {
 		super();
 	}
+	
+	public Vaeosa(String kood, String nimetus, Date alates, Date kuni,
+			String kommentaar, Riigi_admin_yksus riigi_admin_yksus) {
+		super();
+		this.kood = kood;
+		this.nimetus = nimetus;
+		this.alates = alates;
+		this.kuni = kuni;
+		this.kommentaar = kommentaar;
+		this.riigi_admin_yksus = riigi_admin_yksus;
+		
+	}
+
+
 
 	public String getKood() {
 		return kood;

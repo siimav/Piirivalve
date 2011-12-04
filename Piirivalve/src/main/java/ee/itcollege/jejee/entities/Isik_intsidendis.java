@@ -38,6 +38,20 @@ public class Isik_intsidendis extends BaseEntity implements Cloneable {
 	public Isik_intsidendis() {
 		super();
 	}
+	
+
+	public Isik_intsidendis(Date alates, Date kuni, String kirjeldus,
+			String kommentaar, Intsident intsident, Piiririkkuja piiririkkuja) {
+		super();
+		this.alates = alates;
+		this.kuni = kuni;
+		this.kirjeldus = kirjeldus;
+		this.kommentaar = kommentaar;
+		this.intsident = intsident;
+		this.piiririkkuja = piiririkkuja;
+	}
+
+
 
 	public Date getAlates() {
 		return alates;

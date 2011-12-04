@@ -34,6 +34,18 @@ public class Seadus extends BaseEntity {
 	public Seadus() {
 		super();
 	}
+	
+	public Seadus(String kood, String nimetus, String kehtiv_alates,
+			String kehtiv_kuni, String kommentaar) {
+		super();
+		this.kood = kood;
+		this.nimetus = nimetus;
+		this.kehtiv_alates = kehtiv_alates;
+		this.kehtiv_kuni = kehtiv_kuni;
+		this.kommentaar = kommentaar;
+	}
+
+
 
 	public String getKood() {
 		return kood;

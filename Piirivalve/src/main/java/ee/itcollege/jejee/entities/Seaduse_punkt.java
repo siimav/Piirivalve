@@ -38,7 +38,27 @@ public class Seaduse_punkt extends BaseEntity {
 	@OneToMany(mappedBy = "seaduse_punkt")
 	private Collection<Piirivalvuri_seadus_intsidendi> piirivalvuri_seadus_intsidendi;
 	
+	public Seaduse_punkt(){
+		super();
+	}
 	
+	public Seaduse_punkt(
+			String paragrahv,
+			String pais,
+			String tekst,
+			Date kehtiv_alates,
+			Date kehtiv_kuni,
+			String kommentaar,
+			Seadus seadus) {
+		super();
+		this.paragrahv = paragrahv;
+		this.pais = pais;
+		this.tekst = tekst;
+		this.kehtiv_alates = kehtiv_alates;
+		this.kehtiv_kuni = kehtiv_kuni;
+		this.kommentaar = kommentaar;
+		this.seadus = seadus;
+	}
 	public String getParagrahv() {
 		return paragrahv;
 	}

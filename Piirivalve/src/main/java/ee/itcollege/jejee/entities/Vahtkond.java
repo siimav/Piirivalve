@@ -46,6 +46,21 @@ public class Vahtkond extends BaseEntity {
 	public Vahtkond() {
 		super();
 	}
+	
+
+	public Vahtkond(String kood, String nimetus, Date alates, Date kuni,
+			String kommentaar,Vaeosa vaeosa,Piiripunkt piiripunkt) {
+		super();
+		this.kood = kood;
+		this.nimetus = nimetus;
+		this.alates = alates;
+		this.kuni = kuni;
+		this.kommentaar = kommentaar;
+		this.vaeosa = vaeosa;
+		this.piiripunkt = piiripunkt;
+	}
+
+
 
 	public String getKood() {
 		return kood;

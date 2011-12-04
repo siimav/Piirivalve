@@ -48,6 +48,29 @@ public class Piirivalvur_intsidendis extends BaseEntity implements Cloneable {
 	@OneToMany(mappedBy = "piirivalvur_intsidendis")
 	private Collection<Piirivalvuri_seadus_intsidendi> piirivalvuri_seadus_intsidendi;
 
+	
+	public Piirivalvur_intsidendis(){
+		super();
+	}
+	
+	public Piirivalvur_intsidendis(
+			Date alates,
+			Date kuni,
+			String kirjeldus,
+			String kommentaar,
+			Intsident intsident,
+			Piirivalvur piirivalvur,
+			Vahtkond_intsidendis vahtkond_intsidendis) {
+		super();
+		this.alates = alates;
+		this.kuni = kuni;
+		this.kirjeldus = kirjeldus;
+		this.kommentaar = kommentaar;
+		this.intsident = intsident;
+		this.piirivalvur = piirivalvur;
+		this.vahtkond_intsidendis = vahtkond_intsidendis;
+	}
+
 	public Date getAlates() {
 		return alates;
 	}

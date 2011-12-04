@@ -34,6 +34,19 @@ public class Piirivalvur extends BaseEntity {
 	public Piirivalvur() {
 		super();
 	}
+	
+	public Piirivalvur(String isikukood, String eesnimed, String perekonnanimi,
+			String sugu, String soduri_kood, String kommentaar) {
+		super();
+		this.isikukood = isikukood;
+		this.eesnimed = eesnimed;
+		this.perekonnanimi = perekonnanimi;
+		this.sugu = sugu;
+		this.soduri_kood = soduri_kood;
+		this.kommentaar = kommentaar;
+	}
+
+
 
 	public String getIsikukood() {
 		return this.isikukood;

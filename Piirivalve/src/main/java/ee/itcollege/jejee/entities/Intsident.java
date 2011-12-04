@@ -51,6 +51,27 @@ public class Intsident extends BaseEntity {
 	@OneToMany(mappedBy = "intsident")
 	private Collection<Piirivalvur_intsidendis> piirivalvurid_intsidendis;
 	
+	
+	public Intsident(){
+		super();
+	}
+	
+	public Intsident(String kood, String nimetus, Date toimumise_algus,
+			Date toimumise_lopp, String kirjeldus, String kommentaar,
+			String gPS_longituud, String gPS_latituud, Piiriloik piiriloik,
+			Intsidendi_liik intsidendi_liik) {
+		super();
+		this.kood = kood;
+		this.nimetus = nimetus;
+		this.toimumise_algus = toimumise_algus;
+		this.toimumise_lopp = toimumise_lopp;
+		this.kirjeldus = kirjeldus;
+		this.kommentaar = kommentaar;
+		GPS_longituud = gPS_longituud;
+		GPS_latituud = gPS_latituud;
+		this.piiriloik = piiriloik;
+		this.intsidendi_liik = intsidendi_liik;
+	}
 
 	public String getKood() {
 		return kood;

@@ -35,6 +35,20 @@ public class Vahtkond_piiriloigul extends BaseEntity {
 	@ManyToOne
 	private Vahtkond vahtkond;
 
+	public Vahtkond_piiriloigul(){
+		super();
+	}
+	
+	public Vahtkond_piiriloigul(Date alates, Date kuni, String kommentaar,
+			Piiriloik piiriloik, Vahtkond vahtkond) {
+		super();
+		this.alates = alates;
+		this.kuni = kuni;
+		this.kommentaar = kommentaar;
+		this.piiriloik = piiriloik;
+		this.vahtkond = vahtkond;
+	}
+
 	public Date getAlates() {
 		return alates;
 	}

@@ -45,6 +45,23 @@ public class Piiripunkt extends BaseEntity {
 		super();
 	}
 
+	
+	public Piiripunkt(String kood, String nimetus, String gPS_longitude,
+			String gPS_latitude, String korgus_merepinnast, Date alates,
+			Date kuni, String kommentaar) {
+		super();
+		this.kood = kood;
+		this.nimetus = nimetus;
+		this.GPS_longitude = gPS_longitude;
+		this.GPS_latitude = gPS_latitude;
+		this.korgus_merepinnast = korgus_merepinnast;
+		this.alates = alates;
+		this.kuni = kuni;
+		this.kommentaar = kommentaar;
+	}
+
+
+
 	public String getKood() {
 		return kood;
 	}

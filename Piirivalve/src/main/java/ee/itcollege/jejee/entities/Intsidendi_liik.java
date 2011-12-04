@@ -24,6 +24,17 @@ public class Intsidendi_liik  extends BaseEntity {
 	@OneToMany(mappedBy = "intsidendi_liik")
 	private Collection<Intsident> intsident;
 
+	public Intsidendi_liik(){
+		super();
+	}
+	
+	public Intsidendi_liik(String kood, String nimetus, String kommentaar) {
+		super();
+		this.kood = kood;
+		this.nimetus = nimetus;
+		this.kommentaar = kommentaar;
+	}
+	
 	public String getKood() {
 		return kood;
 	}
