@@ -8,13 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Query;
-import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
-import ee.itcollege.jejee.entities.Seadus;
-import ee.itcollege.jejee.entities.Piirivalvuri_seadus_intsidendi;
 
 @RooToString
 @RooEntity

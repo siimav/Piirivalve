@@ -1,20 +1,16 @@
 package ee.itcollege.jejee.entities;
 
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Query;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
-import ee.itcollege.jejee.entities.Seaduse_punkt;
-import ee.itcollege.jejee.entities.Piirivalvur_intsidendis;
 
 @RooToString
 @RooEntity
