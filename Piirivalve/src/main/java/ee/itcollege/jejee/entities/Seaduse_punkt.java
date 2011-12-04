@@ -98,18 +98,11 @@ public class Seaduse_punkt extends BaseEntity {
 	
 	@SuppressWarnings("unchecked")
 	public static List<Seaduse_punkt> findAllSeadusePunktsWithout2(Piirivalvur_intsidendis pi) {
-    	Query q = entityManager().createQuery("SELECT o FROM Seaduse_punkt o WHERE o NOT IN(SELECT o1 from Seaduse_punkt o1 JOIN o1.piirivalvuri_seadus_intsidendi psi WHERE psi.piirivalvur_intsidendis=:pi) and o.suletud=:d", Seaduse_punkt.class);
+    	Query q = entityManager().createQuery("SELECT o FROM Seaduse_punkt o WHERE o NOT IN(SELECT o1 from Seaduse_punkt o1 JOIN o1.piirivalvuri_seadus_intsidendi psi WHERE psi.piirivalvur_intsidendis=:pi and psi.suletud=:d) and o.suletud=:d", Seaduse_punkt.class);
     	q.setParameter("pi", pi);
     	q.setParameter("d", SURROGATE_DATE);
         return q.getResultList();
     }
 	
-	@SuppressWarnings("unchecked")
-	public static List<Seaduse_punkt> findSeadusePunktWithID(Long id) {
-    	Query q = entityManager().createQuery("SELECT o FROM Seaduse_punkt o WHERE o.id=:id and o.suletud=:d", Seaduse_punkt.class);
-    	q.setParameter("id", id);
-    	q.setParameter("d", SURROGATE_DATE);
-        return q.getResultList();
-    }
 	
 }
