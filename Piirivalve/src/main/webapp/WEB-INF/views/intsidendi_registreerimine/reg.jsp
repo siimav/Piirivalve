@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>...</title>
+<title>Registreerimine</title>
 </head>
 <body>
 
@@ -20,20 +20,15 @@
 		<table border="0">
 			<tr>
 				<td><spring:message code="label_ee_itcollege_jejee_entities_intsident_kood"/><span style="color:red;">*</span></td>
-				<td><fo:input path="kood" /></td>
-			</tr>
-			<tr>
-				<td><spring:message code="label_liik"/><span style="color:red;">*</span></td>
-				<td height="30px">
-			
+				<td><fo:input path="kood" cssClass="input_width"/>&nbsp;&nbsp;<spring:message code="label_liik"/><span style="color:red;">*</span>   
 				<fo:select path="intsidendi_liik" cssClass="reg_combobox">
 	            	<c:forEach var="ints" items="${intsidendi_liiks}">
 	            		<fo:option value="${ints.id}">${ints.nimetus}</fo:option>
 	          		</c:forEach>
 	        	</fo:select>
-			
 				</td>
 			</tr>
+
 			<tr><td><spring:message code="label_ee_itcollege_jejee_entities_intsident_nimetus"/><span style="color:red;">* </span></td><td><fo:input path="nimetus" cssClass="reg_input_adjust"/></td></tr>
 			<tr><td><spring:message code="label_ee_itcollege_jejee_entities_piiriloik"/><span style="color:red;">*</span></td>
 				<td>
