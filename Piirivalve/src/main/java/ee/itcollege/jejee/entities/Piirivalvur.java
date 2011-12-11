@@ -119,39 +119,39 @@ public class Piirivalvur extends BaseEntity {
 	
 	
     public static long countPiirivalvurs() {
-    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Piirivalvur o WHERE o.suletud=:d", Long.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Piirivalvur o WHERE o.suletud > :date", Long.class);
+    	q.setParameter("date", getDate());
         return (Long) q.getSingleResult();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Piirivalvur> findAllPiirivalvurs() {
-    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud=:d", Piirivalvur.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud > :date", Piirivalvur.class);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Piirivalvur> findPiirivalvurEntries(int firstResult, int maxResults) {
-    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud=:d", Piirivalvur.class).setFirstResult(firstResult).setMaxResults(maxResults);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud > :date", Piirivalvur.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
 	
 	
     @SuppressWarnings("unchecked")
 	public static List<Piirivalvur> findAllPiirivalvuridForIntsident(Intsident ints) {
-    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur o JOIN o.piirivalvur_intsidendis pi WHERE pi.intsident=:ints AND o.suletud=:d", Piirivalvur.class);
+    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur o JOIN o.piirivalvur_intsidendis pi WHERE pi.intsident=:ints AND o.suletud > :date", Piirivalvur.class);
     	q.setParameter("ints", ints);
-    	q.setParameter("d", SURROGATE_DATE);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }    
     
     @SuppressWarnings("unchecked")
 	public static List<Piirivalvur> findAllPiirivalvuridNotInIntsident(Intsident ints) {
-    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud=:d AND o NOT IN (SELECT o1 FROM Piirivalvur o1 JOIN o1.piirivalvur_intsidendis pi WHERE pi.intsident=:ints)", Piirivalvur.class);
+    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud > :date AND o NOT IN (SELECT o1 FROM Piirivalvur o1 JOIN o1.piirivalvur_intsidendis pi WHERE pi.intsident=:ints)", Piirivalvur.class);
     	q.setParameter("ints", ints);
-    	q.setParameter("d", SURROGATE_DATE);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
     
@@ -159,17 +159,17 @@ public class Piirivalvur extends BaseEntity {
     
     @SuppressWarnings("unchecked")
 	public static List<Piirivalvur> findAllPiirivalvuridForPiiriloik(Piiriloik piir) {
-    	Query q = entityManager().createQuery("SELECT p FROM Piirivalvur p JOIN p.piirivalvur_intsidendis pi WHERE pi.intsident.piiriloik=:piir AND p.suletud=:d", Piirivalvur.class);
+    	Query q = entityManager().createQuery("SELECT p FROM Piirivalvur p JOIN p.piirivalvur_intsidendis pi WHERE pi.intsident.piiriloik=:piir AND p.suletud > :date", Piirivalvur.class);
     	q.setParameter("piir", piir);
-    	q.setParameter("d", SURROGATE_DATE);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
 
     @SuppressWarnings("unchecked")
 	public static List<Piirivalvur> findAllPiirivalvuridExceptFor(Piirivalvur piirivalvur) {
-    	Query q = entityManager().createQuery("SELECT p FROM Piirivalvur p WHERE p!=:piirivalvur AND p.suletud=:d", Piirivalvur.class);
+    	Query q = entityManager().createQuery("SELECT p FROM Piirivalvur p WHERE p!=:piirivalvur AND p.suletud > :date", Piirivalvur.class);
     	q.setParameter("piirivalvur", piirivalvur);
-    	q.setParameter("d", SURROGATE_DATE);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
 

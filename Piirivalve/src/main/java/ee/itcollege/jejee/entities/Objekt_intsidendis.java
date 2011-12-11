@@ -109,31 +109,31 @@ public class Objekt_intsidendis extends BaseEntity implements Cloneable {
 	
 	
     public static long countObjekt_intsidendises() {
-    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Objekt_intsidendis o WHERE o.suletud=:d", Long.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Objekt_intsidendis o WHERE o.suletud > :date", Long.class);
+    	q.setParameter("date", getDate());
         return (Long) q.getSingleResult();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Objekt_intsidendis> findAllObjekt_intsidendises() {
-    	Query q = entityManager().createQuery("SELECT o FROM Objekt_intsidendis o WHERE o.suletud=:d", Objekt_intsidendis.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Objekt_intsidendis o WHERE o.suletud > :date", Objekt_intsidendis.class);
+    	q.setParameter("date", getDate());
     	return q.getResultList();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Objekt_intsidendis> findObjekt_intsidendisEntries(int firstResult, int maxResults) {
-    	Query q = entityManager().createQuery("SELECT o FROM Objekt_intsidendis o WHERE o.suletud=:d", Objekt_intsidendis.class).setFirstResult(firstResult).setMaxResults(maxResults);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Objekt_intsidendis o WHERE o.suletud > :date", Objekt_intsidendis.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
 
     
     @SuppressWarnings("unchecked")
 	public static List<Objekt_intsidendis> findAllObjekt_intsidendisForIntsident(Intsident ints) {
-    	Query q = entityManager().createQuery("SELECT o FROM Objekt_intsidendis o WHERE o.intsident=:ints AND o.suletud=:d", Objekt_intsidendis.class);
+    	Query q = entityManager().createQuery("SELECT o FROM Objekt_intsidendis o WHERE o.intsident=:ints AND o.suletud > :date", Objekt_intsidendis.class);
     	q.setParameter("ints", ints);
-    	q.setParameter("d", SURROGATE_DATE);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
 	

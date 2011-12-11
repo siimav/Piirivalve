@@ -144,38 +144,38 @@ public class Vahtkond extends BaseEntity {
 	
 	
     public static long countVahtkonds() {
-    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Vahtkond o WHERE o.suletud=:d", Long.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Vahtkond o WHERE o.suletud > :date", Long.class);
+    	q.setParameter("date", getDate());
         return (Long) q.getSingleResult();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Vahtkond> findAllVahtkonds() {
-    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond o WHERE o.suletud=:d", Vahtkond.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond o WHERE o.suletud > :date", Vahtkond.class);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Vahtkond> findVahtkondEntries(int firstResult, int maxResults) {
-    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond o WHERE o.suletud=:d", Vahtkond.class).setFirstResult(firstResult).setMaxResults(maxResults);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond o WHERE o.suletud > :date", Vahtkond.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
 	
 
 	@SuppressWarnings("unchecked")
 	public static List<Vahtkond> findAllVahtkonnadForIntsident(Intsident ints) {
-    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond o JOIN o.vahtkonnad_intsidendis vi WHERE vi.intsident=:ints AND o.suletud=:d", Vahtkond.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond o JOIN o.vahtkonnad_intsidendis vi WHERE vi.intsident=:ints AND o.suletud > :date", Vahtkond.class);
+    	q.setParameter("date", getDate());
     	q.setParameter("ints", ints);
         return q.getResultList();
     }
 
     @SuppressWarnings("unchecked")
 	public static Collection<Vahtkond> findAllVahtkonnadNotInIntsident(Intsident ints) {
-    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond o WHERE o.suletud=:d AND o NOT IN (SELECT o1 FROM Vahtkond o1 JOIN o1.vahtkonnad_intsidendis vi WHERE vi.intsident=:ints)", Vahtkond.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond o WHERE o.suletud > :date AND o NOT IN (SELECT o1 FROM Vahtkond o1 JOIN o1.vahtkonnad_intsidendis vi WHERE vi.intsident=:ints)", Vahtkond.class);
+    	q.setParameter("date", getDate());
     	q.setParameter("ints", ints);
         return q.getResultList();
     }

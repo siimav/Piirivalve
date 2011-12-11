@@ -157,4 +157,8 @@ public abstract class BaseEntity implements Serializable {
 //        this.entityManager.getTransaction().commit();
     }
 	
+	public static Date getDate() {
+		return new Date();
+	}
+	
 }

@@ -81,22 +81,22 @@ public class Piiriloik extends BaseEntity {
 	
 	
     public static long countPiiriloiks() {
-    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Piiriloik o WHERE o.suletud=:d", Long.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Piiriloik o WHERE o.suletud > :date", Long.class);
+    	q.setParameter("date", getDate());
         return (Long) q.getSingleResult();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Piiriloik> findAllPiiriloiks() {
-    	Query q = entityManager().createQuery("SELECT o FROM Piiriloik o WHERE o.suletud=:d", Piiriloik.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Piiriloik o WHERE o.suletud > :date", Piiriloik.class);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Piiriloik> findPiiriloikEntries(int firstResult, int maxResults) {
-    	Query q = entityManager().createQuery("SELECT o FROM Piiriloik o WHERE o.suletud=:d", Piiriloik.class).setFirstResult(firstResult).setMaxResults(maxResults);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Piiriloik o WHERE o.suletud > :date", Piiriloik.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
 	

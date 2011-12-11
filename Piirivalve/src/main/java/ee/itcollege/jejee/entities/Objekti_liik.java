@@ -73,22 +73,22 @@ public class Objekti_liik extends BaseEntity {
 
 	
     public static long countObjekti_liiks() {
-    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Objekti_liik o WHERE o.suletud=:d", Long.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Objekti_liik o WHERE o.suletud > :date", Long.class);
+    	q.setParameter("date", getDate());
         return (Long) q.getSingleResult();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Objekti_liik> findAllObjekti_liiks() {
-    	Query q = entityManager().createQuery("SELECT o FROM Objekti_liik o WHERE o.suletud=:d", Objekti_liik.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Objekti_liik o WHERE o.suletud > :date", Objekti_liik.class);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Objekti_liik> findObjekti_liikEntries(int firstResult, int maxResults) {
-    	Query q = entityManager().createQuery("SELECT o FROM Objekti_liik o WHERE o.suletud=:d", Objekti_liik.class).setFirstResult(firstResult).setMaxResults(maxResults);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Objekti_liik o WHERE o.suletud > :date", Objekti_liik.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
    

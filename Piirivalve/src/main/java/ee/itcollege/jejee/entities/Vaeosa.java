@@ -116,22 +116,22 @@ public class Vaeosa extends BaseEntity {
 	
 	
     public static long countVaeosas() {
-    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Vaeosa o WHERE o.suletud=:d", Long.class);
-		q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Vaeosa o WHERE o.suletud > :date", Long.class);
+		q.setParameter("date", getDate());
         return (Long) q.getSingleResult();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Vaeosa> findAllVaeosas() {
-    	Query q = entityManager().createQuery("SELECT o FROM Vaeosa o WHERE o.suletud=:d", Vaeosa.class);
-		q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Vaeosa o WHERE o.suletud > :date", Vaeosa.class);
+		q.setParameter("date", getDate());
         return q.getResultList();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Vaeosa> findVaeosaEntries(int firstResult, int maxResults) {
-    	Query q = entityManager().createQuery("SELECT o FROM Vaeosa o WHERE o.suletud=:d", Vaeosa.class).setFirstResult(firstResult).setMaxResults(maxResults);
-		q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Vaeosa o WHERE o.suletud > :date", Vaeosa.class).setFirstResult(firstResult).setMaxResults(maxResults);
+		q.setParameter("date", getDate());
         return q.getResultList();
     }
    

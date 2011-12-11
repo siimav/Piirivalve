@@ -126,40 +126,40 @@ public class Piiririkkuja extends BaseEntity {
 	
 	
     public static long countPiiririkkujas() {
-    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Piiririkkuja o WHERE o.suletud=:d", Long.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Piiririkkuja o WHERE o.suletud > :date", Long.class);
+    	q.setParameter("date", getDate());
         return (Long) q.getSingleResult();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Piiririkkuja> findAllPiiririkkujas() {
-    	Query q = entityManager().createQuery("SELECT o FROM Piiririkkuja o WHERE o.suletud=:d", Piiririkkuja.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Piiririkkuja o WHERE o.suletud > :date", Piiririkkuja.class);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Piiririkkuja> findPiiririkkujaEntries(int firstResult, int maxResults) {
-    	Query q = entityManager().createQuery("SELECT o FROM Piiririkkuja o WHERE o.suletud=:d", Piiririkkuja.class).setFirstResult(firstResult).setMaxResults(maxResults);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Piiririkkuja o WHERE o.suletud > :date", Piiririkkuja.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
 	
 	
     @SuppressWarnings("unchecked")
 	public static List<Piiririkkuja> findAllPiiririkkujadForIntsident(Intsident ints) {
-    	Query q = entityManager().createQuery("SELECT o FROM Piiririkkuja o JOIN o.isik_intsidendis ii WHERE ii.intsident=:ints AND o.suletud=:d", Piiririkkuja.class);
+    	Query q = entityManager().createQuery("SELECT o FROM Piiririkkuja o JOIN o.isik_intsidendis ii WHERE ii.intsident=:ints AND o.suletud > :date", Piiririkkuja.class);
     	q.setParameter("ints", ints);
-    	q.setParameter("d", SURROGATE_DATE);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
     
     
     @SuppressWarnings("unchecked")
 	public static Collection<Piiririkkuja> findAllPiiririkkujadNotInIntsident(Intsident ints) {
-    	Query q = entityManager().createQuery("SELECT o FROM Piiririkkuja o WHERE o NOT IN (SELECT o1 FROM Piiririkkuja o1 JOIN o1.isik_intsidendis ii WHERE ii.intsident=:ints) AND o.suletud=:d", Piiririkkuja.class);
+    	Query q = entityManager().createQuery("SELECT o FROM Piiririkkuja o WHERE o NOT IN (SELECT o1 FROM Piiririkkuja o1 JOIN o1.isik_intsidendis ii WHERE ii.intsident=:ints) AND o.suletud > :date", Piiririkkuja.class);
     	q.setParameter("ints", ints);
-    	q.setParameter("d", SURROGATE_DATE);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
    

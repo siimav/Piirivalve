@@ -88,22 +88,22 @@ public class Vahtkonna_liige extends BaseEntity {
 	
 	
     public static long countVahtkonna_liiges() {
-    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Vahtkonna_liige o WHERE o.suletud=:d", Long.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Vahtkonna_liige o WHERE o.suletud > :date", Long.class);
+    	q.setParameter("date", getDate());
         return (Long) q.getSingleResult();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Vahtkonna_liige> findAllVahtkonna_liiges() {
-    	Query q = entityManager().createQuery("SELECT o FROM Vahtkonna_liige o WHERE o.suletud=:d", Vahtkonna_liige.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Vahtkonna_liige o WHERE o.suletud > :date", Vahtkonna_liige.class);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Vahtkonna_liige> findVahtkonna_liigeEntries(int firstResult, int maxResults) {
-    	Query q = entityManager().createQuery("SELECT o FROM Vahtkonna_liige o WHERE o.suletud=:d", Vahtkonna_liige.class).setFirstResult(firstResult).setMaxResults(maxResults);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Vahtkonna_liige o WHERE o.suletud > :date", Vahtkonna_liige.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
 
