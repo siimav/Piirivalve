@@ -134,26 +134,18 @@ public abstract class BaseEntity implements Serializable {
 	@Transactional
     public void remove() { 
         String table = this.getClass().getSimpleName();
-        Query q = entityManager().createQuery("UPDATE " + table + " SET suletud=:date WHERE id=" + id);
-        q.setParameter("date", new Date());
+        String user = SecurityContextHolder.getContext().getAuthentication().getName();
+        
+        Query q = entityManager().createQuery("UPDATE " + table + " SET suletud=:date, sulgeja=:sulgeja WHERE id=" + id);
+        q.setParameter("date", getDate());
+        q.setParameter("sulgeja", user);
 //        this.entityManager.getTransaction().begin();
         if(q.executeUpdate() != 1) {
         	//FAILED
 //        	this.entityManager.getTransaction().rollback();
         	//TODO: write to log
         	return;
-        }
-
-        String user = SecurityContextHolder.getContext().getAuthentication().getName();
-        q =  entityManager().createQuery("UPDATE " + table + " SET sulgeja=:sulgeja WHERE id=" + id);
-        q.setParameter("sulgeja", user);
-        if(q.executeUpdate() != 1) {
-        	//FAILED
-//        	this.entityManager.getTransaction().rollback();
-        	//TODO: write to log
-        	return;
         }        
-        
 //        this.entityManager.getTransaction().commit();
     }
 	
