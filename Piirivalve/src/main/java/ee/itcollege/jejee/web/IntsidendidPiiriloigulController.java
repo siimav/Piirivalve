@@ -47,24 +47,20 @@ public class IntsidendidPiiriloigulController {
 		if(pia.getPiiriloik_ID()==0){ //--- valik (kuva kÃƒÂµik)
 			if(pia.getAlates()!=null && pia.getKuni()!=null){ //combovÃƒÂ¤ÃƒÂ¤rtus 0, kuupÃƒÂ¤evad olemas
 				tmp = korrasta(Piirivalvur_intsidendis.findAllPiirivalvurIntsidentsWithInterval(pia.getAlates(), pia.getKuni()));
-				uiModel.addAttribute("ints_piiriloigul_piirivalvur", tmp);
 			}
 			else{
 				tmp = korrasta(Piirivalvur_intsidendis.findAllPiirivalvur_intsidendises());
-				uiModel.addAttribute("ints_piiriloigul_piirivalvur", tmp);
 			}
 		}
 		else{
 			if(pia.getAlates()==null && pia.getKuni()==null){
 				tmp = korrasta(Piirivalvur_intsidendis.findAllPiirivalvurIntsidentsForPiiriloik(Piiriloik.findPiiriloik(pia.getPiiriloik_ID())));
-				uiModel.addAttribute("ints_piiriloigul_piirivalvur", tmp);
 			}
 			else {	
-				tmp = korrasta(Piirivalvur_intsidendis.findAllPiirivalvurIntsidentsForPiiriloikWithInterval(Piiriloik.findPiiriloik(pia.getPiiriloik_ID()), pia.getAlates(), pia.getKuni()));				
-				uiModel.addAttribute("ints_piiriloigul_piirivalvur", tmp);
-				
+				tmp = korrasta(Piirivalvur_intsidendis.findAllPiirivalvurIntsidentsForPiiriloikWithInterval(Piiriloik.findPiiriloik(pia.getPiiriloik_ID()), pia.getAlates(), pia.getKuni()));
 			}
 		}
+		uiModel.addAttribute("ints_piiriloigul_piirivalvur", tmp);
 		
 		return "intsidendid_piiriloigul/ipiir";
 	}
