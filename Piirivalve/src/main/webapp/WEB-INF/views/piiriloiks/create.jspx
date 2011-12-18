@@ -3,12 +3,6 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_itcollege_jejee_entities_Piiriloik" modelAttribute="piiriloik" path="/piiriloiks" render="${empty dependencies}" z="4fMzPEdGR/nDWQlWAfN+82ZPR40=">
-        <field:input field="avaja" id="c_ee_itcollege_jejee_entities_Piiriloik_avaja" required="true" z="2gTh8LXlDkNhPe8LJ2kr19dmorc="/>
-        <field:datetime dateTimePattern="${piiriloik_avatud_date_format}" field="avatud" id="c_ee_itcollege_jejee_entities_Piiriloik_avatud" required="true" z="IIukzcZIZIdtZNOfQVmcbWusoxE="/>
-        <field:input field="muutja" id="c_ee_itcollege_jejee_entities_Piiriloik_muutja" required="true" z="HQBTIMTU1lkeEbHe+Ded/yoRBjQ="/>
-        <field:datetime dateTimePattern="${piiriloik_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_jejee_entities_Piiriloik_muudetud" required="true" z="c2XYsw/WE/FYLpP0GEp5du2vHEE="/>
-        <field:input field="sulgeja" id="c_ee_itcollege_jejee_entities_Piiriloik_sulgeja" z="gpX2KF/YaTQOZvIaLzpv1iRSs8A="/>
-        <field:datetime dateTimePattern="${piiriloik_suletud_date_format}" field="suletud" id="c_ee_itcollege_jejee_entities_Piiriloik_suletud" required="true" z="aUW+MfsLkJRwTw9oOaZ4P1FN+HM="/>
         <field:input field="kood" id="c_ee_itcollege_jejee_entities_Piiriloik_kood" z="7gKaKUXg28YAvAxlg7ZsmnvpaRg="/>
         <field:input field="nimetus" id="c_ee_itcollege_jejee_entities_Piiriloik_nimetus" z="rJz5VmsXhtIb+2JjKnWXO9CRiM0="/>
         <field:input field="GPS_koordinaadid" id="c_ee_itcollege_jejee_entities_Piiriloik_GPS_koordinaadid" z="mIVz2jy+xzmeJmd92DpKQk+9H1Q="/>

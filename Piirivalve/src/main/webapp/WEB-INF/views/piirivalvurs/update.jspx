@@ -3,12 +3,6 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ee_itcollege_jejee_entities_Piirivalvur" modelAttribute="piirivalvur" path="/piirivalvurs" versionField="Version" z="a9i+uEvbvCJXhs5UpLNpXWT0My0=">
-        <field:input field="avaja" id="c_ee_itcollege_jejee_entities_Piirivalvur_avaja" required="true" z="HkFM+VwmdwgFihB0PxIdobpkcjM="/>
-        <field:datetime dateTimePattern="${piirivalvur_avatud_date_format}" field="avatud" id="c_ee_itcollege_jejee_entities_Piirivalvur_avatud" required="true" z="o0zZpkTUuP0e8BFiXwPSrwlfi60="/>
-        <field:input field="muutja" id="c_ee_itcollege_jejee_entities_Piirivalvur_muutja" required="true" z="zKgjLNuqkUgTMAqmNvpLTCV0gt0="/>
-        <field:datetime dateTimePattern="${piirivalvur_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_jejee_entities_Piirivalvur_muudetud" required="true" z="PNSK62kGDGTIyF99YmY8WT8o4d4="/>
-        <field:input field="sulgeja" id="c_ee_itcollege_jejee_entities_Piirivalvur_sulgeja" z="8BeOt/+MpngLS9b25uyKvFdg+lE="/>
-        <field:datetime dateTimePattern="${piirivalvur_suletud_date_format}" field="suletud" id="c_ee_itcollege_jejee_entities_Piirivalvur_suletud" required="true" z="lNyIy0JcxvfUJKKOCPUvYITYf8k="/>
         <field:input field="isikukood" id="c_ee_itcollege_jejee_entities_Piirivalvur_isikukood" z="QEIWSjINZEazjZOPK4IOzb2I8gs="/>
         <field:input field="eesnimed" id="c_ee_itcollege_jejee_entities_Piirivalvur_eesnimed" z="Eeei9bu7pOfTGp4IFpP2RjdV3nQ="/>
         <field:input field="perekonnanimi" id="c_ee_itcollege_jejee_entities_Piirivalvur_perekonnanimi" z="6bMqfWxaemp3eGMDAYgXyIpB/pM="/>
