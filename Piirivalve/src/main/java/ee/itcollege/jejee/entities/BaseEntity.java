@@ -34,19 +34,19 @@ public abstract class BaseEntity implements Serializable {
 	@Id
 	private Long id;
 	
-	@NotNull
 	private String avaja;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@NotNull
+	
 	private Date avatud;
-	@NotNull
+	
 	private String muutja;
+	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@NotNull
 	private Date muudetud;
+	
 	private String sulgeja;
+	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@NotNull
 	private Date suletud;
 	
 	
