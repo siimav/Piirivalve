@@ -1,16 +1,16 @@
 package ee.itcollege.jejee.web;
 
+import java.util.Collection;
 import java.util.Date;
 
+import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.transaction.SystemException;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import ee.itcollege.jejee.entities.Intsidendi_liik;
 import ee.itcollege.jejee.entities.Intsident;
@@ -34,19 +34,17 @@ import ee.itcollege.jejee.entities.Vahtkond_intsidendis;
 import ee.itcollege.jejee.entities.Vahtkond_piiriloigul;
 import ee.itcollege.jejee.entities.Vahtkonna_liige;
 
-
-@RequestMapping("/filldb")
-@Controller
-public class FillDbController {
-
+public class FillDB {
+	
 	@PersistenceContext
 	EntityManager entityManager;
 	
-	@RequestMapping(method = RequestMethod.GET)
-    public String fill(Model uiModel) throws IllegalStateException, SecurityException, SystemException {
+	@PostConstruct
+	public void test() {
 		Query q = entityManager.createQuery("SELECT count(o) FROM Intsident o", Long.class);		
 		
 		if(((Long) q.getSingleResult()) == 0) {	  //ühtegi kirjet pole
+			SecurityContextHolder.getContext().setAuthentication(testAuth);
 			
 			Intsidendi_liik il_1 = new Intsidendi_liik("IL4433","tõsine","väga jõhker");
 			Intsidendi_liik il_2 = new Intsidendi_liik("IL6655","kerge","suht savi");
@@ -192,20 +190,64 @@ public class FillDbController {
 			psi_9.persist();
 			
 			Seadus s = new Seadus("s78468", "Murphy seadus", "-lõpmatus", "+lõpmatus", "mis siin ikka öelda?");
+			s.persist();
 			Seaduse_punkt sp = new Seaduse_punkt("33.5", "ah?", "blablabla", new Date(), new Date(), "...", s);
 			sp.persist();
 			
 			s = new Seadus("s78468", "Alkoseadus", "natuke aega tagasi", "natuke aega veel", "karm seadus");
+			s.persist();
 			sp = new Seaduse_punkt("$0.5", "ah?", "blablabla", new Date(), new Date(), "...", s);
 			sp.persist();
 			
+			SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);
 		}
-		else {
-			return "fill_db_fail";
-		}
+	}
+	
+	
+	public Authentication testAuth = new Authentication() {
 
+		private static final long serialVersionUID = 1L;
 		
-        return "fill_db_success";
-    }
+		private boolean isAuthenticated = true;
+		
+		@Override
+		public String getName() {			
+			return "Dolga Molga";
+		}
+		
+		@Override
+		public void setAuthenticated(boolean arg0) throws IllegalArgumentException {
+			isAuthenticated = arg0;			
+		}
+		
+		@Override
+		public boolean isAuthenticated() {
+			return isAuthenticated;
+		}
+		
+		@Override
+		public Object getPrincipal() {
+			// meile pole vajalik
+			return null;
+		}
+		
+		@Override
+		public Object getDetails() {
+			// meile pole vajalik
+			return null;
+		}
+		
+		@Override
+		public Object getCredentials() {
+			// meile pole vajalik
+			return null;
+		}
+		
+		@Override
+		public Collection<GrantedAuthority> getAuthorities() {
+			// meile pole vajalik
+			return null;
+		}
+	};
 	
 }
