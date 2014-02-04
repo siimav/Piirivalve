@@ -114,22 +114,22 @@ public class Riigi_admin_yksus extends BaseEntity {
 	
 	
     public static long countRiigi_admin_yksuses() {
-    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Riigi_admin_yksus o WHERE o.suletud=:d", Long.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Riigi_admin_yksus o WHERE o.suletud > :date", Long.class);
+    	q.setParameter("date", getDate());
         return (Long) q.getSingleResult();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Riigi_admin_yksus> findAllRiigi_admin_yksuses() {
-    	Query q = entityManager().createQuery("SELECT o FROM Riigi_admin_yksus o WHERE o.suletud=:d", Riigi_admin_yksus.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Riigi_admin_yksus o WHERE o.suletud > :date", Riigi_admin_yksus.class);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Riigi_admin_yksus> findRiigi_admin_yksusEntries(int firstResult, int maxResults) {
-    	Query q = entityManager().createQuery("SELECT o FROM Riigi_admin_yksus o WHERE o.suletud=:d", Riigi_admin_yksus.class).setFirstResult(firstResult);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Riigi_admin_yksus o WHERE o.suletud > :date", Riigi_admin_yksus.class).setFirstResult(firstResult);
+    	q.setParameter("date", getDate());
         return q.setMaxResults(maxResults).getResultList();
     }
    

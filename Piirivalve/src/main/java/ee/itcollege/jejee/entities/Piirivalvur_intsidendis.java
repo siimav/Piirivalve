@@ -135,66 +135,66 @@ public class Piirivalvur_intsidendis extends BaseEntity implements Cloneable {
 	
 	
     public static long countPiirivalvur_intsidendises() {
-    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Piirivalvur_intsidendis o WHERE o.suletud=:d", Long.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Piirivalvur_intsidendis o WHERE o.suletud > :date", Long.class);
+    	q.setParameter("date", getDate());
         return (Long) q.getSingleResult();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Piirivalvur_intsidendis> findAllPiirivalvur_intsidendises() {
-    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur_intsidendis o WHERE o.suletud=:d", Piirivalvur_intsidendis.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur_intsidendis o WHERE o.suletud > :date", Piirivalvur_intsidendis.class);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Piirivalvur_intsidendis> findPiirivalvur_intsidendisEntries(int firstResult, int maxResults) {
-    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur_intsidendis o WHERE o.suletud=:d", Piirivalvur_intsidendis.class).setFirstResult(firstResult).setMaxResults(maxResults);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Piirivalvur_intsidendis o WHERE o.suletud > :date", Piirivalvur_intsidendis.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
 	
 	
 	 @SuppressWarnings("unchecked")
 		public static List<Piirivalvur_intsidendis> findAllPiirivalvurIntsidentsForPiiriloik(Piiriloik piir) {
-	    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi JOIN pi.intsident i WHERE i.piiriloik=:piir AND pi.suletud=:d", Piirivalvur_intsidendis.class);
+	    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi JOIN pi.intsident i WHERE i.piiriloik=:piir AND pi.suletud > :date", Piirivalvur_intsidendis.class);
 	    	q.setParameter("piir", piir);
-	    	q.setParameter("d", SURROGATE_DATE);
+	    	q.setParameter("date", getDate());
 	        return q.getResultList();
 	    }
 	
 		@SuppressWarnings("unchecked")
 		public static List<Piirivalvur_intsidendis> findAllPiirivalvurIntsidentsForPiiriloikWithInterval(Piiriloik piir, Date alates, Date kuni) {
-	    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi JOIN pi.intsident i WHERE pi.suletud=:d AND i.piiriloik=:piir and (pi.alates>=:alates and pi.kuni<=:kuni)", Piirivalvur_intsidendis.class);
+	    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi JOIN pi.intsident i WHERE pi.suletud > :date AND i.piiriloik=:piir and (pi.alates>=:alates and pi.kuni<=:kuni)", Piirivalvur_intsidendis.class);
 	    	q.setParameter("piir", piir);
 	    	q.setParameter("alates", alates);
 	    	q.setParameter("kuni", kuni);
-	    	q.setParameter("d", SURROGATE_DATE);
+	    	q.setParameter("date", getDate());
 	        return q.getResultList();
 	    }
 		
 		@SuppressWarnings("unchecked")
 		public static List<Piirivalvur_intsidendis> findAllPiirivalvurIntsidentsWithInterval(Date alates, Date kuni) {
-	    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi WHERE pi.alates>=:alates and pi.kuni<=:kuni AND pi.suletud=:d", Piirivalvur_intsidendis.class);
+	    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi WHERE pi.alates>=:alates and pi.kuni<=:kuni AND pi.suletud > :date", Piirivalvur_intsidendis.class);
 	    	q.setParameter("alates", alates);
 	    	q.setParameter("kuni", kuni);
-	    	q.setParameter("d", SURROGATE_DATE);
+	    	q.setParameter("date", getDate());
 	        return q.getResultList();
 	    }
 		
 		@SuppressWarnings("unchecked")
 		public static List<Piirivalvur_intsidendis> findAllPiirivalvurIntsidentsForPiirivalvur(Piirivalvur piirivalvur) {
-	    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi WHERE pi.piirivalvur=:piirivalvur AND pi.suletud=:d", Piirivalvur_intsidendis.class);
+	    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi WHERE pi.piirivalvur=:piirivalvur AND pi.suletud > :date", Piirivalvur_intsidendis.class);
 	    	q.setParameter("piirivalvur", piirivalvur);
-	    	q.setParameter("d", SURROGATE_DATE);
+	    	q.setParameter("date", getDate());
 	        return q.getResultList();
 	    }
 
 		@SuppressWarnings("unchecked")
 		public static Collection<Piirivalvur_intsidendis> findAllPiirivalvurIntsidendisForIntsident(Intsident ints) {
-	    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi WHERE pi.intsident=:ints AND pi.suletud=:d", Piirivalvur_intsidendis.class);
+	    	Query q = entityManager().createQuery("SELECT pi FROM Piirivalvur_intsidendis pi WHERE pi.intsident=:ints AND pi.suletud > :date", Piirivalvur_intsidendis.class);
 	    	q.setParameter("ints", ints);
-	    	q.setParameter("d", SURROGATE_DATE);
+	    	q.setParameter("date", getDate());
 	        return q.getResultList();
 		}
 

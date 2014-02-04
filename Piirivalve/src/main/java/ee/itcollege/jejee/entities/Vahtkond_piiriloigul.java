@@ -91,22 +91,22 @@ public class Vahtkond_piiriloigul extends BaseEntity {
 	
 	
     public static long countVahtkond_piiriloiguls() {
-    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Vahtkond_piiriloigul o WHERE o.suletud=:d", Long.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Vahtkond_piiriloigul o WHERE o.suletud > :date", Long.class);
+    	q.setParameter("date", getDate());
         return (Long) q.getSingleResult();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Vahtkond_piiriloigul> findAllVahtkond_piiriloiguls() {
-    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond_piiriloigul o WHERE o.suletud=:d", Vahtkond_piiriloigul.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond_piiriloigul o WHERE o.suletud > :date", Vahtkond_piiriloigul.class);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Vahtkond_piiriloigul> findVahtkond_piiriloigulEntries(int firstResult, int maxResults) {
-    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond_piiriloigul o WHERE o.suletud=:d", Vahtkond_piiriloigul.class).setFirstResult(firstResult).setMaxResults(maxResults);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Vahtkond_piiriloigul o WHERE o.suletud > :date", Vahtkond_piiriloigul.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
 	

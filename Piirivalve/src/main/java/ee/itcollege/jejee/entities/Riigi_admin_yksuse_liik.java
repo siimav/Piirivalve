@@ -101,22 +101,22 @@ public class Riigi_admin_yksuse_liik extends BaseEntity {
 
 	
     public static long countRiigi_admin_yksuse_liiks() {
-    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Riigi_admin_yksuse_liik o WHERE o.suletud=:d", Long.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Riigi_admin_yksuse_liik o WHERE o.suletud > :date", Long.class);
+    	q.setParameter("date", getDate());
         return (Long) q.getSingleResult();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Riigi_admin_yksuse_liik> findAllRiigi_admin_yksuse_liiks() {
-    	Query q = entityManager().createQuery("SELECT o FROM Riigi_admin_yksuse_liik o WHERE o.suletud=:d", Riigi_admin_yksuse_liik.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Riigi_admin_yksuse_liik o WHERE o.suletud > :date", Riigi_admin_yksuse_liik.class);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Riigi_admin_yksuse_liik> findRiigi_admin_yksuse_liikEntries(int firstResult, int maxResults) {
-    	Query q = entityManager().createQuery("SELECT o FROM Riigi_admin_yksuse_liik o WHERE o.suletud=:d", Riigi_admin_yksuse_liik.class).setFirstResult(firstResult).setMaxResults(maxResults);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Riigi_admin_yksuse_liik o WHERE o.suletud > :date", Riigi_admin_yksuse_liik.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("date", getDate());
     	return q.getResultList();
     }
 	  

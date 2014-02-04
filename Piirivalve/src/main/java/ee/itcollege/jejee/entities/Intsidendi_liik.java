@@ -62,22 +62,22 @@ public class Intsidendi_liik  extends BaseEntity {
 	
 	
     public static long countIntsidendi_liiks() {
-    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Intsidendi_liik o WHERE o.suletud=:d", Long.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Intsidendi_liik o WHERE o.suletud > :date", Long.class);
+    	q.setParameter("date", getDate());
         return (Long) q.getSingleResult();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Intsidendi_liik> findAllIntsidendi_liiks() {
-    	Query q = entityManager().createQuery("SELECT o FROM Intsidendi_liik o WHERE o.suletud=:d", Intsidendi_liik.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Intsidendi_liik o WHERE o.suletud > :date", Intsidendi_liik.class);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Intsidendi_liik> findIntsidendi_liikEntries(int firstResult, int maxResults) {
-    	Query q = entityManager().createQuery("SELECT o FROM Intsidendi_liik o WHERE o.suletud=:d", Intsidendi_liik.class).setFirstResult(firstResult).setMaxResults(maxResults);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Intsidendi_liik o WHERE o.suletud > :date", Intsidendi_liik.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
 	

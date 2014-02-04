@@ -187,50 +187,50 @@ public class Intsident extends BaseEntity {
 	
 	
     public static long countIntsidents() {
-    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Intsident o WHERE o.suletud=:d", Long.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Intsident o WHERE o.suletud > :date", Long.class);
+    	q.setParameter("date", getDate());
         return (Long) q.getSingleResult();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Intsident> findAllIntsidents() {
-    	Query q = entityManager().createQuery("SELECT o FROM Intsident o WHERE o.suletud=:d", Intsident.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Intsident o WHERE o.suletud > :date", Intsident.class);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Intsident> findIntsidentEntries(int firstResult, int maxResults) {
-    	Query q = entityManager().createQuery("SELECT o FROM Intsident o WHERE o.suletud=:d", Intsident.class).setFirstResult(firstResult).setMaxResults(maxResults);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Intsident o WHERE o.suletud > :date", Intsident.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
 
 	
 	@SuppressWarnings("unchecked")
 	public static List<Intsident> findAllIntsidentsForPiiriloik(Piiriloik piir) {
-		Query q = entityManager().createQuery("SELECT o FROM Intsident o WHERE o.piiriloik=:piir AND o.suletud=:d", Intsident.class);
+		Query q = entityManager().createQuery("SELECT o FROM Intsident o WHERE o.piiriloik=:piir AND o.suletud > :date", Intsident.class);
 		q.setParameter("piir", piir);
-		q.setParameter("d", SURROGATE_DATE);
+		q.setParameter("date", getDate());
 		return q.getResultList();
 	}
 
 	@SuppressWarnings("unchecked")
 	public static List<Intsident> findIntsidentsForPiiriloikWithInterval(Piiriloik piir, Date toimumise_algus, Date toimumise_lopp) {
-		Query q = entityManager().createQuery("SELECT o FROM Intsident o WHERE o.piiriloik=:piir and o.toimumise_algus>=:toimumise_algus and o.toimumise_lopp<=:toimumise_lopp AND o.suletud=:d", Intsident.class);
+		Query q = entityManager().createQuery("SELECT o FROM Intsident o WHERE o.piiriloik=:piir and o.toimumise_algus>=:toimumise_algus and o.toimumise_lopp<=:toimumise_lopp AND o.suletud > :date", Intsident.class);
 		q.setParameter("piir", piir);
 		q.setParameter("toimumise_algus", toimumise_algus);
 		q.setParameter("toimumise_lopp", toimumise_lopp);
-		q.setParameter("d", SURROGATE_DATE);
+		q.setParameter("date", getDate());
 		return q.getResultList();
 	}
 
 	@SuppressWarnings("unchecked")
 	public static List<Intsident> findAllIntsidentsWithInterval(Date toimumise_algus, Date toimumise_lopp) {
-		Query q = entityManager().createQuery("SELECT o FROM Intsident o WHERE o.toimumise_algus>=:toimumise_algus and o.toimumise_lopp<=:toimumise_lopp AND o.suletud=:d", Intsident.class);
+		Query q = entityManager().createQuery("SELECT o FROM Intsident o WHERE o.toimumise_algus>=:toimumise_algus and o.toimumise_lopp<=:toimumise_lopp AND o.suletud > :date", Intsident.class);
 		q.setParameter("toimumise_algus", toimumise_algus);
 		q.setParameter("toimumise_lopp", toimumise_lopp);
-		q.setParameter("d", SURROGATE_DATE);
+		q.setParameter("date", getDate());
 		return q.getResultList();
 	}
 

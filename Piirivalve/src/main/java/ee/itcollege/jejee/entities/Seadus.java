@@ -89,22 +89,22 @@ public class Seadus extends BaseEntity {
 	
 	
     public static long countSeaduses() {
-    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Seadus o WHERE o.suletud=:d", Long.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT COUNT(o) FROM Seadus o WHERE o.suletud > :date", Long.class);
+    	q.setParameter("date", getDate());
     	return (Long) q.getSingleResult();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Seadus> findAllSeaduses() {
-    	Query q = entityManager().createQuery("SELECT o FROM Seadus o WHERE o.suletud=:d", Seadus.class);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Seadus o WHERE o.suletud > :date", Seadus.class);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
     
     @SuppressWarnings("unchecked")
 	public static List<Seadus> findSeadusEntries(int firstResult, int maxResults) {
-    	Query q = entityManager().createQuery("SELECT o FROM Seadus o WHERE o.suletud=:d", Seadus.class).setFirstResult(firstResult).setMaxResults(maxResults);
-    	q.setParameter("d", SURROGATE_DATE);
+    	Query q = entityManager().createQuery("SELECT o FROM Seadus o WHERE o.suletud > :date", Seadus.class).setFirstResult(firstResult).setMaxResults(maxResults);
+    	q.setParameter("date", getDate());
         return q.getResultList();
     }
 
